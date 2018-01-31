@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node --use_strict server.js",
+    "local-build": "node set_up_env.js && NODE_ENV=production webpack",
+    "start-dev": "NODE_ENV=development node server.js &&  NODE_ENV=development webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,9 +14,41 @@
     "url": "git+https://github.com/MKwenhua/docs-r-us.git"
   },
   "author": "Peter Halloran",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MKwenhua/docs-r-us/issues"
   },
-  "homepage": "https://github.com/MKwenhua/docs-r-us#readme"
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "semantic-ui-react": "^0.77.2",
+    "sequelize": "^4.32.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-react-app": "^3.0.1",
+    "babel-runtime": "^6.26.0",
+    "css-loader": "^0.28.4",
+    "dotenv": "^4.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^0.11.2",
+    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-loader": "2.0.8",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.1.0",
+    "webpack-node-externals": "^1.6.0",
+    "webpack-s3-plugin": "^1.0.0-rc.0"
+  }
 }
