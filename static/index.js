@@ -1,13 +1,7 @@
-const OrangutanPageContent = require('./orangutan');
 const {
   LoginPageDoctor,
   LoginPagePatient
 } = require('./login_page');
-
-const OrangutanPage = (req, res) => {
-  res.send(OrangutanPageContent);
-  res.end();
-}
 
 const DoctorLogin = (req, res) => {
   res.send(LoginPageDoctor);
@@ -32,9 +26,7 @@ const LogOut = (req,res) => {
   });
 }
 
-
 module.exports = {
-  OrangutanPage,
   DoctorLogin,
   PatientLogin,
   isLoggedIn,

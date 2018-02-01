@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const {Doctor, Patient, Appointment, GetUserType} = require('./db');
 const {ProccessInfo, ProcessHealth} = require('./system_health')
-const {OrangutanPage, DoctorLogin, PatientLogin, isLoggedIn, LogOut} = require('./static')
+const { DoctorLogin, PatientLogin, isLoggedIn, LogOut } = require('./static')
 const {IndexRoute} = require('./react_pages.js');
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
+app.use(session({ secret: 'think outside the bun', resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -37,13 +37,11 @@ app.post('/signin', passport.authenticate('local-signin', {
 
 app.post('/patient/login', PatientLogin)
 
-app.get('/bajablast', OrangutanPage);
-
 app.get('/health', ProcessHealth);
 
 app.get(/\/info\/(gen|poll)/, ProccessInfo);
 
-require('./config/passport.js')(GetUserType)(passport)
+require('./config/passport.js')(passport)
 
 app.listen(ProceessPort, () => {
   console.log(`Application worker ${process.pid} at Port: ${ProceessPort} has started`);
