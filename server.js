@@ -1,5 +1,6 @@
 const ProceessPort = process.env.PORT || 5000;
 const express = require('express');
+const sequelize = require('./db');
 const {
   ProccessInfo,
   ProcessHealth
@@ -9,7 +10,7 @@ const {
 } = require('./static')
 const {
   IndexRoute
-} = require('./react_pages.js')
+} = require('./react_pages.js');
 
 const app = express();
 
