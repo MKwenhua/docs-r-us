@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -86,16 +86,22 @@ module.exports = require("react-redux");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("constants");
+module.exports = require("semantic-ui-react");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("constants");
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106,7 +112,7 @@ var external__react_ = __webpack_require__(0);
 var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
 
 // EXTERNAL MODULE: ./src/shared/styles/Main.css
-var Main = __webpack_require__(6);
+var Main = __webpack_require__(7);
 var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 
 // EXTERNAL MODULE: external "react-redux"
@@ -114,7 +120,7 @@ var external__react_redux_ = __webpack_require__(2);
 var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
 
 // EXTERNAL MODULE: ./src/shared/styles/TopNav.css
-var styles_TopNav = __webpack_require__(7);
+var styles_TopNav = __webpack_require__(8);
 var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
 // EXTERNAL MODULE: external "react-router-dom"
@@ -159,32 +165,23 @@ var TopNav_TopNav = function (_React$PureComponent) {
           __self: this
         },
         external__react__default.a.createElement(
-          external__react_router_dom_["Link"],
-          { to: '/', className: 'self-brand', __source: {
+          'div',
+          { className: 'topbar-left', __source: {
               fileName: _jsxFileName,
               lineNumber: 12
             },
             __self: this
           },
-          'MKwenhua'
-        ),
-        external__react__default.a.createElement(
-          'div',
-          { className: 'right-button', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 15
+          external__react__default.a.createElement(
+            external__react_router_dom_["Link"],
+            { to: '/', className: 'brand', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 13
+              },
+              __self: this
             },
-            __self: this
-          },
-          external__react__default.a.createElement('img', {
-            className: 'button-icon hidden',
-            height: '60',
-            src: 'https://dq8llwxgkllay.cloudfront.net/site_icon_cube.png', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 16
-            },
-            __self: this
-          })
+            'MED-MD'
+          )
         )
       );
     }
@@ -194,12 +191,144 @@ var TopNav_TopNav = function (_React$PureComponent) {
 }(external__react__default.a.PureComponent);
 
 /* harmony default export */ var components_TopNav = (TopNav_TopNav);
+// EXTERNAL MODULE: ./src/shared/styles/SideNav.css
+var styles_SideNav = __webpack_require__(9);
+var SideNav_default = /*#__PURE__*/__webpack_require__.n(styles_SideNav);
+
+// EXTERNAL MODULE: external "semantic-ui-react"
+var external__semantic_ui_react_ = __webpack_require__(3);
+var external__semantic_ui_react__default = /*#__PURE__*/__webpack_require__.n(external__semantic_ui_react_);
+
+// CONCATENATED MODULE: ./src/shared/components/SideNav.js
+var SideNav__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/SideNav.js';
+
+var SideNav__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function SideNav__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function SideNav__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function SideNav__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var SideNav_SideNav = function (_React$PureComponent) {
+  SideNav__inherits(SideNav, _React$PureComponent);
+
+  function SideNav() {
+    SideNav__classCallCheck(this, SideNav);
+
+    return SideNav__possibleConstructorReturn(this, (SideNav.__proto__ || Object.getPrototypeOf(SideNav)).apply(this, arguments));
+  }
+
+  SideNav__createClass(SideNav, [{
+    key: 'render',
+    value: function render() {
+      var expanded = this.props.expanded;
+
+      return external__react__default.a.createElement(
+        'aside',
+        { className: expanded === false ? 'side-nav' : 'side-nav expanded', __source: {
+            fileName: SideNav__jsxFileName,
+            lineNumber: 10
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
+          { to: '/', className: 'side-link', activeClassName: 'selected', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 13
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'home', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 14
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: SideNav__jsxFileName,
+                lineNumber: 15
+              },
+              __self: this
+            },
+            'home'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
+          { to: '/calendar', className: 'side-link', activeClassName: 'selected', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 17
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'calendar outline', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 18
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: SideNav__jsxFileName,
+                lineNumber: 19
+              },
+              __self: this
+            },
+            'calendar'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
+          { to: '/patients', className: 'side-link', activeClassName: 'selected', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 21
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'address book outline', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 22
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: SideNav__jsxFileName,
+                lineNumber: 23
+              },
+              __self: this
+            },
+            'patients'
+          )
+        )
+      );
+    }
+  }]);
+
+  return SideNav;
+}(external__react__default.a.PureComponent);
+
+/* harmony default export */ var components_SideNav = (SideNav_SideNav);
 // EXTERNAL MODULE: external "react-router"
-var external__react_router_ = __webpack_require__(8);
+var external__react_router_ = __webpack_require__(10);
 var external__react_router__default = /*#__PURE__*/__webpack_require__.n(external__react_router_);
 
 // EXTERNAL MODULE: external "constants"
-var external__constants_ = __webpack_require__(3);
+var external__constants_ = __webpack_require__(4);
 var external__constants__default = /*#__PURE__*/__webpack_require__.n(external__constants_);
 
 // CONCATENATED MODULE: ./src/shared/helpers/index.js
@@ -221,46 +350,140 @@ var Debounce = function Debounce(fn, wait, immediate) {
 };
 
 
-// CONCATENATED MODULE: ./src/shared/pages/DoctorDashboard.js
-var DoctorDashboard__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/DoctorDashboard.js';
+// CONCATENATED MODULE: ./src/shared/pages/DoctorHome.js
+var DoctorHome__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/DoctorHome.js';
 
-var DoctorDashboard__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var DoctorHome__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function DoctorDashboard__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function DoctorHome__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function DoctorDashboard__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function DoctorHome__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function DoctorDashboard__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function DoctorHome__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
-var DoctorDashboard_DoctorDashboard = function (_PureComponent) {
-  DoctorDashboard__inherits(DoctorDashboard, _PureComponent);
+var items = [{
+  header: 'Project Report - April',
+  description: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+  meta: 'ROI: 30%',
+  centered: true
+}, {
+  header: 'Project Report - May',
+  description: 'Bring to the table win-win survival strategies to ensure proactive domination.',
+  meta: 'ROI: 34%',
+  centered: true
+}, {
+  header: 'Project Report - June',
+  description: 'Capitalise on low hanging fruit to identify a ballpark value added activity to beta test.',
+  meta: 'ROI: 27%',
+  centered: true
+}];
 
-  function DoctorDashboard() {
-    DoctorDashboard__classCallCheck(this, DoctorDashboard);
+var events = [{
+  date: '1 Hour Ago',
+  image: '/assets/images/avatar/small/elliot.jpg',
+  meta: '4 Likes',
+  summary: 'Elliot Fu added you as a friend'
+}, {
+  date: '4 days ago',
+  image: '/assets/images/avatar/small/helen.jpg',
+  meta: '1 Like',
+  summary: 'Helen Troy added 2 new illustrations',
+  extraImages: ['/assets/images/wireframe/image.png', '/assets/images/wireframe/image-text.png']
+}, {
+  date: '3 days ago',
+  image: '/assets/images/avatar/small/joe.jpg',
+  meta: '8 Likes',
+  summary: 'Joe Henderson posted on his page',
+  extraText: "Ours is a life of constant reruns. We're always circling back to where we'd we started."
+}, {
+  date: '4 days ago',
+  image: '/assets/images/avatar/small/justen.jpg',
+  meta: '41 Likes',
+  summary: 'Justen Kitsune added 2 new photos of you',
+  extraText: 'Look at these fun pics I found from a few years ago. Good times.',
+  extraImages: ['/assets/images/wireframe/image.png', '/assets/images/wireframe/image-text.png']
+}];
 
-    return DoctorDashboard__possibleConstructorReturn(this, (DoctorDashboard.__proto__ || Object.getPrototypeOf(DoctorDashboard)).apply(this, arguments));
+var DoctorHome_DoctorHome = function (_PureComponent) {
+  DoctorHome__inherits(DoctorHome, _PureComponent);
+
+  function DoctorHome() {
+    DoctorHome__classCallCheck(this, DoctorHome);
+
+    return DoctorHome__possibleConstructorReturn(this, (DoctorHome.__proto__ || Object.getPrototypeOf(DoctorHome)).apply(this, arguments));
   }
 
-  DoctorDashboard__createClass(DoctorDashboard, [{
+  DoctorHome__createClass(DoctorHome, [{
     key: 'render',
     value: function render() {
       return external__react__default.a.createElement(
-        'h1',
+        'div',
         {
           __source: {
-            fileName: DoctorDashboard__jsxFileName,
-            lineNumber: 6
+            fileName: DoctorHome__jsxFileName,
+            lineNumber: 59
           },
           __self: this
         },
-        'Doctor Dash'
+        external__react__default.a.createElement(external__semantic_ui_react_["Card"].Group, { itemsPerRow: '3', items: items, __source: {
+            fileName: DoctorHome__jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Card"],
+          { fluid: true, color: 'red', header: 'Activity', __source: {
+              fileName: DoctorHome__jsxFileName,
+              lineNumber: 61
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Content,
+            {
+              __source: {
+                fileName: DoctorHome__jsxFileName,
+                lineNumber: 62
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["Card"].Header,
+              {
+                __source: {
+                  fileName: DoctorHome__jsxFileName,
+                  lineNumber: 63
+                },
+                __self: this
+              },
+              'Recent Activity'
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Content,
+            {
+              __source: {
+                fileName: DoctorHome__jsxFileName,
+                lineNumber: 67
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Feed"], { events: events, __source: {
+                fileName: DoctorHome__jsxFileName,
+                lineNumber: 68
+              },
+              __self: this
+            })
+          )
+        )
       );
     }
   }]);
 
-  return DoctorDashboard;
+  return DoctorHome;
 }(external__react_["PureComponent"]);
 
 
@@ -274,6 +497,7 @@ function MainContainer__classCallCheck(instance, Constructor) { if (!(instance i
 function MainContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function MainContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -312,62 +536,78 @@ var MainContainer_MainContainer = function (_PureComponent) {
           dispatch = _props.dispatch,
           location = _props.location;
 
+      console.log('MainContainer this.props', this.props);
       return external__react__default.a.createElement(
         'section',
         { className: WrapperClass[location.pathname] || 'main', __source: {
             fileName: MainContainer__jsxFileName,
-            lineNumber: 32
+            lineNumber: 34
           },
           __self: this
         },
         external__react__default.a.createElement(components_TopNav, { navStuck: false, __source: {
             fileName: MainContainer__jsxFileName,
-            lineNumber: 33
+            lineNumber: 35
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(components_SideNav, { location: location, __source: {
+            fileName: MainContainer__jsxFileName,
+            lineNumber: 36
           },
           __self: this
         }),
         external__react__default.a.createElement(
-          external__react_router_dom_["Switch"],
-          {
-            __source: {
+          'div',
+          { className: true ? 'page-content' : 'page-content', __source: {
               fileName: MainContainer__jsxFileName,
-              lineNumber: 34
+              lineNumber: 37
             },
             __self: this
           },
           external__react__default.a.createElement(
-            external__react_router_dom_["Route"],
-            { exact: true, path: '/', __source: {
-                fileName: MainContainer__jsxFileName,
-                lineNumber: 35
-              },
-              __self: this
-            },
-            external__react__default.a.createElement(DoctorDashboard_DoctorDashboard, { location: location, __source: {
-                fileName: MainContainer__jsxFileName,
-                lineNumber: 36
-              },
-              __self: this
-            })
-          ),
-          external__react__default.a.createElement(
-            external__react_router_dom_["Route"],
-            { exact: true, path: '/bbbb', __source: {
+            external__react_router_dom_["Switch"],
+            {
+              __source: {
                 fileName: MainContainer__jsxFileName,
                 lineNumber: 38
               },
               __self: this
             },
             external__react__default.a.createElement(
-              'p',
-              {
-                __source: {
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/', __source: {
                   fileName: MainContainer__jsxFileName,
                   lineNumber: 39
                 },
                 __self: this
               },
-              'ok'
+              external__react__default.a.createElement(DoctorHome_DoctorHome, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 40
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/bbbb', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 42
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                'p',
+                {
+                  __source: {
+                    fileName: MainContainer__jsxFileName,
+                    lineNumber: 43
+                  },
+                  __self: this
+                },
+                'ok'
+              )
             )
           )
         )
@@ -380,7 +620,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
 
 /* harmony default export */ var containers_MainContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(selectState)(MainContainer_MainContainer)));
 // EXTERNAL MODULE: external "react-dom/server"
-var server_ = __webpack_require__(9);
+var server_ = __webpack_require__(11);
 var server__default = /*#__PURE__*/__webpack_require__.n(server_);
 
 // CONCATENATED MODULE: ./src/server/render_page.js
@@ -394,11 +634,11 @@ var render_page_RenderPage = function RenderPage(content, preloadedState) {
 
 /* harmony default export */ var render_page = (render_page_RenderPage);
 // EXTERNAL MODULE: external "redux"
-var external__redux_ = __webpack_require__(4);
+var external__redux_ = __webpack_require__(5);
 var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
 
 // EXTERNAL MODULE: external "redux-logger"
-var external__redux_logger_ = __webpack_require__(10);
+var external__redux_logger_ = __webpack_require__(12);
 var external__redux_logger__default = /*#__PURE__*/__webpack_require__.n(external__redux_logger_);
 
 // CONCATENATED MODULE: ./src/shared/reducers/main.js
@@ -480,12 +720,13 @@ var context = {
 };
 
 var server_IndexRoute = function IndexRoute(req, res) {
-  var store = store_buildServerStore(Object.assign({}, server_defaultState, { animationType: Math.random() * 2 | 0 }));
+  console.log('\n', req.user, '\n');
+  var store = store_buildServerStore(Object.assign({}, server_defaultState, { currentUser: req.user }));
   res.send(render_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: _this
     },
@@ -493,14 +734,14 @@ var server_IndexRoute = function IndexRoute(req, res) {
       external__react_router_dom_["StaticRouter"],
       { location: req.url, context: context, __source: {
           fileName: server__jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: _this
       },
       external__react__default.a.createElement(containers_MainContainer, {
         __source: {
           fileName: server__jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: _this
       })
@@ -513,12 +754,6 @@ var server_IndexRoute = function IndexRoute(req, res) {
 
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -528,16 +763,28 @@ var server_IndexRoute = function IndexRoute(req, res) {
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-logger");

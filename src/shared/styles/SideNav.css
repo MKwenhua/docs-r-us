@@ -1,0 +1,29 @@
+.side-nav {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 80px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+a.side-link {
+  margin: 8px 0;
+  width: 100%;
+  display: block;
+}
+
+a.selected {
+  color: #2196f3 !important;
+}
+
+.side-link p, i.icon {
+  width: 100%;
+  text-align: center;
+}

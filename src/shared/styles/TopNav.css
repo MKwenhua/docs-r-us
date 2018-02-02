@@ -1,9 +1,36 @@
 .top-nav {
-  height: 40px;
-  padding: 5px;
-  /* position: absolute; */
+  height: 45px;
   right: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: #2196f3;
+  border-radius: 0;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 2px 20px 0 rgba(0, 0, 0, 0.08);
+  border: none;
+  margin-bottom: 0;
+}
+
+.topbar-left {
+  float: left;
+  position: relative;
+  width: 150px;
+  z-index: 1;
+  text-align: center;
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+
+.brand a {
+  color: #ffffff;
 }
 
 .top-nav.fixed {
@@ -33,23 +60,4 @@
 .button-icon:hover {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .19);
   transform: scale(0.9, 0.9);
-}
-
-.right-button {
-  float: right;
-}
-
-.self-brand {
-  /* color: silver;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, .6); */
-  font-size: 25px;
-  display: inline-block;
-}
-
-.git .top-nav .self-brand {
-  text-shadow: none;
-}
-
-.git .top-nav.fixed .self-brand {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, .6);
 }

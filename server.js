@@ -10,7 +10,7 @@ const {IndexRoute} = require('./react_pages.js');
 
 const app = express();
 
-app.use(require('morgan')('combined'));
+//app.use(require('morgan')('combined'));
 app.use(express.static('public'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({extended: true}));
