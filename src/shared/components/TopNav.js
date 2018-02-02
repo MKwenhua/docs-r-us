@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import 'stylesheet/TopNav.css';
 import {
   Link
 } from 'react-router-dom'
 
-class TopNav extends React.PureComponent {
+class TopNav extends PureComponent {
   render() {
     const { navStuck } = this.props;
     return (

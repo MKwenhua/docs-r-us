@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import 'stylesheet/SideNav.css';
 import {NavLink} from 'react-router-dom'
 import {Icon} from 'semantic-ui-react'
 
-class SideNav extends React.PureComponent {
+class SideNav extends PureComponent {
   render() {
     const {expanded} = this.props;
     return (
