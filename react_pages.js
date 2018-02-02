@@ -364,7 +364,7 @@ var SideNav_SideNav = function (_PureComponent) {
               },
               __self: this
             },
-            'appointment'
+            'checkup'
           )
         )
       );
