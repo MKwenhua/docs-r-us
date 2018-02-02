@@ -28,7 +28,7 @@ import {
 } from 'page/AppointmentTerminal';
 import {
   DoctorProfile
-} 'page/DoctorProfile';
+} from 'page/DoctorProfile';
 
 const WrapperClass = {
   '/': 'main'
@@ -63,7 +63,7 @@ class MainContainer extends PureComponent {
           <Route exact path='/appointments'>
             <AppointmentsCalendar location={ location } />
           </Route>
-          <Route exact path='/appointment/:id'>
+          <Route path='/appointment/:id'>
             <AppointmentTerminal location={ location } />
           </Route>
           <Route exact path='/profile'>

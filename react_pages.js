@@ -74,19 +74,19 @@ module.exports = require("react");
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("semantic-ui-react");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("semantic-ui-react");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 4 */
@@ -116,7 +116,7 @@ var Main = __webpack_require__(7);
 var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 
 // EXTERNAL MODULE: external "react-redux"
-var external__react_redux_ = __webpack_require__(2);
+var external__react_redux_ = __webpack_require__(3);
 var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
 
 // EXTERNAL MODULE: ./src/shared/styles/TopNav.css
@@ -124,7 +124,7 @@ var styles_TopNav = __webpack_require__(8);
 var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
 // EXTERNAL MODULE: external "react-router-dom"
-var external__react_router_dom_ = __webpack_require__(1);
+var external__react_router_dom_ = __webpack_require__(2);
 var external__react_router_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_router_dom_);
 
 // CONCATENATED MODULE: ./src/shared/components/TopNav.js
@@ -142,8 +142,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var TopNav_TopNav = function (_React$PureComponent) {
-  _inherits(TopNav, _React$PureComponent);
+var TopNav_TopNav = function (_PureComponent) {
+  _inherits(TopNav, _PureComponent);
 
   function TopNav() {
     _classCallCheck(this, TopNav);
@@ -188,7 +188,7 @@ var TopNav_TopNav = function (_React$PureComponent) {
   }]);
 
   return TopNav;
-}(external__react__default.a.PureComponent);
+}(external__react_["PureComponent"]);
 
 /* harmony default export */ var components_TopNav = (TopNav_TopNav);
 // EXTERNAL MODULE: ./src/shared/styles/SideNav.css
@@ -196,7 +196,7 @@ var styles_SideNav = __webpack_require__(9);
 var SideNav_default = /*#__PURE__*/__webpack_require__.n(styles_SideNav);
 
 // EXTERNAL MODULE: external "semantic-ui-react"
-var external__semantic_ui_react_ = __webpack_require__(3);
+var external__semantic_ui_react_ = __webpack_require__(1);
 var external__semantic_ui_react__default = /*#__PURE__*/__webpack_require__.n(external__semantic_ui_react_);
 
 // CONCATENATED MODULE: ./src/shared/components/SideNav.js
@@ -215,8 +215,8 @@ function SideNav__inherits(subClass, superClass) { if (typeof superClass !== "fu
 
 
 
-var SideNav_SideNav = function (_React$PureComponent) {
-  SideNav__inherits(SideNav, _React$PureComponent);
+var SideNav_SideNav = function (_PureComponent) {
+  SideNav__inherits(SideNav, _PureComponent);
 
   function SideNav() {
     SideNav__classCallCheck(this, SideNav);
@@ -291,15 +291,15 @@ var SideNav_SideNav = function (_React$PureComponent) {
         ),
         external__react__default.a.createElement(
           external__react_router_dom_["NavLink"],
-          { to: '/patients', className: 'side-link', activeClassName: 'selected', __source: {
+          { to: '/profile', className: 'side-link', activeClassName: 'selected', __source: {
               fileName: SideNav__jsxFileName,
-              lineNumber: 21
+              lineNumber: 22
             },
             __self: this
           },
-          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'address book outline', size: 'big', __source: {
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'doctor', size: 'big', __source: {
               fileName: SideNav__jsxFileName,
-              lineNumber: 22
+              lineNumber: 23
             },
             __self: this
           }),
@@ -308,11 +308,63 @@ var SideNav_SideNav = function (_React$PureComponent) {
             {
               __source: {
                 fileName: SideNav__jsxFileName,
-                lineNumber: 23
+                lineNumber: 24
+              },
+              __self: this
+            },
+            'profile'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
+          { to: '/patients', className: 'side-link', activeClassName: 'selected', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 26
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'address book outline', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 27
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: SideNav__jsxFileName,
+                lineNumber: 28
               },
               __self: this
             },
             'patients'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
+          { to: '/appointment', className: 'side-link', activeClassName: 'selected', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 30
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'clipboard', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
+              lineNumber: 31
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: SideNav__jsxFileName,
+                lineNumber: 32
+              },
+              __self: this
+            },
+            'appointment'
           )
         )
       );
@@ -320,7 +372,7 @@ var SideNav_SideNav = function (_React$PureComponent) {
   }]);
 
   return SideNav;
-}(external__react__default.a.PureComponent);
+}(external__react_["PureComponent"]);
 
 /* harmony default export */ var components_SideNav = (SideNav_SideNav);
 // EXTERNAL MODULE: external "react-router"
@@ -487,6 +539,1027 @@ var DoctorHome_DoctorHome = function (_PureComponent) {
 }(external__react_["PureComponent"]);
 
 
+// CONCATENATED MODULE: ./src/shared/pages/DoctorPatientsView.js
+var DoctorPatientsView__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/DoctorPatientsView.js';
+
+var DoctorPatientsView__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function DoctorPatientsView__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function DoctorPatientsView__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function DoctorPatientsView__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var DoctorPatientsView_DoctorPatientsView = function (_PureComponent) {
+  DoctorPatientsView__inherits(DoctorPatientsView, _PureComponent);
+
+  function DoctorPatientsView() {
+    DoctorPatientsView__classCallCheck(this, DoctorPatientsView);
+
+    return DoctorPatientsView__possibleConstructorReturn(this, (DoctorPatientsView.__proto__ || Object.getPrototypeOf(DoctorPatientsView)).apply(this, arguments));
+  }
+
+  DoctorPatientsView__createClass(DoctorPatientsView, [{
+    key: 'render',
+    value: function render() {
+      return external__react__default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: DoctorPatientsView__jsxFileName,
+            lineNumber: 7
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Statistic"],
+          {
+            __source: {
+              fileName: DoctorPatientsView__jsxFileName,
+              lineNumber: 8
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Statistic"].Value,
+            {
+              __source: {
+                fileName: DoctorPatientsView__jsxFileName,
+                lineNumber: 9
+              },
+              __self: this
+            },
+            '5,550'
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Statistic"].Label,
+            {
+              __source: {
+                fileName: DoctorPatientsView__jsxFileName,
+                lineNumber: 10
+              },
+              __self: this
+            },
+            'Blood Pressure'
+          )
+        )
+      );
+    }
+  }]);
+
+  return DoctorPatientsView;
+}(external__react_["PureComponent"]);
+
+
+// CONCATENATED MODULE: ./src/shared/pages/DoctorPatientProfile.js
+var DoctorPatientProfile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var DoctorPatientProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/DoctorPatientProfile.js';
+
+function DoctorPatientProfile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function DoctorPatientProfile__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function DoctorPatientProfile__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var extra = external__react__default.a.createElement(
+  'a',
+  {
+    __source: {
+      fileName: DoctorPatientProfile__jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  },
+  external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'user', __source: {
+      fileName: DoctorPatientProfile__jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }),
+  '16 Friends'
+);
+
+var DoctorPatientProfile_DoctorPatientProfile = function (_PureComponent) {
+  DoctorPatientProfile__inherits(DoctorPatientProfile, _PureComponent);
+
+  function DoctorPatientProfile() {
+    DoctorPatientProfile__classCallCheck(this, DoctorPatientProfile);
+
+    return DoctorPatientProfile__possibleConstructorReturn(this, (DoctorPatientProfile.__proto__ || Object.getPrototypeOf(DoctorPatientProfile)).apply(this, arguments));
+  }
+
+  DoctorPatientProfile__createClass(DoctorPatientProfile, [{
+    key: 'render',
+    value: function render() {
+      return external__react__default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: DoctorPatientProfile__jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(external__semantic_ui_react_["Card"], {
+          image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
+          header: 'Elliot Baker',
+          meta: 'Friend',
+          description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.',
+          extra: extra, __source: {
+            fileName: DoctorPatientProfile__jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"],
+          { relaxed: 'very', __source: {
+              fileName: DoctorPatientProfile__jsxFileName,
+              lineNumber: 21
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 22
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 23
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorPatientProfile__jsxFileName,
+                  lineNumber: 24
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 25
+                  },
+                  __self: this
+                },
+                'Daniel Louise'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 26
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorPatientProfile__jsxFileName,
+                      lineNumber: 27
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorPatientProfile__jsxFileName,
+                        lineNumber: 28
+                      },
+                      __self: this
+                    },
+                    'Arrested Development'
+                  )
+                ),
+                'just now.'
+              )
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 33
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 34
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorPatientProfile__jsxFileName,
+                  lineNumber: 35
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 36
+                  },
+                  __self: this
+                },
+                'Stevie Feliciano'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 37
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorPatientProfile__jsxFileName,
+                      lineNumber: 38
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorPatientProfile__jsxFileName,
+                        lineNumber: 39
+                      },
+                      __self: this
+                    },
+                    'Bob\'s Burgers'
+                  )
+                ),
+                '10 hours ago.'
+              )
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 44
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
+                fileName: DoctorPatientProfile__jsxFileName,
+                lineNumber: 45
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorPatientProfile__jsxFileName,
+                  lineNumber: 46
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 47
+                  },
+                  __self: this
+                },
+                'Elliot Fu'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorPatientProfile__jsxFileName,
+                    lineNumber: 48
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorPatientProfile__jsxFileName,
+                      lineNumber: 49
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorPatientProfile__jsxFileName,
+                        lineNumber: 50
+                      },
+                      __self: this
+                    },
+                    'The Godfather Part 2'
+                  )
+                ),
+                'yesterday.'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DoctorPatientProfile;
+}(external__react_["PureComponent"]);
+
+
+// EXTERNAL MODULE: external "react-big-calendar"
+var external__react_big_calendar_ = __webpack_require__(11);
+var external__react_big_calendar__default = /*#__PURE__*/__webpack_require__.n(external__react_big_calendar_);
+
+// EXTERNAL MODULE: external "moment"
+var external__moment_ = __webpack_require__(12);
+var external__moment__default = /*#__PURE__*/__webpack_require__.n(external__moment_);
+
+// CONCATENATED MODULE: ./src/shared/components/CalendarDisplay.js
+var CalendarDisplay__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/CalendarDisplay.js';
+
+var CalendarDisplay__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function CalendarDisplay__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function CalendarDisplay__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function CalendarDisplay__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+external__react_big_calendar__default.a.setLocalizer(external__react_big_calendar__default.a.momentLocalizer(external__moment__default.a));
+
+var CalendarDisplay_events = [{
+  id: 0,
+  title: 'All Day Event very long title',
+  allDay: true,
+  start: new Date(2015, 3, 0),
+  end: new Date(2015, 3, 1)
+}, {
+  id: 1,
+  title: 'Long Event',
+  start: new Date(2015, 3, 7),
+  end: new Date(2015, 3, 10)
+}, {
+  id: 2,
+  title: 'DTS STARTS',
+  start: new Date(2016, 2, 13, 0, 0, 0),
+  end: new Date(2016, 2, 20, 0, 0, 0)
+}, {
+  id: 3,
+  title: 'DTS ENDS',
+  start: new Date(2016, 10, 6, 0, 0, 0),
+  end: new Date(2016, 10, 13, 0, 0, 0)
+}, {
+  id: 4,
+  title: 'Some Event',
+  start: new Date(2015, 3, 9, 0, 0, 0),
+  end: new Date(2015, 3, 9, 0, 0, 0)
+}, {
+  id: 5,
+  title: 'Conference',
+  start: new Date(2015, 3, 11),
+  end: new Date(2015, 3, 13),
+  desc: 'Big conference for important people'
+}, {
+  id: 6,
+  title: 'Meeting',
+  start: new Date(2015, 3, 12, 10, 30, 0, 0),
+  end: new Date(2015, 3, 12, 12, 30, 0, 0),
+  desc: 'Pre-meeting meeting, to prepare for the meeting'
+}, {
+  id: 7,
+  title: 'Lunch',
+  start: new Date(2015, 3, 12, 12, 0, 0, 0),
+  end: new Date(2015, 3, 12, 13, 0, 0, 0),
+  desc: 'Power lunch'
+}, {
+  id: 8,
+  title: 'Meeting',
+  start: new Date(2015, 3, 12, 14, 0, 0, 0),
+  end: new Date(2015, 3, 12, 15, 0, 0, 0)
+}, {
+  id: 9,
+  title: 'Happy Hour',
+  start: new Date(2015, 3, 12, 17, 0, 0, 0),
+  end: new Date(2015, 3, 12, 17, 30, 0, 0),
+  desc: 'Most important meal of the day'
+}, {
+  id: 10,
+  title: 'Dinner',
+  start: new Date(2015, 3, 12, 20, 0, 0, 0),
+  end: new Date(2015, 3, 12, 21, 0, 0, 0)
+}, {
+  id: 11,
+  title: 'Birthday Party',
+  start: new Date(2015, 3, 13, 7, 0, 0),
+  end: new Date(2015, 3, 13, 10, 30, 0)
+}, {
+  id: 12,
+  title: 'Late Night Event',
+  start: new Date(2015, 3, 17, 19, 30, 0),
+  end: new Date(2015, 3, 18, 2, 0, 0)
+}, {
+  id: 13,
+  title: 'Multi-day Event',
+  start: new Date(2015, 3, 20, 19, 30, 0),
+  end: new Date(2015, 3, 22, 2, 0, 0)
+}];
+
+var CalendarDisplay_CalendarDisplay = function (_PureComponent) {
+  CalendarDisplay__inherits(CalendarDisplay, _PureComponent);
+
+  function CalendarDisplay() {
+    CalendarDisplay__classCallCheck(this, CalendarDisplay);
+
+    return CalendarDisplay__possibleConstructorReturn(this, (CalendarDisplay.__proto__ || Object.getPrototypeOf(CalendarDisplay)).apply(this, arguments));
+  }
+
+  CalendarDisplay__createClass(CalendarDisplay, [{
+    key: 'render',
+    value: function render() {
+      return external__react__default.a.createElement(external__react_big_calendar__default.a, Object.assign({}, this.props, {
+        events: CalendarDisplay_events,
+        step: 15,
+        timeslots: 8,
+        defaultView: 'week',
+        defaultDate: new Date(2015, 3, 12), __source: {
+          fileName: CalendarDisplay__jsxFileName,
+          lineNumber: 89
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return CalendarDisplay;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var components_CalendarDisplay = (CalendarDisplay_CalendarDisplay);
+// CONCATENATED MODULE: ./src/shared/pages/AppointmentsCalendar.js
+var AppointmentsCalendar__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/AppointmentsCalendar.js';
+
+var AppointmentsCalendar__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function AppointmentsCalendar__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentsCalendar__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentsCalendar__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
+  AppointmentsCalendar__inherits(AppointmentsCalendar, _PureComponent);
+
+  function AppointmentsCalendar() {
+    AppointmentsCalendar__classCallCheck(this, AppointmentsCalendar);
+
+    return AppointmentsCalendar__possibleConstructorReturn(this, (AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).apply(this, arguments));
+  }
+
+  AppointmentsCalendar__createClass(AppointmentsCalendar, [{
+    key: 'render',
+    value: function render() {
+      return external__react__default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: AppointmentsCalendar__jsxFileName,
+            lineNumber: 8
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(components_CalendarDisplay, {
+          __source: {
+            fileName: AppointmentsCalendar__jsxFileName,
+            lineNumber: 9
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return AppointmentsCalendar;
+}(external__react_["PureComponent"]);
+
+
+// CONCATENATED MODULE: ./src/shared/pages/AppointmentTerminal.js
+var AppointmentTerminal__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/AppointmentTerminal.js';
+
+var AppointmentTerminal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function AppointmentTerminal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentTerminal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentTerminal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var AppointmentTerminal_AppointmentTerminal = function (_PureComponent) {
+  AppointmentTerminal__inherits(AppointmentTerminal, _PureComponent);
+
+  function AppointmentTerminal() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    AppointmentTerminal__classCallCheck(this, AppointmentTerminal);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = AppointmentTerminal__possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeIndex: 0 }, _this.handleClick = function (e, titleProps) {
+      var index = titleProps.index;
+      var activeIndex = _this.state.activeIndex;
+
+      var newIndex = activeIndex === index ? -1 : index;
+
+      _this.setState({ activeIndex: newIndex });
+    }, _temp), AppointmentTerminal__possibleConstructorReturn(_this, _ret);
+  }
+
+  AppointmentTerminal__createClass(AppointmentTerminal, [{
+    key: 'render',
+    value: function render() {
+      var activeIndex = this.state.activeIndex;
+
+
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["Accordion"],
+        { styled: true, __source: {
+            fileName: AppointmentTerminal__jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
+          { active: activeIndex === 0, index: 0, onClick: this.handleClick, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 20
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 21
+            },
+            __self: this
+          }),
+          'What is a dog?'
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
+          { active: activeIndex === 0, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 24
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: AppointmentTerminal__jsxFileName,
+                lineNumber: 25
+              },
+              __self: this
+            },
+            'A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a',
+            ' ',
+            'welcome guest in many households across the world.'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
+          { active: activeIndex === 1, index: 1, onClick: this.handleClick, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 31
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 32
+            },
+            __self: this
+          }),
+          'What kinds of dogs are there?'
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
+          { active: activeIndex === 1, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 35
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: AppointmentTerminal__jsxFileName,
+                lineNumber: 36
+              },
+              __self: this
+            },
+            'There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of',
+            ' ',
+            'dog that they find to be compatible with their own lifestyle and desires from a companion.'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
+          { active: activeIndex === 2, index: 2, onClick: this.handleClick, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 42
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 43
+            },
+            __self: this
+          }),
+          'How do you acquire a dog?'
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
+          { active: activeIndex === 2, __source: {
+              fileName: AppointmentTerminal__jsxFileName,
+              lineNumber: 46
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: AppointmentTerminal__jsxFileName,
+                lineNumber: 47
+              },
+              __self: this
+            },
+            'Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.'
+          ),
+          external__react__default.a.createElement(
+            'p',
+            {
+              __source: {
+                fileName: AppointmentTerminal__jsxFileName,
+                lineNumber: 50
+              },
+              __self: this
+            },
+            'A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to',
+            ' ',
+            'assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your',
+            ' ',
+            'dog from a shelter, helps give a good home to a dog who may not find one so readily.'
+          )
+        )
+      );
+    }
+  }]);
+
+  return AppointmentTerminal;
+}(external__react_["PureComponent"]);
+
+
+// CONCATENATED MODULE: ./src/shared/pages/DoctorProfile.js
+var DoctorProfile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var DoctorProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/DoctorProfile.js';
+
+function DoctorProfile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function DoctorProfile__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function DoctorProfile__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var DoctorProfile_extra = external__react__default.a.createElement(
+  'a',
+  {
+    __source: {
+      fileName: DoctorProfile__jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  },
+  external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'user', __source: {
+      fileName: DoctorProfile__jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }),
+  '16 Friends'
+);
+
+var DoctorProfile_DoctorProfile = function (_PureComponent) {
+  DoctorProfile__inherits(DoctorProfile, _PureComponent);
+
+  function DoctorProfile() {
+    DoctorProfile__classCallCheck(this, DoctorProfile);
+
+    return DoctorProfile__possibleConstructorReturn(this, (DoctorProfile.__proto__ || Object.getPrototypeOf(DoctorProfile)).apply(this, arguments));
+  }
+
+  DoctorProfile__createClass(DoctorProfile, [{
+    key: 'render',
+    value: function render() {
+      return external__react__default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: DoctorProfile__jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(external__semantic_ui_react_["Card"], {
+          image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
+          header: 'Elliot Baker',
+          meta: 'Friend',
+          description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.',
+          extra: DoctorProfile_extra, __source: {
+            fileName: DoctorProfile__jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"],
+          { relaxed: 'very', __source: {
+              fileName: DoctorProfile__jsxFileName,
+              lineNumber: 22
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 23
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 24
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorProfile__jsxFileName,
+                  lineNumber: 25
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 26
+                  },
+                  __self: this
+                },
+                'Daniel Louise'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 27
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorProfile__jsxFileName,
+                      lineNumber: 28
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorProfile__jsxFileName,
+                        lineNumber: 29
+                      },
+                      __self: this
+                    },
+                    'Arrested Development'
+                  )
+                ),
+                'just now.'
+              )
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 34
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 35
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorProfile__jsxFileName,
+                  lineNumber: 36
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 37
+                  },
+                  __self: this
+                },
+                'Stevie Feliciano'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 38
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorProfile__jsxFileName,
+                      lineNumber: 39
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorProfile__jsxFileName,
+                        lineNumber: 40
+                      },
+                      __self: this
+                    },
+                    'Bob\'s Burgers'
+                  )
+                ),
+                '10 hours ago.'
+              )
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Item,
+            {
+              __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 45
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
+                fileName: DoctorProfile__jsxFileName,
+                lineNumber: 46
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Content,
+              {
+                __source: {
+                  fileName: DoctorProfile__jsxFileName,
+                  lineNumber: 47
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Header,
+                { as: 'a', __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 48
+                  },
+                  __self: this
+                },
+                'Elliot Fu'
+              ),
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Description,
+                {
+                  __source: {
+                    fileName: DoctorProfile__jsxFileName,
+                    lineNumber: 49
+                  },
+                  __self: this
+                },
+                'Last seen watching',
+                external__react__default.a.createElement(
+                  'a',
+                  {
+                    __source: {
+                      fileName: DoctorProfile__jsxFileName,
+                      lineNumber: 50
+                    },
+                    __self: this
+                  },
+                  external__react__default.a.createElement(
+                    'b',
+                    {
+                      __source: {
+                        fileName: DoctorProfile__jsxFileName,
+                        lineNumber: 51
+                      },
+                      __self: this
+                    },
+                    'The Godfather Part 2'
+                  )
+                ),
+                'yesterday.'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DoctorProfile;
+}(external__react_["PureComponent"]);
+
+
 // CONCATENATED MODULE: ./src/shared/containers/MainContainer.js
 var MainContainer__jsxFileName = '/Users/pete/docs-r-us/src/shared/containers/MainContainer.js';
 
@@ -497,6 +1570,11 @@ function MainContainer__classCallCheck(instance, Constructor) { if (!(instance i
 function MainContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function MainContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
 
 
 
@@ -541,19 +1619,19 @@ var MainContainer_MainContainer = function (_PureComponent) {
         'section',
         { className: WrapperClass[location.pathname] || 'main', __source: {
             fileName: MainContainer__jsxFileName,
-            lineNumber: 34
+            lineNumber: 49
           },
           __self: this
         },
         external__react__default.a.createElement(components_TopNav, { navStuck: false, __source: {
             fileName: MainContainer__jsxFileName,
-            lineNumber: 35
+            lineNumber: 50
           },
           __self: this
         }),
         external__react__default.a.createElement(components_SideNav, { location: location, __source: {
             fileName: MainContainer__jsxFileName,
-            lineNumber: 36
+            lineNumber: 51
           },
           __self: this
         }),
@@ -561,7 +1639,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
           'div',
           { className: true ? 'page-content' : 'page-content', __source: {
               fileName: MainContainer__jsxFileName,
-              lineNumber: 37
+              lineNumber: 52
             },
             __self: this
           },
@@ -570,7 +1648,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
             {
               __source: {
                 fileName: MainContainer__jsxFileName,
-                lineNumber: 38
+                lineNumber: 53
               },
               __self: this
             },
@@ -578,36 +1656,91 @@ var MainContainer_MainContainer = function (_PureComponent) {
               external__react_router_dom_["Route"],
               { exact: true, path: '/', __source: {
                   fileName: MainContainer__jsxFileName,
-                  lineNumber: 39
+                  lineNumber: 54
                 },
                 __self: this
               },
               external__react__default.a.createElement(DoctorHome_DoctorHome, { location: location, __source: {
                   fileName: MainContainer__jsxFileName,
-                  lineNumber: 40
+                  lineNumber: 55
                 },
                 __self: this
               })
             ),
             external__react__default.a.createElement(
               external__react_router_dom_["Route"],
-              { exact: true, path: '/bbbb', __source: {
+              { exact: true, path: '/patients', __source: {
                   fileName: MainContainer__jsxFileName,
-                  lineNumber: 42
+                  lineNumber: 57
                 },
                 __self: this
               },
-              external__react__default.a.createElement(
-                'p',
-                {
-                  __source: {
-                    fileName: MainContainer__jsxFileName,
-                    lineNumber: 43
-                  },
-                  __self: this
+              external__react__default.a.createElement(DoctorPatientsView_DoctorPatientsView, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 58
                 },
-                'ok'
-              )
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/patient/:id', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 60
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(DoctorPatientProfile_DoctorPatientProfile, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 61
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/appointments', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 63
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(AppointmentsCalendar_AppointmentsCalendar, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 64
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { path: '/appointment/:id', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 66
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(AppointmentTerminal_AppointmentTerminal, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 67
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/profile', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 69
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(DoctorProfile_DoctorProfile, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 70
+                },
+                __self: this
+              })
             )
           )
         )
@@ -620,7 +1753,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
 
 /* harmony default export */ var containers_MainContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(selectState)(MainContainer_MainContainer)));
 // EXTERNAL MODULE: external "react-dom/server"
-var server_ = __webpack_require__(11);
+var server_ = __webpack_require__(13);
 var server__default = /*#__PURE__*/__webpack_require__.n(server_);
 
 // CONCATENATED MODULE: ./src/server/render_page.js
@@ -638,7 +1771,7 @@ var external__redux_ = __webpack_require__(5);
 var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
 
 // EXTERNAL MODULE: external "redux-logger"
-var external__redux_logger_ = __webpack_require__(12);
+var external__redux_logger_ = __webpack_require__(14);
 var external__redux_logger__default = /*#__PURE__*/__webpack_require__.n(external__redux_logger_);
 
 // CONCATENATED MODULE: ./src/shared/reducers/main.js
@@ -720,13 +1853,12 @@ var context = {
 };
 
 var server_IndexRoute = function IndexRoute(req, res) {
-  console.log('\n', req.user, '\n');
   var store = store_buildServerStore(Object.assign({}, server_defaultState, { currentUser: req.user }));
   res.send(render_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       },
       __self: _this
     },
@@ -734,14 +1866,14 @@ var server_IndexRoute = function IndexRoute(req, res) {
       external__react_router_dom_["StaticRouter"],
       { location: req.url, context: context, __source: {
           fileName: server__jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: _this
       },
       external__react__default.a.createElement(containers_MainContainer, {
         __source: {
           fileName: server__jsxFileName,
-          lineNumber: 18
+          lineNumber: 17
         },
         __self: _this
       })
@@ -781,10 +1913,22 @@ module.exports = require("react-router");
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-big-calendar");
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports) {
+
+module.exports = require("moment");
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-logger");
