@@ -20,7 +20,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', isLoggedIn, IndexRoute);
-app.get('/dashboard', isLoggedIn, IndexRoute);
+app.get(/\/(patients|appointments|profile)/, isLoggedIn, IndexRoute);
+app.get('/appointment/:id', isLoggedIn, IndexRoute);
+app.get('/patient/:id', isLoggedIn, IndexRoute);
+
 app.get('/signin', DoctorLogin);
 
 app.post('/signup', passport.authenticate('local-signup', {

@@ -14,6 +14,21 @@ import {
 import {
   DoctorHome
 } from 'page/DoctorHome';
+import {
+  DoctorPatientsView
+} from 'page/DoctorPatientsView';
+import {
+  DoctorPatientProfile
+} from 'page/DoctorPatientProfile';
+import {
+  AppointmentsCalendar
+} from 'page/AppointmentsCalendar';
+import {
+  AppointmentTerminal
+} from 'page/AppointmentTerminal';
+import {
+  DoctorProfile
+} 'page/DoctorProfile';
 
 const WrapperClass = {
   '/': 'main'
@@ -39,8 +54,20 @@ class MainContainer extends PureComponent {
           <Route exact path='/'>
             <DoctorHome location={ location } />
           </Route>
-          <Route exact path='/bbbb'>
-            <p>ok</p>
+          <Route exact path='/patients'>
+            <DoctorPatientsView location={ location } />
+          </Route>
+          <Route exact path='/patient/:id'>
+            <DoctorPatientProfile location={ location } />
+          </Route>
+          <Route exact path='/appointments'>
+            <AppointmentsCalendar location={ location } />
+          </Route>
+          <Route exact path='/appointment/:id'>
+            <AppointmentTerminal location={ location } />
+          </Route>
+          <Route exact path='/profile'>
+            <DoctorProfile location={ location } />
           </Route>
         </Switch>
         </div>

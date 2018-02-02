@@ -10,7 +10,6 @@ const context = {
 };
 
 const IndexRoute = (req, res) => {
-  console.log('\n',req.user ,'\n')
   const store = buildServerStore({...defaultState, currentUser: req.user })
   res.send(RenderPage(
     <Provider store={store}>
