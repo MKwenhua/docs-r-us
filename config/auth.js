@@ -1,10 +1,12 @@
 const bCrypt = require('bcrypt-nodejs');
 
-const {
-  Patient,
-  Appointment,
-  GetUserType
-} = require('../db');
+// const {
+//   Patient,
+//   Appointment,
+//   GetUserType
+// } = require('../db');
+
+module.exports = ({ Patient, Appointment, GetUserType }) => {
 
 const isValidPassword = (userpass, password) => (
   bCrypt.compareSync(password, userpass)
@@ -32,7 +34,7 @@ const SigninAuth = (req, email, password, done) => {
     where: {
       email: email
     },
-    include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
+    //include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
   }).then(user => {
 
     if (!user) {
@@ -51,7 +53,7 @@ const SigninAuth = (req, email, password, done) => {
 const DeserializeUser = ({ userType, id }, done) => {
   GetUserType(userType).findOne({
     where: {id: id},
-    include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
+    //include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
   }).then(user => {
     if (user) {
       done(null, user);
@@ -61,8 +63,9 @@ const DeserializeUser = ({ userType, id }, done) => {
   });
 }
 
-module.exports = {
+return {
   SignupAuth,
   SigninAuth,
   DeserializeUser
+};
 };

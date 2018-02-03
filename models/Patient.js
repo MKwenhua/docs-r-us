@@ -1,35 +1,35 @@
 
-module.exports = ({sequelize, Sequelize}) => {
+module.exports = (sequelize, DataTypes) => {
 
   const Patient = sequelize.define('patient', {
     id: {
       primaryKey: true,
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
     },
     fullName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true
     },
     userType: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: 'patient'
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true,
       validate: {
         isEmail: true
       }
     },
-    doctorNotes: Sequelize.JSONB,
-    records: Sequelize.JSONB,
-    phone: Sequelize.STRING,
+    doctorNotes: DataTypes.JSONB,
+    records: DataTypes.JSONB,
+    phone: DataTypes.STRING,
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: 'password'
     },
-    birthday: Sequelize.DATEONLY
+    birthday: DataTypes.DATEONLY
   }, {
     indexes: [
       {
@@ -38,6 +38,13 @@ module.exports = ({sequelize, Sequelize}) => {
       }
     ]
   });
+
+  Patient.associate = ({Appointment, Doctor}) => {
+    // 1 to many with board
+    Patient.hasMany(Appointment, {as: 'appointments'});
+    Patient.belongsToMany(Doctor, {through: Appointment});
+  };
+
 
   return Patient;
 }

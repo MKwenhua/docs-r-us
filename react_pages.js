@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,16 +92,22 @@ module.exports = require("react-redux");
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("constants");
+module.exports = require("react-apollo");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("constants");
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -112,7 +118,7 @@ var external__react_ = __webpack_require__(0);
 var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
 
 // EXTERNAL MODULE: ./src/shared/styles/Main.css
-var Main = __webpack_require__(7);
+var Main = __webpack_require__(8);
 var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 
 // EXTERNAL MODULE: external "react-redux"
@@ -120,23 +126,37 @@ var external__react_redux_ = __webpack_require__(3);
 var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
 
 // EXTERNAL MODULE: ./src/shared/styles/TopNav.css
-var styles_TopNav = __webpack_require__(8);
+var styles_TopNav = __webpack_require__(9);
 var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
 // EXTERNAL MODULE: external "react-router-dom"
 var external__react_router_dom_ = __webpack_require__(2);
 var external__react_router_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_router_dom_);
 
+// EXTERNAL MODULE: external "react-apollo"
+var external__react_apollo_ = __webpack_require__(4);
+var external__react_apollo__default = /*#__PURE__*/__webpack_require__.n(external__react_apollo_);
+
+// EXTERNAL MODULE: external "graphql-tag"
+var external__graphql_tag_ = __webpack_require__(10);
+var external__graphql_tag__default = /*#__PURE__*/__webpack_require__.n(external__graphql_tag_);
+
 // CONCATENATED MODULE: ./src/shared/components/TopNav.js
 var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/TopNav.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n{\n  allDoctors {\n    id\n    fullName\n    appointments {\n      id\n      date\n    }\n  }\n}\n'], ['\n{\n  allDoctors {\n    id\n    fullName\n    appointments {\n      id\n      date\n    }\n  }\n}\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -156,11 +176,12 @@ var TopNav_TopNav = function (_PureComponent) {
     value: function render() {
       var navStuck = this.props.navStuck;
 
+      console.log('TopNav this.props', this.props);
       return external__react__default.a.createElement(
         'nav',
         { className: navStuck === false ? 'top-nav' : 'top-nav fixed', __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 14
           },
           __self: this
         },
@@ -168,7 +189,7 @@ var TopNav_TopNav = function (_PureComponent) {
           'div',
           { className: 'topbar-left', __source: {
               fileName: _jsxFileName,
-              lineNumber: 12
+              lineNumber: 15
             },
             __self: this
           },
@@ -176,7 +197,7 @@ var TopNav_TopNav = function (_PureComponent) {
             external__react_router_dom_["Link"],
             { to: '/', className: 'brand', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 13
+                lineNumber: 16
               },
               __self: this
             },
@@ -190,9 +211,11 @@ var TopNav_TopNav = function (_PureComponent) {
   return TopNav;
 }(external__react_["PureComponent"]);
 
-/* harmony default export */ var components_TopNav = (TopNav_TopNav);
+var firstQuery = external__graphql_tag__default()(_templateObject);
+
+/* harmony default export */ var components_TopNav = (Object(external__react_apollo_["graphql"])(firstQuery)(TopNav_TopNav));
 // EXTERNAL MODULE: ./src/shared/styles/SideNav.css
-var styles_SideNav = __webpack_require__(9);
+var styles_SideNav = __webpack_require__(11);
 var SideNav_default = /*#__PURE__*/__webpack_require__.n(styles_SideNav);
 
 // EXTERNAL MODULE: external "semantic-ui-react"
@@ -376,11 +399,11 @@ var SideNav_SideNav = function (_PureComponent) {
 
 /* harmony default export */ var components_SideNav = (SideNav_SideNav);
 // EXTERNAL MODULE: external "react-router"
-var external__react_router_ = __webpack_require__(10);
+var external__react_router_ = __webpack_require__(12);
 var external__react_router__default = /*#__PURE__*/__webpack_require__.n(external__react_router_);
 
 // EXTERNAL MODULE: external "constants"
-var external__constants_ = __webpack_require__(4);
+var external__constants_ = __webpack_require__(5);
 var external__constants__default = /*#__PURE__*/__webpack_require__.n(external__constants_);
 
 // CONCATENATED MODULE: ./src/shared/helpers/index.js
@@ -487,7 +510,7 @@ var DoctorHome_DoctorHome = function (_PureComponent) {
         }),
         external__react__default.a.createElement(
           external__semantic_ui_react_["Card"],
-          { fluid: true, color: 'red', header: 'Activity', __source: {
+          { fluid: true, color: 'red', __source: {
               fileName: DoctorHome__jsxFileName,
               lineNumber: 61
             },
@@ -903,11 +926,11 @@ var DoctorPatientProfile_DoctorPatientProfile = function (_PureComponent) {
 
 
 // EXTERNAL MODULE: external "react-big-calendar"
-var external__react_big_calendar_ = __webpack_require__(11);
+var external__react_big_calendar_ = __webpack_require__(13);
 var external__react_big_calendar__default = /*#__PURE__*/__webpack_require__.n(external__react_big_calendar_);
 
 // EXTERNAL MODULE: external "moment"
-var external__moment_ = __webpack_require__(12);
+var external__moment_ = __webpack_require__(14);
 var external__moment__default = /*#__PURE__*/__webpack_require__.n(external__moment_);
 
 // CONCATENATED MODULE: ./src/shared/components/CalendarDisplay.js
@@ -1753,7 +1776,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
 
 /* harmony default export */ var containers_MainContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(selectState)(MainContainer_MainContainer)));
 // EXTERNAL MODULE: external "react-dom/server"
-var server_ = __webpack_require__(13);
+var server_ = __webpack_require__(15);
 var server__default = /*#__PURE__*/__webpack_require__.n(server_);
 
 // CONCATENATED MODULE: ./src/server/render_page.js
@@ -1767,11 +1790,11 @@ var render_page_RenderPage = function RenderPage(content, preloadedState) {
 
 /* harmony default export */ var render_page = (render_page_RenderPage);
 // EXTERNAL MODULE: external "redux"
-var external__redux_ = __webpack_require__(5);
+var external__redux_ = __webpack_require__(6);
 var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
 
 // EXTERNAL MODULE: external "redux-logger"
-var external__redux_logger_ = __webpack_require__(14);
+var external__redux_logger_ = __webpack_require__(16);
 var external__redux_logger__default = /*#__PURE__*/__webpack_require__.n(external__redux_logger_);
 
 // CONCATENATED MODULE: ./src/shared/reducers/main.js
@@ -1836,6 +1859,18 @@ var defaultState = {
 };
 
 /* harmony default export */ var server_defaultState = (defaultState);
+// EXTERNAL MODULE: external "apollo-client"
+var external__apollo_client_ = __webpack_require__(17);
+var external__apollo_client__default = /*#__PURE__*/__webpack_require__.n(external__apollo_client_);
+
+// EXTERNAL MODULE: external "apollo-cache-inmemory"
+var external__apollo_cache_inmemory_ = __webpack_require__(18);
+var external__apollo_cache_inmemory__default = /*#__PURE__*/__webpack_require__.n(external__apollo_cache_inmemory_);
+
+// EXTERNAL MODULE: external "apollo-link-schema"
+var external__apollo_link_schema_ = __webpack_require__(19);
+var external__apollo_link_schema__default = /*#__PURE__*/__webpack_require__.n(external__apollo_link_schema_);
+
 // CONCATENATED MODULE: ./src/server/index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IndexRoute", function() { return server_IndexRoute; });
 var server__jsxFileName = '/Users/pete/docs-r-us/src/server/index.js',
@@ -1848,35 +1883,66 @@ var server__jsxFileName = '/Users/pete/docs-r-us/src/server/index.js',
 
 
 
+
+
+
+// import fetch from 'node-fetch';
+// import { createHttpLink } from 'apollo-link-http';
+//const link = createHttpLink({ uri: 'http://localhost:5000/graphql', fetch: fetch });
+
+var schema = __webpack_require__(20);
+
 var context = {
   serverSide: true
 };
 
 var server_IndexRoute = function IndexRoute(req, res) {
+  var client = new external__apollo_client_["ApolloClient"]({
+    ssrMode: true,
+    link: new external__apollo_link_schema_["SchemaLink"]({ schema: schema }),
+    // link: createHttpLink({
+    //   uri: '/graphql',
+    //   fetch: fetch,
+    //   credentials: 'same-origin',
+    //   headers: {
+    //     cookie: req.header('Cookie'),
+    //   },
+    //}),
+    cache: new external__apollo_cache_inmemory_["InMemoryCache"]()
+  });
   var store = store_buildServerStore(Object.assign({}, server_defaultState, { currentUser: req.user }));
   res.send(render_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
-        lineNumber: 15
+        lineNumber: 38
       },
       __self: _this
     },
     external__react__default.a.createElement(
-      external__react_router_dom_["StaticRouter"],
-      { location: req.url, context: context, __source: {
+      external__react_apollo_["ApolloProvider"],
+      { client: client, __source: {
           fileName: server__jsxFileName,
-          lineNumber: 16
+          lineNumber: 39
         },
         __self: _this
       },
-      external__react__default.a.createElement(containers_MainContainer, {
-        __source: {
-          fileName: server__jsxFileName,
-          lineNumber: 17
+      external__react__default.a.createElement(
+        external__react_router_dom_["StaticRouter"],
+        { location: req.url, context: context, __source: {
+            fileName: server__jsxFileName,
+            lineNumber: 40
+          },
+          __self: _this
         },
-        __self: _this
-      })
+        external__react__default.a.createElement(containers_MainContainer, {
+          __source: {
+            fileName: server__jsxFileName,
+            lineNumber: 41
+          },
+          __self: _this
+        })
+      )
     )
   ), store.getState()));
 
@@ -1884,12 +1950,6 @@ var server_IndexRoute = function IndexRoute(req, res) {
 };
 
 
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 8 */
@@ -1907,31 +1967,247 @@ var server_IndexRoute = function IndexRoute(req, res) {
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("graphql-tag");
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-big-calendar");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("moment");
+module.exports = require("react-router");
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-big-calendar");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
+module.exports = require("moment");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
 module.exports = require("redux-logger");
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-client");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-cache-inmemory");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("apollo-link-schema");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//const { graphiqlExpress, graphqlExpress } = require('graphql-server-express');
+var _require = __webpack_require__(21),
+    makeExecutableSchema = _require.makeExecutableSchema;
+
+var typeDefs = __webpack_require__(22);
+var resolvers = __webpack_require__(23);
+
+var schema = makeExecutableSchema({
+  typeDefs: typeDefs,
+  resolvers: resolvers
+});
+
+module.exports = schema;
+
+// module.exports = (app, models) => {
+//   app.use(
+//     '/graphiql',
+//     graphiqlExpress({
+//       endpointURL: '/graphql',
+//     }),
+//   );
+//
+//   app.use(
+//     '/graphql',
+//     graphqlExpress({ schema, context: { models } }),
+//   );
+// }
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql-tools");
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = "\n  scalar CalendarDate\n  scalar Time\n\n  type Appointment {\n    id: ID!\n    date: CalendarDate!\n    time: Time!\n    status: String!\n    canceled: Boolean\n    purpose: String\n    text: String!\n    patientId: Patient!\n    doctorId: Doctor!\n  }\n\n  type Doctor {\n    id: ID!\n    fullName: String!\n    email: String!\n    photo: String\n    specialty: String\n    createdAt: String!\n    updatedAt: String!\n    appointments: [Appointment!]!\n    patients: [Patient!]!\n  }\n\n  type Patient {\n    id: ID!\n    fullName: String!\n    email: String!\n    doctorNotes: String\n    records: String\n    phone: String\n    birthday: String!\n    specialty: String\n    createdAt: String!\n    updatedAt: String!\n    appointments: [Appointment!]!\n    doctors: [Doctor!]!\n  }\n\n  type Query {\n    allDoctors: [Doctor!]!\n    getDoctor(id: ID!): Doctor\n    allPatients: [Patient!]!\n    getPatient(id: ID!): Patient\n    doctorAppointments(doctorId: String!): [Appointment!]!\n    patientAppointments(patientId: String!): [Appointment!]!\n  }\n\n  type Mutation {\n    createAppointment(date: String!, purpose: String!, time: String!, description: String!, patientId: String!, doctorId: String!): Appointment!\n    createDoctor(fullName: String!, email: String!): Doctor\n  }\n";
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  Doctor: {
+    appointments: function appointments(_ref, args, _ref2) {
+      var id = _ref.id;
+      var models = _ref2.models;
+      return models.Appointment.findAll({
+        where: {
+          doctorId: id
+        }
+      });
+    },
+    patients: function patients(doctor, args, _ref3) {
+      var models = _ref3.models;
+      return doctor.getPatients();
+    }
+  },
+  Patient: {
+    appointments: function appointments(_ref4, args, _ref5) {
+      var id = _ref4.id;
+      var models = _ref5.models;
+      return models.Appointment.findAll({
+        where: {
+          doctorId: id
+        }
+      });
+    },
+    doctors: function doctors(patient, args, _ref6) {
+      var models = _ref6.models;
+      return patient.getDoctors();
+    }
+  },
+  Appointment: {
+    doctorId: function doctorId(_ref7, args, _ref8) {
+      var _doctorId = _ref7.doctorId;
+      var models = _ref8.models;
+      return models.Doctor.findOne({
+        where: {
+          id: _doctorId
+        }
+      });
+    },
+    patientId: function patientId(_ref9, args, _ref10) {
+      var _patientId = _ref9.patientId;
+      var models = _ref10.models;
+      return models.Patient.findOne({
+        where: {
+          id: _patientId
+        }
+      });
+    }
+  },
+  CalendarDate: {
+    __parseValue: function __parseValue(value) {
+      return new Date(value);
+    },
+    __serialize: function __serialize(value) {
+      return new Date(value).getTime();
+    },
+    __parseLiteral: function __parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return parseInt(ast.value, 10);
+      }
+      return null;
+    }
+  },
+  Time: {
+    __parseValue: function __parseValue(value) {
+      return new Date(value);
+    },
+    __serialize: function __serialize(value) {
+      return new Date(value).getTime();
+    },
+    __parseLiteral: function __parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return parseInt(ast.value, 10);
+      }
+      return null;
+    }
+  },
+  Query: {
+    allDoctors: function allDoctors(parent, args, _ref11) {
+      var models = _ref11.models;
+      return models.Doctor.findAll();
+    },
+    allPatients: function allPatients(parent, args, _ref12) {
+      var models = _ref12.models;
+      return models.Patient.findAll();
+    },
+    getPatient: function getPatient(parent, _ref13, _ref14) {
+      var id = _ref13.id;
+      var models = _ref14.models;
+      return models.Patient.findOne({
+        where: {
+          id: id
+        }
+      });
+    },
+    getDoctor: function getDoctor(parent, _ref15, _ref16) {
+      var id = _ref15.id;
+      var models = _ref16.models;
+      return models.Doctor.findOne({
+        where: {
+          id: id
+        }
+      });
+    },
+    doctorAppointments: function doctorAppointments(parent, _ref17, _ref18) {
+      var doctorId = _ref17.doctorId;
+      var models = _ref18.models;
+      return models.Appointment.findAll({
+        where: {
+          doctorId: doctorId
+        }
+      });
+    },
+    patientAppointments: function patientAppointments(parent, _ref19, _ref20) {
+      var patientId = _ref19.patientId;
+      var models = _ref20.models;
+      return models.Appointment.findAll({
+        where: {
+          patientId: patientId
+        }
+      });
+    }
+  },
+
+  Mutation: {
+    createDoctor: function createDoctor(parent, args, _ref21) {
+      var models = _ref21.models;
+      return models.Doctor.create(args);
+    },
+    createAppointment: function createAppointment(parent, args, _ref22) {
+      var models = _ref22.models;
+      return models.Appointment.create(args);
+    }
+  }
+};
 
 /***/ })
 /******/ ]);

@@ -3,14 +3,14 @@ const express = require('express');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const {Doctor, Patient, Appointment, GetUserType} = require('./db');
 const {ProccessInfo, ProcessHealth} = require('./system_health')
 const { DoctorLogin, PatientLogin, isLoggedIn, LogOut } = require('./static')
-const {IndexRoute} = require('./react_pages.js');
-
+const { graphiqlExpress, graphqlExpress } = require('graphql-server-express');
+// const schema = require('./graphql');
+const {IndexRoute} = require('./react_pages');
 const app = express();
+const db = require('./db');
 
-//app.use(require('morgan')('combined'));
 app.use(express.static('public'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -43,9 +43,19 @@ app.post('/patient/login', PatientLogin)
 app.get('/health', ProcessHealth);
 
 app.get(/\/info\/(gen|poll)/, ProccessInfo);
+app.use(
+  '/graphiql',
+  graphiqlExpress({
+    endpointURL: '/graphql',
+  }),
+);
 
-require('./config/passport.js')(passport)
-
+app.use(
+  '/graphql',
+  graphqlExpress({ schema, context: { models: db } }),
+);
+require('./config/passport.js')(passport, db);
+require('./graphql')(app, db);
 app.listen(ProceessPort, () => {
   console.log(`Application worker ${process.pid} at Port: ${ProceessPort} has started`);
 });

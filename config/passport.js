@@ -1,12 +1,11 @@
 const LocalStrategy = require('passport-local').Strategy;
-const {
-  SignupAuth,
-  SigninAuth,
-  DeserializeUser
-} = require('./auth');
 
-
-module.exports = (passport) => {
+module.exports = (passport, db) => {
+  const {
+    SignupAuth,
+    SigninAuth,
+    DeserializeUser
+  } = require('./auth')(db);
 
   const LocalSignupStrategy = new LocalStrategy({
     usernameField: 'email',

@@ -58,7 +58,7 @@ class DoctorHome extends PureComponent {
     return (
       <div>
         <Card.Group itemsPerRow='3' items={items} />
-        <Card fluid color='red' header='Activity'>
+        <Card fluid color='red'>
           <Card.Content>
             <Card.Header>
               Recent Activity

@@ -1,24 +1,33 @@
 
-module.exports = ({sequelize, Sequelize}) => {
+module.exports = (sequelize, DataTypes) => {
 
   const Appointment = sequelize.define('appointment', {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
-    canceled: Sequelize.BOOLEAN,
+    //status: DataTypes.ENUM('pending', 'rejected', 'accepted', 'canceled'),
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: 'pending'
+    },
+    response: DataTypes.STRING,
     date: {
-      type: Sequelize.DATEONLY
+      type: DataTypes.DATEONLY
     },
-    purpose: Sequelize.TEXT,
+    purpose: DataTypes.TEXT,
     time: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     description: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     }
   });
+  Appointment.associate = ({Patient, Doctor}) => {
+    Appointment.belongsTo(Doctor);
+    Appointment.belongsTo(Patient);
+  };
 
   return Appointment;
 }
