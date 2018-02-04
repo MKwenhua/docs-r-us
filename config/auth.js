@@ -1,11 +1,5 @@
 const bCrypt = require('bcrypt-nodejs');
 
-// const {
-//   Patient,
-//   Appointment,
-//   GetUserType
-// } = require('../db');
-
 module.exports = ({ Patient, Appointment, GetUserType }) => {
 
 const isValidPassword = (userpass, password) => (
@@ -53,7 +47,7 @@ const SigninAuth = (req, email, password, done) => {
 const DeserializeUser = ({ userType, id }, done) => {
   GetUserType(userType).findOne({
     where: {id: id},
-    //include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
+    include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
   }).then(user => {
     if (user) {
       done(null, user);

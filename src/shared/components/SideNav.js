@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import 'stylesheet/SideNav.css';
 import {NavLink} from 'react-router-dom'
 import {Icon} from 'semantic-ui-react'
@@ -18,7 +18,6 @@ class SideNav extends PureComponent {
           <Icon name='calendar outline' size='big'/>
           <p>calendar</p>
         </NavLink>
-
         <NavLink to="/profile" className="side-link" activeClassName="selected">
           <Icon name='doctor' size='big'/>
           <p>profile</p>

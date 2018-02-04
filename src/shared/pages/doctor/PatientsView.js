@@ -1,8 +1,14 @@
 import React, {PureComponent} from 'react';
-import { Icon, Header,Dropdown, Button, List, Image, Statistic } from 'semantic-ui-react'
 import {
-  CDN_URI
-} from 'constants';
+  Icon,
+  Header,
+  Dropdown,
+  Button,
+  List,
+  Image,
+  Statistic
+} from 'semantic-ui-react'
+import {CDN_URI} from 'constants';
 
 const renderStat = () => (
   <Statistic>
@@ -12,11 +18,11 @@ const renderStat = () => (
 )
 
 class PatientsView extends PureComponent {
-  paientListItem = ({ id, fullName, email }) => (
+  paientListItem = ({id, fullName, email}) => (
     <List.Item key={id}>
       <List.Content floated='right'>
-       <Button>Add</Button>
-     </List.Content>
+        <Button>Add</Button>
+      </List.Content>
       <Image avatar src={`${CDN_URI}patient_records_icon.png`}/>
       <List.Content>
         <List.Header as='a'>{fullName}</List.Header>
@@ -29,24 +35,26 @@ class PatientsView extends PureComponent {
     </List.Item>
   )
   render() {
-    const { allPatients = [] } = this.props;
+    const {
+      patients = []
+    } = this.props;
     return (
       <div>
         <Dropdown text='Filter Tags' floating labeled button icon='filter' className='icon'>
-    <Dropdown.Menu>
-      <Dropdown.Header icon='tags' content='Filter by tag' />
-      <Dropdown.Divider />
-      <Dropdown.Item description='2 new' text='Important' />
-      <Dropdown.Item description='10 new' text='Hopper' />
-      <Dropdown.Item description='5 new' text='Discussion' />
-    </Dropdown.Menu>
-  </Dropdown>
-         <Header as='h3' dividing>
-           Most Recent Patients
-         </Header>
+          <Dropdown.Menu>
+            <Dropdown.Header icon='tags' content='Filter by tag'/>
+            <Dropdown.Divider/>
+            <Dropdown.Item description='2 new' text='Important'/>
+            <Dropdown.Item description='10 new' text='Hopper'/>
+            <Dropdown.Item description='5 new' text='Discussion'/>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Header as='h3' dividing>
+          Most Recent Patients
+        </Header>
 
         <List divided verticalAlign='middle'>
-         {allPatients.map(this.paientListItem)}
+          {patients.map(this.paientListItem)}
         </List>
       </div>
     )

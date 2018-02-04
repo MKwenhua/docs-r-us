@@ -86,15 +86,7 @@ const events = [
 
 class CalendarDisplay extends PureComponent {
   render() {
-    return (
-      <BigCalendar
-        {...this.props}
-        events={events}
-        step={15}
-        timeslots={8}
-        defaultView="week"
-        defaultDate={new Date(2015, 3, 12)}/>
-      )
+    return (<BigCalendar {...this.props} events={events} step={15} timeslots={8} defaultView="week" defaultDate={new Date(2015, 3, 12)}/>)
   }
 }
 

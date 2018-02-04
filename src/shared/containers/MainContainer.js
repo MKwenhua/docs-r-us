@@ -44,7 +44,7 @@ class MainContainer extends PureComponent {
             <Home location={ location } />
           </Route>
           <Route exact path='/patients'>
-            <PatientsView location={ location } />
+            <PatientsView patients={currentUser.patients} dispatch={dispatch} location={ location } />
           </Route>
           <Route exact path='/patient/:id'>
             <PatientProfile location={ location } />

@@ -11,12 +11,7 @@ class PatientProfile extends PureComponent {
   render() {
     return (
       <div>
-        <Card
-          image='https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg'
-          header='Elliot Baker'
-          meta='Friend'
-          description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-          extra={extra}/>
+        <Card image='https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg' header='Elliot Baker' meta='Friend' description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.' extra={extra}/>
 
         <List relaxed='very'>
           <List.Item>

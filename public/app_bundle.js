@@ -67536,7 +67536,7 @@ var MainContainer = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(_doctor.PatientsView, { location: location, __source: {
+              _react2.default.createElement(_doctor.PatientsView, { patients: currentUser.patients, dispatch: dispatch, location: location, __source: {
                   fileName: _jsxFileName,
                   lineNumber: 47
                 },
@@ -67668,7 +67668,7 @@ var TopNav = function (_PureComponent) {
         'nav',
         { className: navStuck === false ? 'top-nav' : 'top-nav fixed', __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 9
           },
           __self: this
         },
@@ -67816,13 +67816,13 @@ var SideNav = function (_PureComponent) {
           _reactRouterDom.NavLink,
           { to: '/profile', className: 'side-link', activeClassName: 'selected', __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 21
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'doctor', size: 'big', __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 22
             },
             __self: this
           }),
@@ -67831,7 +67831,7 @@ var SideNav = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 24
+                lineNumber: 23
               },
               __self: this
             },
@@ -67842,13 +67842,13 @@ var SideNav = function (_PureComponent) {
           _reactRouterDom.NavLink,
           { to: '/patients', className: 'side-link', activeClassName: 'selected', __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 25
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'address book outline', size: 'big', __source: {
               fileName: _jsxFileName,
-              lineNumber: 27
+              lineNumber: 26
             },
             __self: this
           }),
@@ -67857,7 +67857,7 @@ var SideNav = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 28
+                lineNumber: 27
               },
               __self: this
             },
@@ -67868,13 +67868,13 @@ var SideNav = function (_PureComponent) {
           _reactRouterDom.NavLink,
           { to: '/appointment', className: 'side-link', activeClassName: 'selected', __source: {
               fileName: _jsxFileName,
-              lineNumber: 30
+              lineNumber: 29
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'clipboard', size: 'big', __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 30
             },
             __self: this
           }),
@@ -67883,7 +67883,7 @@ var SideNav = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 32
+                lineNumber: 31
               },
               __self: this
             },
@@ -85584,13 +85584,13 @@ var Home = function (_PureComponent) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 53
           },
           __self: this
         },
         _react2.default.createElement(_semanticUiReact.Card.Group, { itemsPerRow: '3', items: items, __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 54
           },
           __self: this
         }),
@@ -85598,7 +85598,7 @@ var Home = function (_PureComponent) {
           _semanticUiReact.Card,
           { fluid: true, color: 'red', __source: {
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 55
             },
             __self: this
           },
@@ -85607,7 +85607,7 @@ var Home = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 62
+                lineNumber: 56
               },
               __self: this
             },
@@ -85616,7 +85616,7 @@ var Home = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 63
+                  lineNumber: 57
                 },
                 __self: this
               },
@@ -85628,13 +85628,13 @@ var Home = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 67
+                lineNumber: 61
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Feed, { events: events, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 68
+                lineNumber: 62
               },
               __self: this
             })
@@ -85687,7 +85687,7 @@ var renderStat = function renderStat() {
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 14
       },
       __self: _this
     },
@@ -85696,7 +85696,7 @@ var renderStat = function renderStat() {
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 15
         },
         __self: _this
       },
@@ -85707,7 +85707,7 @@ var renderStat = function renderStat() {
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 16
         },
         __self: _this
       },
@@ -85739,7 +85739,7 @@ var PatientsView = function (_PureComponent) {
         _semanticUiReact.List.Item,
         { key: id, __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 22
           },
           __self: _this3
         },
@@ -85747,7 +85747,7 @@ var PatientsView = function (_PureComponent) {
           _semanticUiReact.List.Content,
           { floated: 'right', __source: {
               fileName: _jsxFileName,
-              lineNumber: 17
+              lineNumber: 23
             },
             __self: _this3
           },
@@ -85756,7 +85756,7 @@ var PatientsView = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 18
+                lineNumber: 24
               },
               __self: _this3
             },
@@ -85765,7 +85765,7 @@ var PatientsView = function (_PureComponent) {
         ),
         _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'patient_records_icon.png', __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 26
           },
           __self: _this3
         }),
@@ -85774,7 +85774,7 @@ var PatientsView = function (_PureComponent) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 27
             },
             __self: _this3
           },
@@ -85782,7 +85782,7 @@ var PatientsView = function (_PureComponent) {
             _semanticUiReact.List.Header,
             { as: 'a', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 22
+                lineNumber: 28
               },
               __self: _this3
             },
@@ -85793,7 +85793,7 @@ var PatientsView = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 23
+                lineNumber: 29
               },
               __self: _this3
             },
@@ -85803,7 +85803,7 @@ var PatientsView = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 24
+                  lineNumber: 30
                 },
                 __self: _this3
               },
@@ -85812,7 +85812,7 @@ var PatientsView = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 25
+                    lineNumber: 31
                   },
                   __self: _this3
                 },
@@ -85829,15 +85829,15 @@ var PatientsView = function (_PureComponent) {
   _createClass(PatientsView, [{
     key: 'render',
     value: function render() {
-      var _props$allPatients = this.props.allPatients,
-          allPatients = _props$allPatients === undefined ? [] : _props$allPatients;
+      var _props$patients = this.props.patients,
+          patients = _props$patients === undefined ? [] : _props$patients;
 
       return _react2.default.createElement(
         'div',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 42
           },
           __self: this
         },
@@ -85845,7 +85845,7 @@ var PatientsView = function (_PureComponent) {
           _semanticUiReact.Dropdown,
           { text: 'Filter Tags', floating: true, labeled: true, button: true, icon: 'filter', className: 'icon', __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 43
             },
             __self: this
           },
@@ -85854,38 +85854,38 @@ var PatientsView = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 36
+                lineNumber: 44
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Dropdown.Header, { icon: 'tags', content: 'Filter by tag', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 37
+                lineNumber: 45
               },
               __self: this
             }),
             _react2.default.createElement(_semanticUiReact.Dropdown.Divider, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 38
+                lineNumber: 46
               },
               __self: this
             }),
             _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '2 new', text: 'Important', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 39
+                lineNumber: 47
               },
               __self: this
             }),
             _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '10 new', text: 'Hopper', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 40
+                lineNumber: 48
               },
               __self: this
             }),
             _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '5 new', text: 'Discussion', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 41
+                lineNumber: 49
               },
               __self: this
             })
@@ -85895,7 +85895,7 @@ var PatientsView = function (_PureComponent) {
           _semanticUiReact.Header,
           { as: 'h3', dividing: true, __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 52
             },
             __self: this
           },
@@ -85905,11 +85905,11 @@ var PatientsView = function (_PureComponent) {
           _semanticUiReact.List,
           { divided: true, verticalAlign: 'middle', __source: {
               fileName: _jsxFileName,
-              lineNumber: 48
+              lineNumber: 56
             },
             __self: this
           },
-          allPatients.map(this.paientListItem)
+          patients.map(this.paientListItem)
         )
       );
     }
@@ -85988,12 +85988,7 @@ var PatientProfile = function (_PureComponent) {
           },
           __self: this
         },
-        _react2.default.createElement(_semanticUiReact.Card, {
-          image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
-          header: 'Elliot Baker',
-          meta: 'Friend',
-          description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.',
-          extra: extra, __source: {
+        _react2.default.createElement(_semanticUiReact.Card, { image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg', header: 'Elliot Baker', meta: 'Friend', description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.', extra: extra, __source: {
             fileName: _jsxFileName,
             lineNumber: 14
           },
@@ -86003,7 +85998,7 @@ var PatientProfile = function (_PureComponent) {
           _semanticUiReact.List,
           { relaxed: 'very', __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 16
             },
             __self: this
           },
@@ -86012,13 +86007,13 @@ var PatientProfile = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 22
+                lineNumber: 17
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 23
+                lineNumber: 18
               },
               __self: this
             }),
@@ -86027,7 +86022,7 @@ var PatientProfile = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 24
+                  lineNumber: 19
                 },
                 __self: this
               },
@@ -86035,7 +86030,7 @@ var PatientProfile = function (_PureComponent) {
                 _semanticUiReact.List.Header,
                 { as: 'a', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 25
+                    lineNumber: 20
                   },
                   __self: this
                 },
@@ -86046,7 +86041,7 @@ var PatientProfile = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 26
+                    lineNumber: 21
                   },
                   __self: this
                 },
@@ -86056,7 +86051,7 @@ var PatientProfile = function (_PureComponent) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 27
+                      lineNumber: 22
                     },
                     __self: this
                   },
@@ -86065,7 +86060,7 @@ var PatientProfile = function (_PureComponent) {
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 28
+                        lineNumber: 23
                       },
                       __self: this
                     },
@@ -86081,13 +86076,13 @@ var PatientProfile = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 33
+                lineNumber: 28
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 29
               },
               __self: this
             }),
@@ -86096,7 +86091,7 @@ var PatientProfile = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 35
+                  lineNumber: 30
                 },
                 __self: this
               },
@@ -86104,7 +86099,7 @@ var PatientProfile = function (_PureComponent) {
                 _semanticUiReact.List.Header,
                 { as: 'a', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 36
+                    lineNumber: 31
                   },
                   __self: this
                 },
@@ -86115,7 +86110,7 @@ var PatientProfile = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 37
+                    lineNumber: 32
                   },
                   __self: this
                 },
@@ -86125,7 +86120,7 @@ var PatientProfile = function (_PureComponent) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 38
+                      lineNumber: 33
                     },
                     __self: this
                   },
@@ -86134,7 +86129,7 @@ var PatientProfile = function (_PureComponent) {
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 39
+                        lineNumber: 34
                       },
                       __self: this
                     },
@@ -86150,13 +86145,13 @@ var PatientProfile = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 44
+                lineNumber: 39
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 45
+                lineNumber: 40
               },
               __self: this
             }),
@@ -86165,7 +86160,7 @@ var PatientProfile = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 46
+                  lineNumber: 41
                 },
                 __self: this
               },
@@ -86173,7 +86168,7 @@ var PatientProfile = function (_PureComponent) {
                 _semanticUiReact.List.Header,
                 { as: 'a', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 47
+                    lineNumber: 42
                   },
                   __self: this
                 },
@@ -86184,7 +86179,7 @@ var PatientProfile = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 48
+                    lineNumber: 43
                   },
                   __self: this
                 },
@@ -86194,7 +86189,7 @@ var PatientProfile = function (_PureComponent) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 49
+                      lineNumber: 44
                     },
                     __self: this
                   },
@@ -86203,7 +86198,7 @@ var PatientProfile = function (_PureComponent) {
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 50
+                        lineNumber: 45
                       },
                       __self: this
                     },
@@ -86421,14 +86416,9 @@ var CalendarDisplay = function (_PureComponent) {
   _createClass(CalendarDisplay, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(_reactBigCalendar2.default, Object.assign({}, this.props, {
-        events: events,
-        step: 15,
-        timeslots: 8,
-        defaultView: 'week',
-        defaultDate: new Date(2015, 3, 12), __source: {
+      return _react2.default.createElement(_reactBigCalendar2.default, Object.assign({}, this.props, { events: events, step: 15, timeslots: 8, defaultView: 'week', defaultDate: new Date(2015, 3, 12), __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 89
         },
         __self: this
       }));
@@ -93420,7 +93410,9 @@ var AppointmentTerminal = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeIndex: 0 }, _this.handleClick = function (e, titleProps) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      activeIndex: 0
+    }, _this.handleClick = function (e, titleProps) {
       var index = titleProps.index;
       var activeIndex = _this.state.activeIndex;
 
@@ -93440,7 +93432,7 @@ var AppointmentTerminal = function (_PureComponent) {
         _semanticUiReact.Accordion,
         { styled: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 23
           },
           __self: this
         },
@@ -93448,13 +93440,13 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Title,
           { active: activeIndex === 0, index: 0, onClick: this.handleClick, __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 24
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 25
             },
             __self: this
           }),
@@ -93464,7 +93456,7 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Content,
           { active: activeIndex === 0, __source: {
               fileName: _jsxFileName,
-              lineNumber: 24
+              lineNumber: 28
             },
             __self: this
           },
@@ -93473,11 +93465,11 @@ var AppointmentTerminal = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 25
+                lineNumber: 29
               },
               __self: this
             },
-            'A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a',
+            'A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a ',
             ' ',
             'welcome guest in many households across the world.'
           )
@@ -93486,13 +93478,13 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Title,
           { active: activeIndex === 1, index: 1, onClick: this.handleClick, __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 34
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 35
             },
             __self: this
           }),
@@ -93502,7 +93494,7 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Content,
           { active: activeIndex === 1, __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 38
             },
             __self: this
           },
@@ -93511,11 +93503,11 @@ var AppointmentTerminal = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 36
+                lineNumber: 39
               },
               __self: this
             },
-            'There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of',
+            'There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of ',
             ' ',
             'dog that they find to be compatible with their own lifestyle and desires from a companion.'
           )
@@ -93524,13 +93516,13 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Title,
           { active: activeIndex === 2, index: 2, onClick: this.handleClick, __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 44
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
               fileName: _jsxFileName,
-              lineNumber: 43
+              lineNumber: 45
             },
             __self: this
           }),
@@ -93540,7 +93532,7 @@ var AppointmentTerminal = function (_PureComponent) {
           _semanticUiReact.Accordion.Content,
           { active: activeIndex === 2, __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 48
             },
             __self: this
           },
@@ -93549,7 +93541,7 @@ var AppointmentTerminal = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 47
+                lineNumber: 49
               },
               __self: this
             },
@@ -93560,13 +93552,13 @@ var AppointmentTerminal = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 50
+                lineNumber: 52
               },
               __self: this
             },
-            'A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to',
+            'A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to ',
             ' ',
-            'assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your',
+            'assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your ',
             ' ',
             'dog from a shelter, helps give a good home to a dog who may not find one so readily.'
           )
@@ -93641,49 +93633,50 @@ var Profile = function (_PureComponent) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        {
-          __source: {
+        { className: 'ui grid', __source: {
             fileName: _jsxFileName,
             lineNumber: 14
           },
           __self: this
         },
-        _react2.default.createElement(_semanticUiReact.Card, {
-          image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
-          header: 'Elliot Baker',
-          meta: 'Friend',
-          description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.',
-          extra: extra, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 15
-          },
-          __self: this
-        }),
         _react2.default.createElement(
-          _semanticUiReact.List,
-          { relaxed: 'very', __source: {
+          'div',
+          { className: 'six wide right floated column', __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 15
+            },
+            __self: this
+          },
+          _react2.default.createElement(_semanticUiReact.Card, {
+            image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
+            header: 'Elliot Baker',
+            meta: 'Friend',
+            extra: extra,
+            description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            },
+            __self: this
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'ten wide left floated column', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
             },
             __self: this
           },
           _react2.default.createElement(
-            _semanticUiReact.List.Item,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 23
-              },
-              __self: this
-            },
-            _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
+            _semanticUiReact.List,
+            { relaxed: 'very', __source: {
                 fileName: _jsxFileName,
                 lineNumber: 24
               },
               __self: this
-            }),
+            },
             _react2.default.createElement(
-              _semanticUiReact.List.Content,
+              _semanticUiReact.List.Item,
               {
                 __source: {
                   fileName: _jsxFileName,
@@ -93691,18 +93684,14 @@ var Profile = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(
-                _semanticUiReact.List.Header,
-                { as: 'a', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 26
-                  },
-                  __self: this
+              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 26
                 },
-                'Daniel Louise'
-              ),
+                __self: this
+              }),
               _react2.default.createElement(
-                _semanticUiReact.List.Description,
+                _semanticUiReact.List.Content,
                 {
                   __source: {
                     fileName: _jsxFileName,
@@ -93710,49 +93699,53 @@ var Profile = function (_PureComponent) {
                   },
                   __self: this
                 },
-                'Last seen watching',
                 _react2.default.createElement(
-                  'a',
-                  {
-                    __source: {
+                  _semanticUiReact.List.Header,
+                  { as: 'a', __source: {
                       fileName: _jsxFileName,
                       lineNumber: 28
                     },
                     __self: this
                   },
+                  'Daniel Louise'
+                ),
+                _react2.default.createElement(
+                  _semanticUiReact.List.Description,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 29
+                    },
+                    __self: this
+                  },
+                  'Last seen watching',
                   _react2.default.createElement(
-                    'b',
+                    'a',
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 29
+                        lineNumber: 30
                       },
                       __self: this
                     },
-                    'Arrested Development'
-                  )
-                ),
-                'just now.'
+                    _react2.default.createElement(
+                      'b',
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 31
+                        },
+                        __self: this
+                      },
+                      'Arrested Development'
+                    )
+                  ),
+                  'just now.'
+                )
               )
-            )
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.List.Item,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 34
-              },
-              __self: this
-            },
-            _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 35
-              },
-              __self: this
-            }),
+            ),
             _react2.default.createElement(
-              _semanticUiReact.List.Content,
+              _semanticUiReact.List.Item,
               {
                 __source: {
                   fileName: _jsxFileName,
@@ -93760,18 +93753,14 @@ var Profile = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(
-                _semanticUiReact.List.Header,
-                { as: 'a', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 37
-                  },
-                  __self: this
+              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 37
                 },
-                'Stevie Feliciano'
-              ),
+                __self: this
+              }),
               _react2.default.createElement(
-                _semanticUiReact.List.Description,
+                _semanticUiReact.List.Content,
                 {
                   __source: {
                     fileName: _jsxFileName,
@@ -93779,49 +93768,53 @@ var Profile = function (_PureComponent) {
                   },
                   __self: this
                 },
-                'Last seen watching',
                 _react2.default.createElement(
-                  'a',
-                  {
-                    __source: {
+                  _semanticUiReact.List.Header,
+                  { as: 'a', __source: {
                       fileName: _jsxFileName,
                       lineNumber: 39
                     },
                     __self: this
                   },
+                  'Stevie Feliciano'
+                ),
+                _react2.default.createElement(
+                  _semanticUiReact.List.Description,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 40
+                    },
+                    __self: this
+                  },
+                  'Last seen watching',
                   _react2.default.createElement(
-                    'b',
+                    'a',
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 40
+                        lineNumber: 41
                       },
                       __self: this
                     },
-                    'Bob\'s Burgers'
-                  )
-                ),
-                '10 hours ago.'
+                    _react2.default.createElement(
+                      'b',
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 42
+                        },
+                        __self: this
+                      },
+                      'Bob\'s Burgers'
+                    )
+                  ),
+                  '10 hours ago.'
+                )
               )
-            )
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.List.Item,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 45
-              },
-              __self: this
-            },
-            _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 46
-              },
-              __self: this
-            }),
+            ),
             _react2.default.createElement(
-              _semanticUiReact.List.Content,
+              _semanticUiReact.List.Item,
               {
                 __source: {
                   fileName: _jsxFileName,
@@ -93829,18 +93822,14 @@ var Profile = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(
-                _semanticUiReact.List.Header,
-                { as: 'a', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 48
-                  },
-                  __self: this
+              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 48
                 },
-                'Elliot Fu'
-              ),
+                __self: this
+              }),
               _react2.default.createElement(
-                _semanticUiReact.List.Description,
+                _semanticUiReact.List.Content,
                 {
                   __source: {
                     fileName: _jsxFileName,
@@ -93848,29 +93837,49 @@ var Profile = function (_PureComponent) {
                   },
                   __self: this
                 },
-                'Last seen watching',
                 _react2.default.createElement(
-                  'a',
-                  {
-                    __source: {
+                  _semanticUiReact.List.Header,
+                  { as: 'a', __source: {
                       fileName: _jsxFileName,
                       lineNumber: 50
                     },
                     __self: this
                   },
+                  'Elliot Fu'
+                ),
+                _react2.default.createElement(
+                  _semanticUiReact.List.Description,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 51
+                    },
+                    __self: this
+                  },
+                  'Last seen watching',
                   _react2.default.createElement(
-                    'b',
+                    'a',
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 51
+                        lineNumber: 52
                       },
                       __self: this
                     },
-                    'The Godfather Part 2'
-                  )
-                ),
-                'yesterday.'
+                    _react2.default.createElement(
+                      'b',
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 53
+                        },
+                        __self: this
+                      },
+                      'The Godfather Part 2'
+                    )
+                  ),
+                  'yesterday.'
+                )
               )
             )
           )
