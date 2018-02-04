@@ -1,16 +1,13 @@
 const PROCESS_PORT = process.env.PORT || 5000;
-import { createServer } from 'http';
+//import { createServer } from 'http';
 import { app, passport } from './app';
-import { schema } from './graphql/schema';
-import { execute, subscribe } from 'graphql';
-import { SubscriptionServer } from 'subscriptions-transport-ws';
+// import { schema } from './graphql/schema';
 import { DoctorLogin, PatientLogin, isLoggedIn, LogOut } from './static';
+import { IndexRoute } from './react_pages';
 import {
   graphqlExpress,
   graphiqlExpress,
 } from 'graphql-server-express';
-import {IndexRoute} from './react_pages';
-
 
 const db = require('./db');
 
@@ -37,45 +34,17 @@ app.post('/signin', passport.authenticate('local-signin', {
 app.post('/patient/login', PatientLogin)
 
 require('./config/passport.js')(passport, db);
+require('./graphql')(app, db);
 
-//const GraphQLSub = require('./graphql')(app, db, server);
-app.use('/graphiql', graphiqlExpress({
-  endpointURL: '/graphql',
-  subscriptionsEndpoint: `ws://localhost:5000/subscriptions`
-}));
+// app.use('/graphiql', graphiqlExpress({
+//   endpointURL: '/graphql'
+// }));
+//
+// app.use(
+//   '/graphql',
+//   graphqlExpress({ schema, context: { models: db } }),
+// );
 
-app.use(
-  '/graphql',
-  graphqlExpress({ schema, context: { models: db } }),
-);
-
-const server = createServer(app);
-
-// server.listen(ProceessPort, GraphQLSub);
-server.listen(PROCESS_PORT, () => {
-  console.log(`GraphQL Server is now running on http://localhost:${PROCESS_PORT}`);
-
-  // Set up the WebSocket for handling GraphQL subscriptions
-  new SubscriptionServer({
-    execute,
-    subscribe,
-    schema,
-    onConnect: (connectionParams, webSocket) => {
-      console.log('\n onConnect connectionParams',connectionParams );
-      console.log('\n onConnect webSocket',webSocket )
-   },
-   onOperation: (message, params, webSocket) => {
-     console.log('\n onOperation message',message );
-     console.log('\n onOperation params',params );
-   },
-   onOperationDone: (webSocket) => {
-
-   },
-   onDisconnect: (webSocket) => {
-      
-   }
-  }, {
-    server: server,
-    path: '/subscriptions',
-  });
+app.listen(PROCESS_PORT, () => {
+  console.log(`Application worker ${process.pid} at Port: ${PROCESS_PORT} has started`);
 });

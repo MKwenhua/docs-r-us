@@ -13,7 +13,7 @@ const sourceAliases = {
   component: path.resolve(__dirname, 'src/shared/components'),
   constants: path.resolve(__dirname, 'src/shared/constants'),
   helpers: path.resolve(__dirname, 'src/shared/helpers'),
-  page: path.resolve(__dirname, 'src/shared/pages')
+  pages: path.resolve(__dirname, 'src/shared/pages')
 }
 
 const StylesLoader = {

@@ -31,11 +31,6 @@ class SideNav extends PureComponent {
           <Icon name='clipboard' size='big'/>
           <p>checkup</p>
         </NavLink>
-        <NavLink to="/stuff" className="side-link" activeClassName="selected">
-          <Icon name='calendar outline' size='big'/>
-          <p>stuff</p>
-        </NavLink>
-
       </aside>
     )
   }

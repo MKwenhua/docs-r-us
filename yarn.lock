@@ -1861,6 +1861,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-fetch@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-1.1.1.tgz#dede6865ae30f37eae62ac90ebb7bdac002b05a0"
+  dependencies:
+    node-fetch "1.7.3"
+    whatwg-fetch "2.0.3"
+
 cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2992,6 +2999,12 @@ graphql-extensions@^0.0.x:
     core-js "^2.5.3"
     source-map-support "^0.5.1"
 
+graphql-request@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.4.1.tgz#0772743cfac8dfdd4d69d36106a96c9bdd191ce8"
+  dependencies:
+    cross-fetch "1.1.1"
+
 graphql-server-express@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/graphql-server-express/-/graphql-server-express-1.3.2.tgz#cb60614bda10ddd6657731b1584042ee081d5a7d"
@@ -4043,7 +4056,7 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-node-fetch@^1.0.1, node-fetch@^1.7.3:
+node-fetch@1.7.3, node-fetch@^1.0.1, node-fetch@^1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
@@ -6308,7 +6321,7 @@ webpack@^3.1.0:
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@2.0.3, whatwg-fetch@>=0.10.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 

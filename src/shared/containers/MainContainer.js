@@ -11,13 +11,15 @@ import {
 import {
   Debounce
 } from 'helpers';
-import DoctorHome from 'page/DoctorHome';
-import DoctorPatientsView from 'page/DoctorPatientsView';
-import DoctorPatientProfile from 'page/DoctorPatientProfile';
-import AppointmentsCalendar from 'page/AppointmentsCalendar';
-import AppointmentTerminal from 'page/AppointmentTerminal';
-import DoctorProfile from 'page/DoctorProfile';
-import CreateAppointment from 'page/CreateAppointment';
+
+import {
+  Home,
+  PatientsView,
+  PatientProfile,
+  AppointmentsCalendar,
+  AppointmentTerminal,
+  Profile
+} from 'pages/doctor';
 
 const WrapperClass = {
   '/': 'main'
@@ -30,6 +32,7 @@ class MainContainer extends PureComponent {
     super(props);
   }
   componentDidMount() {
+  //  this.props.graphQL.request
   }
   render() {
     const { dispatch, location, currentUser } = this.props;
@@ -41,26 +44,22 @@ class MainContainer extends PureComponent {
         <div className={ true ? 'page-content' : 'page-content'}>
         <Switch>
           <Route exact path='/'>
-            <DoctorHome location={ location } />
+            <Home location={ location } />
           </Route>
           <Route exact path='/patients'>
-            <DoctorPatientsView location={ location } />
+            <PatientsView location={ location } />
           </Route>
           <Route exact path='/patient/:id'>
-            <DoctorPatientProfile location={ location } />
+            <PatientProfile location={ location } />
           </Route>
-          <Route exact path='/appointments'>
+          <Route exact path='/calendar'>
             <AppointmentsCalendar location={ location } />
           </Route>
           <Route path='/appointment/:id'>
             <AppointmentTerminal location={ location } />
           </Route>
           <Route exact path='/profile'>
-            <DoctorProfile location={ location } />
-          </Route>
-          <Route exact path='/stuff'>
-            <CreateAppointment patientId='eb27d50b-7cce-4091-abc4-f33e01ff6c61'
-              doctorId={ currentUser.id } dispatch={dispatch}  />
+            <Profile location={ location } />
           </Route>
         </Switch>
         </div>

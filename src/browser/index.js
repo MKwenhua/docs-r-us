@@ -8,31 +8,35 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import fetch from 'node-fetch';
-import { split } from 'apollo-link';
+// import { split } from 'apollo-link';
 import { createHttpLink } from 'apollo-link-http';
 const httpLink = createHttpLink({ uri: 'http://localhost:5000/graphql', fetch: fetch });
 
-import { WebSocketLink } from 'apollo-link-ws';
+// import { WebSocketLink } from 'apollo-link-ws';
+//
+// const wsLink = new WebSocketLink({
+//   uri: `ws://localhost:5000/subscriptions`,
+//   options: {
+//     reconnect: true
+//   }
+// });
 
-const wsLink = new WebSocketLink({
-  uri: `ws://localhost:5000/subscriptions`,
-  options: {
-    reconnect: true
-  }
-});
+// const link = split(
+//   // split based on operation type
+//   ({ query }) => {
+//     const { kind, operation } = getMainDefinition(query);
+//     return kind === 'OperationDefinition' && operation === 'subscription';
+//   },
+//   wsLink,
+//   httpLink,
+// );
+// import { GraphQLClient } from 'graphql-request'
+//
+// const client = new GraphQLClient('http://localhost:5000/graphql')
 
-const link = split(
-  // split based on operation type
-  ({ query }) => {
-    const { kind, operation } = getMainDefinition(query);
-    return kind === 'OperationDefinition' && operation === 'subscription';
-  },
-  wsLink,
-  httpLink,
-);
 
 const client = new ApolloClient({
-  link: link,
+  link: httpLink,
   cache: new InMemoryCache().restore(window.__APOLLO_STATE__)
 });
 
@@ -46,9 +50,9 @@ const store = buildClientStore(preloadedState)
 hydrate(
   <Provider store={store}>
      <ApolloProvider client={client}>
-     <BrowserRouter >
+     <BrowserRouter  >
        <MainContainer />
      </BrowserRouter>
-   </ApolloProvider>
+    </ApolloProvider>
    </Provider>, document.getElementById('root')
 );

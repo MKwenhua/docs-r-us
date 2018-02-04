@@ -1,14 +1,6 @@
-import { PubSub } from 'graphql-subscriptions';
-import { withFilter } from 'graphql-subscriptions';
-const pubsub = new PubSub();
-
-const channels = [
-
-]
-
 const APPOINTMENT_ADDED = 'APPOINTMENT_ADDED';
 
-export const resolvers = {
+const resolvers = {
   // Subscription: {
   //   appointmentAdded: {
   //     subscribe: () => pubsub.asyncIterator(APPOINTMENT_ADDED),
@@ -77,27 +69,36 @@ export const resolvers = {
     }
   },
   Query: {
-    allDoctors: (parent, args, { models }) => models.Doctor.findAll(),
-    allPatients: (parent, args, { models }) => models.Patient.findAll(),
-    getPatient: (parent, { id }, { models }) =>
+    allDoctors: (parent, args, {models}) => models.Doctor.findAll(),
+    allPatients: (parent, args, {models}) => models.Patient.findAll(),
+    //doctorPatients: (parent, args, { models }) => models.Patient.findAll(),
+    getPatient: (parent, { id }, { models}) =>
       models.Patient.findOne({
         where: {
           id,
         },
       }),
-    getDoctor: (parent, { id }, { models }) =>
+    getPatientEmail: (parent, { email }, { models }) => {
+      console.log('\n getPatientEmail models', models, '\n');
+      models.Patient.findOne({
+        where: {
+          email,
+        },
+      })
+    },
+    getDoctor: (parent, { id }, {models}) =>
       models.Doctor.findOne({
         where: {
           id,
         },
       }),
-    doctorAppointments: (parent, { doctorId }, { models }) =>
+    doctorAppointments: (parent, { doctorId }, {models }) =>
       models.Appointment.findAll({
         where: {
           doctorId,
         },
       }),
-    patientAppointments: (parent, { patientId }, { models }) =>
+    patientAppointments: (parent, { patientId }, { models} ) =>
       models.Appointment.findAll({
         where: {
           patientId,
@@ -106,28 +107,29 @@ export const resolvers = {
   },
 
   Mutation: {
-    createDoctor: (parent, args, { models }) => models.Doctor.create(args),
+    createDoctor: (parent, args, models) => models.Doctor.create(args),
     createAppointment: (parent, args, { models }) => {
       models.Appointment.create(args).then(appointment => {
       return appointment.dataValues;
     })
     .then(appointment => {
-      pubsub.publish(APPOINTMENT_ADDED, { appointmentAdded: appointment });
+      //pubsub.publish(APPOINTMENT_ADDED, { appointmentAdded: appointment });
     })
     .catch(e => {
       console.error(e);
     });
     },
   },
-  Subscription: {
-   appointmentAdded: {
-     subscribe: withFilter(() => pubsub.asyncIterator(APPOINTMENT_ADDED), (payload, variables) => {
-       // The `messageAdded` channel includes events for all channels, so we filter to only
-       // pass through events for the channel specified in the query
-       console.log('APPOINTMENT_ADDED payload:', payload );
-       console.log('APPOINTMENT_ADDED variables:', variables);
-       return (payload.patientId === variables.patientId) || (payload.doctorId === variables.doctorId);
-     }),
-   }
- },
+  // Subscription: {
+  //  appointmentAdded: {
+  //    subscribe: withFilter(() => pubsub.asyncIterator(APPOINTMENT_ADDED), (payload, variables) => {
+  //      // The `messageAdded` channel includes events for all channels, so we filter to only
+  //      // pass through events for the channel specified in the query
+  //      console.log('APPOINTMENT_ADDED payload:', payload );
+  //      console.log('APPOINTMENT_ADDED variables:', variables);
+  //      return (payload.patientId === variables.patientId) || (payload.doctorId === variables.doctorId);
+  //    }),
+  //  }
+// },
 };
+export default resolvers

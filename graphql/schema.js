@@ -1,17 +1,6 @@
-import {
-  makeExecutableSchema,
-  addMockFunctionsToSchema,
-} from 'graphql-tools';
-
-import { resolvers } from './resolvers';
-
 const typeDefs = `
   scalar CalendarDate
   scalar Time
-
-  type Subscription {
-    appointmentAdded: Appointment!
-  }
 
   type Appointment {
     id: ID!
@@ -55,8 +44,9 @@ const typeDefs = `
   type Query {
     allDoctors: [Doctor!]!
     getDoctor(id: ID!): Doctor
-    allPatients: [Patient!]!
+    allPatients: [Patient]!
     getPatient(id: ID!): Patient
+    getPatientEmail(email: String!): Patient
     doctorAppointments(doctorId: String!): [Appointment!]!
     patientAppointments(patientId: String!): [Appointment!]!
   }
@@ -69,9 +59,7 @@ const typeDefs = `
   schema {
     query: Query
     mutation: Mutation
-    subscription: Subscription
   }
 `;
 
-const schema = makeExecutableSchema({ typeDefs, resolvers });
-export { schema };
+ export default typeDefs

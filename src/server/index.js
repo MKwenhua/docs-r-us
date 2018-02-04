@@ -36,7 +36,7 @@ const IndexRoute = (req, res) => {
     <StaticRouter location={req.url} context={context}>
       <MainContainer />
     </StaticRouter>
-     </ApolloProvider>
+   </ApolloProvider> 
   </Provider>,
   store.getState()
 ));
