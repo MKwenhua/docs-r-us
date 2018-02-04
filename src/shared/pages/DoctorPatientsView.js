@@ -14,4 +14,4 @@ class DoctorPatientsView extends PureComponent {
   }
 }
 
-export {DoctorPatientsView};
+export default DoctorPatientsView;

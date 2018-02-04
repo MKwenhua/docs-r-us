@@ -1,4 +1,19 @@
-module.exports = {
+import { PubSub } from 'graphql-subscriptions';
+import { withFilter } from 'graphql-subscriptions';
+const pubsub = new PubSub();
+
+const channels = [
+
+]
+
+const APPOINTMENT_ADDED = 'APPOINTMENT_ADDED';
+
+export const resolvers = {
+  // Subscription: {
+  //   appointmentAdded: {
+  //     subscribe: () => pubsub.asyncIterator(APPOINTMENT_ADDED),
+  //   },
+  // },
   Doctor: {
     appointments: ({ id }, args, { models }) =>
       models.Appointment.findAll({
@@ -92,6 +107,27 @@ module.exports = {
 
   Mutation: {
     createDoctor: (parent, args, { models }) => models.Doctor.create(args),
-    createAppointment: (parent, args, { models }) => models.Appointment.create(args),
+    createAppointment: (parent, args, { models }) => {
+      models.Appointment.create(args).then(appointment => {
+      return appointment.dataValues;
+    })
+    .then(appointment => {
+      pubsub.publish(APPOINTMENT_ADDED, { appointmentAdded: appointment });
+    })
+    .catch(e => {
+      console.error(e);
+    });
+    },
   },
+  Subscription: {
+   appointmentAdded: {
+     subscribe: withFilter(() => pubsub.asyncIterator(APPOINTMENT_ADDED), (payload, variables) => {
+       // The `messageAdded` channel includes events for all channels, so we filter to only
+       // pass through events for the channel specified in the query
+       console.log('APPOINTMENT_ADDED payload:', payload );
+       console.log('APPOINTMENT_ADDED variables:', variables);
+       return (payload.patientId === variables.patientId) || (payload.doctorId === variables.doctorId);
+     }),
+   }
+ },
 };

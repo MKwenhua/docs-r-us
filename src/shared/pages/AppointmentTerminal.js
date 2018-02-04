@@ -58,4 +58,4 @@ class AppointmentTerminal extends PureComponent {
   }
 }
 
-export {AppointmentTerminal};
+export default AppointmentTerminal;

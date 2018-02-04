@@ -10,9 +10,6 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import fetch from 'node-fetch';
 import { createHttpLink } from 'apollo-link-http';
-// const link = createHttpLink({ uri: 'http://localhost:5000/graphql', fetch: fetch });
-// import { SchemaLink } from "apollo-link-schema";
-// const schema = require('../../graphql');
 
 const context = {
   serverSide: true
@@ -22,7 +19,6 @@ const context = {
 const IndexRoute = (req, res) => {
   const client = new ApolloClient({
     ssrMode: true,
-    // link: new SchemaLink({ schema }),
     link: createHttpLink({
       uri: '/graphql',
       fetch: fetch,

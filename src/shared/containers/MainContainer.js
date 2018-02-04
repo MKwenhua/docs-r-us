@@ -11,24 +11,13 @@ import {
 import {
   Debounce
 } from 'helpers';
-import {
-  DoctorHome
-} from 'page/DoctorHome';
-import {
-  DoctorPatientsView
-} from 'page/DoctorPatientsView';
-import {
-  DoctorPatientProfile
-} from 'page/DoctorPatientProfile';
-import {
-  AppointmentsCalendar
-} from 'page/AppointmentsCalendar';
-import {
-  AppointmentTerminal
-} from 'page/AppointmentTerminal';
-import {
-  DoctorProfile
-} from 'page/DoctorProfile';
+import DoctorHome from 'page/DoctorHome';
+import DoctorPatientsView from 'page/DoctorPatientsView';
+import DoctorPatientProfile from 'page/DoctorPatientProfile';
+import AppointmentsCalendar from 'page/AppointmentsCalendar';
+import AppointmentTerminal from 'page/AppointmentTerminal';
+import DoctorProfile from 'page/DoctorProfile';
+import CreateAppointment from 'page/CreateAppointment';
 
 const WrapperClass = {
   '/': 'main'
@@ -43,7 +32,7 @@ class MainContainer extends PureComponent {
   componentDidMount() {
   }
   render() {
-    const { dispatch, location } = this.props;
+    const { dispatch, location, currentUser } = this.props;
     console.log('MainContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'main'}>
@@ -68,6 +57,10 @@ class MainContainer extends PureComponent {
           </Route>
           <Route exact path='/profile'>
             <DoctorProfile location={ location } />
+          </Route>
+          <Route exact path='/stuff'>
+            <CreateAppointment patientId='eb27d50b-7cce-4091-abc4-f33e01ff6c61'
+              doctorId={ currentUser.id } dispatch={dispatch}  />
           </Route>
         </Switch>
         </div>

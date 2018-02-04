@@ -59,4 +59,4 @@ class DoctorProfile extends PureComponent {
   }
 }
 
-export {DoctorProfile};
+export default DoctorProfile;

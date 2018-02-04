@@ -1,6 +1,17 @@
-module.exports = `
+import {
+  makeExecutableSchema,
+  addMockFunctionsToSchema,
+} from 'graphql-tools';
+
+import { resolvers } from './resolvers';
+
+const typeDefs = `
   scalar CalendarDate
   scalar Time
+
+  type Subscription {
+    appointmentAdded: Appointment!
+  }
 
   type Appointment {
     id: ID!
@@ -52,6 +63,15 @@ module.exports = `
 
   type Mutation {
     createAppointment(date: String!, purpose: String!, time: String!, description: String!, patientId: String!, doctorId: String!): Appointment!
-    createDoctor(fullName: String!, email: String!): Doctor
+    createDoctor(fullName: String!, photo: String!, email: String!): Doctor
+  }
+
+  schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
   }
 `;
+
+const schema = makeExecutableSchema({ typeDefs, resolvers });
+export { schema };

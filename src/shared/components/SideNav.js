@@ -10,7 +10,7 @@ class SideNav extends PureComponent {
       <aside className={expanded === false
         ? 'side-nav'
         : 'side-nav expanded'}>
-        <NavLink to="/" className="side-link" activeClassName="selected">
+        <NavLink exact to="/" className="side-link" activeClassName="selected">
           <Icon name='home' size='big'/>
           <p>home</p>
         </NavLink>
@@ -30,6 +30,10 @@ class SideNav extends PureComponent {
         <NavLink to="/appointment" className="side-link" activeClassName="selected">
           <Icon name='clipboard' size='big'/>
           <p>checkup</p>
+        </NavLink>
+        <NavLink to="/stuff" className="side-link" activeClassName="selected">
+          <Icon name='calendar outline' size='big'/>
+          <p>stuff</p>
         </NavLink>
 
       </aside>

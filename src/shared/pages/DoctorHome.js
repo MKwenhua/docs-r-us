@@ -73,4 +73,4 @@ class DoctorHome extends PureComponent {
   }
 }
 
-export {DoctorHome};
+export default DoctorHome;
