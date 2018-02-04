@@ -11,19 +11,6 @@ const renderStat = () => (
   </Statistic>
 )
 
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-
-const firstQuery = gql`
-{
-  allPatients {
-    id
-    fullName
-    email
-  }
-}
-`
-
 class PatientsView extends PureComponent {
   paientListItem = ({ id, fullName, email }) => (
     <List.Item key={id}>
@@ -42,7 +29,7 @@ class PatientsView extends PureComponent {
     </List.Item>
   )
   render() {
-    const { allPatients = [] } = this.props.data;
+    const { allPatients = [] } = this.props;
     return (
       <div>
         <Dropdown text='Filter Tags' floating labeled button icon='filter' className='icon'>
@@ -65,4 +52,4 @@ class PatientsView extends PureComponent {
     )
   }
 }
-export default graphql(firstQuery)(PatientsView);
+export default PatientsView;

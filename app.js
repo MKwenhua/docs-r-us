@@ -12,7 +12,10 @@ app.use(bodyParser.json());
 app.use(session({secret: 'think outside the bun', resave: true, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
-import {ProccessInfo, ProcessHealth} from './system_health';
+import {
+  ProccessInfo,
+  ProcessHealth
+} from './system_health';
 
 app.get('/health', ProcessHealth);
 

@@ -1,13 +1,7 @@
 const PROCESS_PORT = process.env.PORT || 5000;
-//import { createServer } from 'http';
 import { app, passport } from './app';
-// import { schema } from './graphql/schema';
 import { DoctorLogin, PatientLogin, isLoggedIn, LogOut } from './static';
 import { IndexRoute } from './react_pages';
-import {
-  graphqlExpress,
-  graphiqlExpress,
-} from 'graphql-server-express';
 
 const db = require('./db');
 
@@ -34,16 +28,6 @@ app.post('/signin', passport.authenticate('local-signin', {
 app.post('/patient/login', PatientLogin)
 
 require('./config/passport.js')(passport, db);
-require('./graphql')(app, db);
-
-// app.use('/graphiql', graphiqlExpress({
-//   endpointURL: '/graphql'
-// }));
-//
-// app.use(
-//   '/graphql',
-//   graphqlExpress({ schema, context: { models: db } }),
-// );
 
 app.listen(PROCESS_PORT, () => {
   console.log(`Application worker ${process.pid} at Port: ${PROCESS_PORT} has started`);

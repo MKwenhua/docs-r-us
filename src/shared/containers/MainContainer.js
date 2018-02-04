@@ -31,9 +31,6 @@ class MainContainer extends PureComponent {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-  //  this.props.graphQL.request
-  }
   render() {
     const { dispatch, location, currentUser } = this.props;
     console.log('MainContainer this.props', this.props);
