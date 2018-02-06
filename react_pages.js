@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -80,373 +80,81 @@ module.exports = require("semantic-ui-react");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("constants");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("constants");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("moment");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("moment");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dropzone");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
 module.exports = require("redux");
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
+// EXTERNAL MODULE: external "react"
+var external__react_ = __webpack_require__(0);
+var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.IndexRoute = undefined;
-var _jsxFileName = '/Users/pete/docs-r-us/src/server/index.js',
-    _this = undefined;
+// EXTERNAL MODULE: ./src/shared/styles/Main.css
+var Main = __webpack_require__(9);
+var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 
-var _react = __webpack_require__(0);
+// EXTERNAL MODULE: external "react-redux"
+var external__react_redux_ = __webpack_require__(5);
+var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
 
-var _react2 = _interopRequireDefault(_react);
+// EXTERNAL MODULE: ./src/shared/styles/TopNav.css
+var styles_TopNav = __webpack_require__(10);
+var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
-var _MainContainer = __webpack_require__(10);
+// EXTERNAL MODULE: external "react-router-dom"
+var external__react_router_dom_ = __webpack_require__(3);
+var external__react_router_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_router_dom_);
 
-var _MainContainer2 = _interopRequireDefault(_MainContainer);
-
-var _render_page = __webpack_require__(30);
-
-var _render_page2 = _interopRequireDefault(_render_page);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _reactRedux = __webpack_require__(4);
-
-var _state = __webpack_require__(32);
-
-var _store = __webpack_require__(35);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var context = {
-  serverSide: true
-};
-
-var IndexRoute = function IndexRoute(req, res) {
-  var store = (0, _store.buildServerStore)((0, _state.normalizeDoctorState)(req.user.dataValues));
-  res.send((0, _render_page2.default)(_react2.default.createElement(
-    _reactRedux.Provider,
-    { store: store, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: _this
-    },
-    _react2.default.createElement(
-      _reactRouterDom.StaticRouter,
-      { location: req.url, context: context, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: _this
-      },
-      _react2.default.createElement(_MainContainer2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: _this
-      })
-    )
-  ), store.getState()));
-
-  res.end();
-};
-
-exports.IndexRoute = IndexRoute;
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/containers/MainContainer.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(11);
-
-var _reactRedux = __webpack_require__(4);
-
-var _TopNav = __webpack_require__(12);
-
-var _TopNav2 = _interopRequireDefault(_TopNav);
-
-var _SideNav = __webpack_require__(14);
-
-var _SideNav2 = _interopRequireDefault(_SideNav);
-
-var _reactRouter = __webpack_require__(16);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _constants = __webpack_require__(3);
-
-var _helpers = __webpack_require__(17);
-
-var _doctor = __webpack_require__(18);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var WrapperClass = {
-  '/': 'main'
-};
-
-var selectState = function selectState(state) {
-  return state;
-};
-
-var MainContainer = function (_PureComponent) {
-  _inherits(MainContainer, _PureComponent);
-
-  function MainContainer(props) {
-    _classCallCheck(this, MainContainer);
-
-    return _possibleConstructorReturn(this, (MainContainer.__proto__ || Object.getPrototypeOf(MainContainer)).call(this, props));
-  }
-
-  _createClass(MainContainer, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          dispatch = _props.dispatch,
-          location = _props.location,
-          match = _props.match,
-          currentUser = _props.currentUser,
-          appointments = _props.appointments,
-          patients = _props.patients,
-          patientProfile = _props.patientProfile,
-          patientsView = _props.patientsView,
-          calendarView = _props.calendarView;
-
-      console.log('MainContainer this.props', this.props);
-      return _react2.default.createElement(
-        'section',
-        { className: WrapperClass[location.pathname] || 'main', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 48
-          },
-          __self: this
-        },
-        _react2.default.createElement(_TopNav2.default, { navStuck: false, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 49
-          },
-          __self: this
-        }),
-        _react2.default.createElement(_SideNav2.default, { location: location, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: this
-        }),
-        _react2.default.createElement(
-          'div',
-          { className: true ? 'page-content' : 'page-content', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 51
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            _reactRouterDom.Switch,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 52
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 53
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.Home, { location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 54
-                },
-                __self: this
-              })
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/patients', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 56
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.PatientsView, Object.assign({ currentUser: currentUser }, patientsView, { patients: patients, dispatch: dispatch, location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 57
-                },
-                __self: this
-              }))
-            ),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/patient/:id', render: function render(props) {
-                return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 60
-                  },
-                  __self: _this2
-                }));
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 59
-              },
-              __self: this
-            }),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/calendar', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 62
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { patients: patients, dispatch: dispatch, location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 63
-                },
-                __self: this
-              }))
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { path: '/appointment/:id', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 65
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.AppointmentTerminal, { location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 66
-                },
-                __self: this
-              })
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/profile', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 68
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.Profile, Object.assign({ appointments: appointments, patients: patients }, currentUser, { location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 69
-                },
-                __self: this
-              }))
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return MainContainer;
-}(_react.PureComponent);
-
-exports.default = (0, _reactRouter.withRouter)((0, _reactRedux.connect)(selectState)(MainContainer));
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+// CONCATENATED MODULE: ./src/shared/components/TopNav.js
 var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/TopNav.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(13);
-
-var _reactRouterDom = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TopNav = function (_PureComponent) {
+
+
+
+
+var TopNav_TopNav = function (_PureComponent) {
   _inherits(TopNav, _PureComponent);
 
   function TopNav() {
@@ -460,7 +168,7 @@ var TopNav = function (_PureComponent) {
     value: function render() {
       var navStuck = this.props.navStuck;
 
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'nav',
         { className: navStuck === false ? 'top-nav' : 'top-nav fixed', __source: {
             fileName: _jsxFileName,
@@ -468,7 +176,7 @@ var TopNav = function (_PureComponent) {
           },
           __self: this
         },
-        _react2.default.createElement(
+        external__react__default.a.createElement(
           'div',
           { className: 'topbar-left', __source: {
               fileName: _jsxFileName,
@@ -476,8 +184,8 @@ var TopNav = function (_PureComponent) {
             },
             __self: this
           },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
+          external__react__default.a.createElement(
+            external__react_router_dom_["Link"],
             { to: '/', className: 'brand', __source: {
                 fileName: _jsxFileName,
                 lineNumber: 13
@@ -492,89 +200,74 @@ var TopNav = function (_PureComponent) {
   }]);
 
   return TopNav;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = TopNav;
+/* harmony default export */ var components_TopNav = (TopNav_TopNav);
+// EXTERNAL MODULE: ./src/shared/styles/SideNav.css
+var styles_SideNav = __webpack_require__(11);
+var SideNav_default = /*#__PURE__*/__webpack_require__.n(styles_SideNav);
 
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
+// EXTERNAL MODULE: external "semantic-ui-react"
+var external__semantic_ui_react_ = __webpack_require__(1);
+var external__semantic_ui_react__default = /*#__PURE__*/__webpack_require__.n(external__semantic_ui_react_);
 
-// removed by extract-text-webpack-plugin
+// CONCATENATED MODULE: ./src/shared/components/SideNav.js
+var SideNav__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/SideNav.js';
 
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
+var SideNav__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-"use strict";
+function SideNav__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function SideNav__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function SideNav__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/SideNav.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
 
-var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(15);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _semanticUiReact = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SideNav = function (_PureComponent) {
-  _inherits(SideNav, _PureComponent);
+var SideNav_SideNav = function (_PureComponent) {
+  SideNav__inherits(SideNav, _PureComponent);
 
   function SideNav() {
-    _classCallCheck(this, SideNav);
+    SideNav__classCallCheck(this, SideNav);
 
-    return _possibleConstructorReturn(this, (SideNav.__proto__ || Object.getPrototypeOf(SideNav)).apply(this, arguments));
+    return SideNav__possibleConstructorReturn(this, (SideNav.__proto__ || Object.getPrototypeOf(SideNav)).apply(this, arguments));
   }
 
-  _createClass(SideNav, [{
+  SideNav__createClass(SideNav, [{
     key: 'render',
     value: function render() {
       var expanded = this.props.expanded;
 
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'aside',
         { className: expanded === false ? 'side-nav' : 'side-nav expanded', __source: {
-            fileName: _jsxFileName,
+            fileName: SideNav__jsxFileName,
             lineNumber: 10
           },
           __self: this
         },
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
           { exact: true, to: '/', className: 'side-link', activeClassName: 'selected', __source: {
-              fileName: _jsxFileName,
+              fileName: SideNav__jsxFileName,
               lineNumber: 13
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'home', size: 'big', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'home', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
               lineNumber: 14
             },
             __self: this
           }),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: SideNav__jsxFileName,
                 lineNumber: 15
               },
               __self: this
@@ -582,25 +275,25 @@ var SideNav = function (_PureComponent) {
             'home'
           )
         ),
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
           { to: '/calendar', className: 'side-link', activeClassName: 'selected', __source: {
-              fileName: _jsxFileName,
+              fileName: SideNav__jsxFileName,
               lineNumber: 17
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'calendar outline', size: 'big', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'calendar outline', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
               lineNumber: 18
             },
             __self: this
           }),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: SideNav__jsxFileName,
                 lineNumber: 19
               },
               __self: this
@@ -608,25 +301,25 @@ var SideNav = function (_PureComponent) {
             'calendar'
           )
         ),
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
           { to: '/profile', className: 'side-link', activeClassName: 'selected', __source: {
-              fileName: _jsxFileName,
+              fileName: SideNav__jsxFileName,
               lineNumber: 21
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'doctor', size: 'big', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'doctor', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
               lineNumber: 22
             },
             __self: this
           }),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: SideNav__jsxFileName,
                 lineNumber: 23
               },
               __self: this
@@ -634,25 +327,25 @@ var SideNav = function (_PureComponent) {
             'profile'
           )
         ),
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
           { to: '/patients', className: 'side-link', activeClassName: 'selected', __source: {
-              fileName: _jsxFileName,
+              fileName: SideNav__jsxFileName,
               lineNumber: 25
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'address book outline', size: 'big', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'address book outline', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
               lineNumber: 26
             },
             __self: this
           }),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: SideNav__jsxFileName,
                 lineNumber: 27
               },
               __self: this
@@ -660,25 +353,25 @@ var SideNav = function (_PureComponent) {
             'patients'
           )
         ),
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
+        external__react__default.a.createElement(
+          external__react_router_dom_["NavLink"],
           { to: '/appointment', className: 'side-link', activeClassName: 'selected', __source: {
-              fileName: _jsxFileName,
+              fileName: SideNav__jsxFileName,
               lineNumber: 29
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'clipboard', size: 'big', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'clipboard', size: 'big', __source: {
+              fileName: SideNav__jsxFileName,
               lineNumber: 30
             },
             __self: this
           }),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: SideNav__jsxFileName,
                 lineNumber: 31
               },
               __self: this
@@ -691,32 +384,18 @@ var SideNav = function (_PureComponent) {
   }]);
 
   return SideNav;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = SideNav;
+/* harmony default export */ var components_SideNav = (SideNav_SideNav);
+// EXTERNAL MODULE: external "react-router"
+var external__react_router_ = __webpack_require__(12);
+var external__react_router__default = /*#__PURE__*/__webpack_require__.n(external__react_router_);
 
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
+// EXTERNAL MODULE: external "constants"
+var external__constants_ = __webpack_require__(2);
+var external__constants__default = /*#__PURE__*/__webpack_require__.n(external__constants_);
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router");
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+// CONCATENATED MODULE: ./src/shared/helpers/index.js
 var Debounce = function Debounce(fn, wait, immediate) {
   var timeout = void 0;
   return function (e) {
@@ -734,80 +413,19 @@ var Debounce = function Debounce(fn, wait, immediate) {
   };
 };
 
-exports.Debounce = Debounce;
 
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
+// CONCATENATED MODULE: ./src/shared/pages/doctor/Home.js
+var Home__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Home.js';
 
-"use strict";
+var Home__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function Home__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Profile = exports.AppointmentTerminal = exports.AppointmentsCalendar = exports.PatientProfile = exports.PatientsView = exports.Home = undefined;
+function Home__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-var _Home = __webpack_require__(19);
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _PatientsView = __webpack_require__(20);
-
-var _PatientsView2 = _interopRequireDefault(_PatientsView);
-
-var _PatientProfile = __webpack_require__(22);
-
-var _PatientProfile2 = _interopRequireDefault(_PatientProfile);
-
-var _AppointmentsCalendar = __webpack_require__(24);
-
-var _AppointmentsCalendar2 = _interopRequireDefault(_AppointmentsCalendar);
-
-var _AppointmentTerminal = __webpack_require__(28);
-
-var _AppointmentTerminal2 = _interopRequireDefault(_AppointmentTerminal);
-
-var _Profile = __webpack_require__(29);
-
-var _Profile2 = _interopRequireDefault(_Profile);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Home = _Home2.default;
-exports.PatientsView = _PatientsView2.default;
-exports.PatientProfile = _PatientProfile2.default;
-exports.AppointmentsCalendar = _AppointmentsCalendar2.default;
-exports.AppointmentTerminal = _AppointmentTerminal2.default;
-exports.Profile = _Profile2.default;
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+function Home__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Home.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var items = [{
   header: 'Project Report - April',
@@ -826,7 +444,7 @@ var items = [{
   centered: true
 }];
 
-var events = [{
+var Home_events = [{
   date: '1 Hour Ago',
   image: '/assets/images/avatar/small/elliot.jpg',
   meta: '4 Likes',
@@ -852,55 +470,55 @@ var events = [{
   extraImages: ['/assets/images/wireframe/image.png', '/assets/images/wireframe/image-text.png']
 }];
 
-var Home = function (_PureComponent) {
-  _inherits(Home, _PureComponent);
+var Home_Home = function (_PureComponent) {
+  Home__inherits(Home, _PureComponent);
 
   function Home() {
-    _classCallCheck(this, Home);
+    Home__classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    return Home__possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
   }
 
-  _createClass(Home, [{
+  Home__createClass(Home, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'div',
         {
           __source: {
-            fileName: _jsxFileName,
+            fileName: Home__jsxFileName,
             lineNumber: 53
           },
           __self: this
         },
-        _react2.default.createElement(_semanticUiReact.Card.Group, { itemsPerRow: '3', items: items, __source: {
-            fileName: _jsxFileName,
+        external__react__default.a.createElement(external__semantic_ui_react_["Card"].Group, { itemsPerRow: '3', items: items, __source: {
+            fileName: Home__jsxFileName,
             lineNumber: 54
           },
           __self: this
         }),
-        _react2.default.createElement(
-          _semanticUiReact.Card,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Card"],
           { fluid: true, color: 'red', __source: {
-              fileName: _jsxFileName,
+              fileName: Home__jsxFileName,
               lineNumber: 55
             },
             __self: this
           },
-          _react2.default.createElement(
-            _semanticUiReact.Card.Content,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Content,
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: Home__jsxFileName,
                 lineNumber: 56
               },
               __self: this
             },
-            _react2.default.createElement(
-              _semanticUiReact.Card.Header,
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["Card"].Header,
               {
                 __source: {
-                  fileName: _jsxFileName,
+                  fileName: Home__jsxFileName,
                   lineNumber: 57
                 },
                 __self: this
@@ -908,17 +526,17 @@ var Home = function (_PureComponent) {
               'Recent Activity'
             )
           ),
-          _react2.default.createElement(
-            _semanticUiReact.Card.Content,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Content,
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: Home__jsxFileName,
                 lineNumber: 61
               },
               __self: this
             },
-            _react2.default.createElement(_semanticUiReact.Feed, { events: events, __source: {
-                fileName: _jsxFileName,
+            external__react__default.a.createElement(external__semantic_ui_react_["Feed"], { events: Home_events, __source: {
+                fileName: Home__jsxFileName,
                 lineNumber: 62
               },
               __self: this
@@ -930,284 +548,35 @@ var Home = function (_PureComponent) {
   }]);
 
   return Home;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = Home;
+/* harmony default export */ var doctor_Home = (Home_Home);
+// CONCATENATED MODULE: ./src/shared/components/PatientListItem.js
+var PatientListItem__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/PatientListItem.js';
 
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
+var PatientListItem__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-"use strict";
+function PatientListItem__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function PatientListItem__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientsView.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _PatientListItem = __webpack_require__(21);
-
-var _PatientListItem2 = _interopRequireDefault(_PatientListItem);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _actionAutocomplete = __webpack_require__(44);
-
-var _actionAutocomplete2 = _interopRequireDefault(_actionAutocomplete);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var PatientsView = function (_PureComponent) {
-  _inherits(PatientsView, _PureComponent);
-
-  function PatientsView(props) {
-    var _this2 = this;
-
-    _classCallCheck(this, PatientsView);
-
-    var _this = _possibleConstructorReturn(this, (PatientsView.__proto__ || Object.getPrototypeOf(PatientsView)).call(this, props));
-
-    _this.listPatientItems = function (_ref) {
-      var allIds = _ref.allIds,
-          byId = _ref.byId;
-      return allIds.map(function (patientId, i) {
-        return _react2.default.createElement(_PatientListItem2.default, Object.assign({ key: i }, byId[patientId], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 36
-          },
-          __self: _this2
-        }));
-      });
-    };
-
-    _this.listSuggestions = function (suggestions) {
-      return suggestions.map(function (patient, i) {
-        return _react2.default.createElement(_PatientListItem2.default, Object.assign({ key: i }, patient, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39
-          },
-          __self: _this2
-        }));
-      });
-    };
-
-    _this.searchType = function (e) {
-      var typed = e.target.value.toLowerCase().trim();
-      var suggestions = _this.AutoComplete.lookup(typed);
-      console.log('suggestions', suggestions);
-      _this.props.dispatch({
-        type: _constants.SEARCH_INPUT_UPDATE,
-        payload: { typed: typed, suggestions: suggestions }
-      });
-    };
-
-    var _props$patients$resou = props.patients.resource.reduce(function (obj, patient) {
-      var _Object$assign;
-
-      obj.names_email = [patient.fullName, patient.email].concat(obj.names_email);
-      obj.nameMap = Object.assign({}, obj.nameMap, (_Object$assign = {}, _defineProperty(_Object$assign, patient.email, patient), _defineProperty(_Object$assign, patient.fullName, patient), _Object$assign));
-      return obj;
-    }, { names_email: [], nameMap: {} }),
-        names_email = _props$patients$resou.names_email,
-        nameMap = _props$patients$resou.nameMap;
-
-    _this.AutoComplete = (0, _actionAutocomplete2.default)(names_email, nameMap);
-    return _this;
-  }
-
-  _createClass(PatientsView, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          _props$patients = _props.patients,
-          patients = _props$patients === undefined ? [] : _props$patients,
-          suggestions = _props.suggestions;
-
-      return _react2.default.createElement(
-        'section',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 56
-          },
-          __self: this
-        },
-        _react2.default.createElement(
-          'div',
-          { className: 'ui grid', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 57
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            'div',
-            { className: 'fourteen wide column', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 58
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              'div',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 59
-                },
-                __self: this
-              },
-              _react2.default.createElement(
-                'div',
-                { className: 'ui fluid action input', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 60
-                  },
-                  __self: this
-                },
-                _react2.default.createElement('input', { onKeyUp: this.searchType, type: 'text', placeholder: 'Search...', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 61
-                  },
-                  __self: this
-                }),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'ui button', __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 62
-                    },
-                    __self: this
-                  },
-                  'Search'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'two wide column', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 66
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              'div',
-              { className: 'ui fitted toggle checkbox', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 67
-                },
-                __self: this
-              },
-              _react2.default.createElement('input', { type: 'checkbox', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 68
-                },
-                __self: this
-              }),
-              _react2.default.createElement('label', {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 69
-                },
-                __self: this
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Header,
-          { as: 'h3', dividing: true, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 73
-            },
-            __self: this
-          },
-          'Most Recent Patients'
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.List,
-          { divided: true, verticalAlign: 'middle', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 77
-            },
-            __self: this
-          },
-          suggestions.length > 0 ? this.listSuggestions(suggestions) : this.listPatientItems(patients)
-        )
-      );
-    }
-  }]);
-
-  return PatientsView;
-}(_react.PureComponent);
-
-exports.default = PatientsView;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+function PatientListItem__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/PatientListItem.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(2);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var PatientListItem = function (_PureComponent) {
-  _inherits(PatientListItem, _PureComponent);
+var PatientListItem_PatientListItem = function (_PureComponent) {
+  PatientListItem__inherits(PatientListItem, _PureComponent);
 
   function PatientListItem() {
-    _classCallCheck(this, PatientListItem);
+    PatientListItem__classCallCheck(this, PatientListItem);
 
-    return _possibleConstructorReturn(this, (PatientListItem.__proto__ || Object.getPrototypeOf(PatientListItem)).apply(this, arguments));
+    return PatientListItem__possibleConstructorReturn(this, (PatientListItem.__proto__ || Object.getPrototypeOf(PatientListItem)).apply(this, arguments));
   }
 
-  _createClass(PatientListItem, [{
+  PatientListItem__createClass(PatientListItem, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -1215,36 +584,36 @@ var PatientListItem = function (_PureComponent) {
           fullName = _props.fullName,
           email = _props.email;
 
-      return _react2.default.createElement(
-        _semanticUiReact.List.Item,
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["List"].Item,
         {
           __source: {
-            fileName: _jsxFileName,
+            fileName: PatientListItem__jsxFileName,
             lineNumber: 14
           },
           __self: this
         },
-        _react2.default.createElement(
-          _semanticUiReact.List.Content,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"].Content,
           { floated: 'right', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientListItem__jsxFileName,
               lineNumber: 15
             },
             __self: this
           },
-          _react2.default.createElement(
-            _reactRouterDom.Link,
+          external__react__default.a.createElement(
+            external__react_router_dom_["Link"],
             { to: '/patient/' + id, __source: {
-                fileName: _jsxFileName,
+                fileName: PatientListItem__jsxFileName,
                 lineNumber: 16
               },
               __self: this
             },
-            _react2.default.createElement(
-              _semanticUiReact.Button,
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["Button"],
               {
                 __source: {
-                  fileName: _jsxFileName,
+                  fileName: PatientListItem__jsxFileName,
                   lineNumber: 17
                 },
                 __self: this
@@ -1253,55 +622,55 @@ var PatientListItem = function (_PureComponent) {
             )
           )
         ),
-        _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'patient_records_icon.png', __source: {
-            fileName: _jsxFileName,
+        external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: external__constants_["CDN_URI"] + 'patient_records_icon.png', __source: {
+            fileName: PatientListItem__jsxFileName,
             lineNumber: 20
           },
           __self: this
         }),
-        _react2.default.createElement(
-          _semanticUiReact.List.Content,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"].Content,
           {
             __source: {
-              fileName: _jsxFileName,
+              fileName: PatientListItem__jsxFileName,
               lineNumber: 21
             },
             __self: this
           },
-          _react2.default.createElement(
-            _semanticUiReact.List.Header,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Header,
             { as: 'a', __source: {
-                fileName: _jsxFileName,
+                fileName: PatientListItem__jsxFileName,
                 lineNumber: 22
               },
               __self: this
             },
             fullName
           ),
-          _react2.default.createElement(
-            _semanticUiReact.List.Description,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Description,
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: PatientListItem__jsxFileName,
                 lineNumber: 23
               },
               __self: this
             },
             'Last seen watching',
-            _react2.default.createElement(
+            external__react__default.a.createElement(
               'a',
               {
                 __source: {
-                  fileName: _jsxFileName,
+                  fileName: PatientListItem__jsxFileName,
                   lineNumber: 24
                 },
                 __self: this
               },
-              _react2.default.createElement(
+              external__react__default.a.createElement(
                 'b',
                 {
                   __source: {
-                    fileName: _jsxFileName,
+                    fileName: PatientListItem__jsxFileName,
                     lineNumber: 25
                   },
                   __self: this
@@ -1317,90 +686,1079 @@ var PatientListItem = function (_PureComponent) {
   }]);
 
   return PatientListItem;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = PatientListItem;
+/* harmony default export */ var components_PatientListItem = (PatientListItem_PatientListItem);
+// EXTERNAL MODULE: external "action-autocomplete"
+var external__action_autocomplete_ = __webpack_require__(13);
+var external__action_autocomplete__default = /*#__PURE__*/__webpack_require__.n(external__action_autocomplete_);
 
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
+// CONCATENATED MODULE: ./src/shared/pages/doctor/PatientsView.js
+var PatientsView__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientsView.js';
 
-"use strict";
+var PatientsView__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function PatientsView__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function PatientsView__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function PatientsView__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientProfile.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _semanticUiReact = __webpack_require__(1);
 
-var _moment = __webpack_require__(5);
 
-var _moment2 = _interopRequireDefault(_moment);
+var PatientsView_PatientsView = function (_PureComponent) {
+  PatientsView__inherits(PatientsView, _PureComponent);
 
-var _FileUploader = __webpack_require__(23);
+  function PatientsView(props) {
+    var _this2 = this;
 
-var _FileUploader2 = _interopRequireDefault(_FileUploader);
+    PatientsView__classCallCheck(this, PatientsView);
 
-var _RecordsList = __webpack_require__(40);
+    var _this = PatientsView__possibleConstructorReturn(this, (PatientsView.__proto__ || Object.getPrototypeOf(PatientsView)).call(this, props));
 
-var _RecordsList2 = _interopRequireDefault(_RecordsList);
+    _this.listPatientItems = function (_ref) {
+      var allIds = _ref.allIds,
+          byId = _ref.byId;
+      return allIds.map(function (patientId, i) {
+        return external__react__default.a.createElement(components_PatientListItem, Object.assign({ key: i }, byId[patientId], {
+          __source: {
+            fileName: PatientsView__jsxFileName,
+            lineNumber: 36
+          },
+          __self: _this2
+        }));
+      });
+    };
 
-var _AppointmentsList = __webpack_require__(41);
+    _this.listSuggestions = function (suggestions) {
+      return suggestions.map(function (patient, i) {
+        return external__react__default.a.createElement(components_PatientListItem, Object.assign({ key: i }, patient, {
+          __source: {
+            fileName: PatientsView__jsxFileName,
+            lineNumber: 39
+          },
+          __self: _this2
+        }));
+      });
+    };
 
-var _AppointmentsList2 = _interopRequireDefault(_AppointmentsList);
+    _this.searchType = function (e) {
+      var typed = e.target.value.toLowerCase().trim();
+      var suggestions = _this.AutoComplete.lookup(typed);
+      console.log('suggestions', suggestions);
+      _this.props.dispatch({
+        type: external__constants_["SEARCH_INPUT_UPDATE"],
+        payload: { typed: typed, suggestions: suggestions }
+      });
+    };
 
-var _PatientInfo = __webpack_require__(42);
+    var _props$patients$resou = props.patients.resource.reduce(function (obj, patient) {
+      var _Object$assign;
 
-var _PatientInfo2 = _interopRequireDefault(_PatientInfo);
+      obj.names_email = [patient.fullName, patient.email].concat(obj.names_email);
+      obj.nameMap = Object.assign({}, obj.nameMap, (_Object$assign = {}, _defineProperty(_Object$assign, patient.email, patient), _defineProperty(_Object$assign, patient.fullName, patient), _Object$assign));
+      return obj;
+    }, { names_email: [], nameMap: {} }),
+        names_email = _props$patients$resou.names_email,
+        nameMap = _props$patients$resou.nameMap;
 
-__webpack_require__(7);
+    _this.AutoComplete = external__action_autocomplete__default()(names_email, nameMap);
+    return _this;
+  }
 
-var _constants = __webpack_require__(3);
+  PatientsView__createClass(PatientsView, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          _props$patients = _props.patients,
+          patients = _props$patients === undefined ? [] : _props$patients,
+          suggestions = _props.suggestions;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+      return external__react__default.a.createElement(
+        'section',
+        {
+          __source: {
+            fileName: PatientsView__jsxFileName,
+            lineNumber: 56
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          'div',
+          { className: 'ui grid', __source: {
+              fileName: PatientsView__jsxFileName,
+              lineNumber: 57
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            'div',
+            { className: 'fourteen wide column', __source: {
+                fileName: PatientsView__jsxFileName,
+                lineNumber: 58
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              'div',
+              {
+                __source: {
+                  fileName: PatientsView__jsxFileName,
+                  lineNumber: 59
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                'div',
+                { className: 'ui fluid action input', __source: {
+                    fileName: PatientsView__jsxFileName,
+                    lineNumber: 60
+                  },
+                  __self: this
+                },
+                external__react__default.a.createElement('input', { onKeyUp: this.searchType, type: 'text', placeholder: 'Search...', __source: {
+                    fileName: PatientsView__jsxFileName,
+                    lineNumber: 61
+                  },
+                  __self: this
+                }),
+                external__react__default.a.createElement(
+                  'div',
+                  { className: 'ui button', __source: {
+                      fileName: PatientsView__jsxFileName,
+                      lineNumber: 62
+                    },
+                    __self: this
+                  },
+                  'Search'
+                )
+              )
+            )
+          ),
+          external__react__default.a.createElement(
+            'div',
+            { className: 'two wide column', __source: {
+                fileName: PatientsView__jsxFileName,
+                lineNumber: 66
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              'div',
+              { className: 'ui fitted toggle checkbox', __source: {
+                  fileName: PatientsView__jsxFileName,
+                  lineNumber: 67
+                },
+                __self: this
+              },
+              external__react__default.a.createElement('input', { type: 'checkbox', __source: {
+                  fileName: PatientsView__jsxFileName,
+                  lineNumber: 68
+                },
+                __self: this
+              }),
+              external__react__default.a.createElement('label', {
+                __source: {
+                  fileName: PatientsView__jsxFileName,
+                  lineNumber: 69
+                },
+                __self: this
+              })
+            )
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Header"],
+          { as: 'h3', dividing: true, __source: {
+              fileName: PatientsView__jsxFileName,
+              lineNumber: 73
+            },
+            __self: this
+          },
+          'Most Recent Patients'
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"],
+          { divided: true, verticalAlign: 'middle', __source: {
+              fileName: PatientsView__jsxFileName,
+              lineNumber: 77
+            },
+            __self: this
+          },
+          suggestions.length > 0 ? this.listSuggestions(suggestions) : this.listPatientItems(patients)
+        )
+      );
+    }
+  }]);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  return PatientsView;
+}(external__react_["PureComponent"]);
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+/* harmony default export */ var doctor_PatientsView = (PatientsView_PatientsView);
+// EXTERNAL MODULE: external "moment"
+var external__moment_ = __webpack_require__(4);
+var external__moment__default = /*#__PURE__*/__webpack_require__.n(external__moment_);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// EXTERNAL MODULE: ./src/shared/styles/FileUploader.css
+var styles_FileUploader = __webpack_require__(6);
+var FileUploader_default = /*#__PURE__*/__webpack_require__.n(styles_FileUploader);
 
-var PatientProfile = function (_PureComponent) {
-  _inherits(PatientProfile, _PureComponent);
+// EXTERNAL MODULE: external "react-dropzone"
+var external__react_dropzone_ = __webpack_require__(14);
+var external__react_dropzone__default = /*#__PURE__*/__webpack_require__.n(external__react_dropzone_);
+
+// CONCATENATED MODULE: ./src/shared/components/FileUploader.js
+var FileUploader__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/FileUploader.js';
+
+var FileUploader__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function FileUploader__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function FileUploader__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function FileUploader__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var FileUploader_uploadPreviewSrc = function uploadPreviewSrc(_ref) {
+  var preview = _ref.preview,
+      type = _ref.type;
+  return type.includes('image') ? preview : external__constants_["CDN_URI"] + 'record-upload-icon.png';
+};
+
+var FileUploader_FileUploader = function (_PureComponent) {
+  FileUploader__inherits(FileUploader, _PureComponent);
+
+  function FileUploader() {
+    var _ref2,
+        _this2 = this;
+
+    var _temp, _this, _ret;
+
+    FileUploader__classCallCheck(this, FileUploader);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = FileUploader__possibleConstructorReturn(this, (_ref2 = FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call.apply(_ref2, [this].concat(args))), _this), _this.fileDrop = function (files) {
+      console.log('files', files);
+      _this.props.dispatch({ type: external__constants_["PATIENT_FILES_DROPPED"], payload: files });
+    }, _this.uploadToS3 = function (e) {
+      e.preventDefault();
+      var _this$props = _this.props,
+          action = _this$props.action,
+          files = _this$props.files;
+
+      var formData = new FormData(document.forms['uploadForm']);
+      files.forEach(function (file) {
+        formData.append(file.name, file, file.name);
+      });
+      fetch(action, {
+        method: 'POST',
+        body: formData
+      }).then(function (response) {
+        console.log('upload response', response);
+        _this.props.dispatch({ type: external__constants_["PATIENT_FILES_UPLOADED"] });
+      }).catch(function (error) {
+        console.log(error);
+      });
+      _this.props.dispatch({ type: external__constants_["PATIENT_FILES_UPLOADING"] });
+    }, _this.removeFile = function (index) {
+      return function (e) {
+        return _this.props.dispatch({
+          type: external__constants_["PATIENT_FILE_REMOVED"],
+          payload: _this.props.files.filter(function (fl, i) {
+            return index !== i;
+          })
+        });
+      };
+    }, _this.previewUploads = function (files) {
+      return files.map(function (file, i) {
+        return external__react__default.a.createElement(
+          external__semantic_ui_react_["List"].Item,
+          { key: i, __source: {
+              fileName: FileUploader__jsxFileName,
+              lineNumber: 47
+            },
+            __self: _this2
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Content,
+            { floated: 'right', __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 48
+              },
+              __self: _this2
+            },
+            external__react__default.a.createElement(
+              'a',
+              {
+                __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 49
+                },
+                __self: _this2
+              },
+              external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { onClick: _this.removeFile(i), name: 'remove', size: 'large', __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 49
+                },
+                __self: _this2
+              })
+            )
+          ),
+          external__react__default.a.createElement(external__semantic_ui_react_["Image"], { size: 'mini', src: FileUploader_uploadPreviewSrc(file), __source: {
+              fileName: FileUploader__jsxFileName,
+              lineNumber: 51
+            },
+            __self: _this2
+          }),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Content,
+            {
+              __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 52
+              },
+              __self: _this2
+            },
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Header,
+              { as: 'a', __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 53
+                },
+                __self: _this2
+              },
+              file.name
+            ),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Description,
+              {
+                __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 54
+                },
+                __self: _this2
+              },
+              'content-type: ',
+              external__react__default.a.createElement(
+                'b',
+                {
+                  __source: {
+                    fileName: FileUploader__jsxFileName,
+                    lineNumber: 54
+                  },
+                  __self: _this2
+                },
+                file.type
+              ),
+              external__react__default.a.createElement(
+                'span',
+                { style: { marginLeft: '20px' }, __source: {
+                    fileName: FileUploader__jsxFileName,
+                    lineNumber: 54
+                  },
+                  __self: _this2
+                },
+                ' Last Modified: ',
+                external__react__default.a.createElement(
+                  'b',
+                  {
+                    __source: {
+                      fileName: FileUploader__jsxFileName,
+                      lineNumber: 54
+                    },
+                    __self: _this2
+                  },
+                  ' ',
+                  external__moment__default()(new Date(file.lastModified), "YYYYMMDD").fromNow()
+                )
+              )
+            )
+          )
+        );
+      });
+    }, _this.cancelUpload = function () {
+      return _this.props.dispatch({
+        type: external__constants_["CANCEL_FILE_UPLOAD"]
+      });
+    }, _temp), FileUploader__possibleConstructorReturn(_this, _ret);
+  }
+
+  FileUploader__createClass(FileUploader, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          syncing = _props.syncing,
+          files = _props.files,
+          dispatch = _props.dispatch,
+          action = _props.action,
+          method = _props.method;
+
+      return external__react__default.a.createElement(
+        'section',
+        {
+          __source: {
+            fileName: FileUploader__jsxFileName,
+            lineNumber: 64
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          'form',
+          {
+            name: 'uploadForm',
+            onSubmit: this.uploadToS3,
+            encType: 'multipart/form-data',
+            action: action,
+            method: method, __source: {
+              fileName: FileUploader__jsxFileName,
+              lineNumber: 65
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Header"],
+            { textAlign: 'center', __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 71
+              },
+              __self: this
+            },
+            'Upload Records'
+          ),
+          external__react__default.a.createElement(
+            external__react_dropzone__default.a,
+            {
+              name: 'files',
+              className: 'dropzone-element',
+              activeClassName: 'dropzone-element-active',
+              acceptClassName: 'dropzone-element-accept',
+              rejectClassName: 'dropzone-element-reject',
+              onDrop: this.fileDrop, __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 72
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["Header"],
+              { textAlign: 'center', color: 'grey', __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 79
+                },
+                __self: this
+              },
+              'Just Drag And Drop Files'
+            )
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Modal"],
+          { open: files.length > 0, __source: {
+              fileName: FileUploader__jsxFileName,
+              lineNumber: 82
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Modal"].Header,
+            {
+              __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 83
+              },
+              __self: this
+            },
+            'Files To Be Uploaded'
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Modal"].Content,
+            {
+              __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 84
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["Dimmer"],
+              { blurring: true, active: syncing, __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 85
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["Loader"],
+                { indeterminate: true, __source: {
+                    fileName: FileUploader__jsxFileName,
+                    lineNumber: 86
+                  },
+                  __self: this
+                },
+                'Uploading Files'
+              )
+            ),
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"],
+              {
+                __source: {
+                  fileName: FileUploader__jsxFileName,
+                  lineNumber: 88
+                },
+                __self: this
+              },
+              this.previewUploads(files)
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Modal"].Actions,
+            {
+              __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 92
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { secondary: true, onClick: this.cancelUpload, labelPosition: 'right', content: 'Cancel', __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 93
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { color: 'blue', onClick: this.uploadToS3, type: 'submit', icon: 'checkmark', labelPosition: 'right', content: 'Upload', __source: {
+                fileName: FileUploader__jsxFileName,
+                lineNumber: 94
+              },
+              __self: this
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return FileUploader;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var components_FileUploader = (FileUploader_FileUploader);
+// CONCATENATED MODULE: ./src/shared/components/RecordsList.js
+var RecordsList__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var RecordsList__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/RecordsList.js',
+    RecordsList__this = this;
+
+function RecordsList__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function RecordsList__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function RecordsList__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var RecordsList_recordSrc = function recordSrc(_ref) {
+  var src = _ref.src,
+      type = _ref.type;
+  return type.includes('image') ? external__constants_["CDN_URI"] + src : external__constants_["CDN_URI"] + 'record-upload-icon.png';
+};
+var RecordsList_updatedSince = function updatedSince(_ref2) {
+  var updatedAt = _ref2.updatedAt;
+  return external__moment__default()(new Date(updatedAt), "YYYYMMDD").fromNow();
+};
+
+var compareDates = function compareDates(a, b) {
+  if (a.updatedAt < b.updatedAt) return -1;
+  if (a.updatedAt > b.updatedAt) return 1;
+  return 0;
+};
+
+var RecordToSortedList = function RecordToSortedList(records) {
+  return Object.keys(records).map(function (recKey) {
+    return records[recKey];
+  }).sort(compareDates);
+};
+
+var recordsQty = function recordsQty(data) {
+  return {
+    value: Object.keys(data).length,
+    label: 'Qty of Records'
+  };
+};
+
+var RecordsList_lastUpdate = function lastUpdate(data) {
+  return {
+    value: external__moment__default()(new Date(Math.max(Object.keys(data).map(function (recordKey) {
+      return new Date(data[recordKey].updatedAt).getTime();
+    }))), "YYYYMMDD").fromNow(),
+    label: 'Most Recent Update'
+  };
+};
+
+var RecordsList_BloodPressure = function BloodPressure(data) {
+  return {
+    value: {
+      content: external__react__default.a.createElement(
+        'span',
+        {
+          __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 48
+          },
+          __self: RecordsList__this
+        },
+        '180',
+        external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'heart', __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 50
+          },
+          __self: RecordsList__this
+        })
+      )
+    },
+    label: 'Blood Pressure'
+  };
+};
+
+var Something = function Something(data) {
+  return { value: 838383, label: 'A Stat' };
+};
+
+var calcStats = function calcStats(data) {
+  return [recordsQty, RecordsList_lastUpdate, RecordsList_BloodPressure, Something].map(function (statFn) {
+    return statFn(data);
+  });
+};
+
+var RecordsList_RecordsList = function (_PureComponent) {
+  RecordsList__inherits(RecordsList, _PureComponent);
+
+  function RecordsList() {
+    var _ref3;
+
+    var _temp, _this2, _ret;
+
+    RecordsList__classCallCheck(this, RecordsList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this2 = RecordsList__possibleConstructorReturn(this, (_ref3 = RecordsList.__proto__ || Object.getPrototypeOf(RecordsList)).call.apply(_ref3, [this].concat(args))), _this2), _this2.mapRecords = function (records) {
+      return records.map(function (record) {
+        return {
+          date: RecordsList_updatedSince(record),
+          image: RecordsList_recordSrc(record),
+          meta: record.type,
+          summary: 'Some summary of the record'
+        };
+      });
+    }, _temp), RecordsList__possibleConstructorReturn(_this2, _ret);
+  }
+
+  RecordsList__createClass(RecordsList, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          dispatch = _props.dispatch,
+          patient = _props.patient;
+
+      var patientRecords = patient.records ? JSON.parse(patient.records) : {};
+      var statList = patientRecords.length ? calcStats() : [];
+      return external__react__default.a.createElement(
+        'section',
+        {
+          __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(external__semantic_ui_react_["Statistic"].Group, { widths: 'four', items: statList, __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 79
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Header"],
+          {
+            __source: {
+              fileName: RecordsList__jsxFileName,
+              lineNumber: 80
+            },
+            __self: this
+          },
+          'Patient Records'
+        ),
+        external__react__default.a.createElement(external__semantic_ui_react_["Divider"], {
+          __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 83
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(external__semantic_ui_react_["Feed"], { events: this.mapRecords(RecordToSortedList(patientRecords)), __source: {
+            fileName: RecordsList__jsxFileName,
+            lineNumber: 84
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return RecordsList;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var components_RecordsList = (RecordsList_RecordsList);
+// CONCATENATED MODULE: ./src/shared/components/AppointmentsList.js
+var AppointmentsList__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/AppointmentsList.js';
+
+var AppointmentsList__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function AppointmentsList__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentsList__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentsList__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var AppointmentsList_AppointmentsList = function (_PureComponent) {
+  AppointmentsList__inherits(AppointmentsList, _PureComponent);
+
+  function AppointmentsList() {
+    var _ref,
+        _this2 = this;
+
+    var _temp, _this, _ret;
+
+    AppointmentsList__classCallCheck(this, AppointmentsList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = AppointmentsList__possibleConstructorReturn(this, (_ref = AppointmentsList.__proto__ || Object.getPrototypeOf(AppointmentsList)).call.apply(_ref, [this].concat(args))), _this), _this.appointmentListItem = function (_ref2) {
+      var id = _ref2.id,
+          purpose = _ref2.purpose,
+          description = _ref2.description,
+          date = _ref2.date,
+          time = _ref2.time;
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["List"].Item,
+        { key: id, __source: {
+            fileName: AppointmentsList__jsxFileName,
+            lineNumber: 17
+          },
+          __self: _this2
+        },
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"].Content,
+          { floated: 'right', __source: {
+              fileName: AppointmentsList__jsxFileName,
+              lineNumber: 18
+            },
+            __self: _this2
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Button"],
+            {
+              __source: {
+                fileName: AppointmentsList__jsxFileName,
+                lineNumber: 19
+              },
+              __self: _this2
+            },
+            'View'
+          )
+        ),
+        external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: external__constants_["CDN_URI"] + 'calendar-icon.png', __source: {
+            fileName: AppointmentsList__jsxFileName,
+            lineNumber: 21
+          },
+          __self: _this2
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["List"].Content,
+          {
+            __source: {
+              fileName: AppointmentsList__jsxFileName,
+              lineNumber: 22
+            },
+            __self: _this2
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Header,
+            { as: 'a', __source: {
+                fileName: AppointmentsList__jsxFileName,
+                lineNumber: 23
+              },
+              __self: _this2
+            },
+            purpose
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"].Description,
+            {
+              __source: {
+                fileName: AppointmentsList__jsxFileName,
+                lineNumber: 24
+              },
+              __self: _this2
+            },
+            description,
+            external__react__default.a.createElement(
+              'strong',
+              { style: { marginLeft: '20px' }, __source: {
+                  fileName: AppointmentsList__jsxFileName,
+                  lineNumber: 26
+                },
+                __self: _this2
+              },
+              external__moment__default()(new Date(time)).calendar()
+            )
+          )
+        )
+      );
+    }, _temp), AppointmentsList__possibleConstructorReturn(_this, _ret);
+  }
+
+  AppointmentsList__createClass(AppointmentsList, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          patient = _props.patient,
+          appointments = _props.appointments;
+
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["List"],
+        {
+          __source: {
+            fileName: AppointmentsList__jsxFileName,
+            lineNumber: 34
+          },
+          __self: this
+        },
+        appointments.filter(function (app) {
+          return app.patientId === patient.id;
+        }).map(this.appointmentListItem)
+      );
+    }
+  }]);
+
+  return AppointmentsList;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var components_AppointmentsList = (AppointmentsList_AppointmentsList);
+// CONCATENATED MODULE: ./src/shared/components/PatientInfo.js
+var PatientInfo__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/PatientInfo.js';
+
+var PatientInfo__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function PatientInfo__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function PatientInfo__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function PatientInfo__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var PatientInfo_PatientInfo = function (_PureComponent) {
+  PatientInfo__inherits(PatientInfo, _PureComponent);
+
+  function PatientInfo() {
+    PatientInfo__classCallCheck(this, PatientInfo);
+
+    return PatientInfo__possibleConstructorReturn(this, (PatientInfo.__proto__ || Object.getPrototypeOf(PatientInfo)).apply(this, arguments));
+  }
+
+  PatientInfo__createClass(PatientInfo, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          fullName = _props.fullName,
+          birthday = _props.birthday,
+          lastSeen = _props.lastSeen;
+
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["Card"],
+        {
+          __source: {
+            fileName: PatientInfo__jsxFileName,
+            lineNumber: 10
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(external__semantic_ui_react_["Image"], { src: external__constants_["CDN_URI"] + 'patient_info_photo.jpg', __source: {
+            fileName: PatientInfo__jsxFileName,
+            lineNumber: 11
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Card"].Content,
+          {
+            __source: {
+              fileName: PatientInfo__jsxFileName,
+              lineNumber: 12
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Header,
+            {
+              __source: {
+                fileName: PatientInfo__jsxFileName,
+                lineNumber: 13
+              },
+              __self: this
+            },
+            fullName
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Meta,
+            {
+              __source: {
+                fileName: PatientInfo__jsxFileName,
+                lineNumber: 14
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: PatientInfo__jsxFileName,
+                  lineNumber: 14
+                },
+                __self: this
+              },
+              'Birth Date:'
+            ),
+            external__moment__default()(new Date(birthday)).format('LL')
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Card"].Description,
+            {
+              __source: {
+                fileName: PatientInfo__jsxFileName,
+                lineNumber: 15
+              },
+              __self: this
+            },
+            'Daniel is a comedian living in Nashville.'
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Card"].Content,
+          { extra: true, __source: {
+              fileName: PatientInfo__jsxFileName,
+              lineNumber: 17
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            'a',
+            {
+              __source: {
+                fileName: PatientInfo__jsxFileName,
+                lineNumber: 18
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'user', __source: {
+                fileName: PatientInfo__jsxFileName,
+                lineNumber: 19
+              },
+              __self: this
+            }),
+            lastSeen
+          )
+        )
+      );
+    }
+  }]);
+
+  return PatientInfo;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var components_PatientInfo = (PatientInfo_PatientInfo);
+// CONCATENATED MODULE: ./src/shared/pages/doctor/PatientProfile.js
+var PatientProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientProfile.js';
+
+var PatientProfile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function PatientProfile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function PatientProfile__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function PatientProfile__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+var PatientProfile_PatientProfile = function (_PureComponent) {
+  PatientProfile__inherits(PatientProfile, _PureComponent);
 
   function PatientProfile() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, PatientProfile);
+    PatientProfile__classCallCheck(this, PatientProfile);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PatientProfile.__proto__ || Object.getPrototypeOf(PatientProfile)).call.apply(_ref, [this].concat(args))), _this), _this.toggleDisplay = function (display) {
+    return _ret = (_temp = (_this = PatientProfile__possibleConstructorReturn(this, (_ref = PatientProfile.__proto__ || Object.getPrototypeOf(PatientProfile)).call.apply(_ref, [this].concat(args))), _this), _this.toggleDisplay = function (display) {
       return function () {
         return _this.props.dispatch({
-          type: _constants.PATIENT_TAB_SELECTED,
+          type: external__constants_["PATIENT_TAB_SELECTED"],
           payload: display
         });
       };
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _temp), PatientProfile__possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(PatientProfile, [{
+  PatientProfile__createClass(PatientProfile, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.props.dispatch({ type: _constants.EXIT_PATIENT_VIEW });
+      this.props.dispatch({ type: external__constants_["EXIT_PATIENT_VIEW"] });
     }
   }, {
     key: 'render',
@@ -1417,130 +1775,130 @@ var PatientProfile = function (_PureComponent) {
           files = _props$files === undefined ? [] : _props$files;
 
       var patient = patients.byId[match.params.id];
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'div',
         {
           __source: {
-            fileName: _jsxFileName,
+            fileName: PatientProfile__jsxFileName,
             lineNumber: 40
           },
           __self: this
         },
-        _react2.default.createElement(
+        external__react__default.a.createElement(
           'h1',
           {
             __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 41
             },
             __self: this
           },
           patient.fullName
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Menu,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Menu"],
           { pointing: true, secondary: true, __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 42
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Info', active: display === 'info', onClick: this.toggleDisplay('info'), __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Menu"].Item, { name: 'Info', active: display === 'info', onClick: this.toggleDisplay('info'), __source: {
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 43
             },
             __self: this
           }),
-          _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Appointments', active: display === 'appointments', onClick: this.toggleDisplay('appointments'), __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Menu"].Item, { name: 'Appointments', active: display === 'appointments', onClick: this.toggleDisplay('appointments'), __source: {
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 44
             },
             __self: this
           }),
-          _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Records', active: display === 'records', onClick: this.toggleDisplay('records'), __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Menu"].Item, { name: 'Records', active: display === 'records', onClick: this.toggleDisplay('records'), __source: {
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 45
             },
             __self: this
           }),
-          _react2.default.createElement(
-            _semanticUiReact.Menu.Menu,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Menu"].Menu,
             { position: 'right', __source: {
-                fileName: _jsxFileName,
+                fileName: PatientProfile__jsxFileName,
                 lineNumber: 46
               },
               __self: this
             },
-            _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Upload Records', active: display === 'upload', onClick: this.toggleDisplay('upload'), __source: {
-                fileName: _jsxFileName,
+            external__react__default.a.createElement(external__semantic_ui_react_["Menu"].Item, { name: 'Upload Records', active: display === 'upload', onClick: this.toggleDisplay('upload'), __source: {
+                fileName: PatientProfile__jsxFileName,
                 lineNumber: 47
               },
               __self: this
             })
           )
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Segment,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Segment"],
           { className: display === 'upload' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 50
             },
             __self: this
           },
-          _react2.default.createElement(_FileUploader2.default, {
+          external__react__default.a.createElement(components_FileUploader, {
             syncing: syncing,
             files: files,
             dispatch: this.props.dispatch,
             patientId: patient.id,
             action: '/patients/' + patient.id,
             method: 'post', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 51
             },
             __self: this
           })
         ),
-        _react2.default.createElement(
+        external__react__default.a.createElement(
           'section',
           { className: display === 'info' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 59
             },
             __self: this
           },
-          _react2.default.createElement(_PatientInfo2.default, Object.assign({ dispatch: dispatch }, patient, {
+          external__react__default.a.createElement(components_PatientInfo, Object.assign({ dispatch: dispatch }, patient, {
             __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 60
             },
             __self: this
           }))
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Segment,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Segment"],
           { className: display === 'appointments' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 62
             },
             __self: this
           },
-          _react2.default.createElement(_AppointmentsList2.default, { dispatch: dispatch, patient: patient, appointments: appointments, __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(components_AppointmentsList, { dispatch: dispatch, patient: patient, appointments: appointments, __source: {
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 63
             },
             __self: this
           })
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Segment,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Segment"],
           { className: display === 'records' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 65
             },
             __self: this
           },
-          _react2.default.createElement(_RecordsList2.default, { dispatch: dispatch, patient: patient, __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(components_RecordsList, { dispatch: dispatch, patient: patient, __source: {
+              fileName: PatientProfile__jsxFileName,
               lineNumber: 66
             },
             __self: this
@@ -1551,433 +1909,110 @@ var PatientProfile = function (_PureComponent) {
   }]);
 
   return PatientProfile;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = PatientProfile;
+/* harmony default export */ var doctor_PatientProfile = (PatientProfile_PatientProfile);
+// EXTERNAL MODULE: external "react-big-calendar"
+var external__react_big_calendar_ = __webpack_require__(15);
+var external__react_big_calendar__default = /*#__PURE__*/__webpack_require__.n(external__react_big_calendar_);
 
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
+// EXTERNAL MODULE: ./src/shared/styles/BigCalendar.css
+var BigCalendar = __webpack_require__(16);
+var BigCalendar_default = /*#__PURE__*/__webpack_require__.n(BigCalendar);
 
-"use strict";
+// CONCATENATED MODULE: ./src/shared/components/CalendarDisplay.js
+var CalendarDisplay__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/CalendarDisplay.js';
+
+var CalendarDisplay__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function CalendarDisplay__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function CalendarDisplay__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function CalendarDisplay__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/FileUploader.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _semanticUiReact = __webpack_require__(1);
+external__react_big_calendar__default.a.setLocalizer(external__react_big_calendar__default.a.momentLocalizer(external__moment__default.a));
 
-__webpack_require__(7);
+var CalendarDisplay_CalendarDisplay = function (_PureComponent) {
+  CalendarDisplay__inherits(CalendarDisplay, _PureComponent);
 
-var _reactDropzone = __webpack_require__(6);
+  function CalendarDisplay() {
+    CalendarDisplay__classCallCheck(this, CalendarDisplay);
 
-var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
-
-var _moment = __webpack_require__(5);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var uploadPreviewSrc = function uploadPreviewSrc(_ref) {
-  var preview = _ref.preview,
-      type = _ref.type;
-  return type.includes('image') ? preview : _constants.CDN_URI + 'record-upload-icon.png';
-};
-
-var FileUploader = function (_PureComponent) {
-  _inherits(FileUploader, _PureComponent);
-
-  function FileUploader() {
-    var _ref2,
-        _this2 = this;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, FileUploader);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call.apply(_ref2, [this].concat(args))), _this), _this.fileDrop = function (files) {
-      console.log('files', files);
-      _this.props.dispatch({ type: _constants.PATIENT_FILES_DROPPED, payload: files });
-    }, _this.uploadToS3 = function (e) {
-      e.preventDefault();
-      var _this$props = _this.props,
-          action = _this$props.action,
-          files = _this$props.files;
-
-      var formData = new FormData(document.forms['uploadForm']);
-      files.forEach(function (file) {
-        formData.append(file.name, file, file.name);
-      });
-      fetch(action, {
-        method: 'POST',
-        body: formData
-      }).then(function (response) {
-        console.log('upload response', response);
-        _this.props.dispatch({ type: _constants.PATIENT_FILES_UPLOADED });
-      }).catch(function (error) {
-        console.log(error);
-      });
-      _this.props.dispatch({ type: _constants.PATIENT_FILES_UPLOADING });
-    }, _this.removeFile = function (index) {
-      return function (e) {
-        return _this.props.dispatch({
-          type: _constants.PATIENT_FILE_REMOVED,
-          payload: _this.props.files.filter(function (fl, i) {
-            return index !== i;
-          })
-        });
-      };
-    }, _this.previewUploads = function (files) {
-      return files.map(function (file, i) {
-        return _react2.default.createElement(
-          _semanticUiReact.List.Item,
-          { key: i, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 47
-            },
-            __self: _this2
-          },
-          _react2.default.createElement(
-            _semanticUiReact.List.Content,
-            { floated: 'right', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 48
-              },
-              __self: _this2
-            },
-            _react2.default.createElement(
-              'a',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 49
-                },
-                __self: _this2
-              },
-              _react2.default.createElement(_semanticUiReact.Icon, { onClick: _this.removeFile(i), name: 'remove', size: 'large', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 49
-                },
-                __self: _this2
-              })
-            )
-          ),
-          _react2.default.createElement(_semanticUiReact.Image, { size: 'mini', src: uploadPreviewSrc(file), __source: {
-              fileName: _jsxFileName,
-              lineNumber: 51
-            },
-            __self: _this2
-          }),
-          _react2.default.createElement(
-            _semanticUiReact.List.Content,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 52
-              },
-              __self: _this2
-            },
-            _react2.default.createElement(
-              _semanticUiReact.List.Header,
-              { as: 'a', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 53
-                },
-                __self: _this2
-              },
-              file.name
-            ),
-            _react2.default.createElement(
-              _semanticUiReact.List.Description,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 54
-                },
-                __self: _this2
-              },
-              'content-type: ',
-              _react2.default.createElement(
-                'b',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 54
-                  },
-                  __self: _this2
-                },
-                file.type
-              ),
-              _react2.default.createElement(
-                'span',
-                { style: { marginLeft: '20px' }, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 54
-                  },
-                  __self: _this2
-                },
-                ' Last Modified: ',
-                _react2.default.createElement(
-                  'b',
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 54
-                    },
-                    __self: _this2
-                  },
-                  ' ',
-                  (0, _moment2.default)(new Date(file.lastModified), "YYYYMMDD").fromNow()
-                )
-              )
-            )
-          )
-        );
-      });
-    }, _this.cancelUpload = function () {
-      return _this.props.dispatch({
-        type: _constants.CANCEL_FILE_UPLOAD
-      });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return CalendarDisplay__possibleConstructorReturn(this, (CalendarDisplay.__proto__ || Object.getPrototypeOf(CalendarDisplay)).apply(this, arguments));
   }
 
-  _createClass(FileUploader, [{
+  CalendarDisplay__createClass(CalendarDisplay, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
-          syncing = _props.syncing,
-          files = _props.files,
-          dispatch = _props.dispatch,
-          action = _props.action,
-          method = _props.method;
+          events = _props.events,
+          patients = _props.patients,
+          dispatch = _props.dispatch;
 
-      return _react2.default.createElement(
-        'section',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 64
-          },
-          __self: this
+      return external__react__default.a.createElement(external__react_big_calendar__default.a, Object.assign({}, this.props, {
+        events: events,
+        step: 15,
+        timeslots: 8,
+        defaultView: 'week',
+        defaultDate: new Date(), __source: {
+          fileName: CalendarDisplay__jsxFileName,
+          lineNumber: 12
         },
-        _react2.default.createElement(
-          'form',
-          {
-            name: 'uploadForm',
-            onSubmit: this.uploadToS3,
-            encType: 'multipart/form-data',
-            action: action,
-            method: method, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 65
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            _semanticUiReact.Header,
-            { textAlign: 'center', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 71
-              },
-              __self: this
-            },
-            'Upload Records'
-          ),
-          _react2.default.createElement(
-            _reactDropzone2.default,
-            {
-              name: 'files',
-              className: 'dropzone-element',
-              activeClassName: 'dropzone-element-active',
-              acceptClassName: 'dropzone-element-accept',
-              rejectClassName: 'dropzone-element-reject',
-              onDrop: this.fileDrop, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 72
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              _semanticUiReact.Header,
-              { textAlign: 'center', color: 'grey', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 79
-                },
-                __self: this
-              },
-              'Just Drag And Drop Files'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Modal,
-          { open: files.length > 0, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 82
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            _semanticUiReact.Modal.Header,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 83
-              },
-              __self: this
-            },
-            'Files To Be Uploaded'
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.Modal.Content,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 84
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              _semanticUiReact.Dimmer,
-              { blurring: true, active: syncing, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 85
-                },
-                __self: this
-              },
-              _react2.default.createElement(
-                _semanticUiReact.Loader,
-                { indeterminate: true, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 86
-                  },
-                  __self: this
-                },
-                'Uploading Files'
-              )
-            ),
-            _react2.default.createElement(
-              _semanticUiReact.List,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 88
-                },
-                __self: this
-              },
-              this.previewUploads(files)
-            )
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.Modal.Actions,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 92
-              },
-              __self: this
-            },
-            _react2.default.createElement(_semanticUiReact.Button, { secondary: true, onClick: this.cancelUpload, labelPosition: 'right', content: 'Cancel', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 93
-              },
-              __self: this
-            }),
-            _react2.default.createElement(_semanticUiReact.Button, { color: 'blue', onClick: this.uploadToS3, type: 'submit', icon: 'checkmark', labelPosition: 'right', content: 'Upload', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 94
-              },
-              __self: this
-            })
-          )
-        )
-      );
+        __self: this
+      }));
     }
   }]);
 
-  return FileUploader;
-}(_react.PureComponent);
+  return CalendarDisplay;
+}(external__react_["PureComponent"]);
 
-exports.default = FileUploader;
+/* harmony default export */ var components_CalendarDisplay = (CalendarDisplay_CalendarDisplay);
+// CONCATENATED MODULE: ./src/shared/pages/doctor/AppointmentsCalendar.js
+var AppointmentsCalendar__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentsCalendar.js';
 
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
+var AppointmentsCalendar__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-"use strict";
+function AppointmentsCalendar__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentsCalendar__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentsCalendar__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentsCalendar.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
 
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _CalendarDisplay = __webpack_require__(25);
-
-var _CalendarDisplay2 = _interopRequireDefault(_CalendarDisplay);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AppointmentsCalendar = function (_PureComponent) {
-  _inherits(AppointmentsCalendar, _PureComponent);
+var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
+  AppointmentsCalendar__inherits(AppointmentsCalendar, _PureComponent);
 
   function AppointmentsCalendar() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, AppointmentsCalendar);
+    AppointmentsCalendar__classCallCheck(this, AppointmentsCalendar);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (events) {
+    return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (events) {
       return events.map(function (event) {
         return Object.assign({}, event, {
           start: new Date(event.start),
           end: new Date(event.end)
         });
       });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(AppointmentsCalendar, [{
+  AppointmentsCalendar__createClass(AppointmentsCalendar, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -1986,17 +2021,17 @@ var AppointmentsCalendar = function (_PureComponent) {
           dispatch = _props.dispatch;
 
       console.log('AppointmentsCalendar this.props', this.props);
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'div',
         {
           __source: {
-            fileName: _jsxFileName,
+            fileName: AppointmentsCalendar__jsxFileName,
             lineNumber: 15
           },
           __self: this
         },
-        _react2.default.createElement(_CalendarDisplay2.default, { events: this.mapEvents(events), dispatch: dispatch, patients: patients, __source: {
-            fileName: _jsxFileName,
+        external__react__default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(events), dispatch: dispatch, patients: patients, __source: {
+            fileName: AppointmentsCalendar__jsxFileName,
             lineNumber: 16
           },
           __self: this
@@ -2006,139 +2041,38 @@ var AppointmentsCalendar = function (_PureComponent) {
   }]);
 
   return AppointmentsCalendar;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = AppointmentsCalendar;
+/* harmony default export */ var doctor_AppointmentsCalendar = (AppointmentsCalendar_AppointmentsCalendar);
+// CONCATENATED MODULE: ./src/shared/pages/doctor/AppointmentTerminal.js
+var AppointmentTerminal__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentTerminal.js';
 
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
+var AppointmentTerminal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-"use strict";
+function AppointmentTerminal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function AppointmentTerminal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/CalendarDisplay.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactBigCalendar = __webpack_require__(26);
-
-var _reactBigCalendar2 = _interopRequireDefault(_reactBigCalendar);
-
-var _moment = __webpack_require__(5);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-__webpack_require__(27);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-_reactBigCalendar2.default.setLocalizer(_reactBigCalendar2.default.momentLocalizer(_moment2.default));
-
-var CalendarDisplay = function (_PureComponent) {
-  _inherits(CalendarDisplay, _PureComponent);
-
-  function CalendarDisplay() {
-    _classCallCheck(this, CalendarDisplay);
-
-    return _possibleConstructorReturn(this, (CalendarDisplay.__proto__ || Object.getPrototypeOf(CalendarDisplay)).apply(this, arguments));
-  }
-
-  _createClass(CalendarDisplay, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          events = _props.events,
-          patients = _props.patients,
-          dispatch = _props.dispatch;
-
-      return _react2.default.createElement(_reactBigCalendar2.default, Object.assign({}, this.props, {
-        events: events,
-        step: 15,
-        timeslots: 8,
-        defaultView: 'week',
-        defaultDate: new Date(), __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        },
-        __self: this
-      }));
-    }
-  }]);
-
-  return CalendarDisplay;
-}(_react.PureComponent);
-
-exports.default = CalendarDisplay;
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-big-calendar");
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+function AppointmentTerminal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentTerminal.js';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AppointmentTerminal = function (_PureComponent) {
-  _inherits(AppointmentTerminal, _PureComponent);
+var AppointmentTerminal_AppointmentTerminal = function (_PureComponent) {
+  AppointmentTerminal__inherits(AppointmentTerminal, _PureComponent);
 
   function AppointmentTerminal() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, AppointmentTerminal);
+    AppointmentTerminal__classCallCheck(this, AppointmentTerminal);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = AppointmentTerminal__possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       activeIndex: 0
     }, _this.handleClick = function (e, titleProps) {
       var index = titleProps.index;
@@ -2147,52 +2081,52 @@ var AppointmentTerminal = function (_PureComponent) {
       var newIndex = activeIndex === index ? -1 : index;
 
       _this.setState({ activeIndex: newIndex });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _temp), AppointmentTerminal__possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(AppointmentTerminal, [{
+  AppointmentTerminal__createClass(AppointmentTerminal, [{
     key: 'render',
     value: function render() {
       var activeIndex = this.state.activeIndex;
 
 
-      return _react2.default.createElement(
-        _semanticUiReact.Accordion,
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["Accordion"],
         { styled: true, __source: {
-            fileName: _jsxFileName,
+            fileName: AppointmentTerminal__jsxFileName,
             lineNumber: 23
           },
           __self: this
         },
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Title,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
           { active: activeIndex === 0, index: 0, onClick: this.handleClick, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 24
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 25
             },
             __self: this
           }),
           'What is a dog?'
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Content,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
           { active: activeIndex === 0, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 28
             },
             __self: this
           },
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: AppointmentTerminal__jsxFileName,
                 lineNumber: 29
               },
               __self: this
@@ -2202,35 +2136,35 @@ var AppointmentTerminal = function (_PureComponent) {
             'welcome guest in many households across the world.'
           )
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Title,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
           { active: activeIndex === 1, index: 1, onClick: this.handleClick, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 34
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 35
             },
             __self: this
           }),
           'What kinds of dogs are there?'
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Content,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
           { active: activeIndex === 1, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 38
             },
             __self: this
           },
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: AppointmentTerminal__jsxFileName,
                 lineNumber: 39
               },
               __self: this
@@ -2240,46 +2174,46 @@ var AppointmentTerminal = function (_PureComponent) {
             'dog that they find to be compatible with their own lifestyle and desires from a companion.'
           )
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Title,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Title,
           { active: activeIndex === 2, index: 2, onClick: this.handleClick, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 44
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown', __source: {
-              fileName: _jsxFileName,
+          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 45
             },
             __self: this
           }),
           'How do you acquire a dog?'
         ),
-        _react2.default.createElement(
-          _semanticUiReact.Accordion.Content,
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Accordion"].Content,
           { active: activeIndex === 2, __source: {
-              fileName: _jsxFileName,
+              fileName: AppointmentTerminal__jsxFileName,
               lineNumber: 48
             },
             __self: this
           },
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: AppointmentTerminal__jsxFileName,
                 lineNumber: 49
               },
               __self: this
             },
             'Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.'
           ),
-          _react2.default.createElement(
+          external__react__default.a.createElement(
             'p',
             {
               __source: {
-                fileName: _jsxFileName,
+                fileName: AppointmentTerminal__jsxFileName,
                 lineNumber: 52
               },
               __self: this
@@ -2296,73 +2230,55 @@ var AppointmentTerminal = function (_PureComponent) {
   }]);
 
   return AppointmentTerminal;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = AppointmentTerminal;
+/* harmony default export */ var doctor_AppointmentTerminal = (AppointmentTerminal_AppointmentTerminal);
+// CONCATENATED MODULE: ./src/shared/pages/doctor/Profile.js
+var Profile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
+var Profile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Profile.js',
+    Profile__this = this;
 
-"use strict";
+function Profile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Profile__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Profile__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Profile.js',
-    _this = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var extraStat = function extraStat(num) {
-  return _react2.default.createElement(
+var Profile_extraStat = function extraStat(num) {
+  return external__react__default.a.createElement(
     'a',
     {
       __source: {
-        fileName: _jsxFileName,
+        fileName: Profile__jsxFileName,
         lineNumber: 5
       },
-      __self: _this
+      __self: Profile__this
     },
-    _react2.default.createElement(_semanticUiReact.Icon, { name: 'doctor', __source: {
-        fileName: _jsxFileName,
+    external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'doctor', __source: {
+        fileName: Profile__jsxFileName,
         lineNumber: 6
       },
-      __self: _this
+      __self: Profile__this
     }),
     num,
     ' Patients'
   );
 };
 
-var Profile = function (_PureComponent) {
-  _inherits(Profile, _PureComponent);
+var Profile_Profile = function (_PureComponent) {
+  Profile__inherits(Profile, _PureComponent);
 
   function Profile() {
-    _classCallCheck(this, Profile);
+    Profile__classCallCheck(this, Profile);
 
-    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
+    return Profile__possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
   }
 
-  _createClass(Profile, [{
+  Profile__createClass(Profile, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -2372,88 +2288,88 @@ var Profile = function (_PureComponent) {
           photo = _props.photo,
           specialty = _props.specialty;
 
-      return _react2.default.createElement(
+      return external__react__default.a.createElement(
         'div',
         { className: 'ui grid', __source: {
-            fileName: _jsxFileName,
+            fileName: Profile__jsxFileName,
             lineNumber: 15
           },
           __self: this
         },
-        _react2.default.createElement(
+        external__react__default.a.createElement(
           'div',
           { className: 'ten wide left floated column', __source: {
-              fileName: _jsxFileName,
+              fileName: Profile__jsxFileName,
               lineNumber: 16
             },
             __self: this
           },
-          _react2.default.createElement(
-            _semanticUiReact.List,
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["List"],
             { relaxed: 'very', __source: {
-                fileName: _jsxFileName,
+                fileName: Profile__jsxFileName,
                 lineNumber: 17
               },
               __self: this
             },
-            _react2.default.createElement(
-              _semanticUiReact.List.Item,
+            external__react__default.a.createElement(
+              external__semantic_ui_react_["List"].Item,
               {
                 __source: {
-                  fileName: _jsxFileName,
+                  fileName: Profile__jsxFileName,
                   lineNumber: 18
                 },
                 __self: this
               },
-              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'calendar-icon.png', __source: {
-                  fileName: _jsxFileName,
+              external__react__default.a.createElement(external__semantic_ui_react_["Image"], { avatar: true, src: external__constants_["CDN_URI"] + 'calendar-icon.png', __source: {
+                  fileName: Profile__jsxFileName,
                   lineNumber: 19
                 },
                 __self: this
               }),
-              _react2.default.createElement(
-                _semanticUiReact.List.Content,
+              external__react__default.a.createElement(
+                external__semantic_ui_react_["List"].Content,
                 {
                   __source: {
-                    fileName: _jsxFileName,
+                    fileName: Profile__jsxFileName,
                     lineNumber: 20
                   },
                   __self: this
                 },
-                _react2.default.createElement(
-                  _semanticUiReact.List.Header,
+                external__react__default.a.createElement(
+                  external__semantic_ui_react_["List"].Header,
                   { as: 'a', __source: {
-                      fileName: _jsxFileName,
+                      fileName: Profile__jsxFileName,
                       lineNumber: 21
                     },
                     __self: this
                   },
                   'Feed Item'
                 ),
-                _react2.default.createElement(
-                  _semanticUiReact.List.Description,
+                external__react__default.a.createElement(
+                  external__semantic_ui_react_["List"].Description,
                   {
                     __source: {
-                      fileName: _jsxFileName,
+                      fileName: Profile__jsxFileName,
                       lineNumber: 22
                     },
                     __self: this
                   },
                   'Here I will list events that occurred on this table item',
-                  _react2.default.createElement(
+                  external__react__default.a.createElement(
                     'a',
                     {
                       __source: {
-                        fileName: _jsxFileName,
+                        fileName: Profile__jsxFileName,
                         lineNumber: 23
                       },
                       __self: this
                     },
-                    _react2.default.createElement(
+                    external__react__default.a.createElement(
                       'b',
                       {
                         __source: {
-                          fileName: _jsxFileName,
+                          fileName: Profile__jsxFileName,
                           lineNumber: 24
                         },
                         __self: this
@@ -2467,21 +2383,21 @@ var Profile = function (_PureComponent) {
             )
           )
         ),
-        _react2.default.createElement(
+        external__react__default.a.createElement(
           'div',
           { className: 'six wide right floated column', __source: {
-              fileName: _jsxFileName,
+              fileName: Profile__jsxFileName,
               lineNumber: 31
             },
             __self: this
           },
-          _react2.default.createElement(_semanticUiReact.Card, {
+          external__react__default.a.createElement(external__semantic_ui_react_["Card"], {
             image: 'https://dq8llwxgkllay.cloudfront.net/' + photo,
             header: fullName,
             meta: specialty,
-            extra: extraStat(patients.resource.length),
+            extra: Profile_extraStat(patients.resource.length),
             description: 'John Hopkins MD', __source: {
-              fileName: _jsxFileName,
+              fileName: Profile__jsxFileName,
               lineNumber: 32
             },
             __self: this
@@ -2492,74 +2408,226 @@ var Profile = function (_PureComponent) {
   }]);
 
   return Profile;
-}(_react.PureComponent);
+}(external__react_["PureComponent"]);
 
-exports.default = Profile;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+/* harmony default export */ var doctor_Profile = (Profile_Profile);
+// CONCATENATED MODULE: ./src/shared/pages/doctor/index.js
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _server = __webpack_require__(31);
+
+
+
+
+
+// CONCATENATED MODULE: ./src/shared/containers/MainContainer.js
+var MainContainer__jsxFileName = '/Users/pete/docs-r-us/src/shared/containers/MainContainer.js';
+
+var MainContainer__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function MainContainer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function MainContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function MainContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var WrapperClass = {
+  '/': 'main'
+};
+
+var selectState = function selectState(state) {
+  return state;
+};
+
+var MainContainer_MainContainer = function (_PureComponent) {
+  MainContainer__inherits(MainContainer, _PureComponent);
+
+  function MainContainer(props) {
+    MainContainer__classCallCheck(this, MainContainer);
+
+    return MainContainer__possibleConstructorReturn(this, (MainContainer.__proto__ || Object.getPrototypeOf(MainContainer)).call(this, props));
+  }
+
+  MainContainer__createClass(MainContainer, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          dispatch = _props.dispatch,
+          location = _props.location,
+          match = _props.match,
+          currentUser = _props.currentUser,
+          appointments = _props.appointments,
+          patients = _props.patients,
+          patientProfile = _props.patientProfile,
+          patientsView = _props.patientsView,
+          calendarView = _props.calendarView;
+
+      console.log('MainContainer this.props', this.props);
+      return external__react__default.a.createElement(
+        'section',
+        { className: WrapperClass[location.pathname] || 'main', __source: {
+            fileName: MainContainer__jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(components_TopNav, { navStuck: false, __source: {
+            fileName: MainContainer__jsxFileName,
+            lineNumber: 49
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(components_SideNav, { location: location, __source: {
+            fileName: MainContainer__jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }),
+        external__react__default.a.createElement(
+          'div',
+          { className: true ? 'page-content' : 'page-content', __source: {
+              fileName: MainContainer__jsxFileName,
+              lineNumber: 51
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__react_router_dom_["Switch"],
+            {
+              __source: {
+                fileName: MainContainer__jsxFileName,
+                lineNumber: 52
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 53
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(doctor_Home, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 54
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/patients', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 56
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(doctor_PatientsView, Object.assign({ currentUser: currentUser }, patientsView, { patients: patients, dispatch: dispatch, location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 57
+                },
+                __self: this
+              }))
+            ),
+            external__react__default.a.createElement(external__react_router_dom_["Route"], { path: '/patient/:id', render: function render(props) {
+                return external__react__default.a.createElement(doctor_PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
+                  __source: {
+                    fileName: MainContainer__jsxFileName,
+                    lineNumber: 60
+                  },
+                  __self: _this2
+                }));
+              }, __source: {
+                fileName: MainContainer__jsxFileName,
+                lineNumber: 59
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/calendar', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 62
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(doctor_AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { patients: patients, dispatch: dispatch, location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 63
+                },
+                __self: this
+              }))
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { path: '/appointment/:id', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 65
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(doctor_AppointmentTerminal, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 66
+                },
+                __self: this
+              })
+            ),
+            external__react__default.a.createElement(
+              external__react_router_dom_["Route"],
+              { exact: true, path: '/profile', __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 68
+                },
+                __self: this
+              },
+              external__react__default.a.createElement(doctor_Profile, Object.assign({ appointments: appointments, patients: patients }, currentUser, { location: location, __source: {
+                  fileName: MainContainer__jsxFileName,
+                  lineNumber: 69
+                },
+                __self: this
+              }))
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return MainContainer;
+}(external__react_["PureComponent"]);
+
+/* harmony default export */ var containers_MainContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(selectState)(MainContainer_MainContainer)));
+// EXTERNAL MODULE: external "react-dom/server"
+var server_ = __webpack_require__(17);
+var server__default = /*#__PURE__*/__webpack_require__.n(server_);
+
+// CONCATENATED MODULE: ./src/server/render_page.js
 
 var prodEnv = process.env.NODE_ENV === 'production';
 var assetBase = prodEnv ? 'https://dq8llwxgkllay.cloudfront.net/public' : '';
 
-var RenderPage = function RenderPage(content, preloadedState) {
-  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/docs-r-us-logo.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + (0, _server.renderToString)(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
+var render_page_RenderPage = function RenderPage(content, preloadedState) {
+  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + Object(server_["renderToString"])(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
 };
 
-exports.default = RenderPage;
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom/server");
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.normalizeDoctorState = exports.setPatientState = undefined;
-
-var _setPatientState = __webpack_require__(33);
-
-var _setPatientState2 = _interopRequireDefault(_setPatientState);
-
-var _normalizeDoctorState = __webpack_require__(34);
-
-var _normalizeDoctorState2 = _interopRequireDefault(_normalizeDoctorState);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.setPatientState = _setPatientState2.default;
-exports.normalizeDoctorState = _normalizeDoctorState2.default;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
+/* harmony default export */ var render_page = (render_page_RenderPage);
+// CONCATENATED MODULE: ./src/shared/state/setPatientState.js
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var setPatientState = function setPatientState(_ref) {
@@ -2575,20 +2643,9 @@ var setPatientState = function setPatientState(_ref) {
     };
 };
 
-exports.default = setPatientState;
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+/* harmony default export */ var state_setPatientState = (setPatientState);
+// CONCATENATED MODULE: ./src/shared/state/normalizeDoctorState.js
+function normalizeDoctorState__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var addHours = function addHours(date) {
   return function (h) {
@@ -2611,7 +2668,7 @@ var indexResource = function indexResource(list) {
 var normalizeDoctorState = function normalizeDoctorState(_ref) {
   var patients = _ref.patients,
       appointments = _ref.appointments,
-      userData = _objectWithoutProperties(_ref, ['patients', 'appointments']);
+      userData = normalizeDoctorState__objectWithoutProperties(_ref, ['patients', 'appointments']);
 
   return {
     patients: indexResource(patients),
@@ -2652,99 +2709,30 @@ var normalizeDoctorState = function normalizeDoctorState(_ref) {
   };
 };
 
-exports.default = normalizeDoctorState;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+/* harmony default export */ var state_normalizeDoctorState = (normalizeDoctorState);
+// CONCATENATED MODULE: ./src/shared/state/index.js
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.buildServerStore = exports.buildClientStore = undefined;
-
-var _redux = __webpack_require__(8);
-
-var _reduxLogger = __webpack_require__(36);
-
-var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
-
-var _reducers = __webpack_require__(37);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var composedStore = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxLogger2.default));
-
-var buildClientStore = function buildClientStore(state) {
-  return composedStore(_redux.createStore)((0, _reducers.clientStoreBuilder)(state));
-};
-var buildServerStore = function buildServerStore(state) {
-  return (0, _redux.createStore)((0, _reducers.serverStoreBuilder)(state));
-};
-
-exports.buildClientStore = buildClientStore;
-exports.buildServerStore = buildServerStore;
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-logger");
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.clientStoreBuilder = exports.serverStoreBuilder = undefined;
+// EXTERNAL MODULE: external "redux"
+var external__redux_ = __webpack_require__(7);
+var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
 
-var _redux = __webpack_require__(8);
+// EXTERNAL MODULE: external "redux-logger"
+var external__redux_logger_ = __webpack_require__(18);
+var external__redux_logger__default = /*#__PURE__*/__webpack_require__.n(external__redux_logger_);
 
-var _doctor = __webpack_require__(38);
-
-var _doctor2 = _interopRequireDefault(_doctor);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var serverStoreBuilder = function serverStoreBuilder(state) {
-  return (0, _doctor2.default)(state);
-};
-
-var clientStoreBuilder = function clientStoreBuilder(state) {
-  return (0, _doctor2.default)(state);
-};
-
-exports.serverStoreBuilder = serverStoreBuilder;
-exports.clientStoreBuilder = clientStoreBuilder;
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+// CONCATENATED MODULE: ./src/shared/reducers/doctor.js
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _constants = __webpack_require__(3);
-
-exports.default = function (initialState) {
+/* harmony default export */ var doctor = (function (initialState) {
   return function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
-      case _constants.CONNECTED:
+      case external__constants_["CONNECTED"]:
         {
           return Object.assign({}, state, {
             connected: true,
@@ -2752,20 +2740,20 @@ exports.default = function (initialState) {
           });
           break;
         }
-      case _constants.DISCONNECTED:
+      case external__constants_["DISCONNECTED"]:
         {
           return Object.assign({}, state, {
             connected: false
           });
           break;
         }
-      case _constants.SEARCH_INPUT_UPDATE:
+      case external__constants_["SEARCH_INPUT_UPDATE"]:
         {
           return Object.assign({}, state, {
             patientsView: Object.assign({}, state.patientsView, action.payload)
           });
         }
-      case _constants.PATIENTS_VIEW_RESET:
+      case external__constants_["PATIENTS_VIEW_RESET"]:
         {
           return Object.assign({}, state, {
             patientsView: {
@@ -2776,7 +2764,7 @@ exports.default = function (initialState) {
             }
           });
         }
-      case _constants.PATIENT_TAB_SELECTED:
+      case external__constants_["PATIENT_TAB_SELECTED"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2784,7 +2772,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.EXIT_PATIENT_VIEW:
+      case external__constants_["EXIT_PATIENT_VIEW"]:
         {
           return Object.assign({}, state, {
             patientProfile: {
@@ -2794,7 +2782,7 @@ exports.default = function (initialState) {
             }
           });
         }
-      case _constants.CANCEL_FILE_UPLOAD:
+      case external__constants_["CANCEL_FILE_UPLOAD"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2803,7 +2791,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.PATIENT_FILES_DROPPED:
+      case external__constants_["PATIENT_FILES_DROPPED"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2811,7 +2799,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.PATIENT_FILE_REMOVED:
+      case external__constants_["PATIENT_FILE_REMOVED"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2819,7 +2807,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.PATIENT_FILES_UPLOADING:
+      case external__constants_["PATIENT_FILES_UPLOADING"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2827,7 +2815,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.PATIENT_FILES_UPLOADED:
+      case external__constants_["PATIENT_FILES_UPLOADED"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2836,7 +2824,7 @@ exports.default = function (initialState) {
             })
           });
         }
-      case _constants.PATIENT_FILES_DROPPED:
+      case external__constants_["PATIENT_FILES_DROPPED"]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -2847,726 +2835,144 @@ exports.default = function (initialState) {
     }
     return state;
   };
-};
-
-/***/ }),
-/* 39 */,
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
 });
+// CONCATENATED MODULE: ./src/shared/reducers/index.js
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/RecordsList.js',
-    _this = undefined;
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _moment = __webpack_require__(5);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var recordSrc = function recordSrc(_ref) {
-  var src = _ref.src,
-      type = _ref.type;
-  return type.includes('image') ? _constants.CDN_URI + src : _constants.CDN_URI + 'record-upload-icon.png';
-};
-var updatedSince = function updatedSince(_ref2) {
-  var updatedAt = _ref2.updatedAt;
-  return (0, _moment2.default)(new Date(updatedAt), "YYYYMMDD").fromNow();
+var reducers_serverStoreBuilder = function serverStoreBuilder(state) {
+  return doctor(state);
 };
 
-var compareDates = function compareDates(a, b) {
-  if (a.updatedAt < b.updatedAt) return -1;
-  if (a.updatedAt > b.updatedAt) return 1;
-  return 0;
+var reducers_clientStoreBuilder = function clientStoreBuilder(state) {
+  return doctor(state);
 };
 
-var RecordToSortedList = function RecordToSortedList(records) {
-  return Object.keys(records).map(function (recKey) {
-    return records[recKey];
-  }).sort(compareDates);
+
+// CONCATENATED MODULE: ./src/shared/store.js
+
+
+
+
+var composedStore = Object(external__redux_["compose"])(Object(external__redux_["applyMiddleware"])(external__redux_logger__default.a));
+
+var store_buildClientStore = function buildClientStore(state) {
+  return composedStore(external__redux_["createStore"])(reducers_clientStoreBuilder(state));
+};
+var store_buildServerStore = function buildServerStore(state) {
+  return Object(external__redux_["createStore"])(reducers_serverStoreBuilder(state));
 };
 
-var recordsQty = function recordsQty(data) {
-  return {
-    value: Object.keys(data).length,
-    label: 'Qty of Records'
-  };
+
+// CONCATENATED MODULE: ./src/server/index.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IndexRoute", function() { return server_IndexRoute; });
+var server__jsxFileName = '/Users/pete/docs-r-us/src/server/index.js',
+    server__this = this;
+
+
+
+
+
+
+
+
+
+var context = {
+  serverSide: true
 };
 
-var lastUpdate = function lastUpdate(data) {
-  return {
-    value: (0, _moment2.default)(new Date(Math.max(Object.keys(data).map(function (recordKey) {
-      return new Date(data[recordKey].updatedAt).getTime();
-    }))), "YYYYMMDD").fromNow(),
-    label: 'Most Recent Update'
-  };
-};
-
-var BloodPressure = function BloodPressure(data) {
-  return {
-    value: {
-      content: _react2.default.createElement(
-        'span',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 48
-          },
-          __self: _this
-        },
-        '180',
-        _react2.default.createElement(_semanticUiReact.Icon, { name: 'heart', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: _this
-        })
-      )
+var server_IndexRoute = function IndexRoute(req, res) {
+  var store = store_buildServerStore(state_normalizeDoctorState(req.user.dataValues));
+  res.send(render_page(external__react__default.a.createElement(
+    external__react_redux_["Provider"],
+    { store: store, __source: {
+        fileName: server__jsxFileName,
+        lineNumber: 21
+      },
+      __self: server__this
     },
-    label: 'Blood Pressure'
-  };
+    external__react__default.a.createElement(
+      external__react_router_dom_["StaticRouter"],
+      { location: req.url, context: context, __source: {
+          fileName: server__jsxFileName,
+          lineNumber: 22
+        },
+        __self: server__this
+      },
+      external__react__default.a.createElement(containers_MainContainer, {
+        __source: {
+          fileName: server__jsxFileName,
+          lineNumber: 23
+        },
+        __self: server__this
+      })
+    )
+  ), store.getState()));
+
+  res.end();
 };
 
-var Something = function Something(data) {
-  return { value: 838383, label: 'A Stat' };
-};
 
-var calcStats = function calcStats(data) {
-  return [recordsQty, lastUpdate, BloodPressure, Something].map(function (statFn) {
-    return statFn(data);
-  });
-};
-
-var RecordsList = function (_PureComponent) {
-  _inherits(RecordsList, _PureComponent);
-
-  function RecordsList() {
-    var _ref3;
-
-    var _temp, _this2, _ret;
-
-    _classCallCheck(this, RecordsList);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref3 = RecordsList.__proto__ || Object.getPrototypeOf(RecordsList)).call.apply(_ref3, [this].concat(args))), _this2), _this2.mapRecords = function (records) {
-      return records.map(function (record) {
-        return {
-          date: updatedSince(record),
-          image: recordSrc(record),
-          meta: record.type,
-          summary: 'Some summary of the record'
-        };
-      });
-    }, _temp), _possibleConstructorReturn(_this2, _ret);
-  }
-
-  _createClass(RecordsList, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          dispatch = _props.dispatch,
-          patient = _props.patient;
-
-      var patientRecords = patient.records ? JSON.parse(patient.records) : {};
-      var statList = patientRecords.length ? calcStats() : [];
-      return _react2.default.createElement(
-        'section',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 78
-          },
-          __self: this
-        },
-        _react2.default.createElement(_semanticUiReact.Statistic.Group, { widths: 'four', items: statList, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 79
-          },
-          __self: this
-        }),
-        _react2.default.createElement(
-          _semanticUiReact.Header,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 80
-            },
-            __self: this
-          },
-          'Patient Records'
-        ),
-        _react2.default.createElement(_semanticUiReact.Divider, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 83
-          },
-          __self: this
-        }),
-        _react2.default.createElement(_semanticUiReact.Feed, { events: this.mapRecords(RecordToSortedList(patientRecords)), __source: {
-            fileName: _jsxFileName,
-            lineNumber: 84
-          },
-          __self: this
-        })
-      );
-    }
-  }]);
-
-  return RecordsList;
-}(_react.PureComponent);
-
-exports.default = RecordsList;
 
 /***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/AppointmentsList.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(2);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _moment = __webpack_require__(5);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _constants = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AppointmentsList = function (_PureComponent) {
-  _inherits(AppointmentsList, _PureComponent);
-
-  function AppointmentsList() {
-    var _ref,
-        _this2 = this;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, AppointmentsList);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentsList.__proto__ || Object.getPrototypeOf(AppointmentsList)).call.apply(_ref, [this].concat(args))), _this), _this.appointmentListItem = function (_ref2) {
-      var id = _ref2.id,
-          purpose = _ref2.purpose,
-          description = _ref2.description,
-          date = _ref2.date,
-          time = _ref2.time;
-      return _react2.default.createElement(
-        _semanticUiReact.List.Item,
-        { key: id, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          },
-          __self: _this2
-        },
-        _react2.default.createElement(
-          _semanticUiReact.List.Content,
-          { floated: 'right', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 18
-            },
-            __self: _this2
-          },
-          _react2.default.createElement(
-            _semanticUiReact.Button,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 19
-              },
-              __self: _this2
-            },
-            'View'
-          )
-        ),
-        _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'calendar-icon.png', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          },
-          __self: _this2
-        }),
-        _react2.default.createElement(
-          _semanticUiReact.List.Content,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 22
-            },
-            __self: _this2
-          },
-          _react2.default.createElement(
-            _semanticUiReact.List.Header,
-            { as: 'a', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 23
-              },
-              __self: _this2
-            },
-            purpose
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.List.Description,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 24
-              },
-              __self: _this2
-            },
-            description,
-            _react2.default.createElement(
-              'strong',
-              { style: { marginLeft: '20px' }, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 26
-                },
-                __self: _this2
-              },
-              (0, _moment2.default)(new Date(time)).calendar()
-            )
-          )
-        )
-      );
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(AppointmentsList, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          patient = _props.patient,
-          appointments = _props.appointments;
-
-      return _react2.default.createElement(
-        _semanticUiReact.List,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 34
-          },
-          __self: this
-        },
-        appointments.filter(function (app) {
-          return app.patientId === patient.id;
-        }).map(this.appointmentListItem)
-      );
-    }
-  }]);
-
-  return AppointmentsList;
-}(_react.PureComponent);
-
-exports.default = AppointmentsList;
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/PatientInfo.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(1);
-
-var _constants = __webpack_require__(3);
-
-var _moment = __webpack_require__(5);
-
-var _moment2 = _interopRequireDefault(_moment);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var PatientInfo = function (_PureComponent) {
-  _inherits(PatientInfo, _PureComponent);
-
-  function PatientInfo() {
-    _classCallCheck(this, PatientInfo);
-
-    return _possibleConstructorReturn(this, (PatientInfo.__proto__ || Object.getPrototypeOf(PatientInfo)).apply(this, arguments));
-  }
-
-  _createClass(PatientInfo, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          fullName = _props.fullName,
-          birthday = _props.birthday,
-          lastSeen = _props.lastSeen;
-
-      return _react2.default.createElement(
-        _semanticUiReact.Card,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 10
-          },
-          __self: this
-        },
-        _react2.default.createElement(_semanticUiReact.Image, { src: _constants.CDN_URI + 'patient_info_photo.jpg', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 11
-          },
-          __self: this
-        }),
-        _react2.default.createElement(
-          _semanticUiReact.Card.Content,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 12
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            _semanticUiReact.Card.Header,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 13
-              },
-              __self: this
-            },
-            fullName
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.Card.Meta,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 14
-              },
-              __self: this
-            },
-            _react2.default.createElement(
-              'b',
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 14
-                },
-                __self: this
-              },
-              'Birth Date:'
-            ),
-            (0, _moment2.default)(new Date(birthday)).format('LL')
-          ),
-          _react2.default.createElement(
-            _semanticUiReact.Card.Description,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 15
-              },
-              __self: this
-            },
-            'Daniel is a comedian living in Nashville.'
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Card.Content,
-          { extra: true, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 17
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            'a',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 18
-              },
-              __self: this
-            },
-            _react2.default.createElement(_semanticUiReact.Icon, { name: 'user', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 19
-              },
-              __self: this
-            }),
-            lastSeen
-          )
-        )
-      );
-    }
-  }]);
-
-  return PatientInfo;
-}(_react.PureComponent);
-
-exports.default = PatientInfo;
-
-/***/ }),
-/* 43 */
+/* 9 */
 /***/ (function(module, exports) {
 
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-   value: true
-});
-function Trie(wordList, actions) {
-   var TrieContext = this;
-   function getAction(word) {
-      return actions[word] ? actions[word] : null;
-   }
-
-   function addCharToTrie(index, word, wordFragment, branch, trie, fragment) {
-      if (index === wordFragment.length) return trie;
-
-      var char = wordFragment[index];
-      var nodeWord = wordFragment.length - 1 === index ? word : null;
-      if (!branch[char]) {
-         branch[char] = {
-            word: nodeWord,
-            fragments: null,
-            action: wordFragment.length - 1 === index ? getAction(word) : null
-         };
-      }
-      if (fragment && nodeWord) {
-         var fragmentArray = branch[char].fragments ? branch[char].fragments : [];
-         branch[char].fragments = fragmentArray.concat(nodeWord);
-      }
-      return addCharToTrie(index + 1, word, wordFragment, branch[char], trie, fragment);
-   }
-
-   function getBranch(charString, trie) {
-      var branch = trie;
-      for (var i = 0; i < charString.length; i++) {
-         branch = branch[charString[i]];
-         if (!branch) return null;
-      }
-      return branch;
-   }
-   TrieContext.words = wordList;
-   TrieContext.actions = actions;
-   TrieContext.foundWordsIndex = {};
-
-   TrieContext.findWords = function (branch, lookupId) {
-      console.log(branch);
-      var list = [];
-      function mineWord(brn) {
-         if (brn.word) {
-            if (!TrieContext.foundWordsIndex[brn.word]) {
-               list.push(brn.action || brn.word);
-               TrieContext.foundWordsIndex[brn.word] = true;
-            }
-            if (list.length === TrieContext.wordLimit) return list;
-         }
-         if (brn.fragments) {
-            list.concat(brn.fragments.filter(function (txt) {
-               return !TrieContext.foundWordsIndex[txt];
-            }));
-         }
-         for (var key in brn) {
-            if (typeof brn[key] !== 'string' && brn[key] !== null && TrieContext.currentLoopup === lookupId) {
-               mineWord(brn[key]);
-            }
-         }
-         return list;
-      }
-
-      return mineWord(branch);
-   };
-   TrieContext.getWordList = function (charString) {
-      var foundWords = [];
-      TrieContext.foundWordsIndex = {};
-      if (!charString) return foundWords;
-      var branch = getBranch(charString, TrieContext.head);
-      if (!branch) return foundWords;
-      var lookupId = Math.random().toString(36).substring(18);
-      TrieContext.currentLoopup = lookupId;
-      return TrieContext.findWords(branch, lookupId);
-   };
-
-   TrieContext.head = wordList.reduce(function (head, word) {
-      var wordLowerCase = word.toLowerCase();
-      head[wordLowerCase[0]] = head[wordLowerCase[0]] ? head[wordLowerCase[0]] : {
-         word: null,
-         fragments: null,
-         action: null
-      };
-      var wordFragment = wordLowerCase;
-      var headAT = addCharToTrie(1, word, wordLowerCase, head[wordLowerCase[0]], head, false);
-      while (wordFragment.length) {
-         wordFragment = wordFragment.split(/\s+/).slice(1).join(' ');
-         if (wordFragment) {
-            headAT[wordFragment[0]] = headAT[wordFragment[0]] ? headAT[wordFragment[0]] : { word: null, fragments: null, action: null };
-            headAT = addCharToTrie(1, word, wordFragment, headAT[wordFragment[0]], headAT, true);
-         }
-      }
-      return headAT;
-   }, {});
-   TrieContext.lookup = function (letters) {
-      return TrieContext.getWordList(letters.toLowerCase());
-   };
-}
-
-function BuildTrie(wordList) {
-   var actions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-   return new Trie(wordList, actions);
-}
-
-exports.default = BuildTrie;
-
-/***/ })
-/******/ ]);
+// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 10 */
+/***/ (function(module, exports) {
 
-"use strict";
+// removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(43);
-} else {
-  module.exports = __webpack_require__(43);
-}
+// removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = require("action-autocomplete");
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dropzone");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-big-calendar");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-logger");
 
 /***/ })
 /******/ ]);

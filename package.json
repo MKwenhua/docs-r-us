@@ -6,12 +6,10 @@
   "scripts": {
     "start": "node --use_strict server.js",
     "nodemon-start": "nodemon ./server.js --ignore src/ --ignore public/",
-    "start-mon": "nodemon ./server.js --ignore src/ --exec babel-node --ignore src --ignore react_pages.js --ignore react_pages.js.map -e js",
     "local-build": "node set_up_env.js && NODE_ENV=production webpack",
     "build-dev": "NODE_ENV=development webpack",
-    "start-dev": "NODE_ENV=development node server.js &&  NODE_ENV=development webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-o": "nodemon --exec babel-node index.js"
+    "start-dev": "NODE_ENV=development webpack -w &  nodemon ./server.js --ignore src/ --ignore public/",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
     "ignore": [
