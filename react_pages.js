@@ -266,6 +266,7 @@ var MainContainer = function (_PureComponent) {
           location = _props.location,
           match = _props.match,
           currentUser = _props.currentUser,
+          appointments = _props.appointments,
           patients = _props.patients,
           patientProfile = _props.patientProfile;
 
@@ -338,7 +339,7 @@ var MainContainer = function (_PureComponent) {
               })
             ),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/patient/:id', render: function render(props) {
-                return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { patients: patients, dispatch: dispatch, location: location }, props, {
+                return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
                   __source: {
                     fileName: _jsxFileName,
                     lineNumber: 50
@@ -1413,6 +1414,18 @@ var _FileUploader = __webpack_require__(23);
 
 var _FileUploader2 = _interopRequireDefault(_FileUploader);
 
+var _RecordsList = __webpack_require__(40);
+
+var _RecordsList2 = _interopRequireDefault(_RecordsList);
+
+var _AppointmentsList = __webpack_require__(41);
+
+var _AppointmentsList2 = _interopRequireDefault(_AppointmentsList);
+
+var _PatientInfo = __webpack_require__(42);
+
+var _PatientInfo2 = _interopRequireDefault(_PatientInfo);
+
 __webpack_require__(7);
 
 var _constants = __webpack_require__(3);
@@ -1461,7 +1474,9 @@ var PatientProfile = function (_PureComponent) {
       var _props = this.props,
           match = _props.match,
           patients = _props.patients,
+          appointments = _props.appointments,
           display = _props.display,
+          dispatch = _props.dispatch,
           syncing = _props.syncing,
           _props$files = _props.files,
           files = _props$files === undefined ? [] : _props$files;
@@ -1472,7 +1487,7 @@ var PatientProfile = function (_PureComponent) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 40
           },
           __self: this
         },
@@ -1481,7 +1496,7 @@ var PatientProfile = function (_PureComponent) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 41
             },
             __self: this
           },
@@ -1491,25 +1506,25 @@ var PatientProfile = function (_PureComponent) {
           _semanticUiReact.Menu,
           { pointing: true, secondary: true, __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 42
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Info', active: display === 'info', onClick: this.toggleDisplay('info'), __source: {
               fileName: _jsxFileName,
-              lineNumber: 40
+              lineNumber: 43
             },
             __self: this
           }),
           _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Appointments', active: display === 'appointments', onClick: this.toggleDisplay('appointments'), __source: {
               fileName: _jsxFileName,
-              lineNumber: 41
+              lineNumber: 44
             },
             __self: this
           }),
           _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Records', active: display === 'records', onClick: this.toggleDisplay('records'), __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 45
             },
             __self: this
           }),
@@ -1517,13 +1532,13 @@ var PatientProfile = function (_PureComponent) {
             _semanticUiReact.Menu.Menu,
             { position: 'right', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 43
+                lineNumber: 46
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Upload Records', active: display === 'upload', onClick: this.toggleDisplay('upload'), __source: {
                 fileName: _jsxFileName,
-                lineNumber: 44
+                lineNumber: 47
               },
               __self: this
             })
@@ -1533,7 +1548,7 @@ var PatientProfile = function (_PureComponent) {
           _semanticUiReact.Segment,
           { className: display === 'upload' ? '' : 'hidden', __source: {
               fileName: _jsxFileName,
-              lineNumber: 47
+              lineNumber: 50
             },
             __self: this
           },
@@ -1545,70 +1560,56 @@ var PatientProfile = function (_PureComponent) {
             action: '/patients/' + patient.id,
             method: 'post', __source: {
               fileName: _jsxFileName,
-              lineNumber: 48
+              lineNumber: 51
+            },
+            __self: this
+          })
+        ),
+        _react2.default.createElement(
+          'section',
+          { className: display === 'info' ? '' : 'hidden', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 59
+            },
+            __self: this
+          },
+          _react2.default.createElement(_PatientInfo2.default, Object.assign({ dispatch: dispatch }, patient, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 60
+            },
+            __self: this
+          }))
+        ),
+        _react2.default.createElement(
+          _semanticUiReact.Segment,
+          { className: display === 'appointments' ? '' : 'hidden', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            },
+            __self: this
+          },
+          _react2.default.createElement(_AppointmentsList2.default, { dispatch: dispatch, patient: patient, appointments: appointments, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 63
             },
             __self: this
           })
         ),
         _react2.default.createElement(
           _semanticUiReact.Segment,
-          { className: display === 'info' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 56
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            'code',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 57
-              },
-              __self: this
-            },
-            JSON.stringify(patient, null, 4)
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Segment,
-          { className: display === 'appointments' ? '' : 'hidden', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 61
-            },
-            __self: this
-          },
-          _react2.default.createElement(
-            'h1',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 62
-              },
-              __self: this
-            },
-            'appointments'
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Segment,
           { className: display === 'records' ? '' : 'hidden', __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 65
             },
             __self: this
           },
-          _react2.default.createElement(
-            'h1',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 65
-              },
-              __self: this
+          _react2.default.createElement(_RecordsList2.default, { dispatch: dispatch, patient: patient, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 66
             },
-            'records'
-          )
+            __self: this
+          })
         )
       );
     }
@@ -3040,6 +3041,520 @@ exports.default = function (initialState) {
     return state;
   };
 };
+
+/***/ }),
+/* 39 */,
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/RecordsList.js',
+    _this = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(2);
+
+var _semanticUiReact = __webpack_require__(1);
+
+var _moment = __webpack_require__(5);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _constants = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var recordSrc = function recordSrc(_ref) {
+  var src = _ref.src,
+      type = _ref.type;
+  return type.includes('image') ? _constants.CDN_URI + src : _constants.CDN_URI + 'record-upload-icon.png';
+};
+var updatedSince = function updatedSince(_ref2) {
+  var updatedAt = _ref2.updatedAt;
+  return (0, _moment2.default)(new Date(updatedAt), "YYYYMMDD").fromNow();
+};
+
+var compareDates = function compareDates(a, b) {
+  if (a.updatedAt < b.updatedAt) return -1;
+  if (a.updatedAt > b.updatedAt) return 1;
+  return 0;
+};
+
+var RecordToSortedList = function RecordToSortedList(records) {
+  return Object.keys(records).map(function (recKey) {
+    return records[recKey];
+  }).sort(compareDates);
+};
+
+var recordsQty = function recordsQty(data) {
+  return {
+    value: Object.keys(data).length,
+    label: 'Qty of Records'
+  };
+};
+
+var lastUpdate = function lastUpdate(data) {
+  return {
+    value: (0, _moment2.default)(new Date(Math.max(Object.keys(data).map(function (recordKey) {
+      return new Date(data[recordKey].updatedAt).getTime();
+    }))), "YYYYMMDD").fromNow(),
+    label: 'Most Recent Update'
+  };
+};
+
+var BloodPressure = function BloodPressure(data) {
+  return {
+    value: {
+      content: _react2.default.createElement(
+        'span',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: _this
+        },
+        '180',
+        _react2.default.createElement(_semanticUiReact.Icon, { name: 'heart', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: _this
+        })
+      )
+    },
+    label: 'Blood Pressure'
+  };
+};
+
+var Something = function Something(data) {
+  return { value: 838383, label: 'A Stat' };
+};
+
+var calcStats = function calcStats(data) {
+  return [recordsQty, lastUpdate, BloodPressure, Something].map(function (statFn) {
+    return statFn(data);
+  });
+};
+
+var RecordsList = function (_PureComponent) {
+  _inherits(RecordsList, _PureComponent);
+
+  function RecordsList() {
+    var _ref3;
+
+    var _temp, _this2, _ret;
+
+    _classCallCheck(this, RecordsList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref3 = RecordsList.__proto__ || Object.getPrototypeOf(RecordsList)).call.apply(_ref3, [this].concat(args))), _this2), _this2.mapRecords = function (records) {
+      return records.map(function (record) {
+        return {
+          date: updatedSince(record),
+          image: recordSrc(record),
+          meta: record.type,
+          summary: 'Some summary of the record'
+        };
+      });
+    }, _temp), _possibleConstructorReturn(_this2, _ret);
+  }
+
+  _createClass(RecordsList, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          dispatch = _props.dispatch,
+          patient = _props.patient;
+
+      var patientRecords = patient.records ? JSON.parse(patient.records) : {};
+      var statList = patientRecords.length ? calcStats() : [];
+      return _react2.default.createElement(
+        'section',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        },
+        _react2.default.createElement(_semanticUiReact.Statistic.Group, { widths: 'four', items: statList, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
+          },
+          __self: this
+        }),
+        _react2.default.createElement(
+          _semanticUiReact.Header,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 80
+            },
+            __self: this
+          },
+          'Patient Records'
+        ),
+        _react2.default.createElement(_semanticUiReact.Divider, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83
+          },
+          __self: this
+        }),
+        _react2.default.createElement(_semanticUiReact.Feed, { events: this.mapRecords(RecordToSortedList(patientRecords)), __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return RecordsList;
+}(_react.PureComponent);
+
+exports.default = RecordsList;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/AppointmentsList.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(2);
+
+var _semanticUiReact = __webpack_require__(1);
+
+var _moment = __webpack_require__(5);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _constants = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AppointmentsList = function (_PureComponent) {
+  _inherits(AppointmentsList, _PureComponent);
+
+  function AppointmentsList() {
+    var _ref,
+        _this2 = this;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, AppointmentsList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentsList.__proto__ || Object.getPrototypeOf(AppointmentsList)).call.apply(_ref, [this].concat(args))), _this), _this.appointmentListItem = function (_ref2) {
+      var id = _ref2.id,
+          purpose = _ref2.purpose,
+          description = _ref2.description,
+          date = _ref2.date,
+          time = _ref2.time;
+      return _react2.default.createElement(
+        _semanticUiReact.List.Item,
+        { key: id, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          },
+          __self: _this2
+        },
+        _react2.default.createElement(
+          _semanticUiReact.List.Content,
+          { floated: 'right', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 18
+            },
+            __self: _this2
+          },
+          _react2.default.createElement(
+            _semanticUiReact.Button,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 19
+              },
+              __self: _this2
+            },
+            'View'
+          )
+        ),
+        _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'calendar-icon.png', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: _this2
+        }),
+        _react2.default.createElement(
+          _semanticUiReact.List.Content,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            },
+            __self: _this2
+          },
+          _react2.default.createElement(
+            _semanticUiReact.List.Header,
+            { as: 'a', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 23
+              },
+              __self: _this2
+            },
+            purpose
+          ),
+          _react2.default.createElement(
+            _semanticUiReact.List.Description,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 24
+              },
+              __self: _this2
+            },
+            description,
+            _react2.default.createElement(
+              'strong',
+              { style: { marginLeft: '20px' }, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 26
+                },
+                __self: _this2
+              },
+              (0, _moment2.default)(new Date(time)).format('MMMM Do YYYY, h:mm')
+            )
+          )
+        )
+      );
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(AppointmentsList, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          patient = _props.patient,
+          appointments = _props.appointments;
+
+      return _react2.default.createElement(
+        _semanticUiReact.List,
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34
+          },
+          __self: this
+        },
+        appointments.filter(function (app) {
+          return app.patientId === patient.id;
+        }).map(this.appointmentListItem)
+      );
+    }
+  }]);
+
+  return AppointmentsList;
+}(_react.PureComponent);
+
+exports.default = AppointmentsList;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/PatientInfo.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _semanticUiReact = __webpack_require__(1);
+
+var _constants = __webpack_require__(3);
+
+var _moment = __webpack_require__(5);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PatientInfo = function (_PureComponent) {
+  _inherits(PatientInfo, _PureComponent);
+
+  function PatientInfo() {
+    _classCallCheck(this, PatientInfo);
+
+    return _possibleConstructorReturn(this, (PatientInfo.__proto__ || Object.getPrototypeOf(PatientInfo)).apply(this, arguments));
+  }
+
+  _createClass(PatientInfo, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          fullName = _props.fullName,
+          birthday = _props.birthday,
+          lastSeen = _props.lastSeen;
+
+      return _react2.default.createElement(
+        _semanticUiReact.Card,
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10
+          },
+          __self: this
+        },
+        _react2.default.createElement(_semanticUiReact.Image, { src: _constants.CDN_URI + 'patient_info_photo.jpg', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11
+          },
+          __self: this
+        }),
+        _react2.default.createElement(
+          _semanticUiReact.Card.Content,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 12
+            },
+            __self: this
+          },
+          _react2.default.createElement(
+            _semanticUiReact.Card.Header,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 13
+              },
+              __self: this
+            },
+            fullName
+          ),
+          _react2.default.createElement(
+            _semanticUiReact.Card.Meta,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 14
+              },
+              __self: this
+            },
+            _react2.default.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 14
+                },
+                __self: this
+              },
+              'Birth Date:'
+            ),
+            (0, _moment2.default)(new Date(birthday)).format('LL')
+          ),
+          _react2.default.createElement(
+            _semanticUiReact.Card.Description,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 15
+              },
+              __self: this
+            },
+            'Daniel is a comedian living in Nashville.'
+          )
+        ),
+        _react2.default.createElement(
+          _semanticUiReact.Card.Content,
+          { extra: true, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 17
+            },
+            __self: this
+          },
+          _react2.default.createElement(
+            'a',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 18
+              },
+              __self: this
+            },
+            _react2.default.createElement(_semanticUiReact.Icon, { name: 'user', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 19
+              },
+              __self: this
+            }),
+            lastSeen
+          )
+        )
+      );
+    }
+  }]);
+
+  return PatientInfo;
+}(_react.PureComponent);
+
+exports.default = PatientInfo;
 
 /***/ })
 /******/ ]);

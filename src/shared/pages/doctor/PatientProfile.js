@@ -13,6 +13,9 @@ import {
 } from 'semantic-ui-react';
 import moment from 'moment';
 import FileUploader from 'component/FileUploader';
+import RecordsList from 'component/RecordsList';
+import AppointmentsList from 'component/AppointmentsList';
+import PatientInfo from 'component/PatientInfo';
 import 'stylesheet/FileUploader.css';
 import {
   CDN_URI,
@@ -31,7 +34,7 @@ class PatientProfile extends PureComponent {
   })
   render() {
     console.log('PatientProfile props', this.props);
-    const { match, patients, display, syncing, files = [] } = this.props;
+    const { match, patients, appointments, display, dispatch, syncing, files = [] } = this.props;
     const patient = patients.byId[match.params.id];
     return (
       <div>
@@ -53,16 +56,14 @@ class PatientProfile extends PureComponent {
           action={`/patients/${patient.id}`}
           method='post' />
        </Segment>
-       <Segment className={ display === 'info' ? '' : 'hidden'}>
-         <code>
-           {JSON.stringify(patient, null, 4)}
-         </code>
-       </Segment>
+       <section className={ display === 'info' ? '' : 'hidden'}>
+         <PatientInfo dispatch={dispatch} { ...patient } />
+       </section>
        <Segment className={ display === 'appointments' ? '' : 'hidden'}>
-         <h1>appointments</h1>
+         <AppointmentsList dispatch={dispatch} patient={patient} appointments={appointments} />
        </Segment>
        <Segment className={ display === 'records' ? '' : 'hidden'}>
-         <h1>records</h1>
+         <RecordsList dispatch={dispatch} patient={patient}/>
        </Segment>
       </div>
     )

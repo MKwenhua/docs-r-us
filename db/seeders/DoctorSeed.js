@@ -61,10 +61,10 @@ const DoctorObject = name => ({
 module.exports = [
   {
     fullName: 'Cornelius Zaius',
-    email: 'dr.zaius@planetape.gov',
+    email: 'dr.zaius@hopkins.edu',
     photo: 'dr_zaius.jpg',
     specialty: 'Neurosurgery',
-    password: bCrypt.hashSync('tacobell', bCrypt.genSaltSync(8), null)
+    password: bCrypt.hashSync('bb', bCrypt.genSaltSync(8), null)
   },
   {
     fullName: 'John A. Zoidberg',

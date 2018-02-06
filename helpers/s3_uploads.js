@@ -34,13 +34,14 @@ module.exports = (db, io) => {
     var form = new multiparty.Form();
     const s3bucket = new AWS.S3();
     const recordsIndex = {};
+    let fileTimestamp = new Date().getTime()
     form.on('part',(file) => {
       let bucket = `${S3_BUCKET_NAME}/patients/${req.params.id}`;
       recordsIndex[file.name] = {
         name: file.name,
         src: `${bucket}/${file.name}`,
         type: file.type,
-        modified: file.lastModified
+        updatedAt: fileTimestamp
       };
       const params = {
         Key: file.name,
