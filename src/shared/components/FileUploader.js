@@ -21,7 +21,6 @@ class FileUploader extends PureComponent {
   }
   uploadToS3 = e => {
     e.preventDefault();
-    console.log('uploadToS3', this.props);
     const { action, files } = this.props;
     const formData = new FormData(document.forms['uploadForm']);
     files.forEach(file => {

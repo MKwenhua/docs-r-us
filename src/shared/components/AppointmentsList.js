@@ -23,7 +23,7 @@ class AppointmentsList extends PureComponent {
         <List.Header as='a'>{purpose}</List.Header>
         <List.Description>
           {description }
-          <strong style={{marginLeft: '20px'}}>{moment(new Date(time)).format('MMMM Do YYYY, h:mm')}</strong>
+          <strong style={{marginLeft: '20px'}}>{moment(new Date(time)).calendar()}</strong>
         </List.Description>
       </List.Content>
     </List.Item>

@@ -269,26 +269,27 @@ var MainContainer = function (_PureComponent) {
           appointments = _props.appointments,
           patients = _props.patients,
           patientProfile = _props.patientProfile,
-          patientsView = _props.patientsView;
+          patientsView = _props.patientsView,
+          calendarView = _props.calendarView;
 
       console.log('MainContainer this.props', this.props);
       return _react2.default.createElement(
         'section',
         { className: WrapperClass[location.pathname] || 'main', __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 48
           },
           __self: this
         },
         _react2.default.createElement(_TopNav2.default, { navStuck: false, __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 49
           },
           __self: this
         }),
         _react2.default.createElement(_SideNav2.default, { location: location, __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 50
           },
           __self: this
         }),
@@ -296,7 +297,7 @@ var MainContainer = function (_PureComponent) {
           'div',
           { className: true ? 'page-content' : 'page-content', __source: {
               fileName: _jsxFileName,
-              lineNumber: 41
+              lineNumber: 51
             },
             __self: this
           },
@@ -305,7 +306,7 @@ var MainContainer = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 42
+                lineNumber: 52
               },
               __self: this
             },
@@ -313,55 +314,11 @@ var MainContainer = function (_PureComponent) {
               _reactRouterDom.Route,
               { exact: true, path: '/', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 43
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.Home, { location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 44
-                },
-                __self: this
-              })
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/patients', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 46
-                },
-                __self: this
-              },
-              _react2.default.createElement(_doctor.PatientsView, Object.assign({ currentUser: currentUser }, patientsView, { patients: patients, dispatch: dispatch, location: location, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 47
-                },
-                __self: this
-              }))
-            ),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/patient/:id', render: function render(props) {
-                return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 50
-                  },
-                  __self: _this2
-                }));
-              }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 49
-              },
-              __self: this
-            }),
-            _react2.default.createElement(
-              _reactRouterDom.Route,
-              { exact: true, path: '/calendar', __source: {
-                  fileName: _jsxFileName,
                   lineNumber: 53
                 },
                 __self: this
               },
-              _react2.default.createElement(_doctor.AppointmentsCalendar, { location: location, __source: {
+              _react2.default.createElement(_doctor.Home, { location: location, __source: {
                   fileName: _jsxFileName,
                   lineNumber: 54
                 },
@@ -370,15 +327,59 @@ var MainContainer = function (_PureComponent) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Route,
-              { path: '/appointment/:id', __source: {
+              { exact: true, path: '/patients', __source: {
                   fileName: _jsxFileName,
                   lineNumber: 56
                 },
                 __self: this
               },
-              _react2.default.createElement(_doctor.AppointmentTerminal, { location: location, __source: {
+              _react2.default.createElement(_doctor.PatientsView, Object.assign({ currentUser: currentUser }, patientsView, { patients: patients, dispatch: dispatch, location: location, __source: {
                   fileName: _jsxFileName,
                   lineNumber: 57
+                },
+                __self: this
+              }))
+            ),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/patient/:id', render: function render(props) {
+                return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 60
+                  },
+                  __self: _this2
+                }));
+              }, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 59
+              },
+              __self: this
+            }),
+            _react2.default.createElement(
+              _reactRouterDom.Route,
+              { exact: true, path: '/calendar', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 62
+                },
+                __self: this
+              },
+              _react2.default.createElement(_doctor.AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { patients: patients, dispatch: dispatch, location: location, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 63
+                },
+                __self: this
+              }))
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Route,
+              { path: '/appointment/:id', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 65
+                },
+                __self: this
+              },
+              _react2.default.createElement(_doctor.AppointmentTerminal, { location: location, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 66
                 },
                 __self: this
               })
@@ -387,13 +388,13 @@ var MainContainer = function (_PureComponent) {
               _reactRouterDom.Route,
               { exact: true, path: '/profile', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 59
+                  lineNumber: 68
                 },
                 __self: this
               },
               _react2.default.createElement(_doctor.Profile, Object.assign({ appointments: appointments, patients: patients }, currentUser, { location: location, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 60
+                  lineNumber: 69
                 },
                 __self: this
               }))
@@ -1620,7 +1621,6 @@ var FileUploader = function (_PureComponent) {
       _this.props.dispatch({ type: _constants.PATIENT_FILES_DROPPED, payload: files });
     }, _this.uploadToS3 = function (e) {
       e.preventDefault();
-      console.log('uploadToS3', _this.props);
       var _this$props = _this.props,
           action = _this$props.action,
           files = _this$props.files;
@@ -1654,7 +1654,7 @@ var FileUploader = function (_PureComponent) {
           _semanticUiReact.List.Item,
           { key: i, __source: {
               fileName: _jsxFileName,
-              lineNumber: 48
+              lineNumber: 47
             },
             __self: _this2
           },
@@ -1662,7 +1662,7 @@ var FileUploader = function (_PureComponent) {
             _semanticUiReact.List.Content,
             { floated: 'right', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 49
+                lineNumber: 48
               },
               __self: _this2
             },
@@ -1671,13 +1671,13 @@ var FileUploader = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 49
                 },
                 __self: _this2
               },
               _react2.default.createElement(_semanticUiReact.Icon, { onClick: _this.removeFile(i), name: 'remove', size: 'large', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 49
                 },
                 __self: _this2
               })
@@ -1685,7 +1685,7 @@ var FileUploader = function (_PureComponent) {
           ),
           _react2.default.createElement(_semanticUiReact.Image, { size: 'mini', src: uploadPreviewSrc(file), __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 51
             },
             __self: _this2
           }),
@@ -1694,7 +1694,7 @@ var FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 53
+                lineNumber: 52
               },
               __self: _this2
             },
@@ -1702,7 +1702,7 @@ var FileUploader = function (_PureComponent) {
               _semanticUiReact.List.Header,
               { as: 'a', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 53
                 },
                 __self: _this2
               },
@@ -1713,7 +1713,7 @@ var FileUploader = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 55
+                  lineNumber: 54
                 },
                 __self: _this2
               },
@@ -1723,7 +1723,7 @@ var FileUploader = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 55
+                    lineNumber: 54
                   },
                   __self: _this2
                 },
@@ -1733,7 +1733,7 @@ var FileUploader = function (_PureComponent) {
                 'span',
                 { style: { marginLeft: '20px' }, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 55
+                    lineNumber: 54
                   },
                   __self: _this2
                 },
@@ -1743,7 +1743,7 @@ var FileUploader = function (_PureComponent) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 55
+                      lineNumber: 54
                     },
                     __self: _this2
                   },
@@ -1777,7 +1777,7 @@ var FileUploader = function (_PureComponent) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65
+            lineNumber: 64
           },
           __self: this
         },
@@ -1790,7 +1790,7 @@ var FileUploader = function (_PureComponent) {
             action: action,
             method: method, __source: {
               fileName: _jsxFileName,
-              lineNumber: 66
+              lineNumber: 65
             },
             __self: this
           },
@@ -1798,7 +1798,7 @@ var FileUploader = function (_PureComponent) {
             _semanticUiReact.Header,
             { textAlign: 'center', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 72
+                lineNumber: 71
               },
               __self: this
             },
@@ -1814,7 +1814,7 @@ var FileUploader = function (_PureComponent) {
               rejectClassName: 'dropzone-element-reject',
               onDrop: this.fileDrop, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 73
+                lineNumber: 72
               },
               __self: this
             },
@@ -1822,7 +1822,7 @@ var FileUploader = function (_PureComponent) {
               _semanticUiReact.Header,
               { textAlign: 'center', color: 'grey', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 79
                 },
                 __self: this
               },
@@ -1834,7 +1834,7 @@ var FileUploader = function (_PureComponent) {
           _semanticUiReact.Modal,
           { open: files.length > 0, __source: {
               fileName: _jsxFileName,
-              lineNumber: 83
+              lineNumber: 82
             },
             __self: this
           },
@@ -1843,7 +1843,7 @@ var FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 83
               },
               __self: this
             },
@@ -1854,7 +1854,7 @@ var FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 84
               },
               __self: this
             },
@@ -1862,7 +1862,7 @@ var FileUploader = function (_PureComponent) {
               _semanticUiReact.Dimmer,
               { blurring: true, active: syncing, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 86
+                  lineNumber: 85
                 },
                 __self: this
               },
@@ -1870,7 +1870,7 @@ var FileUploader = function (_PureComponent) {
                 _semanticUiReact.Loader,
                 { indeterminate: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 87
+                    lineNumber: 86
                   },
                   __self: this
                 },
@@ -1882,7 +1882,7 @@ var FileUploader = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 89
+                  lineNumber: 88
                 },
                 __self: this
               },
@@ -1894,19 +1894,19 @@ var FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 93
+                lineNumber: 92
               },
               __self: this
             },
             _react2.default.createElement(_semanticUiReact.Button, { secondary: true, onClick: this.cancelUpload, labelPosition: 'right', content: 'Cancel', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 94
+                lineNumber: 93
               },
               __self: this
             }),
             _react2.default.createElement(_semanticUiReact.Button, { color: 'blue', onClick: this.uploadToS3, type: 'submit', icon: 'checkmark', labelPosition: 'right', content: 'Upload', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 95
+                lineNumber: 94
               },
               __self: this
             })
@@ -1957,28 +1957,47 @@ var AppointmentsCalendar = function (_PureComponent) {
   _inherits(AppointmentsCalendar, _PureComponent);
 
   function AppointmentsCalendar() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, AppointmentsCalendar);
 
-    return _possibleConstructorReturn(this, (AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (events) {
+      return events.map(function (event) {
+        return Object.assign({}, event, {
+          start: new Date(event.start),
+          end: new Date(event.end)
+        });
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(AppointmentsCalendar, [{
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          patients = _props.patients,
+          events = _props.events,
+          dispatch = _props.dispatch;
+
       console.log('AppointmentsCalendar this.props', this.props);
       return _react2.default.createElement(
         'div',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 9
+            lineNumber: 15
           },
           __self: this
         },
-        _react2.default.createElement(_CalendarDisplay2.default, {
-          __source: {
+        _react2.default.createElement(_CalendarDisplay2.default, { events: this.mapEvents(events), dispatch: dispatch, patients: patients, __source: {
             fileName: _jsxFileName,
-            lineNumber: 10
+            lineNumber: 16
           },
           __self: this
         })
@@ -2029,83 +2048,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 _reactBigCalendar2.default.setLocalizer(_reactBigCalendar2.default.momentLocalizer(_moment2.default));
 
-var events = [{
-  id: 0,
-  title: 'All Day Event very long title',
-  allDay: true,
-  start: new Date(2015, 3, 0),
-  end: new Date(2015, 3, 1)
-}, {
-  id: 1,
-  title: 'Long Event',
-  start: new Date(2015, 3, 7),
-  end: new Date(2015, 3, 10)
-}, {
-  id: 2,
-  title: 'DTS STARTS',
-  start: new Date(2016, 2, 13, 0, 0, 0),
-  end: new Date(2016, 2, 20, 0, 0, 0)
-}, {
-  id: 3,
-  title: 'DTS ENDS',
-  start: new Date(2016, 10, 6, 0, 0, 0),
-  end: new Date(2016, 10, 13, 0, 0, 0)
-}, {
-  id: 4,
-  title: 'Some Event',
-  start: new Date(2015, 3, 9, 0, 0, 0),
-  end: new Date(2015, 3, 9, 0, 0, 0)
-}, {
-  id: 5,
-  title: 'Conference',
-  start: new Date(2015, 3, 11),
-  end: new Date(2015, 3, 13),
-  desc: 'Big conference for important people'
-}, {
-  id: 6,
-  title: 'Meeting',
-  start: new Date(2015, 3, 12, 10, 30, 0, 0),
-  end: new Date(2015, 3, 12, 12, 30, 0, 0),
-  desc: 'Pre-meeting meeting, to prepare for the meeting'
-}, {
-  id: 7,
-  title: 'Lunch',
-  start: new Date(2015, 3, 12, 12, 0, 0, 0),
-  end: new Date(2015, 3, 12, 13, 0, 0, 0),
-  desc: 'Power lunch'
-}, {
-  id: 8,
-  title: 'Meeting',
-  start: new Date(2015, 3, 12, 14, 0, 0, 0),
-  end: new Date(2015, 3, 12, 15, 0, 0, 0)
-}, {
-  id: 9,
-  title: 'Happy Hour',
-  start: new Date(2015, 3, 12, 17, 0, 0, 0),
-  end: new Date(2015, 3, 12, 17, 30, 0, 0),
-  desc: 'Most important meal of the day'
-}, {
-  id: 10,
-  title: 'Dinner',
-  start: new Date(2015, 3, 12, 20, 0, 0, 0),
-  end: new Date(2015, 3, 12, 21, 0, 0, 0)
-}, {
-  id: 11,
-  title: 'Birthday Party',
-  start: new Date(2015, 3, 13, 7, 0, 0),
-  end: new Date(2015, 3, 13, 10, 30, 0)
-}, {
-  id: 12,
-  title: 'Late Night Event',
-  start: new Date(2015, 3, 17, 19, 30, 0),
-  end: new Date(2015, 3, 18, 2, 0, 0)
-}, {
-  id: 13,
-  title: 'Multi-day Event',
-  start: new Date(2015, 3, 20, 19, 30, 0),
-  end: new Date(2015, 3, 22, 2, 0, 0)
-}];
-
 var CalendarDisplay = function (_PureComponent) {
   _inherits(CalendarDisplay, _PureComponent);
 
@@ -2118,9 +2060,19 @@ var CalendarDisplay = function (_PureComponent) {
   _createClass(CalendarDisplay, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(_reactBigCalendar2.default, Object.assign({}, this.props, { events: events, step: 15, timeslots: 8, defaultView: 'week', defaultDate: new Date(2015, 3, 12), __source: {
+      var _props = this.props,
+          events = _props.events,
+          patients = _props.patients,
+          dispatch = _props.dispatch;
+
+      return _react2.default.createElement(_reactBigCalendar2.default, Object.assign({}, this.props, {
+        events: events,
+        step: 15,
+        timeslots: 8,
+        defaultView: 'week',
+        defaultDate: new Date(), __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 12
         },
         __self: this
       }));
@@ -2638,6 +2590,12 @@ Object.defineProperty(exports, "__esModule", {
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+var addHours = function addHours(date) {
+  return function (h) {
+    return new Date(date.setHours(date.getHours() + h));
+  };
+};
+
 var getObjectId = function getObjectId(obj) {
   return obj.id;
 };
@@ -2673,6 +2631,23 @@ var normalizeDoctorState = function normalizeDoctorState(_ref) {
       filters: [],
       suggestions: [],
       searchFocus: false
+    },
+    calendarView: {
+      events: appointments.map(function (_ref2) {
+        var id = _ref2.id,
+            purpose = _ref2.purpose,
+            patientId = _ref2.patientId,
+            description = _ref2.description,
+            time = _ref2.time;
+        return {
+          id: id,
+          description: description,
+          patientId: patientId,
+          title: purpose,
+          start: new Date(time).getTime(),
+          end: addHours(new Date(time))(1).getTime()
+        };
+      })
     }
   };
 };
@@ -3197,7 +3172,7 @@ var AppointmentsList = function (_PureComponent) {
                 },
                 __self: _this2
               },
-              (0, _moment2.default)(new Date(time)).format('MMMM Do YYYY, h:mm')
+              (0, _moment2.default)(new Date(time)).calendar()
             )
           )
         )

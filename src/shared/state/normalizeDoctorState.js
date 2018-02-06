@@ -1,3 +1,7 @@
+const addHours = date => h => (
+  new Date(date.setHours(date.getHours() + h))
+)
+
 const getObjectId = obj => obj.id;
 const indexEntity = (entitiesLookup, entity, i) => {
   entitiesLookup.byId[entity.id] = entity;
@@ -25,6 +29,16 @@ const normalizeDoctorState = ({patients, appointments, ...userData}) => ({
     filters: [],
     suggestions: [],
     searchFocus: false
+  },
+  calendarView: {
+    events: appointments.map(({id, purpose, patientId, description, time}) => ({
+     id,
+     description,
+     patientId,
+     title: purpose,
+     start: new Date(time).getTime(),
+     end: addHours(new Date(time))(1).getTime()
+    }))
   }
 })
 
