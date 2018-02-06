@@ -2,7 +2,10 @@
   "name": "docs-r-us",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "9.3.0"
+  },
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "nodemon-start": "nodemon ./server.js --ignore src/ --ignore public/",
