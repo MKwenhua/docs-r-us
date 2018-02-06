@@ -4,10 +4,11 @@ import RenderPage from './render_page';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {
-  buildServerStore,
-  createProjectStore
+  normalizeDoctorState
+} from 'state';
+import {
+  buildServerStore
 } from '../shared/store';
-import defaultState from './defaultState';
 
 const context = {
   serverSide: true
@@ -15,7 +16,7 @@ const context = {
 
 
 const IndexRoute = (req, res) => {
-  const store = buildServerStore({...defaultState, currentUser: req.user })
+  const store = buildServerStore(normalizeDoctorState(req.user.dataValues));
   res.send(RenderPage(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>

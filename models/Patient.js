@@ -1,3 +1,14 @@
+const ParseJson = data => {
+   try {
+     return JSON.parse(data);
+   } catch(e) {
+      return {};
+   }
+}
+
+const updateRecords = (current, updated) => JSON.stringify(
+  Object.assign({}, ParseJson(current), updated)
+)
 
 module.exports = (sequelize, DataTypes) => {
 
@@ -37,13 +48,19 @@ module.exports = (sequelize, DataTypes) => {
         fields: ['email']
       }
     ]
-  });
+  }, {
+    instanceMethods: {
+      updateRecords: updated => JSON.stringify(
+        Object.assign({}, ParseJson(this.records), updated)
+      )
+    }
+  }
+);
 
-  Patient.associate = ({Appointment, Doctor}) => {
-    // 1 to many with board
-    Patient.hasMany(Appointment, {as: 'appointments'});
-    Patient.belongsToMany(Doctor, {through: Appointment});
-  };
+Patient.associate = ({Appointment, Doctor}) => {
+  Patient.hasMany(Appointment, {as: 'appointments'});
+  Patient.belongsToMany(Doctor, {through: Appointment});
+};
 
 
   return Patient;

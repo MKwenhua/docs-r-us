@@ -1,53 +1,69 @@
 import React, {PureComponent} from 'react';
-import {Card, Icon, List, Image} from 'semantic-ui-react'
+import {
+  Card,
+  Icon,
+  Button,
+  Menu,
+  List,
+  Image,
+  Modal,
+  Dimmer,
+  Loader,
+  Segment
+} from 'semantic-ui-react';
+import moment from 'moment';
+import FileUploader from 'component/FileUploader';
+import 'stylesheet/FileUploader.css';
+import {
+  CDN_URI,
+  EXIT_PATIENT_VIEW,
+  PATIENT_TAB_SELECTED
+} from 'constants';
 
-const extra = (
-  <a>
-    <Icon name='user'/>
-    16 Friends
-  </a>
-)
+
 class PatientProfile extends PureComponent {
+  componentWillUnmount() {
+    this.props.dispatch({type: EXIT_PATIENT_VIEW })
+  }
+  toggleDisplay = display => () => this.props.dispatch({
+    type: PATIENT_TAB_SELECTED,
+    payload: display
+  })
   render() {
+    console.log('PatientProfile props', this.props);
+    const { match, patients, display, syncing, files = [] } = this.props;
+    const patient = patients.byId[match.params.id];
     return (
       <div>
-        <Card image='https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg' header='Elliot Baker' meta='Friend' description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.' extra={extra}/>
-
-        <List relaxed='very'>
-          <List.Item>
-            <Image avatar src='/assets/images/avatar/small/daniel.jpg'/>
-            <List.Content>
-              <List.Header as='a'>Daniel Louise</List.Header>
-              <List.Description>Last seen watching
-                <a>
-                  <b>Arrested Development</b>
-                </a>
-                just now.</List.Description>
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <Image avatar src='/assets/images/avatar/small/stevie.jpg'/>
-            <List.Content>
-              <List.Header as='a'>Stevie Feliciano</List.Header>
-              <List.Description>Last seen watching
-                <a>
-                  <b>Bob's Burgers</b>
-                </a>
-                10 hours ago.</List.Description>
-            </List.Content>
-          </List.Item>
-          <List.Item>
-            <Image avatar src='/assets/images/avatar/small/elliot.jpg'/>
-            <List.Content>
-              <List.Header as='a'>Elliot Fu</List.Header>
-              <List.Description>Last seen watching
-                <a>
-                  <b>The Godfather Part 2</b>
-                </a>
-                yesterday.</List.Description>
-            </List.Content>
-          </List.Item>
-        </List>
+        <h1>{patient.fullName}</h1>
+      <Menu pointing secondary>
+         <Menu.Item name='Info' active={display === 'info'} onClick={this.toggleDisplay('info')} />
+         <Menu.Item name='Appointments' active={display === 'appointments'} onClick={this.toggleDisplay('appointments')} />
+         <Menu.Item name='Records' active={display === 'records'} onClick={this.toggleDisplay('records')} />
+         <Menu.Menu position='right'>
+           <Menu.Item name='Upload Records' active={display === 'upload'} onClick={this.toggleDisplay('upload')} />
+         </Menu.Menu>
+      </Menu>
+      <Segment className={ display === 'upload' ? '' : 'hidden'}>
+        <FileUploader
+          syncing={syncing}
+          files={files}
+          dispatch={this.props.dispatch}
+          patientId={patient.id}
+          action={`/patients/${patient.id}`}
+          method='post' />
+       </Segment>
+       <Segment className={ display === 'info' ? '' : 'hidden'}>
+         <code>
+           {JSON.stringify(patient, null, 4)}
+         </code>
+       </Segment>
+       <Segment className={ display === 'appointments' ? '' : 'hidden'}>
+         <h1>appointments</h1>
+       </Segment>
+       <Segment className={ display === 'records' ? '' : 'hidden'}>
+         <h1>records</h1>
+       </Segment>
       </div>
     )
   }

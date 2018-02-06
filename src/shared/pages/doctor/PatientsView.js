@@ -1,4 +1,6 @@
 import React, {PureComponent} from 'react';
+import PatientListItem from 'component/PatientListItem';
+import {Link} from 'react-router-dom'
 import {
   Icon,
   Header,
@@ -16,24 +18,29 @@ const renderStat = () => (
     <Statistic.Label>Blood Pressure</Statistic.Label>
   </Statistic>
 )
+const paientListItem = ({id, fullName, email}) => (
+  <List.Item key={id}>
+    <List.Content floated='right'>
+      <Link to={`/patient/${id}`}>
+        <Button>Add</Button>
+      </Link>
+    </List.Content>
+    <Image avatar src={`${CDN_URI}patient_records_icon.png`}/>
+    <List.Content>
+      <List.Header as='a'>{fullName}</List.Header>
+      <List.Description>Last seen watching
+        <a>
+          <b>The Godfather Part 2</b>
+        </a>
+        yesterday.</List.Description>
+    </List.Content>
+  </List.Item>
+);
 
 class PatientsView extends PureComponent {
-  paientListItem = ({id, fullName, email}) => (
-    <List.Item key={id}>
-      <List.Content floated='right'>
-        <Button>Add</Button>
-      </List.Content>
-      <Image avatar src={`${CDN_URI}patient_records_icon.png`}/>
-      <List.Content>
-        <List.Header as='a'>{fullName}</List.Header>
-        <List.Description>Last seen watching
-          <a>
-            <b>The Godfather Part 2</b>
-          </a>
-          yesterday.</List.Description>
-      </List.Content>
-    </List.Item>
-  )
+  listPatientItems = ({allIds, byId}) => allIds.map((patientId, i) => (
+      <PatientListItem key={i} {...byId[patientId]}/>
+  ))
   render() {
     const {
       patients = []
@@ -54,7 +61,7 @@ class PatientsView extends PureComponent {
         </Header>
 
         <List divided verticalAlign='middle'>
-          {patients.map(this.paientListItem)}
+          {this.listPatientItems(patients)}
         </List>
       </div>
     )

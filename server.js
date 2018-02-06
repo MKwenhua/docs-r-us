@@ -1,15 +1,19 @@
 const PROCESS_PORT = process.env.PORT || 5000;
-import { app, passport } from './app';
-import { DoctorLogin, PatientLogin, isLoggedIn, LogOut } from './static';
-import { IndexRoute } from './react_pages';
-
+const { app, passport } = require('./app');
+const { DoctorLogin, PatientLogin, isLoggedIn, LogOut } = require('./static');
+const { IndexRoute } = require('./react_pages');
 const db = require('./db');
+const {
+  uploadToS3
+} = require('./helpers/s3_uploads.js')(db);
 
 
 app.get('/', isLoggedIn, IndexRoute);
 app.get(/\/(patients|appointments|profile)/, isLoggedIn, IndexRoute);
 app.get('/appointment/:id', isLoggedIn, IndexRoute);
 app.get('/patient/:id', isLoggedIn, IndexRoute);
+
+app.post('/patients/:id', uploadToS3);
 
 app.get('/signin', DoctorLogin);
 
