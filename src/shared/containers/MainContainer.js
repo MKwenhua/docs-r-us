@@ -32,7 +32,7 @@ class MainContainer extends PureComponent {
     super(props);
   }
   render() {
-    const { dispatch, location, match, currentUser, appointments, patients, patientProfile } = this.props;
+    const { dispatch, location, match, currentUser, appointments, patients, patientProfile, patientsView } = this.props;
     console.log('MainContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'main'}>
@@ -44,10 +44,10 @@ class MainContainer extends PureComponent {
             <Home location={ location } />
           </Route>
           <Route exact path='/patients'>
-            <PatientsView currentUser={currentUser} patients={patients} dispatch={dispatch} location={ location } />
+            <PatientsView currentUser={currentUser} {...patientsView}  patients={patients} dispatch={dispatch} location={ location } />
           </Route>
           <Route path='/patient/:id' render={(props) => (
-              <PatientProfile currentUser={currentUser} {...patientProfile} appointments={appointments.resource} patients={patients} dispatch={dispatch} location={ location } {...props} />
+              <PatientProfile currentUser={currentUser} {...patientProfile } appointments={appointments.resource} patients={patients} dispatch={dispatch} location={ location } {...props} />
           )}/>
 
           <Route exact path='/calendar'>

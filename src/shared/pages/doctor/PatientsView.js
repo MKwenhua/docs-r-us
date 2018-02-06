@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import PatientListItem from 'component/PatientListItem';
 import {Link} from 'react-router-dom'
+import BuildTrie from 'action-autocomplete';
 import {
   Icon,
   Header,
@@ -10,61 +11,75 @@ import {
   Image,
   Statistic
 } from 'semantic-ui-react'
-import {CDN_URI} from 'constants';
-
-const renderStat = () => (
-  <Statistic>
-    <Statistic.Value>5,550</Statistic.Value>
-    <Statistic.Label>Blood Pressure</Statistic.Label>
-  </Statistic>
-)
-const paientListItem = ({id, fullName, email}) => (
-  <List.Item key={id}>
-    <List.Content floated='right'>
-      <Link to={`/patient/${id}`}>
-        <Button>Add</Button>
-      </Link>
-    </List.Content>
-    <Image avatar src={`${CDN_URI}patient_records_icon.png`}/>
-    <List.Content>
-      <List.Header as='a'>{fullName}</List.Header>
-      <List.Description>Last seen watching
-        <a>
-          <b>The Godfather Part 2</b>
-        </a>
-        yesterday.</List.Description>
-    </List.Content>
-  </List.Item>
-);
+import {
+  SEARCH_INPUT_UPDATE,
+  PATIENTS_VIEW_RESET,
+  CDN_URI
+} from 'constants';
 
 class PatientsView extends PureComponent {
+  constructor(props) {
+    super(props);
+    const { names_email, nameMap } = props.patients.resource.reduce((obj, patient) => {
+       obj.names_email = [patient.fullName, patient.email].concat(obj.names_email);
+       obj.nameMap = {
+         ...obj.nameMap,
+         [patient.email]: patient,
+         [patient.fullName]: patient
+       };
+       return obj;
+    }, {names_email: [], nameMap: {}});
+
+    this.AutoComplete = BuildTrie(names_email, nameMap);
+  }
   listPatientItems = ({allIds, byId}) => allIds.map((patientId, i) => (
-      <PatientListItem key={i} {...byId[patientId]}/>
+    <PatientListItem key={i} {...byId[patientId]}/>
   ))
+  listSuggestions = suggestions => suggestions.map((patient, i) => (
+    <PatientListItem key={i} {...patient} />
+  ))
+  searchType = e => {
+   const typed = e.target.value.toLowerCase().trim();
+   const suggestions = this.AutoComplete.lookup(typed);
+   console.log('suggestions', suggestions);
+   this.props.dispatch({
+     type: SEARCH_INPUT_UPDATE,
+     payload: { typed, suggestions }
+   })
+  }
   render() {
     const {
-      patients = []
+      patients = [],
+      suggestions
     } = this.props;
     return (
-      <div>
-        <Dropdown text='Filter Tags' floating labeled button icon='filter' className='icon'>
-          <Dropdown.Menu>
-            <Dropdown.Header icon='tags' content='Filter by tag'/>
-            <Dropdown.Divider/>
-            <Dropdown.Item description='2 new' text='Important'/>
-            <Dropdown.Item description='10 new' text='Hopper'/>
-            <Dropdown.Item description='5 new' text='Discussion'/>
-          </Dropdown.Menu>
-        </Dropdown>
+      <section>
+        <div className='ui grid'>
+          <div className='fourteen wide column'>
+            <div>
+              <div className='ui fluid action input'>
+                <input onKeyUp={this.searchType} type='text' placeholder='Search...'/>
+                <div className='ui button'>Search</div>
+              </div>
+            </div>
+          </div>
+          <div className='two wide column'>
+            <div className='ui fitted toggle checkbox'>
+              <input type='checkbox'/>
+              <label></label>
+            </div>
+          </div>
+        </div>
         <Header as='h3' dividing>
           Most Recent Patients
         </Header>
 
         <List divided verticalAlign='middle'>
-          {this.listPatientItems(patients)}
+          { suggestions.length > 0 ? this.listSuggestions(suggestions) : this.listPatientItems(patients)}
         </List>
-      </div>
+      </section>
     )
   }
 }
+
 export default PatientsView;

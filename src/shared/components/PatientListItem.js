@@ -22,7 +22,7 @@ class PatientListItem extends PureComponent {
           <List.Header as='a'>{fullName}</List.Header>
           <List.Description>Last seen watching
             <a>
-              <b>The Godfather Part 2</b>
+              <b>Doing something</b>
             </a>
             yesterday.</List.Description>
         </List.Content>

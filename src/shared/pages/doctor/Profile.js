@@ -1,61 +1,40 @@
 import React, {PureComponent} from 'react';
 import {Card, Icon, List, Image} from 'semantic-ui-react'
-
-const extra = (
+import {CDN_URI} from 'constants';
+const extraStat = num => (
   <a>
-    <Icon name='user'/>
-    16 Friends
+  <Icon name='doctor'/>
+    {num} Patients
   </a>
 )
 
 class Profile extends PureComponent {
   render() {
+    const { patients, appointments, fullName, photo, specialty } = this.props;
     return (
       <div className='ui grid'>
         <div className='ten wide left floated column'>
           <List relaxed='very'>
             <List.Item>
-              <Image avatar src='/assets/images/avatar/small/daniel.jpg'/>
+              <Image avatar src={`${CDN_URI}calendar-icon.png`}/>
               <List.Content>
-                <List.Header as='a'>Daniel Louise</List.Header>
-                <List.Description>Last seen watching
+                <List.Header as='a'>Feed Item</List.Header>
+                <List.Description>Here I will list events that occurred on this table item
                   <a>
-                    <b>Arrested Development</b>
+                    <b>A Link to the feed item</b>
                   </a>
                   just now.</List.Description>
-              </List.Content>
-            </List.Item>
-            <List.Item>
-              <Image avatar src='/assets/images/avatar/small/stevie.jpg'/>
-              <List.Content>
-                <List.Header as='a'>Stevie Feliciano</List.Header>
-                <List.Description>Last seen watching
-                  <a>
-                    <b>Bob's Burgers</b>
-                  </a>
-                  10 hours ago.</List.Description>
-              </List.Content>
-            </List.Item>
-            <List.Item>
-              <Image avatar src='/assets/images/avatar/small/elliot.jpg'/>
-              <List.Content>
-                <List.Header as='a'>Elliot Fu</List.Header>
-                <List.Description>Last seen watching
-                  <a>
-                    <b>The Godfather Part 2</b>
-                  </a>
-                  yesterday.</List.Description>
               </List.Content>
             </List.Item>
           </List>
         </div>
         <div className='six wide right floated column'>
           <Card
-            image='https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg'
-            header='Elliot Baker'
-            meta='Friend'
-            extra={extra}
-            description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.' />
+            image={`https://dq8llwxgkllay.cloudfront.net/${photo}`}
+            header={fullName}
+            meta={specialty}
+            extra={extraStat(patients.resource.length)}
+            description='John Hopkins MD' />
         </div>
       </div>
     )

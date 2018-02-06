@@ -10537,7 +10537,7 @@ var withRouter = __webpack_require__(259);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CDN_URI = exports.PATIENT_TAB_SELECTED = exports.CANCEL_FILE_UPLOAD = exports.PATIENT_FILES_UPLOADING = exports.PATIENT_FILE_REMOVED = exports.PATIENT_FILES_UPLOADED = exports.PATIENT_FILES_DROPPED = exports.EXIT_PATIENT_VIEW = exports.DISCONNECTED = exports.CHANGE_VIEW = exports.CONNECTED = undefined;
+exports.CDN_URI = exports.PATIENTS_VIEW_RESET = exports.SEARCH_INPUT_UPDATE = exports.PATIENT_TAB_SELECTED = exports.CANCEL_FILE_UPLOAD = exports.PATIENT_FILES_UPLOADING = exports.PATIENT_FILE_REMOVED = exports.PATIENT_FILES_UPLOADED = exports.PATIENT_FILES_DROPPED = exports.EXIT_PATIENT_VIEW = exports.DISCONNECTED = exports.CHANGE_VIEW = exports.CONNECTED = undefined;
 
 var _resources = __webpack_require__(615);
 
@@ -10551,6 +10551,8 @@ var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
 var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
 var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
 var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
+var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
+var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
 
 exports.CONNECTED = CONNECTED;
 exports.CHANGE_VIEW = CHANGE_VIEW;
@@ -10562,6 +10564,8 @@ exports.PATIENT_FILE_REMOVED = PATIENT_FILE_REMOVED;
 exports.PATIENT_FILES_UPLOADING = PATIENT_FILES_UPLOADING;
 exports.CANCEL_FILE_UPLOAD = CANCEL_FILE_UPLOAD;
 exports.PATIENT_TAB_SELECTED = PATIENT_TAB_SELECTED;
+exports.SEARCH_INPUT_UPDATE = SEARCH_INPUT_UPDATE;
+exports.PATIENTS_VIEW_RESET = PATIENTS_VIEW_RESET;
 exports.CDN_URI = _resources.CDN_URI;
 
 /***/ }),
@@ -68040,6 +68044,23 @@ exports.default = function (initialState) {
           });
           break;
         }
+      case _constants.SEARCH_INPUT_UPDATE:
+        {
+          return Object.assign({}, state, {
+            patientsView: Object.assign({}, state.patientsView, action.payload)
+          });
+        }
+      case _constants.PATIENTS_VIEW_RESET:
+        {
+          return Object.assign({}, state, {
+            patientsView: {
+              typed: '',
+              filters: [],
+              suggestions: [],
+              searchFocus: false
+            }
+          });
+        }
       case _constants.PATIENT_TAB_SELECTED:
         {
           return Object.assign({}, state, {
@@ -68204,7 +68225,8 @@ var MainContainer = function (_PureComponent) {
           currentUser = _props.currentUser,
           appointments = _props.appointments,
           patients = _props.patients,
-          patientProfile = _props.patientProfile;
+          patientProfile = _props.patientProfile,
+          patientsView = _props.patientsView;
 
       console.log('MainContainer this.props', this.props);
       return _react2.default.createElement(
@@ -68267,12 +68289,12 @@ var MainContainer = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(_doctor.PatientsView, { currentUser: currentUser, patients: patients, dispatch: dispatch, location: location, __source: {
+              _react2.default.createElement(_doctor.PatientsView, Object.assign({ currentUser: currentUser }, patientsView, { patients: patients, dispatch: dispatch, location: location, __source: {
                   fileName: _jsxFileName,
                   lineNumber: 47
                 },
                 __self: this
-              })
+              }))
             ),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/patient/:id', render: function render(props) {
                 return _react2.default.createElement(_doctor.PatientProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
@@ -86389,11 +86411,9 @@ exports.default = Home;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientsView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/PatientsView.js',
-    _this = undefined;
 
 var _react = __webpack_require__(0);
 
@@ -86405,11 +86425,17 @@ var _PatientListItem2 = _interopRequireDefault(_PatientListItem);
 
 var _reactRouterDom = __webpack_require__(64);
 
+var _actionAutocomplete = __webpack_require__(980);
+
+var _actionAutocomplete2 = _interopRequireDefault(_actionAutocomplete);
+
 var _semanticUiReact = __webpack_require__(38);
 
 var _constants = __webpack_require__(65);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -86417,243 +86443,172 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var renderStat = function renderStat() {
-  return _react2.default.createElement(
-    _semanticUiReact.Statistic,
-    {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: _this
-    },
-    _react2.default.createElement(
-      _semanticUiReact.Statistic.Value,
-      {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: _this
-      },
-      '5,550'
-    ),
-    _react2.default.createElement(
-      _semanticUiReact.Statistic.Label,
-      {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: _this
-      },
-      'Blood Pressure'
-    )
-  );
-};
-var paientListItem = function paientListItem(_ref) {
-  var id = _ref.id,
-      fullName = _ref.fullName,
-      email = _ref.email;
-  return _react2.default.createElement(
-    _semanticUiReact.List.Item,
-    { key: id, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: _this
-    },
-    _react2.default.createElement(
-      _semanticUiReact.List.Content,
-      { floated: 'right', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: _this
-      },
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/patient/' + id, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: _this
-        },
-        _react2.default.createElement(
-          _semanticUiReact.Button,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 25
-            },
-            __self: _this
-          },
-          'Add'
-        )
-      )
-    ),
-    _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'patient_records_icon.png', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: _this
-    }),
-    _react2.default.createElement(
-      _semanticUiReact.List.Content,
-      {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: _this
-      },
-      _react2.default.createElement(
-        _semanticUiReact.List.Header,
-        { as: 'a', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 30
-          },
-          __self: _this
-        },
-        fullName
-      ),
-      _react2.default.createElement(
-        _semanticUiReact.List.Description,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 31
-          },
-          __self: _this
-        },
-        'Last seen watching',
-        _react2.default.createElement(
-          'a',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 32
-            },
-            __self: _this
-          },
-          _react2.default.createElement(
-            'b',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 33
-              },
-              __self: _this
-            },
-            'The Godfather Part 2'
-          )
-        ),
-        'yesterday.'
-      )
-    )
-  );
-};
-
 var PatientsView = function (_PureComponent) {
   _inherits(PatientsView, _PureComponent);
 
-  function PatientsView() {
-    var _ref2,
-        _this3 = this;
-
-    var _temp, _this2, _ret;
+  function PatientsView(props) {
+    var _this2 = this;
 
     _classCallCheck(this, PatientsView);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (PatientsView.__proto__ || Object.getPrototypeOf(PatientsView)).call(this, props));
 
-    return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref2 = PatientsView.__proto__ || Object.getPrototypeOf(PatientsView)).call.apply(_ref2, [this].concat(args))), _this2), _this2.listPatientItems = function (_ref3) {
-      var allIds = _ref3.allIds,
-          byId = _ref3.byId;
+    _this.listPatientItems = function (_ref) {
+      var allIds = _ref.allIds,
+          byId = _ref.byId;
       return allIds.map(function (patientId, i) {
         return _react2.default.createElement(_PatientListItem2.default, Object.assign({ key: i }, byId[patientId], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 36
           },
-          __self: _this3
+          __self: _this2
         }));
       });
-    }, _temp), _possibleConstructorReturn(_this2, _ret);
+    };
+
+    _this.listSuggestions = function (suggestions) {
+      return suggestions.map(function (patient, i) {
+        return _react2.default.createElement(_PatientListItem2.default, Object.assign({ key: i }, patient, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39
+          },
+          __self: _this2
+        }));
+      });
+    };
+
+    _this.searchType = function (e) {
+      var typed = e.target.value.toLowerCase().trim();
+      var suggestions = _this.AutoComplete.lookup(typed);
+      console.log('suggestions', suggestions);
+      _this.props.dispatch({
+        type: _constants.SEARCH_INPUT_UPDATE,
+        payload: { typed: typed, suggestions: suggestions }
+      });
+    };
+
+    var _props$patients$resou = props.patients.resource.reduce(function (obj, patient) {
+      var _Object$assign;
+
+      obj.names_email = [patient.fullName, patient.email].concat(obj.names_email);
+      obj.nameMap = Object.assign({}, obj.nameMap, (_Object$assign = {}, _defineProperty(_Object$assign, patient.email, patient), _defineProperty(_Object$assign, patient.fullName, patient), _Object$assign));
+      return obj;
+    }, { names_email: [], nameMap: {} }),
+        names_email = _props$patients$resou.names_email,
+        nameMap = _props$patients$resou.nameMap;
+
+    _this.AutoComplete = (0, _actionAutocomplete2.default)(names_email, nameMap);
+    return _this;
   }
 
   _createClass(PatientsView, [{
     key: 'render',
     value: function render() {
-      var _props$patients = this.props.patients,
-          patients = _props$patients === undefined ? [] : _props$patients;
+      var _props = this.props,
+          _props$patients = _props.patients,
+          patients = _props$patients === undefined ? [] : _props$patients,
+          suggestions = _props.suggestions;
 
       return _react2.default.createElement(
-        'div',
+        'section',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 56
           },
           __self: this
         },
         _react2.default.createElement(
-          _semanticUiReact.Dropdown,
-          { text: 'Filter Tags', floating: true, labeled: true, button: true, icon: 'filter', className: 'icon', __source: {
+          'div',
+          { className: 'ui grid', __source: {
               fileName: _jsxFileName,
-              lineNumber: 50
+              lineNumber: 57
             },
             __self: this
           },
           _react2.default.createElement(
-            _semanticUiReact.Dropdown.Menu,
-            {
-              __source: {
+            'div',
+            { className: 'fourteen wide column', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 51
+                lineNumber: 58
               },
               __self: this
             },
-            _react2.default.createElement(_semanticUiReact.Dropdown.Header, { icon: 'tags', content: 'Filter by tag', __source: {
+            _react2.default.createElement(
+              'div',
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 59
+                },
+                __self: this
+              },
+              _react2.default.createElement(
+                'div',
+                { className: 'ui fluid action input', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 60
+                  },
+                  __self: this
+                },
+                _react2.default.createElement('input', { onKeyUp: this.searchType, type: 'text', placeholder: 'Search...', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 61
+                  },
+                  __self: this
+                }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'ui button', __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 62
+                    },
+                    __self: this
+                  },
+                  'Search'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'two wide column', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 52
+                lineNumber: 66
               },
               __self: this
-            }),
-            _react2.default.createElement(_semanticUiReact.Dropdown.Divider, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 53
+            },
+            _react2.default.createElement(
+              'div',
+              { className: 'ui fitted toggle checkbox', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 67
+                },
+                __self: this
               },
-              __self: this
-            }),
-            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '2 new', text: 'Important', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 54
-              },
-              __self: this
-            }),
-            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '10 new', text: 'Hopper', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 55
-              },
-              __self: this
-            }),
-            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { description: '5 new', text: 'Discussion', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 56
-              },
-              __self: this
-            })
+              _react2.default.createElement('input', { type: 'checkbox', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 68
+                },
+                __self: this
+              }),
+              _react2.default.createElement('label', {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                },
+                __self: this
+              })
+            )
           )
         ),
         _react2.default.createElement(
           _semanticUiReact.Header,
           { as: 'h3', dividing: true, __source: {
               fileName: _jsxFileName,
-              lineNumber: 59
+              lineNumber: 73
             },
             __self: this
           },
@@ -86663,11 +86618,11 @@ var PatientsView = function (_PureComponent) {
           _semanticUiReact.List,
           { divided: true, verticalAlign: 'middle', __source: {
               fileName: _jsxFileName,
-              lineNumber: 63
+              lineNumber: 77
             },
             __self: this
           },
-          this.listPatientItems(patients)
+          suggestions.length > 0 ? this.listSuggestions(suggestions) : this.listPatientItems(patients)
         )
       );
     }
@@ -86818,7 +86773,7 @@ var PatientListItem = function (_PureComponent) {
                   },
                   __self: this
                 },
-                'The Godfather Part 2'
+                'Doing something'
               )
             ),
             'yesterday.'
@@ -94891,13 +94846,16 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Profile.js';
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Profile.js',
+    _this = undefined;
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _semanticUiReact = __webpack_require__(38);
+
+var _constants = __webpack_require__(65);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -94907,23 +94865,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var extra = _react2.default.createElement(
-  'a',
-  {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
+var extraStat = function extraStat(num) {
+  return _react2.default.createElement(
+    'a',
+    {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      },
+      __self: _this
     },
-    __self: undefined
-  },
-  _react2.default.createElement(_semanticUiReact.Icon, { name: 'user', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }),
-  '16 Friends'
-);
+    _react2.default.createElement(_semanticUiReact.Icon, { name: 'doctor', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      },
+      __self: _this
+    }),
+    num,
+    ' Patients'
+  );
+};
 
 var Profile = function (_PureComponent) {
   _inherits(Profile, _PureComponent);
@@ -94937,11 +94898,18 @@ var Profile = function (_PureComponent) {
   _createClass(Profile, [{
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          patients = _props.patients,
+          appointments = _props.appointments,
+          fullName = _props.fullName,
+          photo = _props.photo,
+          specialty = _props.specialty;
+
       return _react2.default.createElement(
         'div',
         { className: 'ui grid', __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 15
           },
           __self: this
         },
@@ -94949,7 +94917,7 @@ var Profile = function (_PureComponent) {
           'div',
           { className: 'ten wide left floated column', __source: {
               fileName: _jsxFileName,
-              lineNumber: 15
+              lineNumber: 16
             },
             __self: this
           },
@@ -94957,7 +94925,7 @@ var Profile = function (_PureComponent) {
             _semanticUiReact.List,
             { relaxed: 'very', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 16
+                lineNumber: 17
               },
               __self: this
             },
@@ -94966,13 +94934,13 @@ var Profile = function (_PureComponent) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 17
+                  lineNumber: 18
                 },
                 __self: this
               },
-              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/daniel.jpg', __source: {
+              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: _constants.CDN_URI + 'calendar-icon.png', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 18
+                  lineNumber: 19
                 },
                 __self: this
               }),
@@ -94981,36 +94949,36 @@ var Profile = function (_PureComponent) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 19
+                    lineNumber: 20
                   },
                   __self: this
                 },
                 _react2.default.createElement(
                   _semanticUiReact.List.Header,
                   { as: 'a', __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 20
-                    },
-                    __self: this
-                  },
-                  'Daniel Louise'
-                ),
-                _react2.default.createElement(
-                  _semanticUiReact.List.Description,
-                  {
-                    __source: {
                       fileName: _jsxFileName,
                       lineNumber: 21
                     },
                     __self: this
                   },
-                  'Last seen watching',
+                  'Feed Item'
+                ),
+                _react2.default.createElement(
+                  _semanticUiReact.List.Description,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 22
+                    },
+                    __self: this
+                  },
+                  'Here I will list events that occurred on this table item',
                   _react2.default.createElement(
                     'a',
                     {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 22
+                        lineNumber: 23
                       },
                       __self: this
                     },
@@ -95019,152 +94987,14 @@ var Profile = function (_PureComponent) {
                       {
                         __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 23
+                          lineNumber: 24
                         },
                         __self: this
                       },
-                      'Arrested Development'
+                      'A Link to the feed item'
                     )
                   ),
                   'just now.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _semanticUiReact.List.Item,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 28
-                },
-                __self: this
-              },
-              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/stevie.jpg', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 29
-                },
-                __self: this
-              }),
-              _react2.default.createElement(
-                _semanticUiReact.List.Content,
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 30
-                  },
-                  __self: this
-                },
-                _react2.default.createElement(
-                  _semanticUiReact.List.Header,
-                  { as: 'a', __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 31
-                    },
-                    __self: this
-                  },
-                  'Stevie Feliciano'
-                ),
-                _react2.default.createElement(
-                  _semanticUiReact.List.Description,
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 32
-                    },
-                    __self: this
-                  },
-                  'Last seen watching',
-                  _react2.default.createElement(
-                    'a',
-                    {
-                      __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 33
-                      },
-                      __self: this
-                    },
-                    _react2.default.createElement(
-                      'b',
-                      {
-                        __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 34
-                        },
-                        __self: this
-                      },
-                      'Bob\'s Burgers'
-                    )
-                  ),
-                  '10 hours ago.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _semanticUiReact.List.Item,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 39
-                },
-                __self: this
-              },
-              _react2.default.createElement(_semanticUiReact.Image, { avatar: true, src: '/assets/images/avatar/small/elliot.jpg', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 40
-                },
-                __self: this
-              }),
-              _react2.default.createElement(
-                _semanticUiReact.List.Content,
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 41
-                  },
-                  __self: this
-                },
-                _react2.default.createElement(
-                  _semanticUiReact.List.Header,
-                  { as: 'a', __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 42
-                    },
-                    __self: this
-                  },
-                  'Elliot Fu'
-                ),
-                _react2.default.createElement(
-                  _semanticUiReact.List.Description,
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 43
-                    },
-                    __self: this
-                  },
-                  'Last seen watching',
-                  _react2.default.createElement(
-                    'a',
-                    {
-                      __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 44
-                      },
-                      __self: this
-                    },
-                    _react2.default.createElement(
-                      'b',
-                      {
-                        __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 45
-                        },
-                        __self: this
-                      },
-                      'The Godfather Part 2'
-                    )
-                  ),
-                  'yesterday.'
                 )
               )
             )
@@ -95174,18 +95004,18 @@ var Profile = function (_PureComponent) {
           'div',
           { className: 'six wide right floated column', __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 31
             },
             __self: this
           },
           _react2.default.createElement(_semanticUiReact.Card, {
-            image: 'https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan.jpg',
-            header: 'Elliot Baker',
-            meta: 'Friend',
-            extra: extra,
-            description: 'Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.', __source: {
+            image: 'https://dq8llwxgkllay.cloudfront.net/' + photo,
+            header: fullName,
+            meta: specialty,
+            extra: extraStat(patients.resource.length),
+            description: 'John Hopkins MD', __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 32
             },
             __self: this
           })
@@ -95712,6 +95542,212 @@ var PatientInfo = function (_PureComponent) {
 }(_react.PureComponent);
 
 exports.default = PatientInfo;
+
+/***/ }),
+/* 979 */
+/***/ (function(module, exports) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+function Trie(wordList, actions) {
+   var TrieContext = this;
+   function getAction(word) {
+      return actions[word] ? actions[word] : null;
+   }
+
+   function addCharToTrie(index, word, wordFragment, branch, trie, fragment) {
+      if (index === wordFragment.length) return trie;
+
+      var char = wordFragment[index];
+      var nodeWord = wordFragment.length - 1 === index ? word : null;
+      if (!branch[char]) {
+         branch[char] = {
+            word: nodeWord,
+            fragments: null,
+            action: wordFragment.length - 1 === index ? getAction(word) : null
+         };
+      }
+      if (fragment && nodeWord) {
+         var fragmentArray = branch[char].fragments ? branch[char].fragments : [];
+         branch[char].fragments = fragmentArray.concat(nodeWord);
+      }
+      return addCharToTrie(index + 1, word, wordFragment, branch[char], trie, fragment);
+   }
+
+   function getBranch(charString, trie) {
+      var branch = trie;
+      for (var i = 0; i < charString.length; i++) {
+         branch = branch[charString[i]];
+         if (!branch) return null;
+      }
+      return branch;
+   }
+   TrieContext.words = wordList;
+   TrieContext.actions = actions;
+   TrieContext.foundWordsIndex = {};
+
+   TrieContext.findWords = function (branch, lookupId) {
+      console.log(branch);
+      var list = [];
+      function mineWord(brn) {
+         if (brn.word) {
+            if (!TrieContext.foundWordsIndex[brn.word]) {
+               list.push(brn.action || brn.word);
+               TrieContext.foundWordsIndex[brn.word] = true;
+            }
+            if (list.length === TrieContext.wordLimit) return list;
+         }
+         if (brn.fragments) {
+            list.concat(brn.fragments.filter(function (txt) {
+               return !TrieContext.foundWordsIndex[txt];
+            }));
+         }
+         for (var key in brn) {
+            if (typeof brn[key] !== 'string' && brn[key] !== null && TrieContext.currentLoopup === lookupId) {
+               mineWord(brn[key]);
+            }
+         }
+         return list;
+      }
+
+      return mineWord(branch);
+   };
+   TrieContext.getWordList = function (charString) {
+      var foundWords = [];
+      TrieContext.foundWordsIndex = {};
+      if (!charString) return foundWords;
+      var branch = getBranch(charString, TrieContext.head);
+      if (!branch) return foundWords;
+      var lookupId = Math.random().toString(36).substring(18);
+      TrieContext.currentLoopup = lookupId;
+      return TrieContext.findWords(branch, lookupId);
+   };
+
+   TrieContext.head = wordList.reduce(function (head, word) {
+      var wordLowerCase = word.toLowerCase();
+      head[wordLowerCase[0]] = head[wordLowerCase[0]] ? head[wordLowerCase[0]] : {
+         word: null,
+         fragments: null,
+         action: null
+      };
+      var wordFragment = wordLowerCase;
+      var headAT = addCharToTrie(1, word, wordLowerCase, head[wordLowerCase[0]], head, false);
+      while (wordFragment.length) {
+         wordFragment = wordFragment.split(/\s+/).slice(1).join(' ');
+         if (wordFragment) {
+            headAT[wordFragment[0]] = headAT[wordFragment[0]] ? headAT[wordFragment[0]] : { word: null, fragments: null, action: null };
+            headAT = addCharToTrie(1, word, wordFragment, headAT[wordFragment[0]], headAT, true);
+         }
+      }
+      return headAT;
+   }, {});
+   TrieContext.lookup = function (letters) {
+      return TrieContext.getWordList(letters.toLowerCase());
+   };
+}
+
+function BuildTrie(wordList) {
+   var actions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+   return new Trie(wordList, actions);
+}
+
+exports.default = BuildTrie;
+
+/***/ })
+/******/ ]);
+
+/***/ }),
+/* 980 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(979);
+} else {
+  module.exports = __webpack_require__(979);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ })
 /******/ ]);

@@ -19,6 +19,12 @@ const normalizeDoctorState = ({patients, appointments, ...userData}) => ({
     files: [],
     syncing: false,
     display: 'info'
+  },
+  patientsView: {
+    typed: '',
+    filters: [],
+    suggestions: [],
+    searchFocus: false
   }
 })
 

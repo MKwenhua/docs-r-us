@@ -8,6 +8,8 @@ import {
   PATIENT_FILES_UPLOADED,
   PATIENT_FILE_REMOVED,
   CANCEL_FILE_UPLOAD,
+  SEARCH_INPUT_UPDATE,
+  PATIENTS_VIEW_RESET,
   PATIENT_TAB_SELECTED
 } from 'constants';
 
@@ -29,6 +31,26 @@ export default (initialState) => (
           }
           break;
         }
+      case SEARCH_INPUT_UPDATE: {
+        return {
+          ...state,
+          patientsView: {
+            ...state.patientsView,
+            ...action.payload
+          }
+        }
+      }
+      case PATIENTS_VIEW_RESET: {
+        return {
+          ...state,
+          patientsView: {
+            typed: '',
+            filters: [],
+            suggestions: [],
+            searchFocus: false
+          } 
+        }
+      }
       case PATIENT_TAB_SELECTED: {
         return {
           ...state,
