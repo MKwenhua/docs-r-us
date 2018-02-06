@@ -5,7 +5,9 @@ import {
   List,
   Image
 } from 'semantic-ui-react';
-import {CDN_URI} from 'constants';
+import {
+  CDN_URI
+} from 'constants';
 
 class PatientListItem extends PureComponent {
   render() {

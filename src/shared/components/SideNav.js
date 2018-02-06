@@ -7,9 +7,7 @@ class SideNav extends PureComponent {
   render() {
     const {expanded} = this.props;
     return (
-      <aside className={expanded === false
-        ? 'side-nav'
-        : 'side-nav expanded'}>
+      <aside className={expanded === false ? 'side-nav' : 'side-nav expanded'}>
         <NavLink exact to="/" className="side-link" activeClassName="selected">
           <Icon name='home' size='big'/>
           <p>home</p>

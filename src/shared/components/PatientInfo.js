@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
-import {CDN_URI} from 'constants';
+import {
+  CDN_URI
+} from 'constants';
 import moment from 'moment';
 
 class PatientInfo extends PureComponent {

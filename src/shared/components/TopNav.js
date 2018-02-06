@@ -6,9 +6,7 @@ class TopNav extends PureComponent {
   render() {
     const {navStuck} = this.props;
     return (
-      <nav className={navStuck === false
-        ? 'top-nav'
-        : 'top-nav fixed'}>
+      <nav className={navStuck === false ? 'top-nav' : 'top-nav fixed'}>
         <div className='topbar-left'>
           <Link to='/' className='brand'>
             MED-MD
