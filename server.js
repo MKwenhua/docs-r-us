@@ -7,7 +7,6 @@ const {
   uploadToS3
 } = require('./helpers/s3_uploads.js')(db);
 
-
 app.get('/', isLoggedIn, IndexRoute);
 app.get(/\/(patients|appointments|profile)/, isLoggedIn, IndexRoute);
 app.get('/appointment/:id', isLoggedIn, IndexRoute);
