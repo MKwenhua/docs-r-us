@@ -16,7 +16,7 @@ class PatientListItem extends PureComponent {
       <List.Item>
         <List.Content floated='right'>
           <Link to={`/patient/${id}`}>
-            <Button>Add</Button>
+            <Button color='blue'>View</Button>
           </Link>
         </List.Content>
         <Image avatar src={`${CDN_URI}patient_records_icon.png`}/>
