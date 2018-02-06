@@ -68326,12 +68326,12 @@ var MainContainer = function (_PureComponent) {
                 },
                 __self: this
               },
-              _react2.default.createElement(_doctor.Profile, { location: location, __source: {
+              _react2.default.createElement(_doctor.Profile, Object.assign({ appointments: appointments, patients: patients }, currentUser, { location: location, __source: {
                   fileName: _jsxFileName,
                   lineNumber: 60
                 },
                 __self: this
-              })
+              }))
             )
           )
         )

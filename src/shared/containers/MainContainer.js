@@ -57,7 +57,7 @@ class MainContainer extends PureComponent {
             <AppointmentTerminal location={ location } />
           </Route>
           <Route exact path='/profile'>
-            <Profile location={ location } />
+            <Profile appointments={appointments} patients={patients} {...currentUser} location={ location } />
           </Route>
         </Switch>
         </div>
