@@ -1,6 +1,5 @@
 
 module.exports = (sequelize, DataTypes) => {
-
   const Doctor = sequelize.define('doctor', {
     fullName: {
       type: DataTypes.STRING,
@@ -47,7 +46,6 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Doctor.associate = ({Appointment, Patient}) => {
-    // 1 to many with board
     Doctor.hasMany(Appointment, {as: 'appointments'});
     Doctor.belongsToMany(Patient, {through: Appointment});
   };

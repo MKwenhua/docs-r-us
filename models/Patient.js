@@ -11,7 +11,6 @@ const updateRecords = (current, updated) => JSON.stringify(
 )
 
 module.exports = (sequelize, DataTypes) => {
-
   const Patient = sequelize.define('patient', {
     id: {
       primaryKey: true,

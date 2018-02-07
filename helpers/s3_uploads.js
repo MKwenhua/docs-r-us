@@ -27,7 +27,6 @@ const updateRecords = (current, updated) => JSON.stringify(
   Object.assign({}, ParseJson(current), updated)
 )
 
-
 const UploadToS3 = (req, res) => {
   const form = new multiparty.Form();
   const s3bucket = new AWS.S3();

@@ -16,15 +16,10 @@ const appointmentTitles = [
   'Jaw keeps locking at night'
 ]
 
-const timeNow = new Date();
-// const randomDateDay = () => (
-//   new Date(new Date(2017, Math.floor((Math.random() * 12) + 10), Math.floor(Math.random() * 30), Math.floor((Math.random() * 18) + 9)).getTime() + Math.random() * (timeNow.getTime() - timeNow.getTime())).getTime()
-// )
-//
-
 const randomDateDay = () => (
   new Date(2018,Math.floor(Math.random() * 3), Math.floor(Math.random() * 28), Math.floor(Math.random() * 8) + 9)
 )
+
 module.exports = (Appointment, doctors, patients) => {
   let dr_zaiusAppointments = 0;
   let drZadiusDates = {}
