@@ -13,14 +13,14 @@ import moment from 'moment';
 import {CDN_URI} from 'constants';
 
 class AppointmentsList extends PureComponent {
-  appointmentListItem = ({id, purpose, description, date, time}) => (
+  appointmentListItem = ({id, purpose, title, description, date, time}) => (
     <List.Item key={id}>
       <List.Content floated='right'>
         <Button>View</Button>
       </List.Content>
       <Image avatar src={`${CDN_URI}calendar-icon.png`}/>
       <List.Content>
-        <List.Header as='a'>{purpose}</List.Header>
+        <List.Header as='a'>{title}</List.Header>
         <List.Description>
           {description }
           <strong style={{marginLeft: '20px'}}>{moment(new Date(time)).calendar()}</strong>

@@ -1,28 +1,49 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const passport = require('passport');
-const session = require('express-session');
 const app = express();
+const passport = require('./config/passport.js')(app);
+
+//Render Actions
 const {
-  ProccessInfo,
-  ProcessHealth
-} = require('./system_health');
+  isLoggedIn,
+  LogOut,
+  SignUpHandler,
+  SignInHandler
+} = require('./helpers/session.js')(passport);
+const {
+  DoctorLogin,
+  PatientLogin
+} = require('./static');
+const {
+  IndexRoute
+} = require('./react_pages');
 
 app.use(express.static('public'));
-app.use(cors('*'));
 app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(session({secret: 'think outside the bun', resave: true, saveUninitialized: true}))
-app.use(passport.initialize());
-app.use(passport.session());
+
+app.get('/', isLoggedIn, IndexRoute);
+
+app.get(/\/(patients|calendar|appointments|profile)/, isLoggedIn, IndexRoute);
+
+app.get('/appointment/:id', isLoggedIn, IndexRoute);
+
+app.get('/patient/:id', isLoggedIn, IndexRoute);
+
+app.get('/signin', DoctorLogin);
+
+app.post('/signup', SignUpHandler);
+
+app.post('/signin', SignInHandler);
+
+app.get('/logout', LogOut);
+
+app.post('/patient/login', PatientLogin)
 
 
-app.get('/health', ProcessHealth);
+//Initialize the API
+require('./api');
 
-app.get(/\/info\/(gen|poll)/, ProccessInfo);
 
-module.exports = {
-  app, passport
-}
+module.exports = app;

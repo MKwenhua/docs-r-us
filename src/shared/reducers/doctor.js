@@ -8,8 +8,14 @@ import {
   PATIENT_FILES_UPLOADED,
   PATIENT_FILE_REMOVED,
   CANCEL_FILE_UPLOAD,
+  VIEW_APPOINTMENT,
+  EDIT_APPOINTMENT_STATUS,
+  EDIT_APPOINTMENT_EVENT,
+  APPOINTMENT_RECORD_UPDATED,
+  REQUEST_APPOINTMENT_CHANGE,
   SEARCH_INPUT_UPDATE,
   PATIENTS_VIEW_RESET,
+  APPOINTMENT_VIEW_BACK,
   PATIENT_TAB_SELECTED
 } from 'constants';
 
@@ -31,6 +37,88 @@ export default (initialState) => (
           }
           break;
         }
+      case VIEW_APPOINTMENT: {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+              syncing: false,
+              step: 'view',
+              ...action.payload
+            }
+          }
+        }
+      }
+      case EDIT_APPOINTMENT_EVENT: {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+              ...state.state.calendarView.selectedEvent,
+              response: action.payload
+            }
+          }
+        }
+      }
+      case EDIT_APPOINTMENT_STATUS: {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+              ...state.state.calendarView.selectedEvent,
+              step: 'confirm',
+              status: action.payload
+            }
+          }
+        }
+      }
+      case REQUEST_APPOINTMENT_CHANGE: {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+              ...state.state.calendarView.selectedEvent,
+              syncing: true
+            }
+          }
+        }
+      }
+      case APPOINTMENT_VIEW_BACK: {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+              ...state.state.calendarView.selectedEvent,
+              step: 'view'
+            }
+          }
+        }
+      }
+      case APPOINTMENT_RECORD_UPDATED: {
+          return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {
+            },
+          },
+          appointments: {
+            ...state.appointments,
+            byId: {
+              ...state.appointments.byId,
+              [action.id]: {
+                  ...state.appointments.byId[action.id],
+                  ...action.payload
+              }
+            }
+          }
+        }
+      }
       case SEARCH_INPUT_UPDATE: {
         return {
           ...state,

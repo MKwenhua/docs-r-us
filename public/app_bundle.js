@@ -46487,6 +46487,12 @@ var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
 var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
 var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
 var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
+var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
+var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
+var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
+var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
+var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
+var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
 
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
@@ -46514,6 +46520,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             connected: false
           });
           break;
+        }
+      case VIEW_APPOINTMENT:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({
+                syncing: false,
+                step: 'view'
+              }, action.payload)
+            })
+          });
+        }
+      case EDIT_APPOINTMENT_EVENT:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                response: action.payload
+              })
+            })
+          });
+        }
+      case EDIT_APPOINTMENT_STATUS:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                step: 'confirm',
+                status: action.payload
+              })
+            })
+          });
+        }
+      case REQUEST_APPOINTMENT_CHANGE:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                syncing: true
+              })
+            })
+          });
+        }
+      case APPOINTMENT_VIEW_BACK:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                step: 'view'
+              })
+            })
+          });
+        }
+      case APPOINTMENT_RECORD_UPDATED:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: {}
+            }),
+            appointments: Object.assign({}, state.appointments, {
+              byId: Object.assign({}, state.appointments.byId, _defineProperty({}, action.id, Object.assign({}, state.appointments.byId[action.id], action.payload)))
+            })
+          });
         }
       case SEARCH_INPUT_UPDATE:
         {
@@ -46899,7 +46968,7 @@ var Divider = __webpack_require__(856);
 var Flag = __webpack_require__(360);
 
 // EXTERNAL MODULE: ./node_modules/semantic-ui-react/dist/es/elements/Header/Header.js
-var Header = __webpack_require__(857);
+var Header_Header = __webpack_require__(857);
 
 // CONCATENATED MODULE: ./node_modules/semantic-ui-react/dist/es/elements/Header/index.js
 
@@ -47717,7 +47786,7 @@ var items = [{
   centered: true
 }];
 
-var Home_events = [{
+var events = [{
   date: '1 Hour Ago',
   image: '/assets/images/avatar/small/elliot.jpg',
   meta: '4 Likes',
@@ -47808,7 +47877,7 @@ var Home_Home = function (_PureComponent) {
               },
               __self: this
             },
-            react_default.a.createElement(Feed["a" /* default */], { events: Home_events, __source: {
+            react_default.a.createElement(Feed["a" /* default */], { events: events, __source: {
                 fileName: Home__jsxFileName,
                 lineNumber: 62
               },
@@ -47858,7 +47927,7 @@ var MatchTextHighlights_MatchTextHighlights = function MatchTextHighlights(_ref)
   var matchText = new RegExp(typed, 'i');
   var highlightedText = suggestion.split(regex).map(MatchTextHighlights_matchHighlight(matchText));
   return react_default.a.createElement(
-    Header["a" /* default */],
+    Header_Header["a" /* default */],
     {
       __source: {
         fileName: MatchTextHighlights__jsxFileName,
@@ -48189,7 +48258,7 @@ var PatientsView_PatientsView = function (_PureComponent) {
           )
         ),
         react_default.a.createElement(
-          Header["a" /* default */],
+          Header_Header["a" /* default */],
           { as: 'h3', dividing: true, __source: {
               fileName: PatientsView__jsxFileName,
               lineNumber: 74
@@ -48453,7 +48522,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
             __self: this
           },
           react_default.a.createElement(
-            Header["a" /* default */],
+            Header_Header["a" /* default */],
             { textAlign: 'center', __source: {
                 fileName: FileUploader__jsxFileName,
                 lineNumber: 74
@@ -48477,7 +48546,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
               __self: this
             },
             react_default.a.createElement(
-              Header["a" /* default */],
+              Header_Header["a" /* default */],
               { textAlign: 'center', color: 'grey', __source: {
                   fileName: FileUploader__jsxFileName,
                   lineNumber: 82
@@ -48729,7 +48798,7 @@ var RecordsList_RecordsList = function (_PureComponent) {
           __self: this
         }),
         react_default.a.createElement(
-          Header["a" /* default */],
+          Header_Header["a" /* default */],
           {
             __source: {
               fileName: RecordsList__jsxFileName,
@@ -48795,6 +48864,7 @@ var AppointmentsList_AppointmentsList = function (_PureComponent) {
     return _ret = (_temp = (_this = AppointmentsList__possibleConstructorReturn(this, (_ref = AppointmentsList.__proto__ || Object.getPrototypeOf(AppointmentsList)).call.apply(_ref, [this].concat(args))), _this), _this.appointmentListItem = function (_ref2) {
       var id = _ref2.id,
           purpose = _ref2.purpose,
+          title = _ref2.title,
           description = _ref2.description,
           date = _ref2.date,
           time = _ref2.time;
@@ -48849,7 +48919,7 @@ var AppointmentsList_AppointmentsList = function (_PureComponent) {
               },
               __self: _this2
             },
-            purpose
+            title
           ),
           react_default.a.createElement(
             List["a" /* default */].Description,
@@ -49239,10 +49309,16 @@ lib_default.a.setLocalizer(lib_default.a.momentLocalizer(moment_default.a));
 
 var CalendarDisplay_CalendarDisplay = function CalendarDisplay(props) {
   return react_default.a.createElement(lib_default.a, Object.assign({}, props, {
+    selectable: true,
     events: props.events,
-    step: 15,
-    timeslots: 8,
+    step: 60,
     defaultView: 'week',
+    onSelectEvent: function onSelectEvent(event) {
+      return console.log('event', event);
+    },
+    onSelectSlot: function onSelectSlot(slotInfo) {
+      console.log('slotInfo', slotInfo);
+    },
     defaultDate: new Date(), __source: {
       fileName: CalendarDisplay__jsxFileName,
       lineNumber: 9
@@ -49252,6 +49328,276 @@ var CalendarDisplay_CalendarDisplay = function CalendarDisplay(props) {
 };
 
 /* harmony default export */ var components_CalendarDisplay = (CalendarDisplay_CalendarDisplay);
+// CONCATENATED MODULE: ./src/shared/components/AppointmentModal.js
+var AppointmentModal__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/AppointmentModal.js';
+
+var AppointmentModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function AppointmentModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentModal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
+  AppointmentModal__inherits(AppointmentModal, _React$PureComponent);
+
+  function AppointmentModal() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    AppointmentModal__classCallCheck(this, AppointmentModal);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = AppointmentModal__possibleConstructorReturn(this, (_ref = AppointmentModal.__proto__ || Object.getPrototypeOf(AppointmentModal)).call.apply(_ref, [this].concat(args))), _this), _this.submitAppointmentChange = function (e) {
+      var _this$props = _this.props,
+          status = _this$props.status,
+          response = _this$props.response;
+
+      fetch('/appointments/' + id, {
+        method: 'PUT',
+        body: JSON.stringify({ status: status, response: response })
+      }).then(function (res) {
+        return _this.props.dispatch({
+          type: APPOINTMENT_RECORD_UPDATED,
+          id: id,
+          payload: {}
+        });
+      }).catch(function (err) {
+        return console.log('APPOINTMENT_RECORD_UPDATED err', err);
+      });
+    }, _this.updateAppointmentStatus = function (status) {
+      return function (e) {
+        return _this.props.dispatch({
+          type: EDIT_APPOINTMENT_STATUS,
+          payload: status
+        });
+      };
+    }, _this.updateComment = function (e) {
+      return _this.props.dispatch({
+        type: EDIT_APPOINTMENT_EVENT,
+        response: e.target.value.trim()
+      });
+    }, _this.sendForUpdate = function (e) {
+      return _this.props.dispatch({ type: REQUEST_APPOINTMENT_CHANGE });
+    }, _this.goBack = function (e) {
+      return _this.props.dispatch({ type: APPOINTMENT_VIEW_BACK });
+    }, _temp), AppointmentModal__possibleConstructorReturn(_this, _ret);
+  }
+
+  AppointmentModal__createClass(AppointmentModal, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          description = _props.description,
+          purpose = _props.purpose,
+          response = _props.response,
+          start = _props.start,
+          end = _props.end,
+          step = _props.step,
+          status = _props.status,
+          title = _props.title,
+          patientId = _props.patientId,
+          id = _props.id,
+          patient = _props.patient;
+
+      return react_default.a.createElement(
+        Modal["a" /* default */],
+        { open: patientId !== undefined, __source: {
+            fileName: AppointmentModal__jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        },
+        react_default.a.createElement(
+          Modal["a" /* default */].Header,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 41
+            },
+            __self: this
+          },
+          purpose
+        ),
+        react_default.a.createElement(
+          Modal["a" /* default */].Content,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 42
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            Modal["a" /* default */].Description,
+            { className: step === 'view' ? '' : 'hidden', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 43
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              Header,
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 44
+                },
+                __self: this
+              },
+              title
+            ),
+            react_default.a.createElement(
+              'p',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 45
+                },
+                __self: this
+              },
+              description
+            )
+          ),
+          react_default.a.createElement(
+            Modal["a" /* default */].Description,
+            { className: step === 'confirm' ? '' : 'hidden', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 47
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              Header,
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 48
+                },
+                __self: this
+              },
+              'Confirm Changes'
+            ),
+            react_default.a.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 49
+                },
+                __self: this
+              },
+              'Status:'
+            ),
+            react_default.a.createElement(
+              'p',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 50
+                },
+                __self: this
+              },
+              status
+            ),
+            react_default.a.createElement(
+              'label',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 51
+                },
+                __self: this
+              },
+              'Optional'
+            ),
+            react_default.a.createElement(TextArea["a" /* default */], { onKeyUp: this.updateComment, defaultValue: response, placeholder: 'Leave comment for why. . . ', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 52
+              },
+              __self: this
+            })
+          )
+        ),
+        react_default.a.createElement(
+          Modal["a" /* default */].Actions,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 55
+            },
+            __self: this
+          },
+          status === 'pending' && react_default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 58
+              },
+              __self: this
+            },
+            react_default.a.createElement(Button["a" /* default */], { color: 'black', content: 'Decline', onClick: this.updateAppointmentStatus('rejected'), __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 59
+              },
+              __self: this
+            }),
+            react_default.a.createElement(Button["a" /* default */], { icon: 'check', content: 'Accept', labelPosition: 'right', onClick: this.updateAppointmentStatus('accepted'), __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 60
+              },
+              __self: this
+            })
+          ),
+          status !== 'pending' && react_default.a.createElement(Button["a" /* default */], { content: 'Cancel', onClick: this.updateAppointmentStatus('canceled'), __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 65
+            },
+            __self: this
+          }),
+          step === 'confirm' && react_default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 69
+              },
+              __self: this
+            },
+            react_default.a.createElement(Button["a" /* default */], { floated: 'left', content: 'Go Back', icon: 'arrow left', color: 'teal', onClick: this.goBack, __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 70
+              },
+              __self: this
+            }),
+            react_default.a.createElement(Button["a" /* default */], { icon: 'check', content: 'Confirm', labelPosition: 'right', onClick: this.submitAppointmentChange, __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 71
+              },
+              __self: this
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return AppointmentModal;
+}(react_default.a.PureComponent);
+
+/* harmony default export */ var components_AppointmentModal = (AppointmentModal_AppointmentModal);
 // CONCATENATED MODULE: ./src/shared/pages/doctor/AppointmentsCalendar.js
 var AppointmentsCalendar__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentsCalendar.js';
 
@@ -49267,6 +49613,13 @@ function AppointmentsCalendar__inherits(subClass, superClass) { if (typeof super
 
 
 
+
+var addHours = function addHours(date) {
+  return function (h) {
+    return new Date(date.setHours(date.getHours() + h));
+  };
+};
+
 var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
   AppointmentsCalendar__inherits(AppointmentsCalendar, _PureComponent);
 
@@ -49281,22 +49634,32 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (events) {
-      return events.map(function (event) {
-        return Object.assign({}, event, {
-          start: new Date(event.start),
-          end: new Date(event.end)
+    return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (appointments) {
+      return appointments.allIds.map(function (eventId) {
+        return Object.assign({}, appointments.byId[eventId], {
+          start: new Date(appointments.byId[eventId].time).getTime(),
+          end: addHours(new Date(appointments.byId[eventId].time))(1).getTime()
         });
+      }).filter(function (event) {
+        return event.status !== 'rejected';
+      });
+    }, _this.viewAppointment = function (event) {
+      return _this.props.dispatch({
+        type: VIEW_APPOINTMENT,
+        payload: event
       });
     }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
   }
+  //sendPatientRequest = slotInfo =>
+
 
   AppointmentsCalendar__createClass(AppointmentsCalendar, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
           patients = _props.patients,
-          events = _props.events,
+          appointments = _props.appointments,
+          selectedEvent = _props.selectedEvent,
           dispatch = _props.dispatch;
 
       console.log('AppointmentsCalendar this.props', this.props);
@@ -49305,16 +49668,22 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
         {
           __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 15
+            lineNumber: 28
           },
           __self: this
         },
-        react_default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(events), dispatch: dispatch, patients: patients, __source: {
+        react_default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(appointments), dispatch: dispatch, patients: patients, __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 16
+            lineNumber: 29
           },
           __self: this
-        })
+        }),
+        react_default.a.createElement(components_AppointmentModal, Object.assign({}, selectedEvent, { dispatch: dispatch, __source: {
+            fileName: AppointmentsCalendar__jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }))
       );
     }
   }]);
@@ -49341,169 +49710,24 @@ var AppointmentTerminal_AppointmentTerminal = function (_PureComponent) {
   AppointmentTerminal__inherits(AppointmentTerminal, _PureComponent);
 
   function AppointmentTerminal() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     AppointmentTerminal__classCallCheck(this, AppointmentTerminal);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = AppointmentTerminal__possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      activeIndex: 0
-    }, _this.handleClick = function (e, titleProps) {
-      var index = titleProps.index;
-      var activeIndex = _this.state.activeIndex;
-
-      var newIndex = activeIndex === index ? -1 : index;
-
-      _this.setState({ activeIndex: newIndex });
-    }, _temp), AppointmentTerminal__possibleConstructorReturn(_this, _ret);
+    return AppointmentTerminal__possibleConstructorReturn(this, (AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).apply(this, arguments));
   }
 
   AppointmentTerminal__createClass(AppointmentTerminal, [{
     key: 'render',
     value: function render() {
-      var activeIndex = this.state.activeIndex;
-
-
       return react_default.a.createElement(
-        Accordion["a" /* default */],
-        { styled: true, __source: {
+        'h1',
+        {
+          __source: {
             fileName: AppointmentTerminal__jsxFileName,
-            lineNumber: 23
+            lineNumber: 7
           },
           __self: this
         },
-        react_default.a.createElement(
-          Accordion["a" /* default */].Title,
-          { active: activeIndex === 0, index: 0, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 24
-            },
-            __self: this
-          },
-          react_default.a.createElement(Icon["a" /* default */], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 25
-            },
-            __self: this
-          }),
-          'What is a dog?'
-        ),
-        react_default.a.createElement(
-          Accordion["a" /* default */].Content,
-          { active: activeIndex === 0, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 28
-            },
-            __self: this
-          },
-          react_default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 29
-              },
-              __self: this
-            },
-            'A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a ',
-            ' ',
-            'welcome guest in many households across the world.'
-          )
-        ),
-        react_default.a.createElement(
-          Accordion["a" /* default */].Title,
-          { active: activeIndex === 1, index: 1, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 34
-            },
-            __self: this
-          },
-          react_default.a.createElement(Icon["a" /* default */], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 35
-            },
-            __self: this
-          }),
-          'What kinds of dogs are there?'
-        ),
-        react_default.a.createElement(
-          Accordion["a" /* default */].Content,
-          { active: activeIndex === 1, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 38
-            },
-            __self: this
-          },
-          react_default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 39
-              },
-              __self: this
-            },
-            'There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of ',
-            ' ',
-            'dog that they find to be compatible with their own lifestyle and desires from a companion.'
-          )
-        ),
-        react_default.a.createElement(
-          Accordion["a" /* default */].Title,
-          { active: activeIndex === 2, index: 2, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 44
-            },
-            __self: this
-          },
-          react_default.a.createElement(Icon["a" /* default */], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 45
-            },
-            __self: this
-          }),
-          'How do you acquire a dog?'
-        ),
-        react_default.a.createElement(
-          Accordion["a" /* default */].Content,
-          { active: activeIndex === 2, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 48
-            },
-            __self: this
-          },
-          react_default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 49
-              },
-              __self: this
-            },
-            'Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.'
-          ),
-          react_default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 52
-              },
-              __self: this
-            },
-            'A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to ',
-            ' ',
-            'assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your ',
-            ' ',
-            'dog from a shelter, helps give a good home to a dog who may not find one so readily.'
-          )
-        )
+        'Not Yet Implemented'
       );
     }
   }]);
@@ -49845,7 +50069,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
                 },
                 __self: this
               },
-              react_default.a.createElement(doctor_AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { patients: patients, dispatch: dispatch, location: location, __source: {
+              react_default.a.createElement(doctor_AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { currentUser: currentUser, patients: patients, dispatch: dispatch, location: location, __source: {
                   fileName: MainContainer__jsxFileName,
                   lineNumber: 63
                 },
@@ -84203,7 +84427,7 @@ Accordion.Accordion = __WEBPACK_IMPORTED_MODULE_5__AccordionAccordion__["a" /* d
 Accordion.Content = __WEBPACK_IMPORTED_MODULE_6__AccordionContent__["a" /* default */];
 Accordion.Title = __WEBPACK_IMPORTED_MODULE_7__AccordionTitle__["a" /* default */];
 
-/* harmony default export */ __webpack_exports__["a"] = (Accordion);
+/* unused harmony default export */ var _unused_webpack_default_export = (Accordion);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),

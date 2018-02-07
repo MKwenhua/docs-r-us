@@ -5,7 +5,6 @@ import AppointmentsCalendar from './AppointmentsCalendar';
 import AppointmentTerminal from './AppointmentTerminal';
 import Profile from './Profile';
 
-
 export {
   Home,
   PatientsView,

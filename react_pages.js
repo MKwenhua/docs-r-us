@@ -444,7 +444,7 @@ var items = [{
   centered: true
 }];
 
-var Home_events = [{
+var events = [{
   date: '1 Hour Ago',
   image: '/assets/images/avatar/small/elliot.jpg',
   meta: '4 Likes',
@@ -535,7 +535,7 @@ var Home_Home = function (_PureComponent) {
               },
               __self: this
             },
-            external__react__default.a.createElement(external__semantic_ui_react_["Feed"], { events: Home_events, __source: {
+            external__react__default.a.createElement(external__semantic_ui_react_["Feed"], { events: events, __source: {
                 fileName: Home__jsxFileName,
                 lineNumber: 62
               },
@@ -1523,6 +1523,7 @@ var AppointmentsList_AppointmentsList = function (_PureComponent) {
     return _ret = (_temp = (_this = AppointmentsList__possibleConstructorReturn(this, (_ref = AppointmentsList.__proto__ || Object.getPrototypeOf(AppointmentsList)).call.apply(_ref, [this].concat(args))), _this), _this.appointmentListItem = function (_ref2) {
       var id = _ref2.id,
           purpose = _ref2.purpose,
+          title = _ref2.title,
           description = _ref2.description,
           date = _ref2.date,
           time = _ref2.time;
@@ -1577,7 +1578,7 @@ var AppointmentsList_AppointmentsList = function (_PureComponent) {
               },
               __self: _this2
             },
-            purpose
+            title
           ),
           external__react__default.a.createElement(
             external__semantic_ui_react_["List"].Description,
@@ -1967,10 +1968,16 @@ external__react_big_calendar__default.a.setLocalizer(external__react_big_calenda
 
 var CalendarDisplay_CalendarDisplay = function CalendarDisplay(props) {
   return external__react__default.a.createElement(external__react_big_calendar__default.a, Object.assign({}, props, {
+    selectable: true,
     events: props.events,
-    step: 15,
-    timeslots: 8,
+    step: 60,
     defaultView: 'week',
+    onSelectEvent: function onSelectEvent(event) {
+      return console.log('event', event);
+    },
+    onSelectSlot: function onSelectSlot(slotInfo) {
+      console.log('slotInfo', slotInfo);
+    },
     defaultDate: new Date(), __source: {
       fileName: CalendarDisplay__jsxFileName,
       lineNumber: 9
@@ -1980,6 +1987,276 @@ var CalendarDisplay_CalendarDisplay = function CalendarDisplay(props) {
 };
 
 /* harmony default export */ var components_CalendarDisplay = (CalendarDisplay_CalendarDisplay);
+// CONCATENATED MODULE: ./src/shared/components/AppointmentModal.js
+var AppointmentModal__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/AppointmentModal.js';
+
+var AppointmentModal__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function AppointmentModal__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AppointmentModal__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function AppointmentModal__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
+  AppointmentModal__inherits(AppointmentModal, _React$PureComponent);
+
+  function AppointmentModal() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    AppointmentModal__classCallCheck(this, AppointmentModal);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = AppointmentModal__possibleConstructorReturn(this, (_ref = AppointmentModal.__proto__ || Object.getPrototypeOf(AppointmentModal)).call.apply(_ref, [this].concat(args))), _this), _this.submitAppointmentChange = function (e) {
+      var _this$props = _this.props,
+          status = _this$props.status,
+          response = _this$props.response;
+
+      fetch('/appointments/' + id, {
+        method: 'PUT',
+        body: JSON.stringify({ status: status, response: response })
+      }).then(function (res) {
+        return _this.props.dispatch({
+          type: external__constants_["APPOINTMENT_RECORD_UPDATED"],
+          id: id,
+          payload: {}
+        });
+      }).catch(function (err) {
+        return console.log('APPOINTMENT_RECORD_UPDATED err', err);
+      });
+    }, _this.updateAppointmentStatus = function (status) {
+      return function (e) {
+        return _this.props.dispatch({
+          type: external__constants_["EDIT_APPOINTMENT_STATUS"],
+          payload: status
+        });
+      };
+    }, _this.updateComment = function (e) {
+      return _this.props.dispatch({
+        type: external__constants_["EDIT_APPOINTMENT_EVENT"],
+        response: e.target.value.trim()
+      });
+    }, _this.sendForUpdate = function (e) {
+      return _this.props.dispatch({ type: external__constants_["REQUEST_APPOINTMENT_CHANGE"] });
+    }, _this.goBack = function (e) {
+      return _this.props.dispatch({ type: external__constants_["APPOINTMENT_VIEW_BACK"] });
+    }, _temp), AppointmentModal__possibleConstructorReturn(_this, _ret);
+  }
+
+  AppointmentModal__createClass(AppointmentModal, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          description = _props.description,
+          purpose = _props.purpose,
+          response = _props.response,
+          start = _props.start,
+          end = _props.end,
+          step = _props.step,
+          status = _props.status,
+          title = _props.title,
+          patientId = _props.patientId,
+          id = _props.id,
+          patient = _props.patient;
+
+      return external__react__default.a.createElement(
+        external__semantic_ui_react_["Modal"],
+        { open: patientId !== undefined, __source: {
+            fileName: AppointmentModal__jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        },
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Modal"].Header,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 41
+            },
+            __self: this
+          },
+          purpose
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Modal"].Content,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 42
+            },
+            __self: this
+          },
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Modal"].Description,
+            { className: step === 'view' ? '' : 'hidden', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 43
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              Header,
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 44
+                },
+                __self: this
+              },
+              title
+            ),
+            external__react__default.a.createElement(
+              'p',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 45
+                },
+                __self: this
+              },
+              description
+            )
+          ),
+          external__react__default.a.createElement(
+            external__semantic_ui_react_["Modal"].Description,
+            { className: step === 'confirm' ? '' : 'hidden', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 47
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(
+              Header,
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 48
+                },
+                __self: this
+              },
+              'Confirm Changes'
+            ),
+            external__react__default.a.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 49
+                },
+                __self: this
+              },
+              'Status:'
+            ),
+            external__react__default.a.createElement(
+              'p',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 50
+                },
+                __self: this
+              },
+              status
+            ),
+            external__react__default.a.createElement(
+              'label',
+              {
+                __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 51
+                },
+                __self: this
+              },
+              'Optional'
+            ),
+            external__react__default.a.createElement(external__semantic_ui_react_["TextArea"], { onKeyUp: this.updateComment, defaultValue: response, placeholder: 'Leave comment for why. . . ', __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 52
+              },
+              __self: this
+            })
+          )
+        ),
+        external__react__default.a.createElement(
+          external__semantic_ui_react_["Modal"].Actions,
+          {
+            __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 55
+            },
+            __self: this
+          },
+          status === 'pending' && external__react__default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 58
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { color: 'black', content: 'Decline', onClick: this.updateAppointmentStatus('rejected'), __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 59
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { icon: 'check', content: 'Accept', labelPosition: 'right', onClick: this.updateAppointmentStatus('accepted'), __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 60
+              },
+              __self: this
+            })
+          ),
+          status !== 'pending' && external__react__default.a.createElement(external__semantic_ui_react_["Button"], { content: 'Cancel', onClick: this.updateAppointmentStatus('canceled'), __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 65
+            },
+            __self: this
+          }),
+          step === 'confirm' && external__react__default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 69
+              },
+              __self: this
+            },
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { floated: 'left', content: 'Go Back', icon: 'arrow left', color: 'teal', onClick: this.goBack, __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 70
+              },
+              __self: this
+            }),
+            external__react__default.a.createElement(external__semantic_ui_react_["Button"], { icon: 'check', content: 'Confirm', labelPosition: 'right', onClick: this.submitAppointmentChange, __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 71
+              },
+              __self: this
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return AppointmentModal;
+}(external__react__default.a.PureComponent);
+
+/* harmony default export */ var components_AppointmentModal = (AppointmentModal_AppointmentModal);
 // CONCATENATED MODULE: ./src/shared/pages/doctor/AppointmentsCalendar.js
 var AppointmentsCalendar__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/AppointmentsCalendar.js';
 
@@ -1995,6 +2272,13 @@ function AppointmentsCalendar__inherits(subClass, superClass) { if (typeof super
 
 
 
+
+var addHours = function addHours(date) {
+  return function (h) {
+    return new Date(date.setHours(date.getHours() + h));
+  };
+};
+
 var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
   AppointmentsCalendar__inherits(AppointmentsCalendar, _PureComponent);
 
@@ -2009,22 +2293,32 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (events) {
-      return events.map(function (event) {
-        return Object.assign({}, event, {
-          start: new Date(event.start),
-          end: new Date(event.end)
+    return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (appointments) {
+      return appointments.allIds.map(function (eventId) {
+        return Object.assign({}, appointments.byId[eventId], {
+          start: new Date(appointments.byId[eventId].time).getTime(),
+          end: addHours(new Date(appointments.byId[eventId].time))(1).getTime()
         });
+      }).filter(function (event) {
+        return event.status !== 'rejected';
+      });
+    }, _this.viewAppointment = function (event) {
+      return _this.props.dispatch({
+        type: external__constants_["VIEW_APPOINTMENT"],
+        payload: event
       });
     }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
   }
+  //sendPatientRequest = slotInfo =>
+
 
   AppointmentsCalendar__createClass(AppointmentsCalendar, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
           patients = _props.patients,
-          events = _props.events,
+          appointments = _props.appointments,
+          selectedEvent = _props.selectedEvent,
           dispatch = _props.dispatch;
 
       console.log('AppointmentsCalendar this.props', this.props);
@@ -2033,16 +2327,22 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
         {
           __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 15
+            lineNumber: 28
           },
           __self: this
         },
-        external__react__default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(events), dispatch: dispatch, patients: patients, __source: {
+        external__react__default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(appointments), dispatch: dispatch, patients: patients, __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 16
+            lineNumber: 29
           },
           __self: this
-        })
+        }),
+        external__react__default.a.createElement(components_AppointmentModal, Object.assign({}, selectedEvent, { dispatch: dispatch, __source: {
+            fileName: AppointmentsCalendar__jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }))
       );
     }
   }]);
@@ -2069,169 +2369,24 @@ var AppointmentTerminal_AppointmentTerminal = function (_PureComponent) {
   AppointmentTerminal__inherits(AppointmentTerminal, _PureComponent);
 
   function AppointmentTerminal() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     AppointmentTerminal__classCallCheck(this, AppointmentTerminal);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = AppointmentTerminal__possibleConstructorReturn(this, (_ref = AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      activeIndex: 0
-    }, _this.handleClick = function (e, titleProps) {
-      var index = titleProps.index;
-      var activeIndex = _this.state.activeIndex;
-
-      var newIndex = activeIndex === index ? -1 : index;
-
-      _this.setState({ activeIndex: newIndex });
-    }, _temp), AppointmentTerminal__possibleConstructorReturn(_this, _ret);
+    return AppointmentTerminal__possibleConstructorReturn(this, (AppointmentTerminal.__proto__ || Object.getPrototypeOf(AppointmentTerminal)).apply(this, arguments));
   }
 
   AppointmentTerminal__createClass(AppointmentTerminal, [{
     key: 'render',
     value: function render() {
-      var activeIndex = this.state.activeIndex;
-
-
       return external__react__default.a.createElement(
-        external__semantic_ui_react_["Accordion"],
-        { styled: true, __source: {
+        'h1',
+        {
+          __source: {
             fileName: AppointmentTerminal__jsxFileName,
-            lineNumber: 23
+            lineNumber: 7
           },
           __self: this
         },
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Title,
-          { active: activeIndex === 0, index: 0, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 24
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 25
-            },
-            __self: this
-          }),
-          'What is a dog?'
-        ),
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Content,
-          { active: activeIndex === 0, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 28
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 29
-              },
-              __self: this
-            },
-            'A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a ',
-            ' ',
-            'welcome guest in many households across the world.'
-          )
-        ),
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Title,
-          { active: activeIndex === 1, index: 1, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 34
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 35
-            },
-            __self: this
-          }),
-          'What kinds of dogs are there?'
-        ),
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Content,
-          { active: activeIndex === 1, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 38
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 39
-              },
-              __self: this
-            },
-            'There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of ',
-            ' ',
-            'dog that they find to be compatible with their own lifestyle and desires from a companion.'
-          )
-        ),
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Title,
-          { active: activeIndex === 2, index: 2, onClick: this.handleClick, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 44
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(external__semantic_ui_react_["Icon"], { name: 'dropdown', __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 45
-            },
-            __self: this
-          }),
-          'How do you acquire a dog?'
-        ),
-        external__react__default.a.createElement(
-          external__semantic_ui_react_["Accordion"].Content,
-          { active: activeIndex === 2, __source: {
-              fileName: AppointmentTerminal__jsxFileName,
-              lineNumber: 48
-            },
-            __self: this
-          },
-          external__react__default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 49
-              },
-              __self: this
-            },
-            'Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.'
-          ),
-          external__react__default.a.createElement(
-            'p',
-            {
-              __source: {
-                fileName: AppointmentTerminal__jsxFileName,
-                lineNumber: 52
-              },
-              __self: this
-            },
-            'A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to ',
-            ' ',
-            'assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your ',
-            ' ',
-            'dog from a shelter, helps give a good home to a dog who may not find one so readily.'
-          )
-        )
+        'Not Yet Implemented'
       );
     }
   }]);
@@ -2573,7 +2728,7 @@ var MainContainer_MainContainer = function (_PureComponent) {
                 },
                 __self: this
               },
-              external__react__default.a.createElement(doctor_AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { patients: patients, dispatch: dispatch, location: location, __source: {
+              external__react__default.a.createElement(doctor_AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { currentUser: currentUser, patients: patients, dispatch: dispatch, location: location, __source: {
                   fileName: MainContainer__jsxFileName,
                   lineNumber: 63
                 },
@@ -2654,12 +2809,6 @@ var setPatientState = function setPatientState(_ref) {
 // CONCATENATED MODULE: ./src/shared/state/normalizeDoctorState.js
 function normalizeDoctorState__objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var addHours = function addHours(date) {
-  return function (h) {
-    return new Date(date.setHours(date.getHours() + h));
-  };
-};
-
 var getObjectId = function getObjectId(obj) {
   return obj.id;
 };
@@ -2697,21 +2846,7 @@ var normalizeDoctorState = function normalizeDoctorState(_ref) {
       searchFocus: false
     },
     calendarView: {
-      events: appointments.map(function (_ref2) {
-        var id = _ref2.id,
-            purpose = _ref2.purpose,
-            patientId = _ref2.patientId,
-            description = _ref2.description,
-            time = _ref2.time;
-        return {
-          id: id,
-          description: description,
-          patientId: patientId,
-          title: purpose,
-          start: new Date(time).getTime(),
-          end: addHours(new Date(time))(1).getTime()
-        };
-      })
+      selectedEvent: {}
     }
   };
 };
@@ -2755,6 +2890,69 @@ function doctor__defineProperty(obj, key, value) { if (key in obj) { Object.defi
             connected: false
           });
           break;
+        }
+      case external__constants_["VIEW_APPOINTMENT"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({
+                syncing: false,
+                step: 'view'
+              }, action.payload)
+            })
+          });
+        }
+      case external__constants_["EDIT_APPOINTMENT_EVENT"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                response: action.payload
+              })
+            })
+          });
+        }
+      case external__constants_["EDIT_APPOINTMENT_STATUS"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                step: 'confirm',
+                status: action.payload
+              })
+            })
+          });
+        }
+      case external__constants_["REQUEST_APPOINTMENT_CHANGE"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                syncing: true
+              })
+            })
+          });
+        }
+      case external__constants_["APPOINTMENT_VIEW_BACK"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+                step: 'view'
+              })
+            })
+          });
+        }
+      case external__constants_["APPOINTMENT_RECORD_UPDATED"]:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: {}
+            }),
+            appointments: Object.assign({}, state.appointments, {
+              byId: Object.assign({}, state.appointments.byId, doctor__defineProperty({}, action.id, Object.assign({}, state.appointments.byId[action.id], action.payload)))
+            })
+          });
         }
       case external__constants_["SEARCH_INPUT_UPDATE"]:
         {

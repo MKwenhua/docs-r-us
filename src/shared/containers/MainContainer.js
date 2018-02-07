@@ -60,7 +60,7 @@ class MainContainer extends PureComponent {
             <PatientProfile currentUser={currentUser} {...patientProfile } appointments={appointments.resource} patients={patients} dispatch={dispatch} location={ location } {...props} />
           )}/>
           <Route exact path='/calendar'>
-            <AppointmentsCalendar appointments={appointments} {...calendarView} patients={patients} dispatch={dispatch} location={ location } />
+            <AppointmentsCalendar appointments={appointments} {...calendarView} currentUser={currentUser} patients={patients} dispatch={dispatch} location={ location } />
           </Route>
           <Route path='/appointment/:id'>
             <AppointmentTerminal location={ location } />

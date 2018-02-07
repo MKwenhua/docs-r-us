@@ -12,5 +12,4 @@ db.sequelize.sync({force: rebuildAndSeed}).then(() => {
 }).catch(error => console.log('DB sync error', error))
 
 
-
 module.exports = db
