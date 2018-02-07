@@ -9,9 +9,7 @@ db.sequelize.sync({force: rebuildAndSeed}).then(() => {
     require('./seeders')(db);
   }
   console.log('DB Synced');
-}).catch(error => {
-  console.log('DB sync error', error);
-})
+}).catch(error => console.log('DB sync error', error))
 
 
 

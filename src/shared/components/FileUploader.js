@@ -21,7 +21,7 @@ class FileUploader extends PureComponent {
   }
   uploadToS3 = e => {
     e.preventDefault();
-    const { action, files } = this.props;
+    const { action, files, patientId } = this.props;
     const formData = new FormData(document.forms['uploadForm']);
     files.forEach(file => {
       formData.append(file.name, file, file.name);
@@ -30,13 +30,16 @@ class FileUploader extends PureComponent {
       method: 'POST',
       body: formData
     })
-    .then(response => {
-      console.log('upload response', response);
-      this.props.dispatch({ type: PATIENT_FILES_UPLOADED });
+    .then(response => response.json()).then(json => {
+      console.log('upload response', json);
+      this.props.dispatch({ type: PATIENT_FILES_UPLOADED,
+        patientId: patientId,
+        payload: {
+          records: JSON.parse(json)
+         }
+       });
     })
-    .catch(error => {
-      console.log(error);
-    });
+    .catch(error => console.log(error));
     this.props.dispatch({ type: PATIENT_FILES_UPLOADING });
   }
   removeFile = index => e => this.props.dispatch({
@@ -82,12 +85,14 @@ class FileUploader extends PureComponent {
        <Modal open={ files.length > 0}>
          <Modal.Header>Files To Be Uploaded</Modal.Header>
          <Modal.Content>
-           <Dimmer blurring active={syncing}>
-            <Loader indeterminate>Uploading Files</Loader>
-          </Dimmer>
-          <List>
-            {this.previewUploads(files)}
-          </List>
+          <Dimmer.Dimmable dimmed={syncing}>
+            <Dimmer active={syncing} inverted>
+              <Loader indeterminate>Uploading Files</Loader>
+            </Dimmer>
+            <List>
+              {this.previewUploads(files)}
+            </List>
+           </Dimmer.Dimmable>
           </Modal.Content>
           <Modal.Actions>
              <Button secondary onClick={this.cancelUpload} labelPosition='right' content='Cancel' />

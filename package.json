@@ -40,6 +40,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "faker": "^4.1.0",
     "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "multiparty": "^4.1.3",

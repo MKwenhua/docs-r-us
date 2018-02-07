@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import 'stylesheet/PatientsView.css';
 import PatientListItem from 'component/PatientListItem';
 import {Link} from 'react-router-dom'
 import BuildTrie from 'action-autocomplete';
@@ -36,7 +37,7 @@ class PatientsView extends PureComponent {
     <PatientListItem key={i} {...byId[patientId]}/>
   ))
   listSuggestions = suggestions => suggestions.map((patient, i) => (
-    <PatientListItem key={i} {...patient} />
+    <PatientListItem key={i} typed={this.props.typed} {...patient} />
   ))
   searchType = e => {
    const typed = e.target.value.toLowerCase().trim();

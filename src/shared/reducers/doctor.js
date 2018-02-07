@@ -48,7 +48,7 @@ export default (initialState) => (
             filters: [],
             suggestions: [],
             searchFocus: false
-          } 
+          }
         }
       }
       case PATIENT_TAB_SELECTED: {
@@ -110,10 +110,21 @@ export default (initialState) => (
       case PATIENT_FILES_UPLOADED: {
         return {
           ...state,
+          patients: {
+            ...state.patients,
+            byId: {
+              ...state.patients.byId,
+              [action.patientId]: {
+                  ...state.patients.byId[action.patientId],
+                  ...action.payload
+              }
+            }
+          },
           patientProfile: {
             ...state.patientProfile,
             files: [],
-            syncing: false
+            syncing: false,
+            display: 'records'
           }
         }
       }

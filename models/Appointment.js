@@ -15,12 +15,16 @@ module.exports = (sequelize, DataTypes) => {
     date: {
       type: DataTypes.DATEONLY
     },
-    purpose: DataTypes.TEXT,
+    title: {
+      type: DataTypes.STRING,
+      defaultValue: 'Requesting Appointment'
+    },
+    purpose: DataTypes.STRING,
     time: {
       type: DataTypes.DATE
     },
     description: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     }
   });
   Appointment.associate = ({Patient, Doctor}) => {

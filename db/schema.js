@@ -22,8 +22,6 @@ DB.sequelize.sync().then(() => {
     require('./seeders')(RDS_Models);
   }
   console.log('DB Synced');
-}).catch(error => {
-  console.log('DB sync error', error);
-})
+}).catch(error => console.log('DB sync error', error))
 
 module.exports = RDS_Models;
