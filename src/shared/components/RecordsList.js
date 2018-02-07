@@ -70,7 +70,7 @@ class RecordsList extends PureComponent {
     date: updatedSince(record),
     image: recordSrc(record),
     meta: record.type,
-    summary: 'Some summary of the record'
+    summary: record.name
   }))
   render() {
     const {dispatch, patient} = this.props;

@@ -26,20 +26,20 @@ const items = [
 const events = [
   {
     date: '1 Hour Ago',
-    image: `${CDN_URI}patient_info_photo.jpg`,
+    image: 'https://dq8llwxgkllay.cloudfront.net/patient_info_photo.jpg',
     summary: 'Have Not Gotten To this Part Yet'
   }, {
     date: '2 days ago',
-    image: `${CDN_URI}patient_info_photo.jpg`,
+    image: 'https://dq8llwxgkllay.cloudfront.net/patient_info_photo.jpg',
     meta: '1 Document',
     summary: 'Some Documents Have Been Added',
-    extraImages: [`${CDN_URI}record-upload-icon.png`]
+    extraImages: ['https://dq8llwxgkllay.cloudfront.net/record-upload-icon.png']
   }, {
     date: '4 days ago',
-    image: `${CDN_URI}patient_info_photo.jpg`,
+    image: 'https://dq8llwxgkllay.cloudfront.net/patient_info_photo.jpg',
     meta: '2 X-Rays',
     summary: 'X-Rays got uploaded for a Patient',
-    extraImages: [`${CDN_URI}x-ray-chest.jpg`, `${CDN_URI}x-ray-chest-2.jpg`]
+    extraImages: ['https://dq8llwxgkllay.cloudfront.net/x-ray-chest.jpg', 'https://dq8llwxgkllay.cloudfront.net/x-ray-chest-2.jpg']
   }
 ]
 

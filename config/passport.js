@@ -1,6 +1,7 @@
 const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
+const cookieSession = require('cookie-session');
 const LocalStrategy = require('passport-local').Strategy;
 const {
   SignupAuth,
@@ -9,7 +10,11 @@ const {
 } = require('./auth');
 
 module.exports = (app) => {
-app.use(session({secret: 'think outside the bun', resave: true, saveUninitialized: true}))
+app.use(cookieSession({
+  name: 'session',
+  keys: ['baja', 'blast']
+}))
+//app.use(session({secret: 'think outside the bun', resave: true, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors('*'));
