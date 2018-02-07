@@ -5,7 +5,7 @@ const RedisStore = require('connect-redis')(session);
 const LocalStrategy = require('passport-local').Strategy;
 const {SignupAuth, SigninAuth, DeserializeUser} = require('./auth');
 const redis = require('redis');
-const client = redis.createClient(18121, 'redis-18121.c16.us-east-1-2.ec2.cloud.redislabs.com');
+const client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_ENDPOINT);
 const redisOptions = {
   client: client
 }
