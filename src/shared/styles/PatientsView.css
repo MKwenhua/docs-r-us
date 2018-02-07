@@ -1,0 +1,12 @@
+.match-highlight {
+  color: #f70;
+  text-decoration: underline;
+}
+
+#recordFeed .ui.feed>.event>.label img {
+  border-radius: 0;
+}
+
+#recordFeed .ui.feed>.event>.label {
+  width: 5em;
+}

@@ -15,6 +15,18 @@ const Debounce = (fn, wait, immediate) => {
   }
 }
 
+const ParseJson = data => {
+  if (data instanceof Object === true) {
+    return data;
+  }
+  try {
+    return JSON.parse(data || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
 export {
-  Debounce
+  Debounce,
+  ParseJson
 }

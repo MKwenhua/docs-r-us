@@ -1,5 +1,4 @@
 const bCrypt = require('bcrypt-nodejs');
-
 const {
   Patient,
   Appointment,
@@ -31,27 +30,36 @@ const SigninAuth = (req, email, password, done) => {
   GetUserType(req.body.userType).findOne({
     where: {
       email: email
-    },
-    include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
+    }
   }).then(user => {
 
     if (!user) {
-      return done(null, false, {message: 'Email does not exist'});
+      return done(null, false, {message: 'email does not exist'});
     }
 
     if (!isValidPassword(user.password, password)) {
       return done(null, false, {message: 'Incorrect password.'});
     }
 
-    return done(null,  user.get());
+    return done(null, user.get());
 
-  }).catch(err => done(null, false, {message: 'Something went wrong with your Signin'}));
+  }).catch(err => done(null, false, {message: 'Something Happened'}));
 };
 
 const DeserializeUser = ({ userType, id }, done) => {
   GetUserType(userType).findOne({
-    where: {id: id},
-    include: [{ model: Appointment, as: 'appointments'}, {model: Patient, through: Appointment}]
+    where: {
+      id: id
+    },
+    include: [
+      {
+        model: Appointment,
+        as: 'appointments'
+      }, {
+        model: Patient,
+        through: Appointment
+      }
+    ]
   }).then(user => {
     if (user) {
       done(null, user);

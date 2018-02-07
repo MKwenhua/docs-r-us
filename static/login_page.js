@@ -3,6 +3,7 @@ const LoginPageDoctor = `
     <head>
       <title>Doctor Login</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
@@ -16,15 +17,23 @@ const LoginPageDoctor = `
         .column {
           max-width: 450px;
         }
+        #loginHeadline {
+          display: flex;
+          align-items: center;
+        }
+        #loginHeadline i {
+          font-size: 2em;
+          margin-bottom: -20px;
+        }
       </style>
     </head>
     <body>
       <div class="ui middle aligned center aligned grid">
         <div class="column">
           <h2 class="ui teal image header">
-            <img src="assets/images/logo.png" class="image">
-            <div class="content">
-              Log-in to your account
+            <div id="loginHeadline" class="content">
+              <i class="xing icon"></i>
+              <span>Log-in to your account</span>
             </div>
           </h2>
           <form class="ui large form" action="/signin" method="post" name="signin">

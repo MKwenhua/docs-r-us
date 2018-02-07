@@ -21,13 +21,9 @@ const sequelize = new Sequelize(RDS_DB_NAME, 'root', RDS_PASSWORD, {
   language: 'en'
 });
 
-sequelize.authenticate().then(() => {
-  console.log('Connection has been established successfully.');
-}).catch(err => {
-  console.error('Unable to connect to the database:', err);
-});
+sequelize
+  .authenticate()
+  .then(() => console.log('Connection has been established successfully.'))
+  .catch(err => console.error('Unable to connect to the database:', err));
 
-module.exports = {
-  sequelize,
-  Sequelize
-}
+module.exports = sequelize

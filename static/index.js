@@ -13,22 +13,7 @@ const PatientLogin = (req, res) => {
   res.end();
 }
 
-const isLoggedIn = (req, res, next) => {
-  if (req.isAuthenticated()) {
-      return next();
-  }
-  res.redirect('/signin');
-}
-
-const LogOut = (req,res) => {
-  req.session.destroy(err => {
-    res.redirect('/')
-  });
-}
-
 module.exports = {
   DoctorLogin,
-  PatientLogin,
-  isLoggedIn,
-  LogOut
+  PatientLogin
 }

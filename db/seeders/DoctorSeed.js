@@ -1,4 +1,5 @@
 const bCrypt = require('bcrypt-nodejs');
+const faker = require('faker');
 const Specialties = [
   "General Surgery",
   "Cardiothoracic Surgery",
@@ -19,51 +20,30 @@ const Specialties = [
   "Emergency Medicine"
 ];
 
-const RandomNames = [
-  "Demetrice Stanfield",
-  "Marylee Preston",
-  "Sharri Dejesus",
-  "Lupita Raynor",
-  "Yasmine Cortes",
-  "Lorrine Beyer",
-  "Dan Felton",
-  "Tyra Devito",
-  "Coral Connell",
-  "Clair Seay",
-  "Sid Stamper",
-  "Rocio Anders",
-  "Leo Schott",
-  "Felicita Robins",
-  "Nelly Downey",
-  "Sook Davison",
-  "Tambra Hurd",
-  "Jeanett Hanna",
-  "Chu Crocker",
-  "Marcell Seifert",
-  "Tyrell Oconnell",
-  "Nickole Poore",
-  "Eusebio Steed",
-  "Leida Baughman",
-  "Takako Baptiste"
-];
-
 const buildEmail = name => (
   `${name.split(' ')[0].toLowerCase()}.${name.split(' ')[1].toLowerCase()}@hospital.com`
 );
 
 const DoctorObject = name => ({
-  fullName: name,
-  email: buildEmail(name),
+  fullName: faker.name.findName(),
+  email: faker.internet.email(),
   specialty: Specialties[Math.floor(Math.random() * Specialties.length)],
   password: bCrypt.hashSync('tacobell', bCrypt.genSaltSync(8), null)
 })
 
 module.exports = [
   {
+    fullName: 'Cornelius Zaius',
+    email: 'dr.zaius@hopkins.edu',
+    photo: 'dr_zaius.jpg',
+    specialty: 'Neurosurgery',
+    password: bCrypt.hashSync('baja', bCrypt.genSaltSync(8), null)
+  },
+  {
     fullName: 'John A. Zoidberg',
     email: 'zoidberg@aol.com',
     photo: 'zoidberg-photo.jpg',
     specialty: 'Pathology',
-    password: bCrypt.hashSync('tacobell', bCrypt.genSaltSync(8), null)
+    password: bCrypt.hashSync('baja', bCrypt.genSaltSync(8), null)
   }
-].concat(RandomNames.map(DoctorObject))
+].concat(new Array(20).fill(8).map(DoctorObject))

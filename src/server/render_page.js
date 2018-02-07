@@ -8,7 +8,7 @@ const RenderPage = (content, preloadedState) => (`
     <head>
       <title>Docs R Us</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/site_icon_cube.png">
+      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
       <link rel="stylesheet" href="${assetBase}/css/app_bundle.css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">

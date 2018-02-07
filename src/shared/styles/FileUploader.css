@@ -1,0 +1,44 @@
+.dropzone-element {
+  width: 100%;
+  min-height: 350px;
+  border-width: 2px;
+  border-color: rgb(102, 102, 102);
+  border-style: dashed;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropzone-element h1 {
+  line-height: 200px;
+  vertical-align: middle;
+  color: white;
+}
+
+.dropzone-element-active {
+  background-color: white;
+}
+
+.dropzone-element-accept {
+  border-color: lime;
+  border-style: solid;
+}
+
+.dropzone-element-reject {
+  border-color: orange;
+}
+
+.spread-sheet-view {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 200px;
+  color: black;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#grid { height: 500px; }

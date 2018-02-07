@@ -1,9 +1,9 @@
 import { combineReducers, createStore } from 'redux';
-import setMainReducer from './main'
+import setDoctorReducer from './doctor'
 
-const serverStoreBuilder = (state) => setMainReducer(state);
+const serverStoreBuilder = state => setDoctorReducer(state);
 
-const clientStoreBuilder = (state) => setMainReducer(state);
+const clientStoreBuilder = state => setDoctorReducer(state);
 
 export {
   serverStoreBuilder,

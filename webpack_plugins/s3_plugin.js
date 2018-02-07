@@ -14,16 +14,11 @@ const S3PluginConfig = {
   cloudfrontInvalidateOptions: {
     DistributionId: process.env.CLOUDFRONT_DISTRIBUTION_ID,
     Items: [
-      "/public/bundle.js",
-      "/public/sample.js",
-      "/public/sample.js.map",
+      "/public/app_bundle.js",
+      "/public/app_bundle.js.map",
       "/public/bundle.js.map",
-      "/public/css/bundle.css",
-      "/public/css/sample.css",
-      "/public/css/projects.css",
-      "/public/css/sample.css.map",
-      "/public/css/projects.css.map",
-      "/public/css/bundle.css.map"
+      "/public/css/app_bundle.css",
+      "/public/css/app_bundle.css.map"
     ]
   }
 };

@@ -1,42 +1,42 @@
 
-module.exports = ({sequelize, Sequelize}) => {
+module.exports = (sequelize, DataTypes) => {
 
   const Doctor = sequelize.define('doctor', {
     fullName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true,
       validate: {
         isEmail: true
       }
     },
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: 'password'
     },
     userType: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: 'doctor'
     },
     photo: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       defaultValue: 'default_doctor_photo.png'
     },
     id: {
-      type: Sequelize.UUID,
+      type: DataTypes.UUID,
       primaryKey: true,
-      defaultValue: Sequelize.UUIDV4
+      defaultValue: DataTypes.UUIDV4
     },
-    rating: Sequelize.DECIMAL,
-    info: Sequelize.JSONB,
-    specialty: Sequelize.STRING,
-    degree: Sequelize.STRING,
-    degreeDate: Sequelize.DATEONLY,
-    createdAt: Sequelize.DATE,
-    updatedAt: Sequelize.DATE
+    rating: DataTypes.DECIMAL,
+    info: DataTypes.JSONB,
+    specialty: DataTypes.STRING,
+    degree: DataTypes.STRING,
+    degreeDate: DataTypes.DATEONLY,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   }, {
     indexes: [
       {
@@ -45,6 +45,12 @@ module.exports = ({sequelize, Sequelize}) => {
       }
     ]
   });
+
+  Doctor.associate = ({Appointment, Patient}) => {
+    // 1 to many with board
+    Doctor.hasMany(Appointment, {as: 'appointments'});
+    Doctor.belongsToMany(Patient, {through: Appointment});
+  };
 
   return Doctor;
 }

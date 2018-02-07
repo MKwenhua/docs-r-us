@@ -11,24 +11,15 @@ import {
 import {
   Debounce
 } from 'helpers';
+
 import {
-  DoctorHome
-} from 'page/DoctorHome';
-import {
-  DoctorPatientsView
-} from 'page/DoctorPatientsView';
-import {
-  DoctorPatientProfile
-} from 'page/DoctorPatientProfile';
-import {
-  AppointmentsCalendar
-} from 'page/AppointmentsCalendar';
-import {
-  AppointmentTerminal
-} from 'page/AppointmentTerminal';
-import {
-  DoctorProfile
-} from 'page/DoctorProfile';
+  Home,
+  PatientsView,
+  PatientProfile,
+  AppointmentsCalendar,
+  AppointmentTerminal,
+  Profile
+} from 'pages/doctor';
 
 const WrapperClass = {
   '/': 'main'
@@ -40,10 +31,18 @@ class MainContainer extends PureComponent {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-  }
   render() {
-    const { dispatch, location } = this.props;
+    const {
+      dispatch,
+      location,
+      match,
+      currentUser,
+      appointments,
+      patients,
+      patientProfile,
+      patientsView,
+      calendarView
+    } = this.props;
     console.log('MainContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'main'}>
@@ -52,22 +51,22 @@ class MainContainer extends PureComponent {
         <div className={ true ? 'page-content' : 'page-content'}>
         <Switch>
           <Route exact path='/'>
-            <DoctorHome location={ location } />
+            <Home location={ location } />
           </Route>
           <Route exact path='/patients'>
-            <DoctorPatientsView location={ location } />
+            <PatientsView currentUser={currentUser} {...patientsView}  patients={patients} dispatch={dispatch} location={ location } />
           </Route>
-          <Route exact path='/patient/:id'>
-            <DoctorPatientProfile location={ location } />
-          </Route>
-          <Route exact path='/appointments'>
-            <AppointmentsCalendar location={ location } />
+          <Route path='/patient/:id' render={(props) => (
+            <PatientProfile currentUser={currentUser} {...patientProfile } appointments={appointments.resource} patients={patients} dispatch={dispatch} location={ location } {...props} />
+          )}/>
+          <Route exact path='/calendar'>
+            <AppointmentsCalendar appointments={appointments} {...calendarView} currentUser={currentUser} patients={patients} dispatch={dispatch} location={ location } />
           </Route>
           <Route path='/appointment/:id'>
             <AppointmentTerminal location={ location } />
           </Route>
           <Route exact path='/profile'>
-            <DoctorProfile location={ location } />
+            <Profile appointments={appointments} patients={patients} {...currentUser} location={ location } />
           </Route>
         </Switch>
         </div>
