@@ -6,22 +6,27 @@ const {
   RDS_DB_ENDPOINT,
   RDS_DB_NAME,
   RDS_PASSWORD,
-  RDS_PORT
+  RDS_PORT,
+  DATABASE_URL
 } = process.env;
 
-const sequelize = new Sequelize(RDS_DB_NAME, 'root', RDS_PASSWORD, {
-  host: RDS_DB_ENDPOINT,
-  port: RDS_PORT,
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: 'Amazon RDS'
-  },
-  pool: {
-    maxConnections: 5,
-    maxIdleTime: 30
-  },
-  language: 'en'
-});
+// const sequelize = new Sequelize(RDS_DB_NAME, 'root', RDS_PASSWORD, {
+//   host: RDS_DB_ENDPOINT,
+//   port: RDS_PORT,
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: 'Amazon RDS'
+//   },
+//   pool: {
+//     maxConnections: 5,
+//     maxIdleTime: 30
+//   },
+//   language: 'en'
+// });
+const sequelize = new Sequelize(DATABASE_URL, {
+   dialect: 'postgres',
+   language: 'en'
+})
 
 sequelize
   .authenticate()

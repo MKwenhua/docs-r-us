@@ -19,15 +19,15 @@ client.on('connect', () => console.log('Connected to Redis'));
 module.exports = (app) => {
   app.enable('trust proxy');
   app.use(session({
+    store: new RedisStore(redisOptions),
     secret: 'think outside the bun',
-    resave: true,
-    saveUninitialized: true,
-    proxy: true,
-    cookie: {
-      secure: true,
-      maxAge: 3600000,
-      store: new RedisStore(redisOptions)
-    }
+    resave: false
+    //saveUninitialized: true
+    // proxy: true,
+    // cookie: {
+    //   secure: true,
+    //   maxAge: 3600000
+    // }
   }))
   app.use(passport.initialize());
   app.use(passport.session());
