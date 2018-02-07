@@ -10,7 +10,9 @@ import {
   Statistic
 } from 'semantic-ui-react'
 import moment from 'moment';
-import {CDN_URI} from 'constants';
+import {
+  CDN_URI
+} from 'constants';
 
 class AppointmentsList extends PureComponent {
   appointmentListItem = ({id, purpose, title, description, date, time}) => (

@@ -8,12 +8,15 @@ import {
   Statistic
 } from 'semantic-ui-react'
 import moment from 'moment';
-import {CDN_URI} from 'constants';
 import {
   ParseJson
 } from 'helpers';
+import {
+  CDN_URI
+} from 'constants';
 
 const recordSrc = ({src, type}) => type.includes('image') ? (CDN_URI + src) : `${CDN_URI}record-upload-icon.png`;
+
 const updatedSince = ({updatedAt}) => moment(new Date(updatedAt), "YYYYMMDD").fromNow();
 
 const compareDates = (a, b) => {
@@ -37,8 +40,8 @@ const lastUpdate = data => ({
   value: moment(
     new Date(
       Math.max(
-      Object.keys(data).map(recordKey => (
-        new Date(data[recordKey].updatedAt).getTime()
+      data.map(record => (
+        new Date(record.updatedAt).getTime()
       ))
     )
   ), "YYMMDD").fromNow(),

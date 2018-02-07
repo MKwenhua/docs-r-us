@@ -6,7 +6,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
-const {serverPlugins, clientPlugins} = require('./webpack_plugins/optimize_plugins.js')(webpack);
+const {
+  serverPlugins,
+  clientPlugins
+} = require('./webpack_plugins/optimize_plugins.js')(webpack);
+//This is for uploading all assets to AWS cloudfront
 const ClientS3Plugins = require('./webpack_plugins/s3_plugin.js');
 
 
