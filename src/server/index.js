@@ -16,7 +16,7 @@ const context = {
 
 
 const IndexRoute = (req, res) => {
-  const store = buildServerStore(normalizeDoctorState(req.user.dataValues));
+  const store = buildServerStore(normalizeDoctorState(req.user.dataValues))
   res.send(RenderPage(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>

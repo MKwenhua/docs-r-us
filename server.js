@@ -6,6 +6,9 @@ const {
 } = require('./system_health');
 
 
+//Initialize the API
+require('./api');
+
 //These Routes Are For Checking Server Health
 app.get('/health', ProcessHealth);
 

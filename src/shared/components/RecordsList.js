@@ -9,6 +9,9 @@ import {
 } from 'semantic-ui-react'
 import moment from 'moment';
 import {CDN_URI} from 'constants';
+import {
+  ParseJson
+} from 'helpers';
 
 const recordSrc = ({src, type}) => type.includes('image') ? (CDN_URI + src) : `${CDN_URI}record-upload-icon.png`;
 const updatedSince = ({updatedAt}) => moment(new Date(updatedAt), "YYYYMMDD").fromNow();
@@ -22,7 +25,7 @@ const compareDates = (a, b) => {
 }
 
 const RecordToSortedList = records => (
-  Object.keys(records).map(recKey => records[recKey]).sort(compareDates)
+  Object.values(records).sort(compareDates)
 );
 
 const recordsQty = data => ({
@@ -38,7 +41,7 @@ const lastUpdate = data => ({
         new Date(data[recordKey].updatedAt).getTime()
       ))
     )
-  ), "YYYYMMDD").fromNow(),
+  ), "YYMMDD").fromNow(),
   label: 'Most Recent Update'
 });
 
@@ -59,8 +62,7 @@ const Something = data => ({value: 838383, label: 'A Stat'})
 const calcStats = data => [
   recordsQty,
   lastUpdate,
-  BloodPressure,
-  Something
+  BloodPressure
 ].map(statFn => statFn(data));
 
 class RecordsList extends PureComponent {
@@ -72,16 +74,16 @@ class RecordsList extends PureComponent {
   }))
   render() {
     const {dispatch, patient} = this.props;
-    const patientRecords = patient.records ? JSON.parse(patient.records) : {};
-    const statList = patientRecords.length ? calcStats() : [];
+    const patientRecords = ParseJson(patient.records);
+    const statList = calcStats(Object.values(patientRecords));
     return (
       <section>
-        <Statistic.Group widths='four' items={statList}/>
+        <Statistic.Group size='tiny' widths='three' items={statList}/>
         <Header>
           Patient Records
         </Header>
         <Divider />
-        <Feed events={this.mapRecords(RecordToSortedList(patientRecords))}/>
+        <Feed id='recordFeed' events={this.mapRecords(RecordToSortedList(patientRecords))}/>
       </section>
     )
   }

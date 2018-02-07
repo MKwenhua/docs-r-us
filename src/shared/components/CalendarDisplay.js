@@ -6,12 +6,13 @@ import 'stylesheet/BigCalendar.css';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 const CalendarDisplay = props => (
-  <BigCalendar {...props}
+  <BigCalendar
+    {...props}
     selectable
     events={props.events}
     step={60}
     defaultView='week'
-    onSelectEvent={event => console.log('event', event)}
+    onSelectEvent={props.viewAppointment}
     onSelectSlot={slotInfo => {
       console.log('slotInfo', slotInfo)
       }

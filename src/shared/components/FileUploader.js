@@ -15,10 +15,10 @@ import {
 const uploadPreviewSrc = ({preview, type}) => type.includes('image') ? preview : `${CDN_URI}record-upload-icon.png`;
 
 class FileUploader extends PureComponent {
-  fileDrop = files =>  {
-    console.log('files', files);
-    this.props.dispatch({type: PATIENT_FILES_DROPPED, payload: files});
-  }
+  fileDrop = files => this.props.dispatch({
+    type: PATIENT_FILES_DROPPED,
+    payload: files
+  })
   uploadToS3 = e => {
     e.preventDefault();
     const { action, files, patientId } = this.props;
@@ -32,7 +32,8 @@ class FileUploader extends PureComponent {
     })
     .then(response => response.json()).then(json => {
       console.log('upload response', json);
-      this.props.dispatch({ type: PATIENT_FILES_UPLOADED,
+      this.props.dispatch({
+        type: PATIENT_FILES_UPLOADED,
         patientId: patientId,
         payload: {
           records: JSON.parse(json)

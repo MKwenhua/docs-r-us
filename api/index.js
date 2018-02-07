@@ -1,3 +1,4 @@
+const app = require('../app');
 const {
  UpdateAppointment
 } = require('./appointments');
@@ -5,11 +6,6 @@ const {
   UploadToS3
 } = require('../helpers/s3_uploads.js');
 
+app.post('/appointments/:id', UpdateAppointment)
 
-module.exports = () => {
-
-  app.put('/appointments/:id', UpdateAppointment)
-
-  app.post('/patients/:id', UploadToS3);
-
-}
+app.post('/patients/:id', UploadToS3);

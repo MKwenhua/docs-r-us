@@ -46493,6 +46493,7 @@ var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
 var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
 var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
 var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
+var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
 
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
@@ -46536,7 +46537,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
-              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+              selectedEvent: Object.assign({}, state.calendarView.selectedEvent, {
                 response: action.payload
               })
             })
@@ -46546,7 +46547,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
-              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+              selectedEvent: Object.assign({}, state.calendarView.selectedEvent, {
                 step: 'confirm',
                 status: action.payload
               })
@@ -46557,7 +46558,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
-              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
+              selectedEvent: Object.assign({}, state.calendarView.selectedEvent, {
                 syncing: true
               })
             })
@@ -46567,9 +46568,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
-              selectedEvent: Object.assign({}, state.state.calendarView.selectedEvent, {
-                step: 'view'
+              selectedEvent: Object.assign({}, state.calendarView.selectedEvent, {
+                step: 'view',
+                status: 'pending'
               })
+            })
+          });
+        }
+      case CLOSE_APPOINTMENT_MODAL:
+        {
+          return Object.assign({}, state, {
+            calendarView: Object.assign({}, state.calendarView, {
+              selectedEvent: {}
             })
           });
         }
@@ -46968,7 +46978,7 @@ var Divider = __webpack_require__(856);
 var Flag = __webpack_require__(360);
 
 // EXTERNAL MODULE: ./node_modules/semantic-ui-react/dist/es/elements/Header/Header.js
-var Header_Header = __webpack_require__(857);
+var Header = __webpack_require__(857);
 
 // CONCATENATED MODULE: ./node_modules/semantic-ui-react/dist/es/elements/Header/index.js
 
@@ -47755,6 +47765,17 @@ var Debounce = function Debounce(fn, wait, immediate) {
   };
 };
 
+var ParseJson = function ParseJson(data) {
+  if (data instanceof Object === true) {
+    return data;
+  }
+  try {
+    return JSON.parse(data || '{}');
+  } catch (e) {
+    return {};
+  }
+};
+
 
 // CONCATENATED MODULE: ./src/shared/pages/doctor/Home.js
 var Home__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/doctor/Home.js';
@@ -47766,6 +47787,8 @@ function Home__classCallCheck(instance, Constructor) { if (!(instance instanceof
 function Home__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function Home__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -47788,28 +47811,20 @@ var items = [{
 
 var events = [{
   date: '1 Hour Ago',
-  image: '/assets/images/avatar/small/elliot.jpg',
-  meta: '4 Likes',
-  summary: 'Elliot Fu added you as a friend'
+  image: CDN_URI + 'patient_info_photo.jpg',
+  summary: 'Have Not Gotten To this Part Yet'
+}, {
+  date: '2 days ago',
+  image: CDN_URI + 'patient_info_photo.jpg',
+  meta: '1 Document',
+  summary: 'Some Documents Have Been Added',
+  extraImages: [CDN_URI + 'record-upload-icon.png']
 }, {
   date: '4 days ago',
-  image: '/assets/images/avatar/small/helen.jpg',
-  meta: '1 Like',
-  summary: 'Helen Troy added 2 new illustrations',
-  extraImages: ['/assets/images/wireframe/image.png', '/assets/images/wireframe/image-text.png']
-}, {
-  date: '3 days ago',
-  image: '/assets/images/avatar/small/joe.jpg',
-  meta: '8 Likes',
-  summary: 'Joe Henderson posted on his page',
-  extraText: "Ours is a life of constant reruns. We're always circling back to where we'd we started."
-}, {
-  date: '4 days ago',
-  image: '/assets/images/avatar/small/justen.jpg',
-  meta: '41 Likes',
-  summary: 'Justen Kitsune added 2 new photos of you',
-  extraText: 'Look at these fun pics I found from a few years ago. Good times.',
-  extraImages: ['/assets/images/wireframe/image.png', '/assets/images/wireframe/image-text.png']
+  image: CDN_URI + 'patient_info_photo.jpg',
+  meta: '2 X-Rays',
+  summary: 'X-Rays got uploaded for a Patient',
+  extraImages: [CDN_URI + 'x-ray-chest.jpg', CDN_URI + 'x-ray-chest-2.jpg']
 }];
 
 var Home_Home = function (_PureComponent) {
@@ -47826,16 +47841,15 @@ var Home_Home = function (_PureComponent) {
     value: function render() {
       return react_default.a.createElement(
         'div',
-        {
-          __source: {
+        { id: 'home', __source: {
             fileName: Home__jsxFileName,
-            lineNumber: 53
+            lineNumber: 49
           },
           __self: this
         },
         react_default.a.createElement(Card["a" /* default */].Group, { itemsPerRow: '3', items: items, __source: {
             fileName: Home__jsxFileName,
-            lineNumber: 54
+            lineNumber: 50
           },
           __self: this
         }),
@@ -47843,7 +47857,7 @@ var Home_Home = function (_PureComponent) {
           Card["a" /* default */],
           { fluid: true, color: 'red', __source: {
               fileName: Home__jsxFileName,
-              lineNumber: 55
+              lineNumber: 51
             },
             __self: this
           },
@@ -47852,7 +47866,7 @@ var Home_Home = function (_PureComponent) {
             {
               __source: {
                 fileName: Home__jsxFileName,
-                lineNumber: 56
+                lineNumber: 52
               },
               __self: this
             },
@@ -47861,7 +47875,7 @@ var Home_Home = function (_PureComponent) {
               {
                 __source: {
                   fileName: Home__jsxFileName,
-                  lineNumber: 57
+                  lineNumber: 53
                 },
                 __self: this
               },
@@ -47873,13 +47887,13 @@ var Home_Home = function (_PureComponent) {
             {
               __source: {
                 fileName: Home__jsxFileName,
-                lineNumber: 61
+                lineNumber: 57
               },
               __self: this
             },
             react_default.a.createElement(Feed["a" /* default */], { events: events, __source: {
                 fileName: Home__jsxFileName,
-                lineNumber: 62
+                lineNumber: 58
               },
               __self: this
             })
@@ -47927,7 +47941,7 @@ var MatchTextHighlights_MatchTextHighlights = function MatchTextHighlights(_ref)
   var matchText = new RegExp(typed, 'i');
   var highlightedText = suggestion.split(regex).map(MatchTextHighlights_matchHighlight(matchText));
   return react_default.a.createElement(
-    Header_Header["a" /* default */],
+    Header["a" /* default */],
     {
       __source: {
         fileName: MatchTextHighlights__jsxFileName,
@@ -48258,7 +48272,7 @@ var PatientsView_PatientsView = function (_PureComponent) {
           )
         ),
         react_default.a.createElement(
-          Header_Header["a" /* default */],
+          Header["a" /* default */],
           { as: 'h3', dividing: true, __source: {
               fileName: PatientsView__jsxFileName,
               lineNumber: 74
@@ -48336,8 +48350,10 @@ var FileUploader_FileUploader = function (_PureComponent) {
     }
 
     return _ret = (_temp = (_this = FileUploader__possibleConstructorReturn(this, (_ref2 = FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call.apply(_ref2, [this].concat(args))), _this), _this.fileDrop = function (files) {
-      console.log('files', files);
-      _this.props.dispatch({ type: PATIENT_FILES_DROPPED, payload: files });
+      return _this.props.dispatch({
+        type: PATIENT_FILES_DROPPED,
+        payload: files
+      });
     }, _this.uploadToS3 = function (e) {
       e.preventDefault();
       var _this$props = _this.props,
@@ -48356,7 +48372,8 @@ var FileUploader_FileUploader = function (_PureComponent) {
         return response.json();
       }).then(function (json) {
         console.log('upload response', json);
-        _this.props.dispatch({ type: PATIENT_FILES_UPLOADED,
+        _this.props.dispatch({
+          type: PATIENT_FILES_UPLOADED,
           patientId: patientId,
           payload: {
             records: JSON.parse(json)
@@ -48381,7 +48398,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
           List["a" /* default */].Item,
           { key: i, __source: {
               fileName: FileUploader__jsxFileName,
-              lineNumber: 50
+              lineNumber: 51
             },
             __self: _this2
           },
@@ -48389,7 +48406,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
             List["a" /* default */].Content,
             { floated: 'right', __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 51
+                lineNumber: 52
               },
               __self: _this2
             },
@@ -48398,13 +48415,13 @@ var FileUploader_FileUploader = function (_PureComponent) {
               {
                 __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 52
+                  lineNumber: 53
                 },
                 __self: _this2
               },
               react_default.a.createElement(Icon["a" /* default */], { onClick: _this.removeFile(i), name: 'remove', size: 'large', __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 52
+                  lineNumber: 53
                 },
                 __self: _this2
               })
@@ -48412,7 +48429,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
           ),
           react_default.a.createElement(Image["a" /* default */], { size: 'mini', src: FileUploader_uploadPreviewSrc(file), __source: {
               fileName: FileUploader__jsxFileName,
-              lineNumber: 54
+              lineNumber: 55
             },
             __self: _this2
           }),
@@ -48421,7 +48438,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 55
+                lineNumber: 56
               },
               __self: _this2
             },
@@ -48429,7 +48446,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
               List["a" /* default */].Header,
               { as: 'a', __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 56
+                  lineNumber: 57
                 },
                 __self: _this2
               },
@@ -48440,7 +48457,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
               {
                 __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 57
+                  lineNumber: 58
                 },
                 __self: _this2
               },
@@ -48450,7 +48467,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                 {
                   __source: {
                     fileName: FileUploader__jsxFileName,
-                    lineNumber: 57
+                    lineNumber: 58
                   },
                   __self: _this2
                 },
@@ -48460,7 +48477,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                 'span',
                 { style: { marginLeft: '20px' }, __source: {
                     fileName: FileUploader__jsxFileName,
-                    lineNumber: 57
+                    lineNumber: 58
                   },
                   __self: _this2
                 },
@@ -48470,7 +48487,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                   {
                     __source: {
                       fileName: FileUploader__jsxFileName,
-                      lineNumber: 57
+                      lineNumber: 58
                     },
                     __self: _this2
                   },
@@ -48504,7 +48521,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
         {
           __source: {
             fileName: FileUploader__jsxFileName,
-            lineNumber: 67
+            lineNumber: 68
           },
           __self: this
         },
@@ -48517,15 +48534,15 @@ var FileUploader_FileUploader = function (_PureComponent) {
             action: action,
             method: method, __source: {
               fileName: FileUploader__jsxFileName,
-              lineNumber: 68
+              lineNumber: 69
             },
             __self: this
           },
           react_default.a.createElement(
-            Header_Header["a" /* default */],
+            Header["a" /* default */],
             { textAlign: 'center', __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 74
+                lineNumber: 75
               },
               __self: this
             },
@@ -48541,15 +48558,15 @@ var FileUploader_FileUploader = function (_PureComponent) {
               rejectClassName: 'dropzone-element-reject',
               onDrop: this.fileDrop, __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 75
+                lineNumber: 76
               },
               __self: this
             },
             react_default.a.createElement(
-              Header_Header["a" /* default */],
+              Header["a" /* default */],
               { textAlign: 'center', color: 'grey', __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 82
+                  lineNumber: 83
                 },
                 __self: this
               },
@@ -48561,7 +48578,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
           Modal["a" /* default */],
           { open: files.length > 0, __source: {
               fileName: FileUploader__jsxFileName,
-              lineNumber: 85
+              lineNumber: 86
             },
             __self: this
           },
@@ -48570,7 +48587,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 86
+                lineNumber: 87
               },
               __self: this
             },
@@ -48581,7 +48598,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 87
+                lineNumber: 88
               },
               __self: this
             },
@@ -48589,7 +48606,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
               Dimmer["a" /* default */].Dimmable,
               { dimmed: syncing, __source: {
                   fileName: FileUploader__jsxFileName,
-                  lineNumber: 88
+                  lineNumber: 89
                 },
                 __self: this
               },
@@ -48597,7 +48614,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                 Dimmer["a" /* default */],
                 { active: syncing, inverted: true, __source: {
                     fileName: FileUploader__jsxFileName,
-                    lineNumber: 89
+                    lineNumber: 90
                   },
                   __self: this
                 },
@@ -48605,7 +48622,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                   Loader["a" /* default */],
                   { indeterminate: true, __source: {
                       fileName: FileUploader__jsxFileName,
-                      lineNumber: 90
+                      lineNumber: 91
                     },
                     __self: this
                   },
@@ -48617,7 +48634,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
                 {
                   __source: {
                     fileName: FileUploader__jsxFileName,
-                    lineNumber: 92
+                    lineNumber: 93
                   },
                   __self: this
                 },
@@ -48630,19 +48647,19 @@ var FileUploader_FileUploader = function (_PureComponent) {
             {
               __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 97
+                lineNumber: 98
               },
               __self: this
             },
             react_default.a.createElement(Button["a" /* default */], { secondary: true, onClick: this.cancelUpload, labelPosition: 'right', content: 'Cancel', __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 98
+                lineNumber: 99
               },
               __self: this
             }),
             react_default.a.createElement(Button["a" /* default */], { color: 'blue', onClick: this.uploadToS3, type: 'submit', icon: 'checkmark', labelPosition: 'right', content: 'Upload', __source: {
                 fileName: FileUploader__jsxFileName,
-                lineNumber: 99
+                lineNumber: 100
               },
               __self: this
             })
@@ -48674,6 +48691,7 @@ function RecordsList__inherits(subClass, superClass) { if (typeof superClass !==
 
 
 
+
 var RecordsList_recordSrc = function recordSrc(_ref) {
   var src = _ref.src,
       type = _ref.type;
@@ -48691,9 +48709,7 @@ var compareDates = function compareDates(a, b) {
 };
 
 var RecordToSortedList = function RecordToSortedList(records) {
-  return Object.keys(records).map(function (recKey) {
-    return records[recKey];
-  }).sort(compareDates);
+  return Object.values(records).sort(compareDates);
 };
 
 var recordsQty = function recordsQty(data) {
@@ -48707,7 +48723,7 @@ var RecordsList_lastUpdate = function lastUpdate(data) {
   return {
     value: moment_default()(new Date(Math.max(Object.keys(data).map(function (recordKey) {
       return new Date(data[recordKey].updatedAt).getTime();
-    }))), "YYYYMMDD").fromNow(),
+    }))), "YYMMDD").fromNow(),
     label: 'Most Recent Update'
   };
 };
@@ -48720,14 +48736,14 @@ var RecordsList_BloodPressure = function BloodPressure(data) {
         {
           __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 48
+            lineNumber: 51
           },
           __self: RecordsList__this
         },
         '180',
         react_default.a.createElement(Icon["a" /* default */], { name: 'heart', __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 50
+            lineNumber: 53
           },
           __self: RecordsList__this
         })
@@ -48742,7 +48758,7 @@ var Something = function Something(data) {
 };
 
 var calcStats = function calcStats(data) {
-  return [recordsQty, RecordsList_lastUpdate, RecordsList_BloodPressure, Something].map(function (statFn) {
+  return [recordsQty, RecordsList_lastUpdate, RecordsList_BloodPressure].map(function (statFn) {
     return statFn(data);
   });
 };
@@ -48780,29 +48796,29 @@ var RecordsList_RecordsList = function (_PureComponent) {
           dispatch = _props.dispatch,
           patient = _props.patient;
 
-      var patientRecords = patient.records ? JSON.parse(patient.records) : {};
-      var statList = patientRecords.length ? calcStats() : [];
+      var patientRecords = ParseJson(patient.records);
+      var statList = calcStats(Object.values(patientRecords));
       return react_default.a.createElement(
         'section',
         {
           __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 78
+            lineNumber: 80
           },
           __self: this
         },
-        react_default.a.createElement(Statistic["a" /* default */].Group, { widths: 'four', items: statList, __source: {
+        react_default.a.createElement(Statistic["a" /* default */].Group, { size: 'tiny', widths: 'three', items: statList, __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 79
+            lineNumber: 81
           },
           __self: this
         }),
         react_default.a.createElement(
-          Header_Header["a" /* default */],
+          Header["a" /* default */],
           {
             __source: {
               fileName: RecordsList__jsxFileName,
-              lineNumber: 80
+              lineNumber: 82
             },
             __self: this
           },
@@ -48811,13 +48827,13 @@ var RecordsList_RecordsList = function (_PureComponent) {
         react_default.a.createElement(Divider["a" /* default */], {
           __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 83
+            lineNumber: 85
           },
           __self: this
         }),
-        react_default.a.createElement(Feed["a" /* default */], { events: this.mapRecords(RecordToSortedList(patientRecords)), __source: {
+        react_default.a.createElement(Feed["a" /* default */], { id: 'recordFeed', events: this.mapRecords(RecordToSortedList(patientRecords)), __source: {
             fileName: RecordsList__jsxFileName,
-            lineNumber: 84
+            lineNumber: 86
           },
           __self: this
         })
@@ -49313,9 +49329,7 @@ var CalendarDisplay_CalendarDisplay = function CalendarDisplay(props) {
     events: props.events,
     step: 60,
     defaultView: 'week',
-    onSelectEvent: function onSelectEvent(event) {
-      return console.log('event', event);
-    },
+    onSelectEvent: props.viewAppointment,
     onSelectSlot: function onSelectSlot(slotInfo) {
       console.log('slotInfo', slotInfo);
     },
@@ -49362,16 +49376,22 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
     return _ret = (_temp = (_this = AppointmentModal__possibleConstructorReturn(this, (_ref = AppointmentModal.__proto__ || Object.getPrototypeOf(AppointmentModal)).call.apply(_ref, [this].concat(args))), _this), _this.submitAppointmentChange = function (e) {
       var _this$props = _this.props,
           status = _this$props.status,
-          response = _this$props.response;
+          response = _this$props.response,
+          id = _this$props.id;
 
       fetch('/appointments/' + id, {
-        method: 'PUT',
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ status: status, response: response })
-      }).then(function (res) {
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
         return _this.props.dispatch({
           type: APPOINTMENT_RECORD_UPDATED,
           id: id,
-          payload: {}
+          payload: JSON.parse(json)
         });
       }).catch(function (err) {
         return console.log('APPOINTMENT_RECORD_UPDATED err', err);
@@ -49383,6 +49403,8 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
           payload: status
         });
       };
+    }, _this.close = function (e) {
+      return _this.props.dispatch({ type: CLOSE_APPOINTMENT_MODAL });
     }, _this.updateComment = function (e) {
       return _this.props.dispatch({
         type: EDIT_APPOINTMENT_EVENT,
@@ -49415,7 +49437,7 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
         Modal["a" /* default */],
         { open: patientId !== undefined, __source: {
             fileName: AppointmentModal__jsxFileName,
-            lineNumber: 40
+            lineNumber: 66
           },
           __self: this
         },
@@ -49424,10 +49446,18 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
           {
             __source: {
               fileName: AppointmentModal__jsxFileName,
-              lineNumber: 41
+              lineNumber: 67
             },
             __self: this
           },
+          react_default.a.createElement(Image["a" /* default */], { circular: true, avatar: true, src: CDN_URI + 'patient_info_photo.jpg', __source: {
+              fileName: AppointmentModal__jsxFileName,
+              lineNumber: 68
+            },
+            __self: this
+          }),
+          ' ',
+          ' Appointment Purpose: ',
           purpose
         ),
         react_default.a.createElement(
@@ -49435,7 +49465,7 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
           {
             __source: {
               fileName: AppointmentModal__jsxFileName,
-              lineNumber: 42
+              lineNumber: 71
             },
             __self: this
           },
@@ -49443,91 +49473,140 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
             Modal["a" /* default */].Description,
             { className: step === 'view' ? '' : 'hidden', __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 43
+                lineNumber: 72
               },
               __self: this
             },
             react_default.a.createElement(
-              Header,
+              Header["a" /* default */],
               {
                 __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 44
+                  lineNumber: 73
                 },
                 __self: this
               },
               title
             ),
             react_default.a.createElement(
-              'p',
-              {
-                __source: {
+              Header["a" /* default */],
+              { as: 'h4', floated: 'right', __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 45
+                  lineNumber: 76
                 },
                 __self: this
               },
-              description
+              'Time:',
+              react_default.a.createElement(
+                Header["a" /* default */].Subheader,
+                {
+                  __source: {
+                    fileName: AppointmentModal__jsxFileName,
+                    lineNumber: 78
+                  },
+                  __self: this
+                },
+                moment_default()(start).format('ll') + ' at: ' + moment_default()(start).format('LT')
+              )
+            ),
+            react_default.a.createElement(
+              Header["a" /* default */],
+              { as: 'h4', __source: {
+                  fileName: AppointmentModal__jsxFileName,
+                  lineNumber: 82
+                },
+                __self: this
+              },
+              'Description:',
+              react_default.a.createElement(
+                Header["a" /* default */].Subheader,
+                {
+                  __source: {
+                    fileName: AppointmentModal__jsxFileName,
+                    lineNumber: 84
+                  },
+                  __self: this
+                },
+                description
+              )
             )
           ),
           react_default.a.createElement(
             Modal["a" /* default */].Description,
             { className: step === 'confirm' ? '' : 'hidden', __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 47
+                lineNumber: 89
               },
               __self: this
             },
             react_default.a.createElement(
-              Header,
+              Header["a" /* default */],
               {
                 __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 48
+                  lineNumber: 90
                 },
                 __self: this
               },
               'Confirm Changes'
             ),
             react_default.a.createElement(
-              'b',
-              {
-                __source: {
+              Header["a" /* default */],
+              { as: 'h4', floated: 'right', __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 49
+                  lineNumber: 91
                 },
                 __self: this
               },
-              'Status:'
+              'Status:',
+              react_default.a.createElement(
+                Header["a" /* default */].Subheader,
+                {
+                  __source: {
+                    fileName: AppointmentModal__jsxFileName,
+                    lineNumber: 93
+                  },
+                  __self: this
+                },
+                react_default.a.createElement(
+                  Label["a" /* default */],
+                  { basic: true, color: 'blue', __source: {
+                      fileName: AppointmentModal__jsxFileName,
+                      lineNumber: 94
+                    },
+                    __self: this
+                  },
+                  status
+                )
+              )
             ),
             react_default.a.createElement(
-              'p',
+              Form["a" /* default */],
               {
                 __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 97
                 },
                 __self: this
               },
-              status
-            ),
-            react_default.a.createElement(
-              'label',
-              {
-                __source: {
+              react_default.a.createElement(
+                'label',
+                {
+                  __source: {
+                    fileName: AppointmentModal__jsxFileName,
+                    lineNumber: 98
+                  },
+                  __self: this
+                },
+                'Optional'
+              ),
+              react_default.a.createElement(TextArea["a" /* default */], { onKeyUp: this.updateComment, fluid: true, defaultValue: response, placeholder: 'Leave comment for why. . . ', __source: {
                   fileName: AppointmentModal__jsxFileName,
-                  lineNumber: 51
+                  lineNumber: 99
                 },
                 __self: this
-              },
-              'Optional'
-            ),
-            react_default.a.createElement(TextArea["a" /* default */], { onKeyUp: this.updateComment, defaultValue: response, placeholder: 'Leave comment for why. . . ', __source: {
-                fileName: AppointmentModal__jsxFileName,
-                lineNumber: 52
-              },
-              __self: this
-            })
+              })
+            )
           )
         ),
         react_default.a.createElement(
@@ -49535,7 +49614,7 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
           {
             __source: {
               fileName: AppointmentModal__jsxFileName,
-              lineNumber: 55
+              lineNumber: 103
             },
             __self: this
           },
@@ -49544,26 +49623,32 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
             {
               __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 58
+                lineNumber: 106
               },
               __self: this
             },
-            react_default.a.createElement(Button["a" /* default */], { color: 'black', content: 'Decline', onClick: this.updateAppointmentStatus('rejected'), __source: {
+            react_default.a.createElement(Button["a" /* default */], { floated: 'left', content: 'close', color: 'grey', onClick: this.close, __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 59
+                lineNumber: 107
               },
               __self: this
             }),
-            react_default.a.createElement(Button["a" /* default */], { icon: 'check', content: 'Accept', labelPosition: 'right', onClick: this.updateAppointmentStatus('accepted'), __source: {
+            react_default.a.createElement(Button["a" /* default */], { color: 'grey', content: 'Decline', onClick: this.updateAppointmentStatus('rejected'), __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 60
+                lineNumber: 108
+              },
+              __self: this
+            }),
+            react_default.a.createElement(Button["a" /* default */], { icon: 'check', color: 'green', content: 'Accept', labelPosition: 'right', onClick: this.updateAppointmentStatus('accepted'), __source: {
+                fileName: AppointmentModal__jsxFileName,
+                lineNumber: 109
               },
               __self: this
             })
           ),
-          status !== 'pending' && react_default.a.createElement(Button["a" /* default */], { content: 'Cancel', onClick: this.updateAppointmentStatus('canceled'), __source: {
+          status !== 'pending' && step !== 'confirm' && react_default.a.createElement(Button["a" /* default */], { content: 'Cancel', onClick: this.updateAppointmentStatus('canceled'), __source: {
               fileName: AppointmentModal__jsxFileName,
-              lineNumber: 65
+              lineNumber: 115
             },
             __self: this
           }),
@@ -49572,19 +49657,19 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
             {
               __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 69
+                lineNumber: 120
               },
               __self: this
             },
-            react_default.a.createElement(Button["a" /* default */], { floated: 'left', content: 'Go Back', icon: 'arrow left', color: 'teal', onClick: this.goBack, __source: {
+            react_default.a.createElement(Button["a" /* default */], { floated: 'left', content: 'Go Back', labelPosition: 'left', icon: 'arrow left', color: 'teal', onClick: this.goBack, __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 70
+                lineNumber: 121
               },
               __self: this
             }),
-            react_default.a.createElement(Button["a" /* default */], { icon: 'check', content: 'Confirm', labelPosition: 'right', onClick: this.submitAppointmentChange, __source: {
+            react_default.a.createElement(Button["a" /* default */], { icon: 'send', content: 'Confirm', labelPosition: 'right', color: 'blue', onClick: this.submitAppointmentChange, __source: {
                 fileName: AppointmentModal__jsxFileName,
-                lineNumber: 71
+                lineNumber: 122
               },
               __self: this
             })
@@ -49614,6 +49699,7 @@ function AppointmentsCalendar__inherits(subClass, superClass) { if (typeof super
 
 
 
+
 var addHours = function addHours(date) {
   return function (h) {
     return new Date(date.setHours(date.getHours() + h));
@@ -49637,11 +49723,11 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
     return _ret = (_temp = (_this = AppointmentsCalendar__possibleConstructorReturn(this, (_ref = AppointmentsCalendar.__proto__ || Object.getPrototypeOf(AppointmentsCalendar)).call.apply(_ref, [this].concat(args))), _this), _this.mapEvents = function (appointments) {
       return appointments.allIds.map(function (eventId) {
         return Object.assign({}, appointments.byId[eventId], {
-          start: new Date(appointments.byId[eventId].time).getTime(),
-          end: addHours(new Date(appointments.byId[eventId].time))(1).getTime()
+          start: new Date(appointments.byId[eventId].time),
+          end: addHours(new Date(appointments.byId[eventId].time))(1)
         });
       }).filter(function (event) {
-        return event.status !== 'rejected';
+        return event.status !== 'rejected' || event.status !== 'canceled';
       });
     }, _this.viewAppointment = function (event) {
       return _this.props.dispatch({
@@ -49650,8 +49736,6 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
       });
     }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
   }
-  //sendPatientRequest = slotInfo =>
-
 
   AppointmentsCalendar__createClass(AppointmentsCalendar, [{
     key: 'render',
@@ -49668,19 +49752,19 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
         {
           __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 28
+            lineNumber: 27
           },
           __self: this
         },
-        react_default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(appointments), dispatch: dispatch, patients: patients, __source: {
+        react_default.a.createElement(components_CalendarDisplay, { events: this.mapEvents(appointments), dispatch: dispatch, viewAppointment: this.viewAppointment, patients: patients, __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 29
+            lineNumber: 28
           },
           __self: this
         }),
         react_default.a.createElement(components_AppointmentModal, Object.assign({}, selectedEvent, { dispatch: dispatch, __source: {
             fileName: AppointmentsCalendar__jsxFileName,
-            lineNumber: 30
+            lineNumber: 29
           },
           __self: this
         }))
@@ -82765,7 +82849,7 @@ Form.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Form);
+/* harmony default export */ __webpack_exports__["a"] = (Form);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),

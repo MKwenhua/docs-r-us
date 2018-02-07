@@ -32,7 +32,8 @@ class AppointmentsList extends PureComponent {
     const { patient, appointments } = this.props;
     return (
       <List>
-        {appointments
+        {
+        appointments
           .filter(app => app.patientId === patient.id)
           .map(this.appointmentListItem)
         }

@@ -24,6 +24,11 @@ body {
   display: none!important;
 }
 
+#home .ui.feed > .event >.content .extra.images img {
+  height: 20px;
+  width: auto;
+}
+
 .main {
   /* height: 100vh;
   overflow: hidden; */
@@ -167,6 +172,14 @@ a.selected {
 .match-highlight {
   color: #f70;
   text-decoration: underline;
+}
+
+#recordFeed .ui.feed>.event>.label img {
+  border-radius: 0;
+}
+
+#recordFeed .ui.feed>.event>.label {
+  width: 5em;
 }
 .dropzone-element {
   width: 100%;

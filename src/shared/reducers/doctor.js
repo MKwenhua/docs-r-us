@@ -11,6 +11,7 @@ import {
   VIEW_APPOINTMENT,
   EDIT_APPOINTMENT_STATUS,
   EDIT_APPOINTMENT_EVENT,
+  CLOSE_APPOINTMENT_MODAL,
   APPOINTMENT_RECORD_UPDATED,
   REQUEST_APPOINTMENT_CHANGE,
   SEARCH_INPUT_UPDATE,
@@ -19,25 +20,27 @@ import {
   PATIENT_TAB_SELECTED
 } from 'constants';
 
-export default (initialState) => (
-  function reducer(state = initialState, action) {
-    switch (action.type) {
-      case CONNECTED: {
+export default(initialState) => (function reducer(state = initialState, action) {
+  switch (action.type) {
+    case CONNECTED:
+      {
         return {
-            ...state,
-            connected: true,
-            socketId: action.payload
-          }
-          break;
+          ...state,
+          connected: true,
+          socketId: action.payload
         }
-      case DISCONNECTED: {
+        break;
+      }
+    case DISCONNECTED:
+      {
         return {
-            ...state,
-            connected: false
-          }
-          break;
+          ...state,
+          connected: false
         }
-      case VIEW_APPOINTMENT: {
+        break;
+      }
+    case VIEW_APPOINTMENT:
+      {
         return {
           ...state,
           calendarView: {
@@ -50,76 +53,92 @@ export default (initialState) => (
           }
         }
       }
-      case EDIT_APPOINTMENT_EVENT: {
+    case EDIT_APPOINTMENT_EVENT:
+      {
         return {
           ...state,
           calendarView: {
             ...state.calendarView,
             selectedEvent: {
-              ...state.state.calendarView.selectedEvent,
+              ...state.calendarView.selectedEvent,
               response: action.payload
             }
           }
         }
       }
-      case EDIT_APPOINTMENT_STATUS: {
+    case EDIT_APPOINTMENT_STATUS:
+      {
         return {
           ...state,
           calendarView: {
             ...state.calendarView,
             selectedEvent: {
-              ...state.state.calendarView.selectedEvent,
+              ...state.calendarView.selectedEvent,
               step: 'confirm',
               status: action.payload
             }
           }
         }
       }
-      case REQUEST_APPOINTMENT_CHANGE: {
+    case REQUEST_APPOINTMENT_CHANGE:
+      {
         return {
           ...state,
           calendarView: {
             ...state.calendarView,
             selectedEvent: {
-              ...state.state.calendarView.selectedEvent,
+              ...state.calendarView.selectedEvent,
               syncing: true
             }
           }
         }
       }
-      case APPOINTMENT_VIEW_BACK: {
+    case APPOINTMENT_VIEW_BACK:
+      {
         return {
           ...state,
           calendarView: {
             ...state.calendarView,
             selectedEvent: {
-              ...state.state.calendarView.selectedEvent,
-              step: 'view'
+              ...state.calendarView.selectedEvent,
+              step: 'view',
+              status: 'pending'
             }
           }
         }
       }
-      case APPOINTMENT_RECORD_UPDATED: {
-          return {
+    case CLOSE_APPOINTMENT_MODAL:
+      {
+        return {
           ...state,
           calendarView: {
             ...state.calendarView,
-            selectedEvent: {
-            },
+            selectedEvent: {}
+          }
+        }
+      }
+    case APPOINTMENT_RECORD_UPDATED:
+      {
+        return {
+          ...state,
+          calendarView: {
+            ...state.calendarView,
+            selectedEvent: {}
           },
           appointments: {
             ...state.appointments,
             byId: {
               ...state.appointments.byId,
               [action.id]: {
-                  ...state.appointments.byId[action.id],
-                  ...action.payload
+                ...state.appointments.byId[action.id],
+                ...action.payload
               }
             }
           }
         }
       }
-      case SEARCH_INPUT_UPDATE: {
+    case SEARCH_INPUT_UPDATE:
+      {
         return {
           ...state,
           patientsView: {
@@ -128,7 +147,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENTS_VIEW_RESET: {
+    case PATIENTS_VIEW_RESET:
+      {
         return {
           ...state,
           patientsView: {
@@ -139,7 +159,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_TAB_SELECTED: {
+    case PATIENT_TAB_SELECTED:
+      {
         return {
           ...state,
           patientProfile: {
@@ -148,7 +169,8 @@ export default (initialState) => (
           }
         }
       }
-      case EXIT_PATIENT_VIEW: {
+    case EXIT_PATIENT_VIEW:
+      {
         return {
           ...state,
           patientProfile: {
@@ -158,7 +180,8 @@ export default (initialState) => (
           }
         }
       }
-      case CANCEL_FILE_UPLOAD: {
+    case CANCEL_FILE_UPLOAD:
+      {
         return {
           ...state,
           patientProfile: {
@@ -168,7 +191,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_FILES_DROPPED: {
+    case PATIENT_FILES_DROPPED:
+      {
         return {
           ...state,
           patientProfile: {
@@ -177,7 +201,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_FILE_REMOVED: {
+    case PATIENT_FILE_REMOVED:
+      {
         return {
           ...state,
           patientProfile: {
@@ -186,7 +211,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_FILES_UPLOADING: {
+    case PATIENT_FILES_UPLOADING:
+      {
         return {
           ...state,
           patientProfile: {
@@ -195,7 +221,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_FILES_UPLOADED: {
+    case PATIENT_FILES_UPLOADED:
+      {
         return {
           ...state,
           patients: {
@@ -203,8 +230,8 @@ export default (initialState) => (
             byId: {
               ...state.patients.byId,
               [action.patientId]: {
-                  ...state.patients.byId[action.patientId],
-                  ...action.payload
+                ...state.patients.byId[action.patientId],
+                ...action.payload
               }
             }
           },
@@ -216,7 +243,8 @@ export default (initialState) => (
           }
         }
       }
-      case PATIENT_FILES_DROPPED: {
+    case PATIENT_FILES_DROPPED:
+      {
         return {
           ...state,
           patientProfile: {
@@ -225,7 +253,6 @@ export default (initialState) => (
           }
         }
       }
-    }
-    return state
   }
-)
+  return state
+})

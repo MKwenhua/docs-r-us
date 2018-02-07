@@ -13,6 +13,9 @@ AWS.config = {
 }
 
 const ParseJson = data => {
+  if (data instanceof Object === true) {
+    return data;
+  }
   try {
     return JSON.parse(data);
   } catch (e) {
@@ -20,7 +23,9 @@ const ParseJson = data => {
   }
 }
 
-const updateRecords = (current, updated) => JSON.stringify(Object.assign({}, ParseJson(current), updated))
+const updateRecords = (current, updated) => JSON.stringify(
+  Object.assign({}, ParseJson(current), updated)
+)
 
 
 const UploadToS3 = (req, res) => {
@@ -33,7 +38,7 @@ const UploadToS3 = (req, res) => {
     if (file.name !== 'files') {
       recordsIndex[file.name] = {
         name: file.name,
-        src: `${bucketName}/${file.name}`,
+        src: `patients/${req.params.id}/${file.name}`,
         type: file.headers['content-type'],
         updatedAt: fileTimestamp
       };

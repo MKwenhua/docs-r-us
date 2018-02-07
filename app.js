@@ -42,8 +42,4 @@ app.get('/logout', LogOut);
 app.post('/patient/login', PatientLogin)
 
 
-//Initialize the API
-require('./api');
-
-
 module.exports = app;
