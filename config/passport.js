@@ -14,9 +14,13 @@ app.use(cookieSession({
   name: 'session',
   keys: ['baja', 'blast']
 }))
-//app.use(session({secret: 'think outside the bun', resave: true, saveUninitialized: true}))
+app.use(session({secret: 'think outside the bun',
+resave: true,
+cookie: { secure: true },
+saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
+app.set('trust proxy', 1);
 app.use(cors('*'));
 
 const LocalSignupStrategy = new LocalStrategy({

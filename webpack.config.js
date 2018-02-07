@@ -1,3 +1,6 @@
+if (process.env.LOCAL_BUILD) {
+  require('dotenv').config();
+}
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
@@ -5,9 +8,7 @@ const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const {serverPlugins, clientPlugins} = require('./webpack_plugins/optimize_plugins.js')(webpack);
 const ClientS3Plugins = require('./webpack_plugins/s3_plugin.js');
-if (process.env.LOCAL_BUILD) {
-  require('dotenv').config();
-}
+
 
 const sourceAliases = {
   stylesheet: path.resolve(__dirname, 'src/shared/styles'),
