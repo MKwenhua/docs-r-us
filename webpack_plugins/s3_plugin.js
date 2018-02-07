@@ -16,7 +16,6 @@ const S3PluginConfig = {
     Items: [
       "/public/app_bundle.js",
       "/public/app_bundle.js.map",
-      "/public/bundle.js.map",
       "/public/css/app_bundle.css",
       "/public/css/app_bundle.css.map"
     ]
