@@ -1,4 +1,3 @@
-const env = process.env;
 const contentTypes = require('./content-types');
 const sysInfo = require('./sys-info');
 
