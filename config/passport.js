@@ -23,11 +23,6 @@ module.exports = (app) => {
     secret: 'think outside the bun',
     resave: false,
     saveUninitialized: true
-    // proxy: true,
-    // cookie: {
-    //   secure: true,
-    //   maxAge: 3600000
-    // }
   }))
   app.use(passport.initialize());
   app.use(passport.session());
