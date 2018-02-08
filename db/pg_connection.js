@@ -25,6 +25,7 @@ const {
 // });
 const sequelize = new Sequelize(DATABASE_URL, {
    dialect: 'postgres',
+   protocol: 'postgres',
    language: 'en'
 })
 
