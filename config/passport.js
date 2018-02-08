@@ -21,8 +21,8 @@ module.exports = (app) => {
   app.use(session({
     store: new RedisStore(redisOptions),
     secret: 'think outside the bun',
-    resave: false
-    //saveUninitialized: true
+    resave: false,
+    saveUninitialized: true
     // proxy: true,
     // cookie: {
     //   secure: true,
