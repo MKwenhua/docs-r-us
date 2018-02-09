@@ -41,12 +41,13 @@ class MainContainer extends PureComponent {
       patients,
       patientProfile,
       patientsView,
-      calendarView
+      calendarView,
+      topNav
     } = this.props;
     console.log('MainContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'main'}>
-        <TopNav navStuck={false} />
+        <TopNav {...topNav} dispatch={dispatch}/>
         <SideNav location={location}/>
         <div className={ true ? 'page-content' : 'page-content'}>
         <Switch>

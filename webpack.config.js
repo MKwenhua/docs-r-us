@@ -19,6 +19,7 @@ const sourceAliases = {
   container: path.resolve(__dirname, 'src/shared/containers'),
   component: path.resolve(__dirname, 'src/shared/components'),
   constants: path.resolve(__dirname, 'src/shared/constants'),
+  elements: path.resolve(__dirname, 'src/shared/elements'),
   helpers: path.resolve(__dirname, 'src/shared/helpers'),
   pages: path.resolve(__dirname, 'src/shared/pages'),
   state: path.resolve(__dirname, 'src/shared/state')

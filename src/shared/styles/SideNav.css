@@ -21,7 +21,6 @@ a.side-link {
   padding: 6px 0;
   width: 100%;
   display: block;
-  transition: all 0.15s ease-out 0s;
 }
 
 a.side-link :hover {

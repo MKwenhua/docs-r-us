@@ -17,6 +17,7 @@ import {
   SEARCH_INPUT_UPDATE,
   PATIENTS_VIEW_RESET,
   APPOINTMENT_VIEW_BACK,
+  TOP_NAV_ICON_CLICKED,
   PATIENT_TAB_SELECTED
 } from 'constants';
 
@@ -53,6 +54,15 @@ export default(initialState) => (function reducer(state = initialState, action) 
           }
         }
       }
+    case TOP_NAV_ICON_CLICKED: {
+      return {
+        ...state,
+        topNav: {
+          ...state.topNav,
+          dropdown: action.payload === state.topNav.dropdown ? null : action.payload
+        }
+      }
+    }
     case EDIT_APPOINTMENT_EVENT:
       {
         return {

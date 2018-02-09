@@ -25,6 +25,23 @@ const normalizeDoctorState = ({patients, appointments, ...userData}) => ({
     syncing: false,
     display: 'info'
   },
+  topNav: {
+    dropdown: null,
+    navStuck: false,
+    avatar: userData.photo,
+    name: userData.fullName,
+    notifications: {
+      notSeen: 3,
+      list: [
+        'notifcation 1',
+        'notifcation 2',
+        'notifcation 3',
+      ]
+    },
+    settings: {
+
+    }
+  },
   patientsView: {
     typed: '',
     filters: [],
