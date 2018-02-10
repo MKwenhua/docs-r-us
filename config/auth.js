@@ -18,7 +18,7 @@ const SignupAuth = (req, email, password, done) => {
     if (user) {
       return done(null, false, {message: 'That email is already taken'});
     }
-    GetUserType(req.userType).create({
+    GetUserType(req.body.userType).create({
       email: email,
       password: bCrypt.hashSync(password, bCrypt.genSaltSync(8), null),
       fullName: req.body.fullName

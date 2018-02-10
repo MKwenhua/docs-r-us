@@ -58,7 +58,8 @@ const StylesLoader = {
 
 const browserConfig = {
   entry: {
-    app_bundle: "./src/browser/index.js"
+    app_bundle: "./src/browser/index.js",
+    booking: "./src/browser/booking.js"
   },
   output: {
     path: __dirname,

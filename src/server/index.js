@@ -1,6 +1,8 @@
 import React from 'react';
 import MainContainer from 'container/MainContainer';
+import BookingContainer from 'container/BookingContainer';
 import RenderPage from './render_page';
+import RenderBookingPage from './render_booking_page';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {
@@ -24,11 +26,33 @@ const IndexRoute = (req, res) => {
       </StaticRouter>
     </Provider>,
   store.getState()
-));
+  ));
+  res.end();
+};
+
+const BookingRoute = (req, res) => {
+  const store = buildServerStore(normalizeDoctorState(req.user.dataValues))
+  res.send(RenderBookingPage(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <BookingContainer />
+      </StaticRouter>
+    </Provider>,
+  store.getState()
+  ));
 
   res.end();
 };
 
+const RoutingPortal  = (req, res) => {
+  console.log('\n req.user.userType', req.user.userType);
+  if (req.user.userType === 'doctor') {
+    IndexRoute(req, res);
+  } else {
+    BookingRoute(req, res);
+  }
+};
+
 export {
-  IndexRoute
+  RoutingPortal
 }

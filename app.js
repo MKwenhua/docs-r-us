@@ -19,7 +19,7 @@ const {
 
 //React SSR Render Actions
 const {
-  IndexRoute
+  RoutingPortal
 } = require('./react_pages');
 
 //This is used for server health checks, which may be useful if running a cluster
@@ -33,13 +33,13 @@ app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.get('/', isLoggedIn, IndexRoute);
+app.get('/', isLoggedIn, RoutingPortal);
 
-app.get(/\/(patients|calendar|appointments|profile)/, isLoggedIn, IndexRoute);
+app.get(/\/(patients|calendar|appointments|profile)/, isLoggedIn, RoutingPortal);
 
-app.get('/appointment/:id', isLoggedIn, IndexRoute);
+app.get('/appointment/:id', isLoggedIn, RoutingPortal);
 
-app.get('/patient/:id', isLoggedIn, IndexRoute);
+app.get('/patient/:id', isLoggedIn, RoutingPortal);
 
 //These Routes are static
 app.get('/signin', DoctorLogin);
