@@ -3,6 +3,7 @@ if (!process.env.HEROKU) {
 }
 const Sequelize = require('sequelize');
 const {
+  RDS_DB_NAME,
   DATABASE_URL
 } = process.env;
 

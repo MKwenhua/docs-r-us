@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
   const Doctor = sequelize.define('doctor', {
     fullName: {
@@ -45,9 +44,16 @@ module.exports = (sequelize, DataTypes) => {
     ]
   });
 
-  Doctor.associate = ({Appointment, Patient}) => {
+  Doctor.associate = ({Appointment, Patient, Hospital}) => {
     Doctor.hasMany(Appointment, {as: 'appointments'});
-    Doctor.belongsToMany(Patient, {through: Appointment});
+    Doctor.belongsToMany(Patient, {
+      through: {
+        model: Appointment,
+        unique: false
+      },
+      constraints: false
+    });
+    Doctor.belongsTo(Hospital);
   };
 
   return Doctor;

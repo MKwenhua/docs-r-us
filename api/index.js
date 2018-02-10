@@ -1,5 +1,9 @@
 const app = require('../app');
 const {
+ NearbyHospitals,
+ AllHospitals
+} = require('./hospitals');
+const {
  UpdateAppointment
 } = require('./appointments');
 const {
@@ -9,3 +13,7 @@ const {
 app.post('/appointments/:id', UpdateAppointment)
 
 app.post('/patients/:id', UploadToS3);
+
+app.get('/nearby/hospitals', NearbyHospitals)
+
+app.get('/hospitals', AllHospitals)

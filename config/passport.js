@@ -8,13 +8,11 @@ const {
   SigninAuth,
   DeserializeUser
 } = require('./auth');
-const redis = require('redis');
-const client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_ENDPOINT);
+const client = require('./redis_client.js');
+
 const redisOptions = {
   client: client
 }
-
-client.on('connect', () => console.log('Connected to Redis'));
 
 module.exports = (app) => {
   app.enable('trust proxy');

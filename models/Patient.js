@@ -1,14 +1,12 @@
 const ParseJson = data => {
-   try {
-     return JSON.parse(data);
-   } catch(e) {
-      return {};
-   }
+  try {
+    return JSON.parse(data);
+  } catch (e) {
+    return {};
+  }
 }
 
-const updateRecords = (current, updated) => JSON.stringify(
-  Object.assign({}, ParseJson(current), updated)
-)
+const updateRecords = (current, updated) => JSON.stringify(Object.assign({}, ParseJson(current), updated))
 
 module.exports = (sequelize, DataTypes) => {
   const Patient = sequelize.define('patient', {
@@ -49,18 +47,20 @@ module.exports = (sequelize, DataTypes) => {
     ]
   }, {
     instanceMethods: {
-      updateRecords: updated => JSON.stringify(
-        Object.assign({}, ParseJson(this.records), updated)
-      )
+      updateRecords: updated => JSON.stringify(Object.assign({}, ParseJson(this.records), updated))
     }
-  }
-);
+  });
 
-Patient.associate = ({Appointment, Doctor}) => {
-  Patient.hasMany(Appointment, {as: 'appointments'});
-  Patient.belongsToMany(Doctor, {through: Appointment});
-};
-
+  Patient.associate = ({Appointment, Doctor}) => {
+    Patient.hasMany(Appointment, {as: 'appointments'});
+    Patient.belongsToMany(Doctor, {
+      through: {
+        model: Appointment,
+        unique: false
+      },
+      constraints: false
+    });
+  };
 
   return Patient;
 }

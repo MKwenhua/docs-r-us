@@ -46,4 +46,4 @@ module.exports = [
     specialty: 'Pathology',
     password: bCrypt.hashSync('baja', bCrypt.genSaltSync(8), null)
   }
-].concat(new Array(20).fill(8).map(DoctorObject))
+].concat(new Array(50).fill(8).map(DoctorObject))
