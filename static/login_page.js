@@ -62,7 +62,7 @@ const LoginPageDoctor = LoginPageTemplate({
 
 const LoginPagePatient = LoginPageTemplate({
   title: 'Patient Login',
-  action: '/patient/signin',
+  action: '/booking/signin',
   type: 'patient',
   signup: '/booking/signup',
   customStyles: PatientStyles

@@ -3216,6 +3216,70 @@ var ParseJson = function ParseJson(data) {
 
 /***/ }),
 
+/***/ 18:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
+var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
+var CONNECTED = 'CONNECTED';
+var DISCONNECTED = 'DISCONNECTED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
+var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
+var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
+var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
+var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
+var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
+var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/index.js
+/* unused harmony export CHANGE_VIEW */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return VIEW_APPOINTMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SEARCH_INPUT_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PATIENTS_VIEW_RESET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return EDIT_APPOINTMENT_EVENT; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOP_NAV_ICON_CLICKED; });
+
+
+
+var CHANGE_VIEW = 'CHANGE_VIEW';
+var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
+var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
+var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
+var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
+var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
+var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
+var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
+var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
+var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
+var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
+
+//Resources
+var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
+
+
+
+/***/ }),
+
 /***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23228,7 +23292,7 @@ var redux_logger = __webpack_require__(213);
 var redux_logger_default = /*#__PURE__*/__webpack_require__.n(redux_logger);
 
 // EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(964);
+var constants = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -23433,6 +23497,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var reducers_serverStoreBuilder = function serverStoreBuilder(state) {
   return doctor(state);
 };
@@ -23441,10 +23506,20 @@ var reducers_clientStoreBuilder = function clientStoreBuilder(state) {
   return doctor(state);
 };
 
+var reducers_serverBookingStoreBuilder = function serverBookingStoreBuilder(state) {
+  return doctor(state);
+};
+
+var reducers_clientBookingStoreBuilder = function clientBookingStoreBuilder(state) {
+  return doctor(state);
+};
+
 
 // CONCATENATED MODULE: ./src/shared/store.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store_buildClientStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return store_buildClientStore; });
 /* unused harmony export buildServerStore */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store_buildBookingClientStore; });
+/* unused harmony export buildBookingServerStore */
 
 
 
@@ -23456,6 +23531,12 @@ var store_buildClientStore = function buildClientStore(state) {
 };
 var store_buildServerStore = function buildServerStore(state) {
   return Object(es["d" /* createStore */])(reducers_serverStoreBuilder(state));
+};
+var store_buildBookingClientStore = function buildBookingClientStore(state) {
+  return composedStore(es["d" /* createStore */])(reducers_clientBookingStoreBuilder(state));
+};
+var store_buildBookingServerStore = function buildBookingServerStore(state) {
+  return Object(es["d" /* createStore */])(reducers_serverBookingStoreBuilder(state));
 };
 
 
@@ -23495,7 +23576,7 @@ var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 var es = __webpack_require__(25);
 
 // EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(964);
+var constants = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/shared/elements/TopNavButtons.js
 var _jsxFileName = '/Users/pete/docs-r-us/src/shared/elements/TopNavButtons.js',
@@ -25777,7 +25858,7 @@ var TopNav = __webpack_require__(215);
 var react_router_es = __webpack_require__(293);
 
 // EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(964);
+var constants = __webpack_require__(18);
 
 // EXTERNAL MODULE: ./src/shared/helpers/index.js
 var helpers = __webpack_require__(179);
@@ -26176,7 +26257,7 @@ var preloadedState = window.__PRELOADED_STATE__;
 // Allow the passed state to be garbage-collected
 delete window.__PRELOADED_STATE__;
 
-var booking_store = Object(store["a" /* buildClientStore */])(preloadedState);
+var booking_store = Object(store["a" /* buildBookingClientStore */])(preloadedState);
 Object(react_dom["hydrate"])(react_default.a.createElement(
   react_redux_es["a" /* Provider */],
   { store: booking_store, __source: {
@@ -26203,70 +26284,6 @@ Object(react_dom["hydrate"])(react_default.a.createElement(
     })
   )
 ), document.getElementById('root'));
-
-/***/ }),
-
-/***/ 964:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
-var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
-var CONNECTED = 'CONNECTED';
-var DISCONNECTED = 'DISCONNECTED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
-var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
-var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
-var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
-var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
-var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
-var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/index.js
-/* unused harmony export CHANGE_VIEW */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return VIEW_APPOINTMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SEARCH_INPUT_UPDATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PATIENTS_VIEW_RESET; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return EDIT_APPOINTMENT_EVENT; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOP_NAV_ICON_CLICKED; });
-
-
-
-var CHANGE_VIEW = 'CHANGE_VIEW';
-var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
-var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
-var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
-var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
-var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
-var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
-var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
-var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
-var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
-var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
-
-//Resources
-var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
-
-
 
 /***/ }),
 

@@ -3752,11 +3752,20 @@ function doctor__defineProperty(obj, key, value) { if (key in obj) { Object.defi
 
 
 
+
 var reducers_serverStoreBuilder = function serverStoreBuilder(state) {
   return doctor(state);
 };
 
 var reducers_clientStoreBuilder = function clientStoreBuilder(state) {
+  return doctor(state);
+};
+
+var reducers_serverBookingStoreBuilder = function serverBookingStoreBuilder(state) {
+  return doctor(state);
+};
+
+var reducers_clientBookingStoreBuilder = function clientBookingStoreBuilder(state) {
   return doctor(state);
 };
 
@@ -3773,6 +3782,12 @@ var store_buildClientStore = function buildClientStore(state) {
 };
 var store_buildServerStore = function buildServerStore(state) {
   return Object(external__redux_["createStore"])(reducers_serverStoreBuilder(state));
+};
+var store_buildBookingClientStore = function buildBookingClientStore(state) {
+  return composedStore(external__redux_["createStore"])(reducers_clientBookingStoreBuilder(state));
+};
+var store_buildBookingServerStore = function buildBookingServerStore(state) {
+  return Object(external__redux_["createStore"])(reducers_serverBookingStoreBuilder(state));
 };
 
 
@@ -3801,7 +3816,7 @@ var server_IndexRoute = function IndexRoute(req, res) {
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: server__this
     },
@@ -3809,14 +3824,14 @@ var server_IndexRoute = function IndexRoute(req, res) {
       external__react_router_dom_["StaticRouter"],
       { location: req.url, context: context, __source: {
           fileName: server__jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: server__this
       },
       external__react__default.a.createElement(containers_MainContainer, {
         __source: {
           fileName: server__jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: server__this
       })
@@ -3826,12 +3841,12 @@ var server_IndexRoute = function IndexRoute(req, res) {
 };
 
 var server_BookingRoute = function BookingRoute(req, res) {
-  var store = store_buildServerStore(state_normalizeDoctorState(req.user.dataValues));
+  var store = store_buildBookingServerStore(state_setPatientState(req.user.dataValues));
   res.send(render_booking_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
-        lineNumber: 36
+        lineNumber: 37
       },
       __self: server__this
     },
@@ -3839,14 +3854,14 @@ var server_BookingRoute = function BookingRoute(req, res) {
       external__react_router_dom_["StaticRouter"],
       { location: req.url, context: context, __source: {
           fileName: server__jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         },
         __self: server__this
       },
       external__react__default.a.createElement(containers_BookingContainer, {
         __source: {
           fileName: server__jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         },
         __self: server__this
       })

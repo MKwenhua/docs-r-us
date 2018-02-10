@@ -1,6 +1,7 @@
 const bCrypt = require('bcrypt-nodejs');
 const {
   Patient,
+  Doctor,
   Appointment,
   GetUserType
 } = require('../db');
@@ -46,6 +47,8 @@ const SigninAuth = (req, email, password, done) => {
   }).catch(err => done(null, false, {message: 'Something Happened'}));
 };
 
+const getAssociatedUser = userType => userType === 'doctor' ? Patient : Doctor;
+
 const DeserializeUser = ({ userType, id }, done) => {
   GetUserType(userType).findOne({
     where: {
@@ -56,7 +59,7 @@ const DeserializeUser = ({ userType, id }, done) => {
         model: Appointment,
         as: 'appointments'
       }, {
-        model: Patient,
+        model: getAssociatedUser(userType),
         through: Appointment
       }
     ]

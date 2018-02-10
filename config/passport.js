@@ -46,6 +46,8 @@ module.exports = (app) => {
 
   passport.use('local-signup', LocalSignupStrategy);
   passport.use('local-signin', LocalSigninStrategy);
+  passport.use('local-booking-signup', LocalSignupStrategy);
+  passport.use('local-booking-signin', LocalSigninStrategy);
 
   return passport;
 }

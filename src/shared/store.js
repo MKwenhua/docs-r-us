@@ -2,7 +2,9 @@ import { compose, createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import {
   serverStoreBuilder,
-  clientStoreBuilder
+  clientStoreBuilder,
+  serverBookingStoreBuilder,
+  clientBookingStoreBuilder
 } from './reducers'
 
 const composedStore = compose(
@@ -11,8 +13,12 @@ const composedStore = compose(
 
 const buildClientStore = (state) => composedStore(createStore)(clientStoreBuilder(state));
 const buildServerStore = (state) => createStore(serverStoreBuilder(state));
+const buildBookingClientStore = (state) => composedStore(createStore)(clientBookingStoreBuilder(state));
+const buildBookingServerStore = (state) => createStore(serverBookingStoreBuilder(state));
 
 export {
   buildClientStore,
-  buildServerStore
+  buildServerStore,
+  buildBookingClientStore,
+  buildBookingServerStore
 }
