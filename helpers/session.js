@@ -22,10 +22,22 @@ module.exports = passport => {
     failureRedirect: '/signin?error=true'
   })
 
+  const SignUpBookingHandler = passport.authenticate('local-booking-signup', {
+    successRedirect: '/',
+    failureRedirect: '/booking/signup'
+  });
+
+  const SignInBookingHandler = passport.authenticate('local-booking-signin', {
+    successRedirect: '/',
+    failureRedirect: '/booking/signin?error=true'
+  })
+
   return {
     isLoggedIn,
     LogOut,
     SignUpHandler,
-    SignInHandler
+    SignInHandler,
+    SignUpBookingHandler,
+    SignInBookingHandler
   }
 }

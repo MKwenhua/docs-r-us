@@ -14,8 +14,7 @@ import {
 } from 'semantic-ui-react'
 import {
   SEARCH_INPUT_UPDATE,
-  PATIENTS_VIEW_RESET,
-  CDN_URI
+  PATIENTS_VIEW_RESET
 } from 'constants';
 
 class PatientsView extends PureComponent {

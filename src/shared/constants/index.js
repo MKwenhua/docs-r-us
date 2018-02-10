@@ -1,7 +1,4 @@
 import {
-  CDN_URI
-} from './resources'
-import {
   CONNECTED,
   DISCONNECTED,
   TOP_NAV_ICON_CLICKED
@@ -15,8 +12,6 @@ import {
   APPOINTMENT_RECORD_UPDATED
 } from './AppointmentModalActions';
 
-
-
 const CHANGE_VIEW = 'CHANGE_VIEW';
 const EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
 const PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED'
@@ -29,6 +24,8 @@ const SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
 const PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
 const VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
 
+//Resources
+const CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
 
 export {
   CONNECTED,
