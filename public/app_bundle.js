@@ -7314,6 +7314,8 @@ var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
 
 // CONCATENATED MODULE: ./src/shared/constants/SearchActions.js
 var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
+var UPDATE_GEO_COORDINATES = 'UPDATE_GEO_COORDINATES';
+var UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
 
 
 // CONCATENATED MODULE: ./src/shared/constants/index.js
@@ -7322,7 +7324,7 @@ var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return VIEW_APPOINTMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return VIEW_APPOINTMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
@@ -7338,7 +7340,9 @@ var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return TOP_NAV_ICON_CLICKED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "u", function() { return UPDATE_GEO_COORDINATES; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOGGLE_PROXIMITY_SEARCH; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "v", function() { return UPDATE_SEARCH_RESULTS; });
 
 
 
@@ -7591,7 +7595,7 @@ var _dateArithmetic = __webpack_require__(910);
 
 var _dateArithmetic2 = _interopRequireDefault(_dateArithmetic);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -7740,111 +7744,6 @@ exports.default = dates;
 
 /***/ }),
 /* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-exports.__esModule = true;
-exports.set = set;
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _invariant = __webpack_require__(14);
-
-var _invariant2 = _interopRequireDefault(_invariant);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var localePropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]);
-
-function _format(localizer, formatter, value, format, culture) {
-  var result = typeof format === 'function' ? format(value, culture, localizer) : formatter.call(localizer, value, format, culture);
-
-  !(result == null || typeof result === 'string') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '`localizer format(..)` must return a string, null, or undefined') : (0, _invariant2.default)(false) : void 0;
-
-  return result;
-}
-
-var DateLocalizer = function DateLocalizer(spec) {
-  var _this = this;
-
-  _classCallCheck(this, DateLocalizer);
-
-  !(typeof spec.format === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `format(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
-  !(typeof spec.parse === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `parse(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
-  !(typeof spec.firstOfWeek === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `firstOfWeek(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
-
-  this.propType = spec.propType || localePropType;
-
-  this.formats = spec.formats;
-  this.startOfWeek = spec.firstOfWeek;
-
-  this.format = function () {
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _format.apply(undefined, [_this, spec.format].concat(args));
-  };
-
-  this.parse = function (value, format, culture) {
-    var result = spec.parse.call(_this, value, format, culture);
-
-    !(result == null || result instanceof Date && !isNaN(result.getTime())) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `parse(..)` must return a valid Date, null, or undefined') : (0, _invariant2.default)(false) : void 0;
-
-    return result;
-  };
-};
-
-var localizer = {
-  parse: error,
-  format: error,
-  startOfWeek: error
-};
-
-function set(newLocalizer) {
-  if (!newLocalizer.__isLocalizer__) {
-    newLocalizer = new DateLocalizer(newLocalizer);
-    newLocalizer.__isLocalizer__ = true;
-  }
-
-  localizer = newLocalizer;
-  return localizer;
-}
-
-var exp = {
-  parse: function parse() {
-    var _localizer;
-
-    return (_localizer = localizer).parse.apply(_localizer, arguments);
-  },
-  format: function format() {
-    var _localizer2;
-
-    return (_localizer2 = localizer).format.apply(_localizer2, arguments);
-  },
-  startOfWeek: function startOfWeek() {
-    var _localizer3;
-
-    return (_localizer3 = localizer).startOfWeek.apply(_localizer3, arguments);
-  }
-};
-
-exports.default = exp;
-
-
-function error() {
-  throw new Error('You have not selected a localization strategy for Big Calendar. ' + 'Please use either of the two included.');
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8269,6 +8168,111 @@ var withRouter = __webpack_require__(107);
 
 
 /***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+exports.set = set;
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _invariant = __webpack_require__(14);
+
+var _invariant2 = _interopRequireDefault(_invariant);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var localePropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]);
+
+function _format(localizer, formatter, value, format, culture) {
+  var result = typeof format === 'function' ? format(value, culture, localizer) : formatter.call(localizer, value, format, culture);
+
+  !(result == null || typeof result === 'string') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '`localizer format(..)` must return a string, null, or undefined') : (0, _invariant2.default)(false) : void 0;
+
+  return result;
+}
+
+var DateLocalizer = function DateLocalizer(spec) {
+  var _this = this;
+
+  _classCallCheck(this, DateLocalizer);
+
+  !(typeof spec.format === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `format(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
+  !(typeof spec.parse === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `parse(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
+  !(typeof spec.firstOfWeek === 'function') ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `firstOfWeek(..)` must be a function') : (0, _invariant2.default)(false) : void 0;
+
+  this.propType = spec.propType || localePropType;
+
+  this.formats = spec.formats;
+  this.startOfWeek = spec.firstOfWeek;
+
+  this.format = function () {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _format.apply(undefined, [_this, spec.format].concat(args));
+  };
+
+  this.parse = function (value, format, culture) {
+    var result = spec.parse.call(_this, value, format, culture);
+
+    !(result == null || result instanceof Date && !isNaN(result.getTime())) ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, 'date localizer `parse(..)` must return a valid Date, null, or undefined') : (0, _invariant2.default)(false) : void 0;
+
+    return result;
+  };
+};
+
+var localizer = {
+  parse: error,
+  format: error,
+  startOfWeek: error
+};
+
+function set(newLocalizer) {
+  if (!newLocalizer.__isLocalizer__) {
+    newLocalizer = new DateLocalizer(newLocalizer);
+    newLocalizer.__isLocalizer__ = true;
+  }
+
+  localizer = newLocalizer;
+  return localizer;
+}
+
+var exp = {
+  parse: function parse() {
+    var _localizer;
+
+    return (_localizer = localizer).parse.apply(_localizer, arguments);
+  },
+  format: function format() {
+    var _localizer2;
+
+    return (_localizer2 = localizer).format.apply(_localizer2, arguments);
+  },
+  startOfWeek: function startOfWeek() {
+    var _localizer3;
+
+    return (_localizer3 = localizer).startOfWeek.apply(_localizer3, arguments);
+  }
+};
+
+exports.default = exp;
+
+
+function error() {
+  throw new Error('You have not selected a localization strategy for Big Calendar. ' + 'Please use either of the two included.');
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
@@ -8422,7 +8426,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -36888,7 +36892,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
           break;
         }
-      case constants["u" /* VIEW_APPOINTMENT */]:
+      case constants["w" /* VIEW_APPOINTMENT */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -37084,6 +37088,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             searchNearby: Object.assign({}, state.searchNearby, {
               on: !state.searchNearby.on
             })
+          });
+        }
+      case constants["u" /* UPDATE_GEO_COORDINATES */]:
+        {
+          return Object.assign({}, state, {
+            searchNearby: Object.assign({}, state.searchNearby, {
+              position: Object.assign({}, state.searchNearby.position, action.payload)
+            })
+          });
+        }
+      case constants["v" /* UPDATE_SEARCH_RESULTS */]:
+        {
+          return Object.assign({}, state, {
+            searchNearby: Object.assign({}, state.searchNearby, action.payload)
           });
         }
       default:
@@ -41443,7 +41461,7 @@ var _dates = __webpack_require__(23);
 
 var _dates2 = _interopRequireDefault(_dates);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -66786,7 +66804,7 @@ var _dates = __webpack_require__(23);
 
 var _dates2 = _interopRequireDefault(_dates);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -66942,7 +66960,7 @@ var react_dom = __webpack_require__(21);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 13 modules
-var es = __webpack_require__(26);
+var es = __webpack_require__(25);
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 4 modules
 var react_redux_es = __webpack_require__(109);
@@ -70112,7 +70130,7 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
       });
     }, _this.viewAppointment = function (event) {
       return _this.props.dispatch({
-        type: constants["u" /* VIEW_APPOINTMENT */],
+        type: constants["w" /* VIEW_APPOINTMENT */],
         payload: event
       });
     }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
@@ -89146,7 +89164,7 @@ var _BackgroundWrapper = __webpack_require__(300);
 
 var _BackgroundWrapper2 = _interopRequireDefault(_BackgroundWrapper);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _moment = __webpack_require__(957);
 
@@ -90682,7 +90700,7 @@ var _dates = __webpack_require__(23);
 
 var _dates2 = _interopRequireDefault(_dates);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -91607,7 +91625,7 @@ var _EventCell2 = _interopRequireDefault(_EventCell);
 
 var _selection = __webpack_require__(131);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -93503,7 +93521,7 @@ var _TimeGrid = __webpack_require__(299);
 
 var _TimeGrid2 = _interopRequireDefault(_TimeGrid);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -93598,7 +93616,7 @@ var _dates2 = _interopRequireDefault(_dates);
 
 var _selection = __webpack_require__(131);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -94403,7 +94421,7 @@ var _dates = __webpack_require__(23);
 
 var _dates2 = _interopRequireDefault(_dates);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -94603,7 +94621,7 @@ var _TimeGrid = __webpack_require__(299);
 
 var _TimeGrid2 = _interopRequireDefault(_TimeGrid);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -94695,7 +94713,7 @@ var _scrollbarSize = __webpack_require__(609);
 
 var _scrollbarSize2 = _interopRequireDefault(_scrollbarSize);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 var _localizer2 = _interopRequireDefault(_localizer);
 
@@ -95449,7 +95467,7 @@ var _dates2 = _interopRequireDefault(_dates);
 
 var _formats = __webpack_require__(180);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -95575,7 +95593,7 @@ var _warning2 = _interopRequireDefault(_warning);
 
 var _formats = __webpack_require__(180);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -95673,7 +95691,7 @@ var _dates2 = _interopRequireDefault(_dates);
 
 var _formats = __webpack_require__(180);
 
-var _localizer = __webpack_require__(25);
+var _localizer = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

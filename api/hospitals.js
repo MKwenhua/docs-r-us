@@ -22,19 +22,16 @@ const distanceWithin = ({lat, long}, distance) => `SELECT * FROM "hospitals" WHE
 const approximateKMtoDegree = km =>  0.001 * (km/0.111)
 
 const NearbyHospitals = (req, res, next) => {
-  let coords = {
-    lat: 41.889671799999995,
-    long: -87.6308846
-  }
+  console.log('\n req.query', req.query);
   db.Hospital.findAll({
     where: Sequelize.where(
       Sequelize.fn('ST_DWithin',
         Sequelize.col('position'),
           Sequelize.fn('ST_SetSRID',
             Sequelize.fn('ST_MakePoint',
-              coords.long, coords.lat),
+              req.query.long, req.query.lat),
           4326),
-      approximateKMtoDegree(3)),
+      approximateKMtoDegree(req.query.distance)),
       true),
       include: [
         {
@@ -43,7 +40,7 @@ const NearbyHospitals = (req, res, next) => {
         }
       ]
   })
-  .then(hospitals => res.send(hospitals))
+  .then(hospitals => res.json(hospitals))
   .catch(next)
 }
 

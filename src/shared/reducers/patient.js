@@ -1,6 +1,8 @@
 import {
   CONNECTED,
-  TOGGLE_PROXIMITY_SEARCH
+  TOGGLE_PROXIMITY_SEARCH,
+  UPDATE_GEO_COORDINATES,
+  UPDATE_SEARCH_RESULTS
 } from 'constants';
 
 export default (initialState) => (function reducer(state = initialState, action) {
@@ -21,6 +23,29 @@ export default (initialState) => (function reducer(state = initialState, action)
           searchNearby: {
             ...state.searchNearby,
             on: !state.searchNearby.on
+          }
+        }
+      }
+    case UPDATE_GEO_COORDINATES:
+      {
+        return {
+          ...state,
+          searchNearby: {
+            ...state.searchNearby,
+            position: {
+              ...state.searchNearby.position,
+              ...action.payload
+            }
+          }
+        }
+      }
+    case UPDATE_SEARCH_RESULTS:
+      {
+        return {
+          ...state,
+          searchNearby: {
+            ...state.searchNearby,
+            ...action.payload
           }
         }
       }

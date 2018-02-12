@@ -3734,10 +3734,41 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
       return _this.props.dispatch({
         type: external__constants_["TOGGLE_PROXIMITY_SEARCH"]
       });
+    }, _this.fetchQuery = function (queryString) {
+      fetch('/api/nearby/hospitals?' + queryString).then(function (results) {
+        return results.json();
+      }).then(function (jsonResults) {
+        return _this.props.dispatch({
+          type: external__constants_["UPDATE_SEARCH_RESULTS"],
+          payload: { hospitals: jsonResults }
+        });
+      }).catch(function (err) {
+        return console.log('err', err);
+      });
+    }, _this.updateCoordinates = function (_ref2) {
+      var withinKM = _ref2.withinKM;
+      return function (pos) {
+        var _pos$coords = pos.coords,
+            latitude = _pos$coords.latitude,
+            longitude = _pos$coords.longitude;
+
+        _this.props.dispatch({
+          type: external__constants_["UPDATE_GEO_COORDINATES"],
+          payload: { latitude: latitude, longitude: longitude }
+        });
+        _this.fetchQuery('distance=' + withinKM + '&lat=' + latitude + '&long=' + longitude);
+      };
     }, _temp), HospitalSearchPage__possibleConstructorReturn(_this, _ret);
   }
 
   HospitalSearchPage__createClass(HospitalSearchPage, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.updateCoordinates(this.props.searchNearby));
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var searchNearby = this.props.searchNearby;
@@ -3746,7 +3777,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
         'div',
         { className: 'container search-container', __source: {
             fileName: HospitalSearchPage__jsxFileName,
-            lineNumber: 15
+            lineNumber: 40
           },
           __self: this
         },
@@ -3754,7 +3785,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block search-options ', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 16
+              lineNumber: 41
             },
             __self: this
           },
@@ -3762,7 +3793,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'btn-group btn-group-sm', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 17
+                lineNumber: 42
               },
               __self: this
             },
@@ -3770,7 +3801,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'button',
               { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 18
+                  lineNumber: 43
                 },
                 __self: this
               },
@@ -3780,7 +3811,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'dropdown-menu', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 21
+                  lineNumber: 46
                 },
                 __self: this
               },
@@ -3788,7 +3819,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 22
+                    lineNumber: 47
                   },
                   __self: this
                 },
@@ -3798,7 +3829,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 23
+                    lineNumber: 48
                   },
                   __self: this
                 },
@@ -3808,7 +3839,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 24
+                    lineNumber: 49
                   },
                   __self: this
                 },
@@ -3816,7 +3847,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               ),
               external__react__default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 25
+                  lineNumber: 50
                 },
                 __self: this
               }),
@@ -3824,7 +3855,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 26
+                    lineNumber: 51
                   },
                   __self: this
                 },
@@ -3836,7 +3867,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'proximity-search', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 29
+                lineNumber: 54
               },
               __self: this
             },
@@ -3845,7 +3876,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               {
                 __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 30
+                  lineNumber: 55
                 },
                 __self: this
               },
@@ -3855,14 +3886,14 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 31
+                  lineNumber: 56
                 },
                 __self: this
               },
               searchNearby.on ? 'ON' : 'OFF',
               external__react__default.a.createElement('div', { className: 'switch', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 33
+                  lineNumber: 58
                 },
                 __self: this
               })
@@ -3873,7 +3904,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 37
+              lineNumber: 62
             },
             __self: this
           },
@@ -3881,7 +3912,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'input-group mb-3 search-bar', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 38
+                lineNumber: 63
               },
               __self: this
             },
@@ -3889,7 +3920,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-prepend', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 39
+                  lineNumber: 64
                 },
                 __self: this
               },
@@ -3897,7 +3928,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 40
+                    lineNumber: 65
                   },
                   __self: this
                 },
@@ -3907,7 +3938,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'div',
                 { className: 'dropdown-menu', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 41
+                    lineNumber: 66
                   },
                   __self: this
                 },
@@ -3915,7 +3946,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 42
+                      lineNumber: 67
                     },
                     __self: this
                   },
@@ -3925,7 +3956,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 43
+                      lineNumber: 68
                     },
                     __self: this
                   },
@@ -3935,7 +3966,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 44
+                      lineNumber: 69
                     },
                     __self: this
                   },
@@ -3943,7 +3974,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 ),
                 external__react__default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 45
+                    lineNumber: 70
                   },
                   __self: this
                 }),
@@ -3951,7 +3982,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 46
+                      lineNumber: 71
                     },
                     __self: this
                   },
@@ -3961,7 +3992,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             ),
             external__react__default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 49
+                lineNumber: 74
               },
               __self: this
             }),
@@ -3969,7 +4000,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-append', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 75
                 },
                 __self: this
               },
@@ -3977,7 +4008,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary', type: 'button', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 51
+                    lineNumber: 76
                   },
                   __self: this
                 },
@@ -4203,20 +4234,25 @@ var render_booking_page_RenderBookingPage = function RenderBookingPage(content, 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var setPatientState = function setPatientState(_ref) {
-    var doctors = _ref.doctors,
-        appointments = _ref.appointments,
-        currentUser = _objectWithoutProperties(_ref, ["doctors", "appointments"]);
+  var doctors = _ref.doctors,
+      appointments = _ref.appointments,
+      currentUser = _objectWithoutProperties(_ref, ["doctors", "appointments"]);
 
-    return {
-        doctors: doctors,
-        appointments: appointments,
-        currentUser: currentUser,
-        searchNearby: {
-            on: true,
-            withinKM: 3
-        },
-        connected: false
-    };
+  return {
+    appointments: appointments,
+    currentUser: currentUser,
+    searchNearby: {
+      on: true,
+      position: {
+        lat: 41.889671799999995,
+        long: -87.6308846
+      },
+      withinKM: 3,
+      hospitals: [],
+      doctors: []
+    },
+    connected: false
+  };
 };
 
 /* harmony default export */ var state_setPatientState = (setPatientState);
@@ -4517,6 +4553,20 @@ function doctor__defineProperty(obj, key, value) { if (key in obj) { Object.defi
             searchNearby: Object.assign({}, state.searchNearby, {
               on: !state.searchNearby.on
             })
+          });
+        }
+      case external__constants_["UPDATE_GEO_COORDINATES"]:
+        {
+          return Object.assign({}, state, {
+            searchNearby: Object.assign({}, state.searchNearby, {
+              position: Object.assign({}, state.searchNearby.position, action.payload)
+            })
+          });
+        }
+      case external__constants_["UPDATE_SEARCH_RESULTS"]:
+        {
+          return Object.assign({}, state, {
+            searchNearby: Object.assign({}, state.searchNearby, action.payload)
           });
         }
       default:

@@ -2,13 +2,38 @@ import React, {PureComponent} from 'react';
 import 'stylesheet/SearchPages.css';
 import {
   CDN_URI,
-  TOGGLE_PROXIMITY_SEARCH
+  TOGGLE_PROXIMITY_SEARCH,
+  UPDATE_GEO_COORDINATES,
+  UPDATE_SEARCH_RESULTS
 } from 'constants';
+
 
 class HospitalSearchPage extends PureComponent {
   onProximityToggle = e => this.props.dispatch({
     type: TOGGLE_PROXIMITY_SEARCH
   })
+  fetchQuery = queryString => {
+    fetch(`/api/nearby/hospitals?${queryString}`)
+      .then(results => results.json())
+      .then(jsonResults => this.props.dispatch({
+        type: UPDATE_SEARCH_RESULTS,
+        payload: { hospitals: jsonResults }
+      }))
+      .catch(err => console.log('err', err))
+  }
+  updateCoordinates = ({withinKM}) => pos => {
+    const { latitude, longitude } = pos.coords;
+    this.props.dispatch({
+      type: UPDATE_GEO_COORDINATES,
+      payload: { latitude, longitude }
+    })
+    this.fetchQuery(`distance=${withinKM}&lat=${latitude}&long=${longitude}`);
+  }
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.updateCoordinates(this.props.searchNearby));
+    }
+  }
   render() {
     const { searchNearby } = this.props;
     return (
