@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import setDoctorReducer from './doctor'
-import setPatientReducer from './doctor'
+import setPatientReducer from './patient'
 
 const serverStoreBuilder = state => setDoctorReducer(state);
 

@@ -13,6 +13,7 @@ const composedStore = compose(
 
 const buildClientStore = (state) => composedStore(createStore)(clientStoreBuilder(state));
 const buildServerStore = (state) => createStore(serverStoreBuilder(state));
+
 const buildBookingClientStore = (state) => composedStore(createStore)(clientBookingStoreBuilder(state));
 const buildBookingServerStore = (state) => createStore(serverBookingStoreBuilder(state));
 

@@ -1,0 +1,36 @@
+.landing-container {
+  padding: 30px 0;
+}
+
+.landing-big-link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  color: #448F94;
+  font-size: 20px;
+  background: #fff;
+  border: 1px solid #448F94;
+  transition: all 0.15s ease-out 0s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .19);
+  text-decoration: none;
+}
+
+.landing-big-link:active {
+  color: #448F94;
+  border-color: #448F94;
+  text-decoration: none;
+}
+
+.landing-big-link:visited {
+  color: #448F94;
+  border-color: #448F94;
+  text-decoration: none;
+}
+
+.landing-big-link:hover {
+  box-shadow: none;
+  /* color: #fff; */
+  color: #448F94;
+  text-decoration: none;
+  background-color: rgba(68, 143, 148, 0.2);
+}

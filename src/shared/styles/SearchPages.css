@@ -1,0 +1,70 @@
+.search-container {
+  padding: 30px 0;
+}
+
+.search-page-block {
+  background: #fff;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.search-bar {
+  margin-bottom: 0!important;
+}
+
+.search-options .btn-group-sm {
+  margin: -3px 0;
+}
+
+.proximity-search {
+  position: absolute;
+  height: 25px;
+  display: flex;
+  right: 10px;
+  flex-flow: row nowrap;
+}
+
+.proximity-search b {
+  line-height: 25px;
+  margin: 0 10px;
+}
+
+.toggle-switch {
+  border: 2px solid #4ed164;
+  transition: all 0.15s ease-out 0s;
+  width: 65px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  line-height: 22px;
+  padding: 0 6px;
+  position: relative;
+  height: 25px;
+}
+
+.switch {
+  width: 10px;
+  border-radius: 2px;
+  top: 0;
+  bottom: 0;
+  background: white;
+  position: absolute;
+}
+
+.toggle-switch.on {
+  background-color: #4ed164;
+  padding-right: 15px;
+}
+
+.toggle-switch.off {
+  padding-left: 15px;
+  background-color: lightgrey;
+}
+
+.toggle-switch.on > .switch {
+  right: 0;
+}
+
+.toggle-switch.off > .switch {
+  left: 0;
+}

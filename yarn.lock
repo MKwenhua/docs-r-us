@@ -4202,6 +4202,13 @@ react-big-calendar@^0.17.0:
     uncontrollable "^3.3.1 || ^4.0.0"
     warning "^2.0.0"
 
+react-bootstrap-toggle@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-toggle/-/react-bootstrap-toggle-2.2.6.tgz#5cc1bad71b565c8d10b2958dd655834400f81726"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.10"
+
 react-dom@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"

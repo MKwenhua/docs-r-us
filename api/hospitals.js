@@ -19,7 +19,7 @@ const AllHospitals = (req, res) => {
 
 const distanceWithin = ({lat, long}, distance) => `SELECT * FROM "hospitals" WHERE (st_dwithin(position, ST_SetSRID(ST_MakePoint(${long}, ${lat}), 4326), ${distance}));`;
 
-const metersApproximateDegree = meters =>  0.00001 * (meters/1.11)
+const approximateKMtoDegree = km =>  0.001 * (km/0.111)
 
 const NearbyHospitals = (req, res, next) => {
   let coords = {
@@ -34,7 +34,7 @@ const NearbyHospitals = (req, res, next) => {
             Sequelize.fn('ST_MakePoint',
               coords.long, coords.lat),
           4326),
-      metersApproximateDegree(3000)),
+      approximateKMtoDegree(3)),
       true),
       include: [
         {

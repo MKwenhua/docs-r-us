@@ -21,7 +21,7 @@ import {
   PATIENT_TAB_SELECTED
 } from 'constants';
 
-export default(initialState) => (function reducer(state = initialState, action) {
+export default (initialState) => (function reducer(state = initialState, action) {
   switch (action.type) {
     case CONNECTED:
       {

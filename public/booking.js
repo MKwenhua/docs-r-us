@@ -3178,6 +3178,77 @@ module.exports = invariant;
 
 /***/ }),
 
+/***/ 16:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
+var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
+var CONNECTED = 'CONNECTED';
+var DISCONNECTED = 'DISCONNECTED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
+var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
+var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
+var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
+var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
+var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
+var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/SearchActions.js
+var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/index.js
+/* unused harmony export CHANGE_VIEW */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return VIEW_APPOINTMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SEARCH_INPUT_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PATIENTS_VIEW_RESET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return EDIT_APPOINTMENT_EVENT; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return TOP_NAV_ICON_CLICKED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOGGLE_PROXIMITY_SEARCH; });
+
+
+
+
+
+var CHANGE_VIEW = 'CHANGE_VIEW';
+var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
+var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
+var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
+var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
+var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
+var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
+var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
+var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
+var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
+var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
+
+//Resources
+var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
+
+
+
+/***/ }),
+
 /***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3211,70 +3282,6 @@ var ParseJson = function ParseJson(data) {
     return {};
   }
 };
-
-
-
-/***/ }),
-
-/***/ 18:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
-var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
-var CONNECTED = 'CONNECTED';
-var DISCONNECTED = 'DISCONNECTED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
-var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
-var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
-var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
-var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
-var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
-var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/index.js
-/* unused harmony export CHANGE_VIEW */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return VIEW_APPOINTMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SEARCH_INPUT_UPDATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PATIENTS_VIEW_RESET; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return EDIT_APPOINTMENT_EVENT; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOP_NAV_ICON_CLICKED; });
-
-
-
-var CHANGE_VIEW = 'CHANGE_VIEW';
-var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
-var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
-var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
-var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
-var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
-var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
-var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
-var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
-var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
-var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
-
-//Resources
-var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
 
 
 
@@ -23291,8 +23298,8 @@ var es = __webpack_require__(68);
 var redux_logger = __webpack_require__(213);
 var redux_logger_default = /*#__PURE__*/__webpack_require__.n(redux_logger);
 
-// EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(18);
+// EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
+var constants = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -23320,7 +23327,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
           break;
         }
-      case constants["t" /* VIEW_APPOINTMENT */]:
+      case constants["u" /* VIEW_APPOINTMENT */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -23331,7 +23338,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["s" /* TOP_NAV_ICON_CLICKED */]:
+      case constants["t" /* TOP_NAV_ICON_CLICKED */]:
         {
           return Object.assign({}, state, {
             topNav: Object.assign({}, state.topNav, {
@@ -23493,6 +23500,37 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return state;
   };
 });
+// CONCATENATED MODULE: ./src/shared/reducers/patient.js
+
+
+/* harmony default export */ var patient = (function (initialState) {
+  return function reducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+    switch (action.type) {
+      case constants["f" /* CONNECTED */]:
+        {
+          return Object.assign({}, state, {
+            connected: true,
+            socketId: action.payload
+          });
+          break;
+        }
+      case constants["s" /* TOGGLE_PROXIMITY_SEARCH */]:
+        {
+          return Object.assign({}, state, {
+            searchNearby: Object.assign({}, state.searchNearby, {
+              on: !state.searchNearby.on
+            })
+          });
+        }
+      default:
+        return state;
+    }
+    return state;
+  };
+});
 // CONCATENATED MODULE: ./src/shared/reducers/index.js
 
 
@@ -23507,11 +23545,11 @@ var reducers_clientStoreBuilder = function clientStoreBuilder(state) {
 };
 
 var reducers_serverBookingStoreBuilder = function serverBookingStoreBuilder(state) {
-  return doctor(state);
+  return patient(state);
 };
 
 var reducers_clientBookingStoreBuilder = function clientBookingStoreBuilder(state) {
-  return doctor(state);
+  return patient(state);
 };
 
 
@@ -23532,6 +23570,7 @@ var store_buildClientStore = function buildClientStore(state) {
 var store_buildServerStore = function buildServerStore(state) {
   return Object(es["d" /* createStore */])(reducers_serverStoreBuilder(state));
 };
+
 var store_buildBookingClientStore = function buildBookingClientStore(state) {
   return composedStore(es["d" /* createStore */])(reducers_clientBookingStoreBuilder(state));
 };
@@ -23552,292 +23591,7 @@ var store_buildBookingServerStore = function buildBookingServerStore(state) {
 
 /***/ }),
 
-/***/ 214:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 215:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./src/shared/styles/TopNav.css
-var styles_TopNav = __webpack_require__(216);
-var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
-
-// EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 13 modules
-var es = __webpack_require__(25);
-
-// EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(18);
-
-// CONCATENATED MODULE: ./src/shared/elements/TopNavButtons.js
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/elements/TopNavButtons.js',
-    TopNavButtons__this = this;
-
-
-
-
-var TopNavButtons_currentNotications = function currentNotications(_ref) {
-  var list = _ref.list;
-  return list.map(function (notification, i) {
-    return react_default.a.createElement(
-      'li',
-      { key: i, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 5
-        },
-        __self: TopNavButtons__this
-      },
-      notification
-    );
-  });
-};
-
-var TopNavButtons_TopNavButtons = function TopNavButtons(_ref2) {
-  var dropdown = _ref2.dropdown,
-      avatar = _ref2.avatar,
-      name = _ref2.name,
-      notifications = _ref2.notifications,
-      iconClick = _ref2.iconClick;
-  return react_default.a.createElement(
-    'div',
-    { className: 'topbar-right', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: TopNavButtons__this
-    },
-    react_default.a.createElement('div', { onClick: iconClick(null), className: dropdown === 'notifications' ? 'dropdown-backface' : 'hidden', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      },
-      __self: TopNavButtons__this
-    }),
-    react_default.a.createElement(
-      'div',
-      { onClick: iconClick('notifications'), className: dropdown === 'notifications' ? 'topbar-icon active' : 'topbar-icon', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: TopNavButtons__this
-      },
-      react_default.a.createElement('i', { 'aria-hidden': 'true', className: 'alarm outline big icon', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        },
-        __self: TopNavButtons__this
-      }),
-      react_default.a.createElement(
-        'span',
-        { className: notifications.notSeen > 0 ? 'notification-count' : 'hidden', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 13
-          },
-          __self: TopNavButtons__this
-        },
-        notifications.notSeen
-      ),
-      react_default.a.createElement(
-        'ul',
-        { className: dropdown === 'notifications' ? 'topnav-dropdown left' : 'hidden', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 16
-          },
-          __self: TopNavButtons__this
-        },
-        TopNavButtons_currentNotications(notifications)
-      )
-    ),
-    react_default.a.createElement('img', { className: dropdown === 'account' ? 'topbar-avatar active' : 'topbar-avatar', src: 'https://dq8llwxgkllay.cloudfront.net/' + avatar, onClick: iconClick('account'), __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: TopNavButtons__this
-    }),
-    react_default.a.createElement('div', { onClick: iconClick(null), className: dropdown === 'account' ? 'dropdown-backface' : 'hidden', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: TopNavButtons__this
-    }),
-    react_default.a.createElement(
-      'ul',
-      { className: dropdown === 'account' ? 'topnav-dropdown' : 'hidden', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: TopNavButtons__this
-      },
-      react_default.a.createElement(
-        'li',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 23
-          },
-          __self: TopNavButtons__this
-        },
-        react_default.a.createElement(
-          'a',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 23
-            },
-            __self: TopNavButtons__this
-          },
-          'Example Item'
-        )
-      ),
-      react_default.a.createElement(
-        'li',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: TopNavButtons__this
-        },
-        react_default.a.createElement(
-          'a',
-          { href: '/logout', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 24
-            },
-            __self: TopNavButtons__this
-          },
-          'Sign Out'
-        )
-      )
-    )
-  );
-};
-
-/* harmony default export */ var elements_TopNavButtons = (TopNavButtons_TopNavButtons);
-// CONCATENATED MODULE: ./src/shared/elements/index.js
-
-
-
-// CONCATENATED MODULE: ./src/shared/components/TopNav.js
-var TopNav__jsxFileName = '/Users/pete/docs-r-us/src/shared/components/TopNav.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-var TopNav_TopNav = function (_PureComponent) {
-  _inherits(TopNav, _PureComponent);
-
-  function TopNav() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, TopNav);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TopNav.__proto__ || Object.getPrototypeOf(TopNav)).call.apply(_ref, [this].concat(args))), _this), _this.iconClick = function (iconType) {
-      return function (e) {
-        return _this.props.dispatch({
-          type: constants["s" /* TOP_NAV_ICON_CLICKED */],
-          payload: iconType
-        });
-      };
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(TopNav, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          navStuck = _props.navStuck,
-          dropdown = _props.dropdown,
-          account = _props.account,
-          settings = _props.settings,
-          avatar = _props.avatar,
-          name = _props.name,
-          notifications = _props.notifications;
-
-      return react_default.a.createElement(
-        'nav',
-        { className: navStuck === false ? 'top-nav' : 'top-nav fixed', __source: {
-            fileName: TopNav__jsxFileName,
-            lineNumber: 19
-          },
-          __self: this
-        },
-        react_default.a.createElement(
-          'div',
-          { className: 'topbar-left', __source: {
-              fileName: TopNav__jsxFileName,
-              lineNumber: 20
-            },
-            __self: this
-          },
-          react_default.a.createElement(
-            es["b" /* Link */],
-            { to: '/', className: 'brand', __source: {
-                fileName: TopNav__jsxFileName,
-                lineNumber: 21
-              },
-              __self: this
-            },
-            'MED-MD'
-          )
-        ),
-        react_default.a.createElement(elements_TopNavButtons, {
-          name: name,
-          settings: settings,
-          avatar: avatar,
-          account: account,
-          dropdown: dropdown,
-          notifications: notifications,
-          iconClick: this.iconClick, __source: {
-            fileName: TopNav__jsxFileName,
-            lineNumber: 25
-          },
-          __self: this
-        })
-      );
-    }
-  }]);
-
-  return TopNav;
-}(react["PureComponent"]);
-
-/* harmony default export */ var components_TopNav = __webpack_exports__["a"] = (TopNav_TopNav);
-
-/***/ }),
-
-/***/ 216:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 25:
+/***/ 26:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24263,7 +24017,7 @@ var withRouter = __webpack_require__(107);
 
 /***/ }),
 
-/***/ 293:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24851,6 +24605,13 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ 613:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -25839,32 +25600,24 @@ var react_dom = __webpack_require__(21);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 13 modules
-var es = __webpack_require__(25);
+var es = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 4 modules
 var react_redux_es = __webpack_require__(109);
 
-// EXTERNAL MODULE: ./src/shared/store.js + 2 modules
+// EXTERNAL MODULE: ./src/shared/store.js + 3 modules
 var store = __webpack_require__(212);
 
-// EXTERNAL MODULE: ./src/shared/styles/Main.css
-var Main = __webpack_require__(214);
-var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
+// EXTERNAL MODULE: ./src/shared/styles/BookingGlobal.css
+var BookingGlobal = __webpack_require__(963);
+var BookingGlobal_default = /*#__PURE__*/__webpack_require__.n(BookingGlobal);
 
-// EXTERNAL MODULE: ./src/shared/components/TopNav.js + 2 modules
-var TopNav = __webpack_require__(215);
+// EXTERNAL MODULE: ./src/shared/styles/BookingNav.css
+var styles_BookingNav = __webpack_require__(964);
+var BookingNav_default = /*#__PURE__*/__webpack_require__.n(styles_BookingNav);
 
-// EXTERNAL MODULE: ./node_modules/react-router/es/index.js
-var react_router_es = __webpack_require__(293);
-
-// EXTERNAL MODULE: ./src/shared/constants/index.js + 2 modules
-var constants = __webpack_require__(18);
-
-// EXTERNAL MODULE: ./src/shared/helpers/index.js
-var helpers = __webpack_require__(179);
-
-// CONCATENATED MODULE: ./src/shared/pages/booking/Landing.js
-var _jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/Landing.js';
+// CONCATENATED MODULE: ./src/shared/components/BookingNav.js
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/components/BookingNav.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -25877,36 +25630,175 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Landing_Landing = function (_PureComponent) {
-  _inherits(Landing, _PureComponent);
 
-  function Landing() {
-    _classCallCheck(this, Landing);
+var checkActive = function checkActive(match, location) {
+  if (!match) {
+    return false;
+  }
+  return true;
+};
 
-    return _possibleConstructorReturn(this, (Landing.__proto__ || Object.getPrototypeOf(Landing)).apply(this, arguments));
+var BookingNav_BookingNav = function (_PureComponent) {
+  _inherits(BookingNav, _PureComponent);
+
+  function BookingNav() {
+    _classCallCheck(this, BookingNav);
+
+    return _possibleConstructorReturn(this, (BookingNav.__proto__ || Object.getPrototypeOf(BookingNav)).apply(this, arguments));
   }
 
-  _createClass(Landing, [{
+  _createClass(BookingNav, [{
     key: 'render',
     value: function render() {
       return react_default.a.createElement(
         'div',
-        { className: 'ui grid', __source: {
+        { className: 'booking-nav', __source: {
             fileName: _jsxFileName,
-            lineNumber: 7
+            lineNumber: 16
           },
           __self: this
         },
         react_default.a.createElement(
-          'h1',
-          {
-            __source: {
+          es["b" /* Link */],
+          { className: 'profile-icon', to: '/', __source: {
               fileName: _jsxFileName,
-              lineNumber: 8
+              lineNumber: 17
             },
             __self: this
           },
-          'Landing'
+          react_default.a.createElement(
+            'i',
+            { className: 'material-icons', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 18
+              },
+              __self: this
+            },
+            'home'
+          )
+        ),
+        react_default.a.createElement(
+          es["b" /* Link */],
+          { className: 'profile-icon right', to: '/profile', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 20
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'i',
+            { className: 'material-icons', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 21
+              },
+              __self: this
+            },
+            'account_box'
+          )
+        )
+      );
+    }
+  }]);
+
+  return BookingNav;
+}(react["PureComponent"]);
+
+/* harmony default export */ var components_BookingNav = (BookingNav_BookingNav);
+// EXTERNAL MODULE: ./node_modules/react-router/es/index.js
+var react_router_es = __webpack_require__(290);
+
+// EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
+var constants = __webpack_require__(16);
+
+// EXTERNAL MODULE: ./src/shared/helpers/index.js
+var helpers = __webpack_require__(179);
+
+// EXTERNAL MODULE: ./src/shared/styles/BookingLandingPage.css
+var BookingLandingPage = __webpack_require__(965);
+var BookingLandingPage_default = /*#__PURE__*/__webpack_require__.n(BookingLandingPage);
+
+// CONCATENATED MODULE: ./src/shared/pages/booking/Landing.js
+var Landing__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/Landing.js';
+
+var Landing__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function Landing__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Landing__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Landing__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var Landing_Landing = function (_PureComponent) {
+  Landing__inherits(Landing, _PureComponent);
+
+  function Landing() {
+    Landing__classCallCheck(this, Landing);
+
+    return Landing__possibleConstructorReturn(this, (Landing.__proto__ || Object.getPrototypeOf(Landing)).apply(this, arguments));
+  }
+
+  Landing__createClass(Landing, [{
+    key: 'render',
+    value: function render() {
+      return react_default.a.createElement(
+        'div',
+        { className: 'container landing-container', __source: {
+            fileName: Landing__jsxFileName,
+            lineNumber: 11
+          },
+          __self: this
+        },
+        react_default.a.createElement(
+          'div',
+          { className: 'row justify-content-center', __source: {
+              fileName: Landing__jsxFileName,
+              lineNumber: 12
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'div',
+            { className: 'col-4', __source: {
+                fileName: Landing__jsxFileName,
+                lineNumber: 13
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              es["b" /* Link */],
+              { className: 'landing-big-link', to: '/search/hospitals', __source: {
+                  fileName: Landing__jsxFileName,
+                  lineNumber: 14
+                },
+                __self: this
+              },
+              'Search For Hospitals'
+            )
+          ),
+          react_default.a.createElement(
+            'div',
+            { className: 'col-4', __source: {
+                fileName: Landing__jsxFileName,
+                lineNumber: 18
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              es["b" /* Link */],
+              { className: 'landing-big-link', to: '/search/doctors', __source: {
+                  fileName: Landing__jsxFileName,
+                  lineNumber: 19
+                },
+                __self: this
+              },
+              'Search For Doctors'
+            )
+          )
         )
       );
     }
@@ -26075,7 +25967,599 @@ var PatientProfile_PatientProfile = function (_PureComponent) {
 }(react["PureComponent"]);
 
 /* harmony default export */ var booking_PatientProfile = (PatientProfile_PatientProfile);
+// EXTERNAL MODULE: ./src/shared/styles/SearchPages.css
+var SearchPages = __webpack_require__(613);
+var SearchPages_default = /*#__PURE__*/__webpack_require__.n(SearchPages);
+
+// CONCATENATED MODULE: ./src/shared/pages/booking/DoctorSearchPage.js
+var DoctorSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorSearchPage.js';
+
+var DoctorSearchPage__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function DoctorSearchPage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function DoctorSearchPage__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function DoctorSearchPage__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
+  DoctorSearchPage__inherits(DoctorSearchPage, _PureComponent);
+
+  function DoctorSearchPage() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    DoctorSearchPage__classCallCheck(this, DoctorSearchPage);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = DoctorSearchPage__possibleConstructorReturn(this, (_ref = DoctorSearchPage.__proto__ || Object.getPrototypeOf(DoctorSearchPage)).call.apply(_ref, [this].concat(args))), _this), _this.onProximityToggle = function (e) {
+      return _this.props.dispatch({
+        type: constants["s" /* TOGGLE_PROXIMITY_SEARCH */]
+      });
+    }, _temp), DoctorSearchPage__possibleConstructorReturn(_this, _ret);
+  }
+
+  DoctorSearchPage__createClass(DoctorSearchPage, [{
+    key: 'render',
+    value: function render() {
+      var searchNearby = this.props.searchNearby;
+
+      return react_default.a.createElement(
+        'div',
+        { className: 'container search-container', __source: {
+            fileName: DoctorSearchPage__jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        },
+        react_default.a.createElement(
+          'div',
+          { className: 'row search-page-block search-options ', __source: {
+              fileName: DoctorSearchPage__jsxFileName,
+              lineNumber: 16
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'div',
+            { className: 'btn-group btn-group-sm', __source: {
+                fileName: DoctorSearchPage__jsxFileName,
+                lineNumber: 17
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'button',
+              { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 18
+                },
+                __self: this
+              },
+              'Small button'
+            ),
+            react_default.a.createElement(
+              'div',
+              { className: 'dropdown-menu', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 21
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 22
+                  },
+                  __self: this
+                },
+                'Action'
+              ),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 23
+                  },
+                  __self: this
+                },
+                'Another action'
+              ),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 24
+                  },
+                  __self: this
+                },
+                'Something else here'
+              ),
+              react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 25
+                },
+                __self: this
+              }),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 26
+                  },
+                  __self: this
+                },
+                'Separated link'
+              )
+            )
+          ),
+          react_default.a.createElement(
+            'div',
+            { className: 'proximity-search', __source: {
+                fileName: DoctorSearchPage__jsxFileName,
+                lineNumber: 29
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 30
+                },
+                __self: this
+              },
+              'Search Nearby:'
+            ),
+            react_default.a.createElement(
+              'div',
+              { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 31
+                },
+                __self: this
+              },
+              searchNearby.on ? 'ON' : 'OFF',
+              react_default.a.createElement('div', { className: 'switch', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 33
+                },
+                __self: this
+              })
+            )
+          )
+        ),
+        react_default.a.createElement(
+          'div',
+          { className: 'row search-page-block', __source: {
+              fileName: DoctorSearchPage__jsxFileName,
+              lineNumber: 37
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'div',
+            { className: 'input-group mb-3 search-bar', __source: {
+                fileName: DoctorSearchPage__jsxFileName,
+                lineNumber: 38
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'div',
+              { className: 'input-group-prepend', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 39
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'button',
+                { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 40
+                  },
+                  __self: this
+                },
+                'Dropdown'
+              ),
+              react_default.a.createElement(
+                'div',
+                { className: 'dropdown-menu', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 41
+                  },
+                  __self: this
+                },
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: DoctorSearchPage__jsxFileName,
+                      lineNumber: 42
+                    },
+                    __self: this
+                  },
+                  'Action'
+                ),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: DoctorSearchPage__jsxFileName,
+                      lineNumber: 43
+                    },
+                    __self: this
+                  },
+                  'Another action'
+                ),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: DoctorSearchPage__jsxFileName,
+                      lineNumber: 44
+                    },
+                    __self: this
+                  },
+                  'Something else here'
+                ),
+                react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 45
+                  },
+                  __self: this
+                }),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: DoctorSearchPage__jsxFileName,
+                      lineNumber: 46
+                    },
+                    __self: this
+                  },
+                  'Separated link'
+                )
+              )
+            ),
+            react_default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
+                fileName: DoctorSearchPage__jsxFileName,
+                lineNumber: 49
+              },
+              __self: this
+            }),
+            react_default.a.createElement(
+              'div',
+              { className: 'input-group-append', __source: {
+                  fileName: DoctorSearchPage__jsxFileName,
+                  lineNumber: 50
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'button',
+                { className: 'btn btn-outline-secondary', type: 'button', __source: {
+                    fileName: DoctorSearchPage__jsxFileName,
+                    lineNumber: 51
+                  },
+                  __self: this
+                },
+                'Search'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DoctorSearchPage;
+}(react["PureComponent"]);
+
+/* harmony default export */ var booking_DoctorSearchPage = (DoctorSearchPage_DoctorSearchPage);
+// CONCATENATED MODULE: ./src/shared/pages/booking/HospitalSearchPage.js
+var HospitalSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/HospitalSearchPage.js';
+
+var HospitalSearchPage__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function HospitalSearchPage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function HospitalSearchPage__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function HospitalSearchPage__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
+  HospitalSearchPage__inherits(HospitalSearchPage, _PureComponent);
+
+  function HospitalSearchPage() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    HospitalSearchPage__classCallCheck(this, HospitalSearchPage);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = HospitalSearchPage__possibleConstructorReturn(this, (_ref = HospitalSearchPage.__proto__ || Object.getPrototypeOf(HospitalSearchPage)).call.apply(_ref, [this].concat(args))), _this), _this.onProximityToggle = function (e) {
+      return _this.props.dispatch({
+        type: constants["s" /* TOGGLE_PROXIMITY_SEARCH */]
+      });
+    }, _temp), HospitalSearchPage__possibleConstructorReturn(_this, _ret);
+  }
+
+  HospitalSearchPage__createClass(HospitalSearchPage, [{
+    key: 'render',
+    value: function render() {
+      var searchNearby = this.props.searchNearby;
+
+      return react_default.a.createElement(
+        'div',
+        { className: 'container search-container', __source: {
+            fileName: HospitalSearchPage__jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        },
+        react_default.a.createElement(
+          'div',
+          { className: 'row search-page-block search-options ', __source: {
+              fileName: HospitalSearchPage__jsxFileName,
+              lineNumber: 16
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'div',
+            { className: 'btn-group btn-group-sm', __source: {
+                fileName: HospitalSearchPage__jsxFileName,
+                lineNumber: 17
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'button',
+              { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 18
+                },
+                __self: this
+              },
+              'Small button'
+            ),
+            react_default.a.createElement(
+              'div',
+              { className: 'dropdown-menu', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 21
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 22
+                  },
+                  __self: this
+                },
+                'Action'
+              ),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 23
+                  },
+                  __self: this
+                },
+                'Another action'
+              ),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 24
+                  },
+                  __self: this
+                },
+                'Something else here'
+              ),
+              react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 25
+                },
+                __self: this
+              }),
+              react_default.a.createElement(
+                'a',
+                { className: 'dropdown-item', href: '#', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 26
+                  },
+                  __self: this
+                },
+                'Separated link'
+              )
+            )
+          ),
+          react_default.a.createElement(
+            'div',
+            { className: 'proximity-search', __source: {
+                fileName: HospitalSearchPage__jsxFileName,
+                lineNumber: 29
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'b',
+              {
+                __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 30
+                },
+                __self: this
+              },
+              'Search Nearby:'
+            ),
+            react_default.a.createElement(
+              'div',
+              { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 31
+                },
+                __self: this
+              },
+              searchNearby.on ? 'ON' : 'OFF',
+              react_default.a.createElement('div', { className: 'switch', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 33
+                },
+                __self: this
+              })
+            )
+          )
+        ),
+        react_default.a.createElement(
+          'div',
+          { className: 'row search-page-block', __source: {
+              fileName: HospitalSearchPage__jsxFileName,
+              lineNumber: 37
+            },
+            __self: this
+          },
+          react_default.a.createElement(
+            'div',
+            { className: 'input-group mb-3 search-bar', __source: {
+                fileName: HospitalSearchPage__jsxFileName,
+                lineNumber: 38
+              },
+              __self: this
+            },
+            react_default.a.createElement(
+              'div',
+              { className: 'input-group-prepend', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 39
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'button',
+                { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 40
+                  },
+                  __self: this
+                },
+                'Dropdown'
+              ),
+              react_default.a.createElement(
+                'div',
+                { className: 'dropdown-menu', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 41
+                  },
+                  __self: this
+                },
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: HospitalSearchPage__jsxFileName,
+                      lineNumber: 42
+                    },
+                    __self: this
+                  },
+                  'Action'
+                ),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: HospitalSearchPage__jsxFileName,
+                      lineNumber: 43
+                    },
+                    __self: this
+                  },
+                  'Another action'
+                ),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: HospitalSearchPage__jsxFileName,
+                      lineNumber: 44
+                    },
+                    __self: this
+                  },
+                  'Something else here'
+                ),
+                react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 45
+                  },
+                  __self: this
+                }),
+                react_default.a.createElement(
+                  'a',
+                  { className: 'dropdown-item', href: '#', __source: {
+                      fileName: HospitalSearchPage__jsxFileName,
+                      lineNumber: 46
+                    },
+                    __self: this
+                  },
+                  'Separated link'
+                )
+              )
+            ),
+            react_default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
+                fileName: HospitalSearchPage__jsxFileName,
+                lineNumber: 49
+              },
+              __self: this
+            }),
+            react_default.a.createElement(
+              'div',
+              { className: 'input-group-append', __source: {
+                  fileName: HospitalSearchPage__jsxFileName,
+                  lineNumber: 50
+                },
+                __self: this
+              },
+              react_default.a.createElement(
+                'button',
+                { className: 'btn btn-outline-secondary', type: 'button', __source: {
+                    fileName: HospitalSearchPage__jsxFileName,
+                    lineNumber: 51
+                  },
+                  __self: this
+                },
+                'Search'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return HospitalSearchPage;
+}(react["PureComponent"]);
+
+/* harmony default export */ var booking_HospitalSearchPage = (HospitalSearchPage_HospitalSearchPage);
 // CONCATENATED MODULE: ./src/shared/pages/booking/index.js
+
+
 
 
 
@@ -26105,7 +26589,7 @@ function BookingContainer__inherits(subClass, superClass) { if (typeof superClas
 
 
 var WrapperClass = {
-  '/': 'main'
+  '/': 'booking-page'
 };
 
 var selectState = function selectState(state) {
@@ -26130,108 +26614,120 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
           dispatch = _props.dispatch,
           location = _props.location,
           match = _props.match,
+          appointments = _props.appointments,
+          searchNearby = _props.searchNearby,
           currentUser = _props.currentUser;
 
       console.log('BookingContainer this.props', this.props);
       return react_default.a.createElement(
         'section',
-        { className: WrapperClass[location.pathname] || 'main', __source: {
+        { className: WrapperClass[location.pathname] || 'booking-page', __source: {
             fileName: BookingContainer__jsxFileName,
-            lineNumber: 40
+            lineNumber: 44
           },
           __self: this
         },
+        react_default.a.createElement(components_BookingNav, { dispatch: dispatch, __source: {
+            fileName: BookingContainer__jsxFileName,
+            lineNumber: 45
+          },
+          __self: this
+        }),
         react_default.a.createElement(
-          'div',
-          { className: true ? 'page-content' : 'page-content', __source: {
+          es["e" /* Switch */],
+          {
+            __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 42
+              lineNumber: 46
             },
             __self: this
           },
           react_default.a.createElement(
-            es["e" /* Switch */],
-            {
-              __source: {
-                fileName: BookingContainer__jsxFileName,
-                lineNumber: 43
-              },
-              __self: this
-            },
-            react_default.a.createElement(
-              es["d" /* Route */],
-              { exact: true, path: '/', __source: {
-                  fileName: BookingContainer__jsxFileName,
-                  lineNumber: 44
-                },
-                __self: this
-              },
-              react_default.a.createElement(booking_Landing, { location: location, __source: {
-                  fileName: BookingContainer__jsxFileName,
-                  lineNumber: 45
-                },
-                __self: this
-              })
-            ),
-            react_default.a.createElement(es["d" /* Route */], { path: '/hospital/:id', render: function render(props) {
-                return react_default.a.createElement(booking_HospitalProfile, Object.assign({ currentUser: currentUser }, patientProfile, { appointments: appointments.resource, patients: patients, dispatch: dispatch, location: location }, props, {
-                  __source: {
-                    fileName: BookingContainer__jsxFileName,
-                    lineNumber: 48
-                  },
-                  __self: _this2
-                }));
-              }, __source: {
+            es["d" /* Route */],
+            { exact: true, path: '/', __source: {
                 fileName: BookingContainer__jsxFileName,
                 lineNumber: 47
               },
               __self: this
-            }),
-            react_default.a.createElement(
-              es["d" /* Route */],
-              { exact: true, path: '/calendar', __source: {
-                  fileName: BookingContainer__jsxFileName,
-                  lineNumber: 50
-                },
-                __self: this
+            },
+            react_default.a.createElement(booking_Landing, { location: location, __source: {
+                fileName: BookingContainer__jsxFileName,
+                lineNumber: 48
               },
-              react_default.a.createElement(AppointmentsCalendar, Object.assign({ appointments: appointments }, calendarView, { currentUser: currentUser, patients: patients, dispatch: dispatch, location: location, __source: {
+              __self: this
+            })
+          ),
+          react_default.a.createElement(es["d" /* Route */], { exact: true, path: '/search/hospitals', render: function render(props) {
+              return react_default.a.createElement(booking_HospitalSearchPage, Object.assign({ searchNearby: searchNearby, dispatch: dispatch, location: location }, props, {
+                __source: {
                   fileName: BookingContainer__jsxFileName,
                   lineNumber: 51
                 },
-                __self: this
-              }))
-            ),
-            react_default.a.createElement(
-              es["d" /* Route */],
-              { path: '/doctor/:id', __source: {
-                  fileName: BookingContainer__jsxFileName,
-                  lineNumber: 53
-                },
-                __self: this
-              },
-              react_default.a.createElement(booking_DoctorProfile, { location: location, __source: {
+                __self: _this2
+              }));
+            }, __source: {
+              fileName: BookingContainer__jsxFileName,
+              lineNumber: 50
+            },
+            __self: this
+          }),
+          react_default.a.createElement(es["d" /* Route */], { exact: true, path: '/search/doctors', render: function render(props) {
+              return react_default.a.createElement(booking_DoctorSearchPage, Object.assign({ searchNearby: searchNearby, dispatch: dispatch, location: location }, props, {
+                __source: {
                   fileName: BookingContainer__jsxFileName,
                   lineNumber: 54
                 },
-                __self: this
-              })
-            ),
-            react_default.a.createElement(
-              es["d" /* Route */],
-              { exact: true, path: '/profile', __source: {
-                  fileName: BookingContainer__jsxFileName,
-                  lineNumber: 56
-                },
-                __self: this
-              },
-              react_default.a.createElement(booking_PatientProfile, Object.assign({ appointments: appointments, patients: patients }, currentUser, { location: location, __source: {
+                __self: _this2
+              }));
+            }, __source: {
+              fileName: BookingContainer__jsxFileName,
+              lineNumber: 53
+            },
+            __self: this
+          }),
+          react_default.a.createElement(es["d" /* Route */], { path: '/hospital/:id', render: function render(props) {
+              return react_default.a.createElement(booking_HospitalProfile, Object.assign({ currentUser: currentUser, dispatch: dispatch, location: location }, props, {
+                __source: {
                   fileName: BookingContainer__jsxFileName,
                   lineNumber: 57
                 },
-                __self: this
-              }))
-            )
+                __self: _this2
+              }));
+            }, __source: {
+              fileName: BookingContainer__jsxFileName,
+              lineNumber: 56
+            },
+            __self: this
+          }),
+          react_default.a.createElement(
+            es["d" /* Route */],
+            { path: '/doctor/:id', __source: {
+                fileName: BookingContainer__jsxFileName,
+                lineNumber: 59
+              },
+              __self: this
+            },
+            react_default.a.createElement(booking_DoctorProfile, { location: location, __source: {
+                fileName: BookingContainer__jsxFileName,
+                lineNumber: 60
+              },
+              __self: this
+            })
+          ),
+          react_default.a.createElement(
+            es["d" /* Route */],
+            { exact: true, path: '/profile', __source: {
+                fileName: BookingContainer__jsxFileName,
+                lineNumber: 62
+              },
+              __self: this
+            },
+            react_default.a.createElement(booking_PatientProfile, Object.assign({}, currentUser, { location: location, __source: {
+                fileName: BookingContainer__jsxFileName,
+                lineNumber: 63
+              },
+              __self: this
+            }))
           )
         )
       );
@@ -26284,6 +26780,27 @@ Object(react_dom["hydrate"])(react_default.a.createElement(
     })
   )
 ), document.getElementById('root'));
+
+/***/ }),
+
+/***/ 963:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 964:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 965:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

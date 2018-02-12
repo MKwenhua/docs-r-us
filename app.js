@@ -23,6 +23,7 @@ const {
 
 //React SSR Render Actions
 const {
+  BookingRoute,
   RoutingPortal
 } = require('./react_pages');
 
@@ -44,6 +45,9 @@ app.get(/^\/(patients|calendar|appointments|profile)/, isLoggedIn, RoutingPortal
 app.get('/appointment/:id', isLoggedIn, RoutingPortal);
 
 app.get('/patient/:id', isLoggedIn, RoutingPortal);
+
+app.get('/search/hospitals', isLoggedIn, BookingRoute);
+app.get('/search/doctors', isLoggedIn, BookingRoute);
 
 //These Routes are static
 app.get('/signin', DoctorLogin);

@@ -55,5 +55,6 @@ const RoutingPortal  = (req, res) => {
 };
 
 export {
+  BookingRoute,
   RoutingPortal
 }

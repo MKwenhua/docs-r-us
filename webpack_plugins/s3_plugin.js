@@ -17,7 +17,11 @@ const S3PluginConfig = {
       "/public/app_bundle.js",
       "/public/app_bundle.js.map",
       "/public/css/app_bundle.css",
-      "/public/css/app_bundle.css.map"
+      "/public/css/app_bundle.css.map",
+      "/public/booking.js",
+      "/public/booking.js.map",
+      "/public/css/booking.css",
+      "/public/css/booking.css.map"
     ]
   }
 };

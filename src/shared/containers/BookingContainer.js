@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import 'stylesheet/Main.css';
+import 'stylesheet/BookingGlobal.css';
 import {connect} from 'react-redux';
-import TopNav from 'component/TopNav'
+import BookingNav from 'component/BookingNav'
 import {withRouter} from 'react-router'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import {
@@ -15,11 +15,13 @@ import {
   Landing,
   DoctorProfile,
   HospitalProfile,
-  PatientProfile
+  PatientProfile,
+  DoctorSearchPage,
+  HospitalSearchPage
 } from 'pages/booking';
 
 const WrapperClass = {
-  '/': 'main'
+  '/': 'booking-page'
 }
 
 const selectState = (state) => state;
@@ -33,31 +35,34 @@ class BookingContainer extends PureComponent {
       dispatch,
       location,
       match,
+      appointments,
+      searchNearby,
       currentUser
     } = this.props;
     console.log('BookingContainer this.props', this.props);
     return (
-      <section className={WrapperClass[location.pathname] || 'main'}>
-        {/* <TopNav {...topNav} dispatch={dispatch}/> */}
-        <div className={ true ? 'page-content' : 'page-content'}>
+      <section className={WrapperClass[location.pathname] || 'booking-page'}>
+        <BookingNav dispatch={dispatch}/>
         <Switch>
           <Route exact path='/'>
             <Landing location={ location } />
           </Route>
-          <Route path='/hospital/:id' render={(props) => (
-            <HospitalProfile currentUser={currentUser} {...patientProfile } appointments={appointments.resource} patients={patients} dispatch={dispatch} location={ location } {...props} />
+          <Route exact path='/search/hospitals' render={ props => (
+            <HospitalSearchPage searchNearby={searchNearby} dispatch={dispatch} location={ location } {...props} />
           )}/>
-          <Route exact path='/calendar'>
-            <AppointmentsCalendar appointments={appointments} {...calendarView} currentUser={currentUser} patients={patients} dispatch={dispatch} location={ location } />
-          </Route>
+          <Route exact path='/search/doctors' render={ props => (
+            <DoctorSearchPage searchNearby={searchNearby} dispatch={dispatch} location={ location } {...props} />
+          )}/>
+          <Route path='/hospital/:id' render={(props) => (
+            <HospitalProfile currentUser={currentUser} dispatch={dispatch} location={ location } {...props} />
+          )}/>
           <Route path='/doctor/:id'>
             <DoctorProfile location={ location } />
           </Route>
           <Route exact path='/profile'>
-            <PatientProfile appointments={appointments} patients={patients} {...currentUser} location={ location } />
+            <PatientProfile {...currentUser} location={ location } />
           </Route>
         </Switch>
-        </div>
       </section>
     )
   }
