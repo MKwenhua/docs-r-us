@@ -44,7 +44,6 @@ class MainContainer extends PureComponent {
       calendarView,
       topNav
     } = this.props;
-    console.log('MainContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'main'}>
         <TopNav {...topNav} dispatch={dispatch}/>

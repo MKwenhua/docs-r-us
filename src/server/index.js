@@ -3,8 +3,8 @@ import MainContainer from 'container/MainContainer';
 import BookingContainer from 'container/BookingContainer';
 import RenderPage from './render_page';
 import RenderBookingPage from './render_booking_page';
-import {StaticRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
+import { StaticRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import {
   normalizeDoctorState,
   setPatientState

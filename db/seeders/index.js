@@ -4,7 +4,6 @@ const PatientSeed = require('./PatientSeed.js');
 const AppointmentSeed = require('./AppointmentSeed.js');
 const HospitalSeed = require('./HospitalSeed.js');
 const Sequelize = require('sequelize');
-const client = require('../../config/redis_client.js');
 
 module.exports = ({Doctor, Patient, Appointment, Hospital}) => {
   const promises = [

@@ -41,4 +41,6 @@
   overflow-y: auto;
 }
 
-#grid { height: 500px; }
+#grid {
+  height: 500px;
+}

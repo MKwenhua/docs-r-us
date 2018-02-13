@@ -50,7 +50,6 @@ class BookingContainer extends PureComponent {
       hospitalProfile,
       currentUser
     } = this.props;
-    console.log('BookingContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'booking-page'}>
         <BookingNav online={online} dispatch={dispatch}/>

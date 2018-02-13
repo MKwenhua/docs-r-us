@@ -1,4 +1,4 @@
-const hospitalRecords = require('../../data_setup/hospital_addresses.js');
+const hospitalRecords = require('../../config/data_setup/hospital_addresses.js');
 
 const HospitalObject = ({name, formatted_address, place_id, location}) => ({
   name: name,

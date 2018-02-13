@@ -28,9 +28,8 @@ a.side-link :hover {
 }
 
 a.selected {
-  /* color: #2196f3 !important; */
   color: #0052CC;
-  background-color: rgba(9,30,66,0.04);
+  background-color: rgba(9, 30, 66, 0.04);
 }
 
 .side-link p, i.icon {
