@@ -1,6 +1,6 @@
 const sequelize = require('./pg_connection.js');
 const db = require('../models')(sequelize);
-const rebuildAndSeed = process.env.SEED_DB === 'true';
+const rebuildAndSeed = true//process.env.SEED_DB === 'true';
 
 db.GetUserType = (userType) => (userType === 'doctor' ? db.Doctor : db.Patient);
 

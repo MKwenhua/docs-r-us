@@ -7,7 +7,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "SEED_DB=true & NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js",
     "nodemon-start": "nodemon ./server.js --ignore src/ --ignore public/",
     "local-build": "NODE_ENV=production webpack",
     "seed-build-dev": "SEED_DB=true & LOCAL_BUILD=true node server.js",
