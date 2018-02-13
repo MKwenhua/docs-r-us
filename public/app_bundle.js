@@ -7292,83 +7292,7 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
-var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
-var CONNECTED = 'CONNECTED';
-var DISCONNECTED = 'DISCONNECTED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
-var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
-var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
-var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
-var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
-var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
-var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/SearchActions.js
-var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
-var UPDATE_GEO_COORDINATES = 'UPDATE_GEO_COORDINATES';
-var UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
-
-
-// CONCATENATED MODULE: ./src/shared/constants/index.js
-/* unused harmony export CHANGE_VIEW */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_DROPPED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_FILE_REMOVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return VIEW_APPOINTMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILES_UPLOADING; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return PATIENT_TAB_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return SEARCH_INPUT_UPDATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENTS_VIEW_RESET; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ONLINE_CONNECTION_CHANGE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return EDIT_APPOINTMENT_EVENT; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "r", function() { return REQUEST_APPOINTMENT_CHANGE; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "u", function() { return TOP_NAV_ICON_CLICKED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "v", function() { return UPDATE_GEO_COORDINATES; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return TOGGLE_PROXIMITY_SEARCH; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "w", function() { return UPDATE_SEARCH_RESULTS; });
-
-
-
-
-
-var CHANGE_VIEW = 'CHANGE_VIEW';
-var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
-var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
-var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
-var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
-var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
-var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
-var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
-var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
-var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
-var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
-
-var ONLINE_CONNECTION_CHANGE = 'ONLINE_CONNECTION_CHANGE';
-
-//Resources
-var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
-
-
-
-/***/ }),
+/* 16 */,
 /* 17 */
 /***/ (function(module, exports) {
 
@@ -37065,8 +36989,8 @@ var es = __webpack_require__(68);
 var redux_logger = __webpack_require__(214);
 var redux_logger_default = /*#__PURE__*/__webpack_require__.n(redux_logger);
 
-// EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
-var constants = __webpack_require__(16);
+// EXTERNAL MODULE: ./src/shared/constants/index.js + 5 modules
+var constants = __webpack_require__(977);
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -37094,7 +37018,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
           break;
         }
-      case constants["x" /* VIEW_APPOINTMENT */]:
+      case constants["D" /* VIEW_APPOINTMENT */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -37105,7 +37029,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["u" /* TOP_NAV_ICON_CLICKED */]:
+      case constants["A" /* TOP_NAV_ICON_CLICKED */]:
         {
           return Object.assign({}, state, {
             topNav: Object.assign({}, state.topNav, {
@@ -37113,7 +37037,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["h" /* EDIT_APPOINTMENT_EVENT */]:
+      case constants["i" /* EDIT_APPOINTMENT_EVENT */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -37123,7 +37047,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["i" /* EDIT_APPOINTMENT_STATUS */]:
+      case constants["j" /* EDIT_APPOINTMENT_STATUS */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -37134,7 +37058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["r" /* REQUEST_APPOINTMENT_CHANGE */]:
+      case constants["v" /* REQUEST_APPOINTMENT_CHANGE */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -37174,13 +37098,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["s" /* SEARCH_INPUT_UPDATE */]:
+      case constants["y" /* SEARCH_INPUT_UPDATE */]:
         {
           return Object.assign({}, state, {
             patientsView: Object.assign({}, state.patientsView, action.payload)
           });
         }
-      case constants["l" /* PATIENTS_VIEW_RESET */]:
+      case constants["n" /* PATIENTS_VIEW_RESET */]:
         {
           return Object.assign({}, state, {
             patientsView: {
@@ -37191,7 +37115,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
           });
         }
-      case constants["q" /* PATIENT_TAB_SELECTED */]:
+      case constants["s" /* PATIENT_TAB_SELECTED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -37199,7 +37123,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["j" /* EXIT_PATIENT_VIEW */]:
+      case constants["k" /* EXIT_PATIENT_VIEW */]:
         {
           return Object.assign({}, state, {
             patientProfile: {
@@ -37218,7 +37142,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["m" /* PATIENT_FILES_DROPPED */]:
+      case constants["o" /* PATIENT_FILES_DROPPED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -37226,7 +37150,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["p" /* PATIENT_FILE_REMOVED */]:
+      case constants["r" /* PATIENT_FILE_REMOVED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -37234,7 +37158,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["o" /* PATIENT_FILES_UPLOADING */]:
+      case constants["q" /* PATIENT_FILES_UPLOADING */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -37242,7 +37166,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["n" /* PATIENT_FILES_UPLOADED */]:
+      case constants["p" /* PATIENT_FILES_UPLOADED */]:
         {
           return Object.assign({}, state, {
             patients: Object.assign({}, state.patients, {
@@ -37255,7 +37179,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["m" /* PATIENT_FILES_DROPPED */]:
+      case constants["o" /* PATIENT_FILES_DROPPED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -37268,14 +37192,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   };
 });
 // CONCATENATED MODULE: ./src/shared/reducers/patient.js
+function patient__defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+
+
+//These should be moved to another file or replace by THUNK
+var indexDoctors = function indexDoctors(doctors) {
+  return doctors.reduce(function (lookup, doctor) {
+    lookup[doctor.id] = doctor;
+    return lookup;
+  }, {});
+};
 
 var mapProximityResults = function mapProximityResults(hospitals) {
-  return hospitals.reduce(function (nearbyResults, hospital) {
-    return Object.assign({}, nearbyResults, {
-      doctors: nearbyResults.doctors.concat(hospital.doctors)
-    });
-  }, { hospitals: hospitals, doctors: [] });
+  return hospitals.reduce(function (nearbyResults, hospital, i) {
+    return {
+      hospitals: Object.assign({}, nearbyResults.hospitals, patient__defineProperty({}, hospital.id, hospital)),
+      doctors: Object.assign({}, nearbyResults.doctors, indexDoctors(hospital.doctors))
+    };
+  }, { hospitals: {}, doctors: {} });
 };
 
 /* harmony default export */ var patient = (function (initialState) {
@@ -37284,7 +37219,7 @@ var mapProximityResults = function mapProximityResults(hospitals) {
     var action = arguments[1];
 
     switch (action.type) {
-      case constants["k" /* ONLINE_CONNECTION_CHANGE */]:
+      case constants["m" /* ONLINE_CONNECTION_CHANGE */]:
         {
           return Object.assign({}, state, {
             online: action.payload
@@ -37298,7 +37233,7 @@ var mapProximityResults = function mapProximityResults(hospitals) {
           });
           break;
         }
-      case constants["t" /* TOGGLE_PROXIMITY_SEARCH */]:
+      case constants["z" /* TOGGLE_PROXIMITY_SEARCH */]:
         {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
@@ -37306,7 +37241,43 @@ var mapProximityResults = function mapProximityResults(hospitals) {
             })
           });
         }
-      case constants["v" /* UPDATE_GEO_COORDINATES */]:
+      case constants["l" /* HOSPITAL_PROFILE_ERROR */]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: {
+              error: true
+            }
+          });
+        }
+      case constants["w" /* RESET_DOCTOR_PROFILE */]:
+        {
+          return Object.assign({}, state, {
+            doctorProfile: {}
+          });
+        }
+      case constants["x" /* RESET_HOSPITAL_PROFILE */]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: {}
+          });
+        }
+      case constants["u" /* POPULATE_HOSPITAL_PROFILE */]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: Object.assign({}, state.hospitalProfile, {
+              hospital: action.payload
+            })
+          });
+        }
+      case constants["t" /* POPULATE_DOCTOR_PROFILE */]:
+        {
+          return Object.assign({}, state, {
+            doctorProfile: Object.assign({}, state.doctorProfile, {
+              doctor: action.payload
+            })
+          });
+        }
+      case constants["B" /* UPDATE_GEO_COORDINATES */]:
         {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
@@ -37315,7 +37286,7 @@ var mapProximityResults = function mapProximityResults(hospitals) {
             })
           });
         }
-      case constants["w" /* UPDATE_SEARCH_RESULTS */]:
+      case constants["C" /* UPDATE_SEARCH_RESULTS */]:
         {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
@@ -67202,8 +67173,8 @@ var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 var styles_TopNav = __webpack_require__(618);
 var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
-// EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
-var constants = __webpack_require__(16);
+// EXTERNAL MODULE: ./src/shared/constants/index.js + 5 modules
+var constants = __webpack_require__(977);
 
 // EXTERNAL MODULE: ./src/shared/elements/index.js + 2 modules
 var shared_elements = __webpack_require__(133);
@@ -67242,7 +67213,7 @@ var TopNav_TopNav = function (_PureComponent) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TopNav.__proto__ || Object.getPrototypeOf(TopNav)).call.apply(_ref, [this].concat(args))), _this), _this.iconClick = function (iconType) {
       return function (e) {
         return _this.props.dispatch({
-          type: constants["u" /* TOP_NAV_ICON_CLICKED */],
+          type: constants["A" /* TOP_NAV_ICON_CLICKED */],
           payload: iconType
         });
       };
@@ -68630,7 +68601,7 @@ var PatientsView_PatientsView = function (_PureComponent) {
       var suggestions = _this.AutoComplete.lookup(typed);
       console.log('suggestions', suggestions);
       _this.props.dispatch({
-        type: constants["s" /* SEARCH_INPUT_UPDATE */],
+        type: constants["y" /* SEARCH_INPUT_UPDATE */],
         payload: { typed: typed, suggestions: suggestions }
       });
     };
@@ -68830,7 +68801,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
 
     return _ret = (_temp = (_this = FileUploader__possibleConstructorReturn(this, (_ref2 = FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call.apply(_ref2, [this].concat(args))), _this), _this.fileDrop = function (files) {
       return _this.props.dispatch({
-        type: constants["m" /* PATIENT_FILES_DROPPED */],
+        type: constants["o" /* PATIENT_FILES_DROPPED */],
         payload: files
       });
     }, _this.uploadToS3 = function (e) {
@@ -68852,7 +68823,7 @@ var FileUploader_FileUploader = function (_PureComponent) {
       }).then(function (json) {
         console.log('upload response', json);
         _this.props.dispatch({
-          type: constants["n" /* PATIENT_FILES_UPLOADED */],
+          type: constants["p" /* PATIENT_FILES_UPLOADED */],
           patientId: patientId,
           payload: {
             records: JSON.parse(json)
@@ -68861,11 +68832,11 @@ var FileUploader_FileUploader = function (_PureComponent) {
       }).catch(function (error) {
         return console.log(error);
       });
-      _this.props.dispatch({ type: constants["o" /* PATIENT_FILES_UPLOADING */] });
+      _this.props.dispatch({ type: constants["q" /* PATIENT_FILES_UPLOADING */] });
     }, _this.removeFile = function (index) {
       return function (e) {
         return _this.props.dispatch({
-          type: constants["p" /* PATIENT_FILE_REMOVED */],
+          type: constants["r" /* PATIENT_FILE_REMOVED */],
           payload: _this.props.files.filter(function (fl, i) {
             return index !== i;
           })
@@ -69620,7 +69591,7 @@ var PatientProfile_PatientProfile = function (_PureComponent) {
     return _ret = (_temp = (_this = PatientProfile__possibleConstructorReturn(this, (_ref = PatientProfile.__proto__ || Object.getPrototypeOf(PatientProfile)).call.apply(_ref, [this].concat(args))), _this), _this.toggleDisplay = function (display) {
       return function () {
         return _this.props.dispatch({
-          type: constants["q" /* PATIENT_TAB_SELECTED */],
+          type: constants["s" /* PATIENT_TAB_SELECTED */],
           payload: display
         });
       };
@@ -69630,7 +69601,7 @@ var PatientProfile_PatientProfile = function (_PureComponent) {
   PatientProfile__createClass(PatientProfile, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.props.dispatch({ type: constants["j" /* EXIT_PATIENT_VIEW */] });
+      this.props.dispatch({ type: constants["k" /* EXIT_PATIENT_VIEW */] });
     }
   }, {
     key: 'render',
@@ -69879,7 +69850,7 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
     }, _this.updateAppointmentStatus = function (status) {
       return function (e) {
         return _this.props.dispatch({
-          type: constants["i" /* EDIT_APPOINTMENT_STATUS */],
+          type: constants["j" /* EDIT_APPOINTMENT_STATUS */],
           payload: status
         });
       };
@@ -69887,11 +69858,11 @@ var AppointmentModal_AppointmentModal = function (_React$PureComponent) {
       return _this.props.dispatch({ type: constants["e" /* CLOSE_APPOINTMENT_MODAL */] });
     }, _this.updateComment = function (e) {
       return _this.props.dispatch({
-        type: constants["h" /* EDIT_APPOINTMENT_EVENT */],
+        type: constants["i" /* EDIT_APPOINTMENT_EVENT */],
         response: e.target.value.trim()
       });
     }, _this.sendForUpdate = function (e) {
-      return _this.props.dispatch({ type: constants["r" /* REQUEST_APPOINTMENT_CHANGE */] });
+      return _this.props.dispatch({ type: constants["v" /* REQUEST_APPOINTMENT_CHANGE */] });
     }, _this.goBack = function (e) {
       return _this.props.dispatch({ type: constants["b" /* APPOINTMENT_VIEW_BACK */] });
     }, _temp), AppointmentModal__possibleConstructorReturn(_this, _ret);
@@ -70211,7 +70182,7 @@ var AppointmentsCalendar_AppointmentsCalendar = function (_PureComponent) {
       });
     }, _this.viewAppointment = function (event) {
       return _this.props.dispatch({
-        type: constants["x" /* VIEW_APPOINTMENT */],
+        type: constants["D" /* VIEW_APPOINTMENT */],
         payload: event
       });
     }, _temp), AppointmentsCalendar__possibleConstructorReturn(_this, _ret);
@@ -95901,6 +95872,119 @@ module.exports = warning;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 964 */,
+/* 965 */,
+/* 966 */,
+/* 967 */,
+/* 968 */,
+/* 969 */,
+/* 970 */,
+/* 971 */,
+/* 972 */,
+/* 973 */,
+/* 974 */,
+/* 975 */,
+/* 976 */,
+/* 977 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./src/shared/constants/TopNavActions.js
+var TOP_NAV_ICON_CLICKED = 'TOP_NAV_ICON_CLICKED';
+var CONNECTED = 'CONNECTED';
+var DISCONNECTED = 'DISCONNECTED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/AppointmentModalActions.js
+var APPOINTMENT_VIEW_BACK = 'APPOINTMENT_VIEW_BACK';
+var EDIT_APPOINTMENT_EVENT = 'EDIT_APPOINTMENT_EVENT';
+var CLOSE_APPOINTMENT_MODAL = 'CLOSE_APPOINTMENT_MODAL';
+var EDIT_APPOINTMENT_STATUS = 'EDIT_APPOINTMENT_STATUS';
+var REQUEST_APPOINTMENT_CHANGE = 'REQUEST_APPOINTMENT_CHANGE';
+var APPOINTMENT_RECORD_UPDATED = 'APPOINTMENT_RECORD_UPDATED';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/SearchActions.js
+var TOGGLE_PROXIMITY_SEARCH = 'TOGGLE_PROXIMITY_SEARCH';
+var UPDATE_GEO_COORDINATES = 'UPDATE_GEO_COORDINATES';
+var UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/HospitalProfileActions.js
+var POPULATE_HOSPITAL_PROFILE = 'POPULATE_HOSPITAL_PROFILE';
+var HOSPITAL_PROFILE_ERROR = 'HOSPITAL_PROFILE_ERROR';
+var RESET_HOSPITAL_PROFILE = 'RESET_HOSPITAL_PROFILE';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/DoctorProfileActions.js
+var POPULATE_DOCTOR_PROFILE = 'POPULATE_DOCTOR_PROFILE';
+var DOCTOR_PROFILE_ERROR = 'DOCTOR_PROFILE_ERROR';
+var RESET_DOCTOR_PROFILE = 'RESET_DOCTOR_PROFILE';
+
+
+// CONCATENATED MODULE: ./src/shared/constants/index.js
+/* unused harmony export CHANGE_VIEW */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return EXIT_PATIENT_VIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILES_DROPPED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_FILES_UPLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return PATIENT_FILE_REMOVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return VIEW_APPOINTMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return PATIENT_FILES_UPLOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return PATIENT_TAB_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return SEARCH_INPUT_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENTS_VIEW_RESET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ONLINE_CONNECTION_CHANGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "e", function() { return CLOSE_APPOINTMENT_MODAL; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_EVENT; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "j", function() { return EDIT_APPOINTMENT_STATUS; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "v", function() { return REQUEST_APPOINTMENT_CHANGE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "A", function() { return TOP_NAV_ICON_CLICKED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "B", function() { return UPDATE_GEO_COORDINATES; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "z", function() { return TOGGLE_PROXIMITY_SEARCH; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "C", function() { return UPDATE_SEARCH_RESULTS; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "l", function() { return HOSPITAL_PROFILE_ERROR; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "u", function() { return POPULATE_HOSPITAL_PROFILE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "h", function() { return DOCTOR_PROFILE_ERROR; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "w", function() { return RESET_DOCTOR_PROFILE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "x", function() { return RESET_HOSPITAL_PROFILE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return POPULATE_DOCTOR_PROFILE; });
+
+
+
+
+
+
+
+
+
+
+var CHANGE_VIEW = 'CHANGE_VIEW';
+var EXIT_PATIENT_VIEW = 'EXIT_PATIENT_VIEW';
+var PATIENT_FILES_DROPPED = 'PATIENT_FILES_DROPPED';
+var PATIENT_FILES_UPLOADED = 'PATIENT_FILES_UPLOADED';
+var PATIENT_FILE_REMOVED = 'PATIENT_FILE_REMOVED';
+var PATIENT_FILES_UPLOADING = 'PATIENT_FILES_UPLOADING';
+var CANCEL_FILE_UPLOAD = 'CANCEL_FILE_UPLOAD';
+var PATIENT_TAB_SELECTED = 'PATIENT_TAB_SELECTED';
+var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
+var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
+var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
+
+var ONLINE_CONNECTION_CHANGE = 'ONLINE_CONNECTION_CHANGE';
+
+//Resources
+var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
+
+
 
 /***/ })
 /******/ ]);

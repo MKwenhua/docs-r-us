@@ -2,6 +2,12 @@ const setPatientState = ({ doctors, appointments, ...currentUser}) => ({
     appointments,
     currentUser,
     online: true,
+    doctorProfile: {
+
+    },
+    hospitalProfile: {
+
+    },
     searchNearby: {
       on: true,
       onLoadDataFetched: false,

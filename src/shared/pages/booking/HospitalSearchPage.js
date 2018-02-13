@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import { Link } from 'react-router-dom'
 import 'stylesheet/SearchPages.css';
 import {
   CssLoader
@@ -10,8 +11,15 @@ import {
   UPDATE_SEARCH_RESULTS
 } from 'constants';
 
-const hospitalResults = ({id,name}, i) => (
-  <li key={i} id={id}>{name}</li>
+const hospitalResults = ({id,name, address}, i) => (
+  <li key={i}>
+    <img src='https://dq8llwxgkllay.cloudfront.net/hospital-icon.png' height='45' />
+    <div className='description'>
+      <b>{name}</b>
+      <p>{address}</p>
+    </div>
+    <Link to={`/hospital/${id}`} className='list-item-link'>view</Link>
+  </li>
 )
 class HospitalSearchPage extends PureComponent {
   onProximityToggle = e => this.props.dispatch({
@@ -72,9 +80,11 @@ class HospitalSearchPage extends PureComponent {
             </div>
           </div>
         </div>
-        <ul className={searchNearby.fetching ? 'hidden' : ''}>
-          { searchNearby.hospitals.map(hospitalResults) }
-        </ul>
+        <div className='row'>
+          <ul className={searchNearby.fetching ? 'hidden' : 'search-list'}>
+            { Object.values(searchNearby.hospitals).map(hospitalResults) }
+          </ul>
+        </div>
         {
           (searchNearby.fetching || !searchNearby.onLoadDataFetched) && <CssLoader />
         }

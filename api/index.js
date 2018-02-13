@@ -1,6 +1,7 @@
 const {
  NearbyHospitals,
- AllHospitals
+ AllHospitals,
+ Hospital
 } = require('./hospitals');
 const {
  UpdateAppointment
@@ -23,7 +24,9 @@ module.exports = (app) => {
 
   app.get('/api/nearby/hospitals', NearbyHospitals)
 
-  app.get('/api/hospitals', AllHospitals)
+  app.get('/api/hospitals', AllHospitals);
+
+  app.get('/api/hospitals/:id', Hospital);
 
   app.get('/api/patients', AllPatients);
 

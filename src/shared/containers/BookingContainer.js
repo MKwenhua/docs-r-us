@@ -46,6 +46,8 @@ class BookingContainer extends PureComponent {
       online,
       appointments,
       searchNearby,
+      doctorProfile,
+      hospitalProfile,
       currentUser
     } = this.props;
     console.log('BookingContainer this.props', this.props);
@@ -63,11 +65,11 @@ class BookingContainer extends PureComponent {
             <DoctorSearchPage searchNearby={searchNearby} online={online} dispatch={dispatch} location={ location } {...props} />
           )}/>
           <Route path='/hospital/:id' render={(props) => (
-            <HospitalProfile currentUser={currentUser} dispatch={dispatch} location={ location } {...props} />
+            <HospitalProfile searchNearby={searchNearby} currentUser={currentUser} dispatch={dispatch} {...hospitalProfile} {...props} />
           )}/>
-          <Route path='/doctor/:id'>
-            <DoctorProfile location={ location } />
-          </Route>
+          <Route path='/doctor/:id' render={(props) => (
+            <DoctorProfile searchNearby={searchNearby} currentUser={currentUser} dispatch={dispatch} {...doctorProfile} {...props} />
+          )}/>
           <Route exact path='/profile'>
             <PatientProfile {...currentUser} location={ location } />
           </Route>

@@ -240,6 +240,10 @@ a:active {
   text-decoration: none;
   background-color: rgba(68, 143, 148, 0.2);
 }
+.fetch-error {
+  background: white;
+  text-align: center;
+}
 .search-container {
   padding: 30px 0;
 }
@@ -252,6 +256,37 @@ a:active {
 
 .search-bar {
   margin-bottom: 0!important;
+}
+
+.search-list {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.search-list li {
+  text-decoration: none;
+  background: #fff;
+  padding: 4px;
+  border-bottom: 1px solid silver;
+  display: -ms-flexbox;
+  display: flex;
+  height: 53px;
+}
+
+.list-item-link {
+  padding: 6px 10px;
+  color: #fff;
+  display: inline-block;
+  background: #00b5ad;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: absolute;
+  right: 10px;
+}
+
+.search-list img {
+  margin-right: 20px;
 }
 
 .search-options .btn-group-sm {
@@ -307,11 +342,11 @@ a:active {
   background-color: lightgrey;
 }
 
-.toggle-switch.on > .switch {
+.toggle-switch.on>.switch {
   right: 0;
 }
 
-.toggle-switch.off > .switch {
+.toggle-switch.off>.switch {
   left: 0;
 }
 

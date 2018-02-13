@@ -26,7 +26,7 @@ const LoginPageTemplate = ({title, action, signup, otherlogin, type, customStyle
       </style>
     </head>
     <body>
-        <a href="${otherlogin.href}" class="ui inverted teal button" id="login-button">${otherlogin.text}</a>
+      <a href="${otherlogin.href}" class="ui inverted teal button" id="login-button">${otherlogin.text}</a>
       <div class="ui middle aligned center aligned grid">
         <div class="column">
           <h2 class="ui teal image header">

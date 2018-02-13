@@ -12,6 +12,35 @@
   margin-bottom: 0!important;
 }
 
+.search-list {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.search-list li {
+  text-decoration: none;
+  background: #fff;
+  padding: 4px;
+  border-bottom: 1px solid silver;
+  display: flex;
+  height: 53px;
+}
+
+.list-item-link {
+  padding: 6px 10px;
+  color: #fff;
+  display: inline-block;
+  background: #00b5ad;
+  align-self: center;
+  position: absolute;
+  right: 10px;
+}
+
+.search-list img {
+  margin-right: 20px;
+}
+
 .search-options .btn-group-sm {
   margin: -3px 0;
 }
@@ -61,10 +90,10 @@
   background-color: lightgrey;
 }
 
-.toggle-switch.on > .switch {
+.toggle-switch.on>.switch {
   right: 0;
 }
 
-.toggle-switch.off > .switch {
+.toggle-switch.off>.switch {
   left: 0;
 }

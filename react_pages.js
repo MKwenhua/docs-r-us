@@ -3308,6 +3308,10 @@ var Landing_Landing = function (_PureComponent) {
 }(external__react_["PureComponent"]);
 
 /* harmony default export */ var booking_Landing = (Landing_Landing);
+// EXTERNAL MODULE: ./src/shared/styles/ProfilePageStyles.css
+var ProfilePageStyles = __webpack_require__(34);
+var ProfilePageStyles_default = /*#__PURE__*/__webpack_require__.n(ProfilePageStyles);
+
 // CONCATENATED MODULE: ./src/shared/pages/booking/DoctorProfile.js
 var DoctorProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorProfile.js';
 
@@ -3322,23 +3326,70 @@ function DoctorProfile__inherits(subClass, superClass) { if (typeof superClass !
 
 
 
+
+
+
 var DoctorProfile_DoctorProfile = function (_PureComponent) {
   DoctorProfile__inherits(DoctorProfile, _PureComponent);
 
   function DoctorProfile() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     DoctorProfile__classCallCheck(this, DoctorProfile);
 
-    return DoctorProfile__possibleConstructorReturn(this, (DoctorProfile.__proto__ || Object.getPrototypeOf(DoctorProfile)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = DoctorProfile__possibleConstructorReturn(this, (_ref = DoctorProfile.__proto__ || Object.getPrototypeOf(DoctorProfile)).call.apply(_ref, [this].concat(args))), _this), _this.fetchProfileData = function (id) {
+      fetch('/api/doctors/' + id).then(function (results) {
+        return results.json();
+      }).then(_this.populateProfileData).catch(_this.profileFetchError);
+    }, _this.populateProfileData = function (doctor) {
+      return _this.props.dispatch({
+        type: external__constants_["POPULATE_DOCTOR_PROFILE"],
+        payload: hospital
+      });
+    }, _this.profileFetchError = function (err) {
+      return _this.props.dispatch({
+        type: external__constants_["DOCTOR_PROFILE_ERROR"]
+      });
+    }, _temp), DoctorProfile__possibleConstructorReturn(_this, _ret);
   }
 
   DoctorProfile__createClass(DoctorProfile, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props,
+          searchNearby = _props.searchNearby,
+          match = _props.match;
+
+      if (searchNearby.hospitals[match.params.id]) {
+        this.populateProfileData(searchNearby.hospitals[match.params.id]);
+      } else {
+        this.fetchProfileData(match.params.id);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.dispatch({ type: external__constants_["RESET_DOCTOR_PROFILE"] });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _props2 = this.props,
+          error = _props2.error,
+          doctor = _props2.doctor,
+          searchNearby = _props2.searchNearby;
+
       return external__react__default.a.createElement(
         'div',
-        { className: 'ui grid', __source: {
+        { className: 'container', __source: {
             fileName: DoctorProfile__jsxFileName,
-            lineNumber: 7
+            lineNumber: 42
           },
           __self: this
         },
@@ -3347,11 +3398,21 @@ var DoctorProfile_DoctorProfile = function (_PureComponent) {
           {
             __source: {
               fileName: DoctorProfile__jsxFileName,
-              lineNumber: 8
+              lineNumber: 43
             },
             __self: this
           },
-          'PatientProfile'
+          'Doctor Profile'
+        ),
+        error && external__react__default.a.createElement(
+          'h1',
+          { className: 'fetch-error', __source: {
+              fileName: DoctorProfile__jsxFileName,
+              lineNumber: 45
+            },
+            __self: this
+          },
+          'Seems there was an issue fetching the data'
         )
       );
     }
@@ -3375,23 +3436,70 @@ function HospitalProfile__inherits(subClass, superClass) { if (typeof superClass
 
 
 
+
+
+
 var HospitalProfile_HospitalProfile = function (_PureComponent) {
   HospitalProfile__inherits(HospitalProfile, _PureComponent);
 
   function HospitalProfile() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     HospitalProfile__classCallCheck(this, HospitalProfile);
 
-    return HospitalProfile__possibleConstructorReturn(this, (HospitalProfile.__proto__ || Object.getPrototypeOf(HospitalProfile)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = HospitalProfile__possibleConstructorReturn(this, (_ref = HospitalProfile.__proto__ || Object.getPrototypeOf(HospitalProfile)).call.apply(_ref, [this].concat(args))), _this), _this.fetchProfileData = function (id) {
+      fetch('/api/hospitals/' + id).then(function (results) {
+        return results.json();
+      }).then(_this.populateProfileData).catch(_this.profileFetchError);
+    }, _this.populateProfileData = function (hospital) {
+      return _this.props.dispatch({
+        type: external__constants_["POPULATE_HOSPITAL_PROFILE"],
+        payload: hospital
+      });
+    }, _this.profileFetchError = function (err) {
+      return _this.props.dispatch({
+        type: external__constants_["HOSPITAL_PROFILE_ERROR"]
+      });
+    }, _temp), HospitalProfile__possibleConstructorReturn(_this, _ret);
   }
 
   HospitalProfile__createClass(HospitalProfile, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props,
+          searchNearby = _props.searchNearby,
+          match = _props.match;
+
+      if (searchNearby.hospitals[match.params.id]) {
+        this.populateProfileData(searchNearby.hospitals[match.params.id]);
+      } else {
+        this.fetchProfileData(match.params.id);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.dispatch({ type: external__constants_["RESET_HOSPITAL_PROFILE"] });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _props2 = this.props,
+          error = _props2.error,
+          hospital = _props2.hospital,
+          searchNearby = _props2.searchNearby;
+
       return external__react__default.a.createElement(
         'div',
-        { className: 'ui grid', __source: {
+        { className: 'container', __source: {
             fileName: HospitalProfile__jsxFileName,
-            lineNumber: 7
+            lineNumber: 42
           },
           __self: this
         },
@@ -3400,11 +3508,21 @@ var HospitalProfile_HospitalProfile = function (_PureComponent) {
           {
             __source: {
               fileName: HospitalProfile__jsxFileName,
-              lineNumber: 8
+              lineNumber: 43
             },
             __self: this
           },
           'HospitalProfile'
+        ),
+        error && external__react__default.a.createElement(
+          'h1',
+          { className: 'fetch-error', __source: {
+              fileName: HospitalProfile__jsxFileName,
+              lineNumber: 45
+            },
+            __self: this
+          },
+          'Seems there was an issue fetching the data'
         )
       );
     }
@@ -3488,17 +3606,67 @@ function DoctorSearchPage__inherits(subClass, superClass) { if (typeof superClas
 
 
 
+
 var DoctorSearchPage_doctorResults = function doctorResults(_ref, i) {
-  var fullName = _ref.fullName;
+  var fullName = _ref.fullName,
+      photo = _ref.photo,
+      specialty = _ref.specialty,
+      id = _ref.id;
   return external__react__default.a.createElement(
     'li',
     { key: i, __source: {
         fileName: DoctorSearchPage__jsxFileName,
-        lineNumber: 14
+        lineNumber: 15
       },
       __self: DoctorSearchPage__this
     },
-    fullName
+    external__react__default.a.createElement('img', { src: 'https://dq8llwxgkllay.cloudfront.net/' + photo, height: '45', __source: {
+        fileName: DoctorSearchPage__jsxFileName,
+        lineNumber: 16
+      },
+      __self: DoctorSearchPage__this
+    }),
+    external__react__default.a.createElement(
+      'div',
+      { className: 'description', __source: {
+          fileName: DoctorSearchPage__jsxFileName,
+          lineNumber: 17
+        },
+        __self: DoctorSearchPage__this
+      },
+      external__react__default.a.createElement(
+        'b',
+        {
+          __source: {
+            fileName: DoctorSearchPage__jsxFileName,
+            lineNumber: 18
+          },
+          __self: DoctorSearchPage__this
+        },
+        fullName
+      ),
+      external__react__default.a.createElement(
+        'p',
+        {
+          __source: {
+            fileName: DoctorSearchPage__jsxFileName,
+            lineNumber: 19
+          },
+          __self: DoctorSearchPage__this
+        },
+        specialty
+      )
+    ),
+    external__react__default.a.createElement(
+      external__react_router_dom_["Link"],
+      { to: '/doctor/' + id, className: 'list-item-link', __source: {
+          fileName: DoctorSearchPage__jsxFileName,
+          lineNumber: 21
+        },
+        __self: DoctorSearchPage__this
+      },
+      'view'
+    )
   );
 };
 
@@ -3565,7 +3733,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
         'div',
         { className: 'container search-container', __source: {
             fileName: DoctorSearchPage__jsxFileName,
-            lineNumber: 46
+            lineNumber: 54
           },
           __self: this
         },
@@ -3573,7 +3741,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block search-options ', __source: {
               fileName: DoctorSearchPage__jsxFileName,
-              lineNumber: 47
+              lineNumber: 55
             },
             __self: this
           },
@@ -3581,7 +3749,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'btn-group btn-group-sm', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 48
+                lineNumber: 56
               },
               __self: this
             },
@@ -3589,7 +3757,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'button',
               { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 49
+                  lineNumber: 57
                 },
                 __self: this
               },
@@ -3597,7 +3765,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             ),
             external__react__default.a.createElement('div', { className: 'dropdown-menu', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 52
+                lineNumber: 60
               },
               __self: this
             })
@@ -3606,7 +3774,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'proximity-search', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 55
+                lineNumber: 63
               },
               __self: this
             },
@@ -3615,7 +3783,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               {
                 __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 56
+                  lineNumber: 64
                 },
                 __self: this
               },
@@ -3625,14 +3793,14 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 57
+                  lineNumber: 65
                 },
                 __self: this
               },
               searchNearby.on ? 'ON' : 'OFF',
               external__react__default.a.createElement('div', { className: 'switch', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 59
+                  lineNumber: 67
                 },
                 __self: this
               })
@@ -3643,7 +3811,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block', __source: {
               fileName: DoctorSearchPage__jsxFileName,
-              lineNumber: 63
+              lineNumber: 71
             },
             __self: this
           },
@@ -3651,7 +3819,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'input-group mb-3 search-bar', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 64
+                lineNumber: 72
               },
               __self: this
             },
@@ -3659,7 +3827,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-prepend', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 65
+                  lineNumber: 73
                 },
                 __self: this
               },
@@ -3667,7 +3835,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 66
+                    lineNumber: 74
                   },
                   __self: this
                 },
@@ -3675,14 +3843,14 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               ),
               external__react__default.a.createElement('div', { className: 'dropdown-menu', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 67
+                  lineNumber: 75
                 },
                 __self: this
               })
             ),
             external__react__default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 70
+                lineNumber: 78
               },
               __self: this
             }),
@@ -3690,7 +3858,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-append', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 71
+                  lineNumber: 79
                 },
                 __self: this
               },
@@ -3698,7 +3866,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary', type: 'button', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 72
+                    lineNumber: 80
                   },
                   __self: this
                 },
@@ -3708,19 +3876,28 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
           )
         ),
         external__react__default.a.createElement(
-          'ul',
-          { className: searchNearby.fetching ? 'hidden' : '', __source: {
+          'div',
+          { className: 'row', __source: {
               fileName: DoctorSearchPage__jsxFileName,
-              lineNumber: 76
+              lineNumber: 84
             },
             __self: this
           },
-          searchNearby.doctors.map(DoctorSearchPage_doctorResults)
+          external__react__default.a.createElement(
+            'ul',
+            { className: searchNearby.fetching ? 'hidden' : 'search-list', __source: {
+                fileName: DoctorSearchPage__jsxFileName,
+                lineNumber: 85
+              },
+              __self: this
+            },
+            Object.values(searchNearby.doctors).map(DoctorSearchPage_doctorResults)
+          )
         ),
         (searchNearby.fetching || !searchNearby.onLoadDataFetched) && external__react__default.a.createElement(elements_CssLoader, {
           __source: {
             fileName: DoctorSearchPage__jsxFileName,
-            lineNumber: 80
+            lineNumber: 90
           },
           __self: this
         })
@@ -3749,18 +3926,66 @@ function HospitalSearchPage__inherits(subClass, superClass) { if (typeof superCl
 
 
 
+
 var HospitalSearchPage_hospitalResults = function hospitalResults(_ref, i) {
   var id = _ref.id,
-      name = _ref.name;
+      name = _ref.name,
+      address = _ref.address;
   return external__react__default.a.createElement(
     'li',
-    { key: i, id: id, __source: {
+    { key: i, __source: {
         fileName: HospitalSearchPage__jsxFileName,
-        lineNumber: 14
+        lineNumber: 15
       },
       __self: HospitalSearchPage__this
     },
-    name
+    external__react__default.a.createElement('img', { src: 'https://dq8llwxgkllay.cloudfront.net/hospital-icon.png', height: '45', __source: {
+        fileName: HospitalSearchPage__jsxFileName,
+        lineNumber: 16
+      },
+      __self: HospitalSearchPage__this
+    }),
+    external__react__default.a.createElement(
+      'div',
+      { className: 'description', __source: {
+          fileName: HospitalSearchPage__jsxFileName,
+          lineNumber: 17
+        },
+        __self: HospitalSearchPage__this
+      },
+      external__react__default.a.createElement(
+        'b',
+        {
+          __source: {
+            fileName: HospitalSearchPage__jsxFileName,
+            lineNumber: 18
+          },
+          __self: HospitalSearchPage__this
+        },
+        name
+      ),
+      external__react__default.a.createElement(
+        'p',
+        {
+          __source: {
+            fileName: HospitalSearchPage__jsxFileName,
+            lineNumber: 19
+          },
+          __self: HospitalSearchPage__this
+        },
+        address
+      )
+    ),
+    external__react__default.a.createElement(
+      external__react_router_dom_["Link"],
+      { to: '/hospital/' + id, className: 'list-item-link', __source: {
+          fileName: HospitalSearchPage__jsxFileName,
+          lineNumber: 21
+        },
+        __self: HospitalSearchPage__this
+      },
+      'view'
+    )
   );
 };
 
@@ -3827,7 +4052,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
         'div',
         { className: 'container search-container', __source: {
             fileName: HospitalSearchPage__jsxFileName,
-            lineNumber: 45
+            lineNumber: 53
           },
           __self: this
         },
@@ -3835,7 +4060,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block search-options ', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 46
+              lineNumber: 54
             },
             __self: this
           },
@@ -3843,7 +4068,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'btn-group btn-group-sm', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 47
+                lineNumber: 55
               },
               __self: this
             },
@@ -3851,7 +4076,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'button',
               { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 48
+                  lineNumber: 56
                 },
                 __self: this
               },
@@ -3859,7 +4084,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             ),
             external__react__default.a.createElement('div', { className: 'dropdown-menu', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 51
+                lineNumber: 59
               },
               __self: this
             })
@@ -3868,7 +4093,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'proximity-search', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 54
+                lineNumber: 62
               },
               __self: this
             },
@@ -3877,7 +4102,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               {
                 __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 55
+                  lineNumber: 63
                 },
                 __self: this
               },
@@ -3887,14 +4112,14 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 56
+                  lineNumber: 64
                 },
                 __self: this
               },
               searchNearby.on ? 'ON' : 'OFF',
               external__react__default.a.createElement('div', { className: 'switch', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 58
+                  lineNumber: 66
                 },
                 __self: this
               })
@@ -3905,7 +4130,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 62
+              lineNumber: 70
             },
             __self: this
           },
@@ -3913,7 +4138,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'input-group mb-3 search-bar', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 63
+                lineNumber: 71
               },
               __self: this
             },
@@ -3921,7 +4146,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-prepend', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 64
+                  lineNumber: 72
                 },
                 __self: this
               },
@@ -3929,7 +4154,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 65
+                    lineNumber: 73
                   },
                   __self: this
                 },
@@ -3937,14 +4162,14 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               ),
               external__react__default.a.createElement('div', { className: 'dropdown-menu', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 66
+                  lineNumber: 74
                 },
                 __self: this
               })
             ),
             external__react__default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 69
+                lineNumber: 77
               },
               __self: this
             }),
@@ -3952,7 +4177,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-append', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 70
+                  lineNumber: 78
                 },
                 __self: this
               },
@@ -3960,7 +4185,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary', disabled: online === false, type: 'button', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 71
+                    lineNumber: 79
                   },
                   __self: this
                 },
@@ -3970,19 +4195,28 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           )
         ),
         external__react__default.a.createElement(
-          'ul',
-          { className: searchNearby.fetching ? 'hidden' : '', __source: {
+          'div',
+          { className: 'row', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 75
+              lineNumber: 83
             },
             __self: this
           },
-          searchNearby.hospitals.map(HospitalSearchPage_hospitalResults)
+          external__react__default.a.createElement(
+            'ul',
+            { className: searchNearby.fetching ? 'hidden' : 'search-list', __source: {
+                fileName: HospitalSearchPage__jsxFileName,
+                lineNumber: 84
+              },
+              __self: this
+            },
+            Object.values(searchNearby.hospitals).map(HospitalSearchPage_hospitalResults)
+          )
         ),
         (searchNearby.fetching || !searchNearby.onLoadDataFetched) && external__react__default.a.createElement(elements_CssLoader, {
           __source: {
             fileName: HospitalSearchPage__jsxFileName,
-            lineNumber: 79
+            lineNumber: 89
           },
           __self: this
         })
@@ -4074,6 +4308,8 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
           online = _props.online,
           appointments = _props.appointments,
           searchNearby = _props.searchNearby,
+          doctorProfile = _props.doctorProfile,
+          hospitalProfile = _props.hospitalProfile,
           currentUser = _props.currentUser;
 
       console.log('BookingContainer this.props', this.props);
@@ -4081,13 +4317,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
         'section',
         { className: BookingContainer_WrapperClass[location.pathname] || 'booking-page', __source: {
             fileName: BookingContainer__jsxFileName,
-            lineNumber: 53
+            lineNumber: 55
           },
           __self: this
         },
         external__react__default.a.createElement(components_BookingNav, { online: online, dispatch: dispatch, __source: {
             fileName: BookingContainer__jsxFileName,
-            lineNumber: 54
+            lineNumber: 56
           },
           __self: this
         }),
@@ -4096,7 +4332,7 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
           {
             __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 55
+              lineNumber: 57
             },
             __self: this
           },
@@ -4104,13 +4340,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
             external__react_router_dom_["Route"],
             { exact: true, path: '/', __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 56
+                lineNumber: 58
               },
               __self: this
             },
             external__react__default.a.createElement(booking_Landing, { location: location, __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 57
+                lineNumber: 59
               },
               __self: this
             })
@@ -4119,13 +4355,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
               return external__react__default.a.createElement(booking_HospitalSearchPage, Object.assign({ searchNearby: searchNearby, online: online, dispatch: dispatch, location: location }, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 60
+                  lineNumber: 62
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 59
+              lineNumber: 61
             },
             __self: this
           }),
@@ -4133,56 +4369,55 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
               return external__react__default.a.createElement(booking_DoctorSearchPage, Object.assign({ searchNearby: searchNearby, online: online, dispatch: dispatch, location: location }, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 63
+                  lineNumber: 65
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 62
+              lineNumber: 64
             },
             __self: this
           }),
           external__react__default.a.createElement(external__react_router_dom_["Route"], { path: '/hospital/:id', render: function render(props) {
-              return external__react__default.a.createElement(booking_HospitalProfile, Object.assign({ currentUser: currentUser, dispatch: dispatch, location: location }, props, {
+              return external__react__default.a.createElement(booking_HospitalProfile, Object.assign({ searchNearby: searchNearby, currentUser: currentUser, dispatch: dispatch }, hospitalProfile, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 66
+                  lineNumber: 68
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 65
+              lineNumber: 67
+            },
+            __self: this
+          }),
+          external__react__default.a.createElement(external__react_router_dom_["Route"], { path: '/doctor/:id', render: function render(props) {
+              return external__react__default.a.createElement(booking_DoctorProfile, Object.assign({ searchNearby: searchNearby, currentUser: currentUser, dispatch: dispatch }, doctorProfile, props, {
+                __source: {
+                  fileName: BookingContainer__jsxFileName,
+                  lineNumber: 71
+                },
+                __self: _this2
+              }));
+            }, __source: {
+              fileName: BookingContainer__jsxFileName,
+              lineNumber: 70
             },
             __self: this
           }),
           external__react__default.a.createElement(
             external__react_router_dom_["Route"],
-            { path: '/doctor/:id', __source: {
-                fileName: BookingContainer__jsxFileName,
-                lineNumber: 68
-              },
-              __self: this
-            },
-            external__react__default.a.createElement(booking_DoctorProfile, { location: location, __source: {
-                fileName: BookingContainer__jsxFileName,
-                lineNumber: 69
-              },
-              __self: this
-            })
-          ),
-          external__react__default.a.createElement(
-            external__react_router_dom_["Route"],
             { exact: true, path: '/profile', __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 71
+                lineNumber: 73
               },
               __self: this
             },
             external__react__default.a.createElement(booking_PatientProfile, Object.assign({}, currentUser, { location: location, __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 72
+                lineNumber: 74
               },
               __self: this
             }))
@@ -4206,7 +4441,7 @@ var prodEnv = process.env.NODE_ENV === 'production';
 var assetBase = prodEnv ? 'https://dq8llwxgkllay.cloudfront.net/public' : '';
 
 var render_page_RenderPage = function RenderPage(content, preloadedState) {
-  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + Object(server_["renderToString"])(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
+  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + /* Cannot get final name for export "renderToString" in "./src/shared/containers/BookingContainer.js" (known exports: default, known reexports: ) */ undefined(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
 };
 
 /* harmony default export */ var render_page = (render_page_RenderPage);
@@ -4216,7 +4451,7 @@ var render_booking_page_prodEnv = process.env.NODE_ENV === 'production';
 var render_booking_page_assetBase = render_booking_page_prodEnv ? 'https://dq8llwxgkllay.cloudfront.net/public' : '';
 
 var render_booking_page_RenderBookingPage = function RenderBookingPage(content, preloadedState) {
-  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Find Doctors</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">\n      <link rel="stylesheet" href="' + render_booking_page_assetBase + '/css/booking.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + render_booking_page_assetBase + '/booking.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + Object(server_["renderToString"])(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
+  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Find Doctors</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">\n      <link rel="stylesheet" href="' + render_booking_page_assetBase + '/css/booking.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + render_booking_page_assetBase + '/booking.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + /* Cannot get final name for export "renderToString" in "./src/shared/containers/BookingContainer.js" (known exports: default, known reexports: ) */ undefined(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
 };
 
 /* harmony default export */ var render_booking_page = (render_booking_page_RenderBookingPage);
@@ -4232,6 +4467,8 @@ var setPatientState = function setPatientState(_ref) {
     appointments: appointments,
     currentUser: currentUser,
     online: true,
+    doctorProfile: {},
+    hospitalProfile: {},
     searchNearby: {
       on: true,
       onLoadDataFetched: false,
@@ -4329,7 +4566,7 @@ function doctor__defineProperty(obj, key, value) { if (key in obj) { Object.defi
 
 
 
-/* harmony default export */ var doctor = (function (initialState) {
+/* harmony default export */ var reducers_doctor = (function (initialState) {
   return function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
@@ -4524,14 +4761,25 @@ function doctor__defineProperty(obj, key, value) { if (key in obj) { Object.defi
   };
 });
 // CONCATENATED MODULE: ./src/shared/reducers/patient.js
+function patient__defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+
+
+//These should be moved to another file or replace by THUNK
+var indexDoctors = function indexDoctors(doctors) {
+  return doctors.reduce(function (lookup, doctor) {
+    lookup[doctor.id] = doctor;
+    return lookup;
+  }, {});
+};
 
 var mapProximityResults = function mapProximityResults(hospitals) {
-  return hospitals.reduce(function (nearbyResults, hospital) {
-    return Object.assign({}, nearbyResults, {
-      doctors: nearbyResults.doctors.concat(hospital.doctors)
-    });
-  }, { hospitals: hospitals, doctors: [] });
+  return hospitals.reduce(function (nearbyResults, hospital, i) {
+    return {
+      hospitals: Object.assign({}, nearbyResults.hospitals, patient__defineProperty({}, hospital.id, hospital)),
+      doctors: Object.assign({}, nearbyResults.doctors, indexDoctors(hospital.doctors))
+    };
+  }, { hospitals: {}, doctors: {} });
 };
 
 /* harmony default export */ var reducers_patient = (function (initialState) {
@@ -4559,6 +4807,42 @@ var mapProximityResults = function mapProximityResults(hospitals) {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
               on: !state.searchNearby.on
+            })
+          });
+        }
+      case external__constants_["HOSPITAL_PROFILE_ERROR"]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: {
+              error: true
+            }
+          });
+        }
+      case external__constants_["RESET_DOCTOR_PROFILE"]:
+        {
+          return Object.assign({}, state, {
+            doctorProfile: {}
+          });
+        }
+      case external__constants_["RESET_HOSPITAL_PROFILE"]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: {}
+          });
+        }
+      case external__constants_["POPULATE_HOSPITAL_PROFILE"]:
+        {
+          return Object.assign({}, state, {
+            hospitalProfile: Object.assign({}, state.hospitalProfile, {
+              hospital: action.payload
+            })
+          });
+        }
+      case external__constants_["POPULATE_DOCTOR_PROFILE"]:
+        {
+          return Object.assign({}, state, {
+            doctorProfile: Object.assign({}, state.doctorProfile, {
+              doctor: action.payload
             })
           });
         }
@@ -4592,11 +4876,11 @@ var mapProximityResults = function mapProximityResults(hospitals) {
 
 
 var reducers_serverStoreBuilder = function serverStoreBuilder(state) {
-  return doctor(state);
+  return reducers_doctor(state);
 };
 
 var reducers_clientStoreBuilder = function clientStoreBuilder(state) {
-  return doctor(state);
+  return reducers_doctor(state);
 };
 
 var reducers_serverBookingStoreBuilder = function serverBookingStoreBuilder(state) {
@@ -4613,20 +4897,20 @@ var reducers_clientBookingStoreBuilder = function clientBookingStoreBuilder(stat
 
 
 
-var composedStore = Object(external__redux_["compose"])(Object(external__redux_["applyMiddleware"])(external__redux_logger__default.a));
+var composedStore = /* Cannot get final name for export "compose" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "applyMiddleware" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* unused reexport */undefined));
 
 var store_buildClientStore = function buildClientStore(state) {
-  return composedStore(external__redux_["createStore"])(reducers_clientStoreBuilder(state));
+  return composedStore(/* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined)(/* Cannot get final name for export "clientStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
 };
 var store_buildServerStore = function buildServerStore(state) {
-  return Object(external__redux_["createStore"])(reducers_serverStoreBuilder(state));
+  return /* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "serverStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
 };
 
 var store_buildBookingClientStore = function buildBookingClientStore(state) {
-  return composedStore(external__redux_["createStore"])(reducers_clientBookingStoreBuilder(state));
+  return composedStore(/* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined)(/* Cannot get final name for export "clientBookingStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
 };
 var store_buildBookingServerStore = function buildBookingServerStore(state) {
-  return Object(external__redux_["createStore"])(reducers_serverBookingStoreBuilder(state));
+  return /* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "serverBookingStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
 };
 
 
@@ -4651,8 +4935,8 @@ var context = {
 };
 
 var server_IndexRoute = function IndexRoute(req, res) {
-  var store = store_buildServerStore(state_normalizeDoctorState(req.user.dataValues));
-  res.send(render_page(external__react__default.a.createElement(
+  var store = /* Cannot get final name for export "buildServerStore" in "./src/shared/reducers/index.js" (known exports: serverStoreBuilder clientStoreBuilder serverBookingStoreBuilder clientBookingStoreBuilder, known reexports: ) */ undefined(/* Cannot get final name for export "normalizeDoctorState" in "./src/shared/state/normalizeDoctorState.js" (known exports: default, known reexports: ) */ undefined(req.user.dataValues));
+  res.send(/* unused reexport */undefined(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
@@ -4681,8 +4965,8 @@ var server_IndexRoute = function IndexRoute(req, res) {
 };
 
 var server_BookingRoute = function BookingRoute(req, res) {
-  var store = store_buildBookingServerStore(state_setPatientState(req.user.dataValues));
-  res.send(render_booking_page(external__react__default.a.createElement(
+  var store = /* Cannot get final name for export "buildBookingServerStore" in "./src/shared/reducers/index.js" (known exports: serverStoreBuilder clientStoreBuilder serverBookingStoreBuilder clientBookingStoreBuilder, known reexports: ) */ undefined(/* Cannot get final name for export "setPatientState" in "./src/shared/state/normalizeDoctorState.js" (known exports: default, known reexports: ) */ undefined(req.user.dataValues));
+  res.send(render_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
@@ -4698,7 +4982,7 @@ var server_BookingRoute = function BookingRoute(req, res) {
         },
         __self: server__this
       },
-      external__react__default.a.createElement(containers_BookingContainer, {
+      external__react__default.a.createElement(/* Cannot get final name for export "default" in "./src/shared/pages/booking/index.js" (known exports: , known reexports: Landing DoctorProfile HospitalProfile PatientProfile DoctorSearchPage HospitalSearchPage) */ undefined, {
         __source: {
           fileName: server__jsxFileName,
           lineNumber: 39
@@ -4799,6 +5083,21 @@ module.exports = require("react-big-calendar");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-logger");
+
+/***/ }),
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
