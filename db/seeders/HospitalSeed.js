@@ -1,3 +1,4 @@
+const hospitalRecords = require('../../data_setup/hospital_addresses.js');
 
 const HospitalObject = ({name, formatted_address, place_id, location}) => ({
   name: name,
@@ -11,15 +12,5 @@ const HospitalObject = ({name, formatted_address, place_id, location}) => ({
   }
 })
 
-module.exports = (Hospital,hospitalRecords) => {
-  const hospitalNames = {};
-  hospitalRecords.forEach((hospital) => {
-     if (hospitalNames[hospital.name]) {
-       return
-     }
-     hospitalNames[hospital.name] = true;
-     Hospital.create(HospitalObject(hospital))
-    .then(hospital => console.log('\n Hospital Has beeen made:'))
-    .catch(err => console.log('\n Hospital error:',err))
-  })
-}
+
+module.exports = hospitalRecords.map(HospitalObject);

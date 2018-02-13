@@ -9,7 +9,7 @@
   "scripts": {
     "start": "NODE_ENV=production node server.js",
     "nodemon-start": "nodemon ./server.js --ignore src/ --ignore public/",
-    "local-build": "LOCAL_BUILD=true & NODE_ENV=production webpack",
+    "local-build": "NODE_ENV=production webpack",
     "seed-build-dev": "SEED_DB=true & LOCAL_BUILD=true node server.js",
     "build-dev": "LOCAL_BUILD=true & NODE_ENV=development webpack",
     "start-dev": "LOCAL_BUILD=true & NODE_ENV=development webpack -w &  nodemon ./server.js --ignore src/ --ignore public/",

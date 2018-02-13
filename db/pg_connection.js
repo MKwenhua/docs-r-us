@@ -1,6 +1,3 @@
-if (!process.env.HEROKU) {
-  require('dotenv').config();
-}
 const Sequelize = require('sequelize');
 const {
   RDS_DB_NAME,

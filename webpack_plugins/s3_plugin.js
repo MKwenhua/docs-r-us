@@ -1,3 +1,4 @@
+require('dotenv').config();
 const S3Plugin = require('webpack-s3-plugin');
 const NodeEnv = process.env.NODE_ENV;
 
