@@ -12,7 +12,14 @@ const HospitalObject = ({name, formatted_address, place_id, location}) => ({
 })
 
 module.exports = (Hospital,hospitalRecords) => {
-  hospitalRecords.forEach((hospital) => Hospital.create(HospitalObject(hospital))
+  const hospitalNames = {};
+  hospitalRecords.forEach((hospital) => {
+     if (hospitalNames[hospital.name]) {
+       return
+     }
+     hospitalNames[hospital.name] = true;
+     Hospital.create(HospitalObject(hospital))
     .then(hospital => console.log('\n Hospital Has beeen made:'))
-    .catch(err => console.log('\n Hospital error:',err)))
+    .catch(err => console.log('\n Hospital error:',err))
+  })
 }
