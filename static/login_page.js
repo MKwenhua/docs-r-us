@@ -3,7 +3,7 @@ const {
   PatientStyles
 } = require('./templates');
 
-const LoginPageTemplate = ({title, action, signup, type, customStyles}) => `
+const LoginPageTemplate = ({title, action, signup, otherlogin, type, customStyles}) => `
     <!DOCTYPE html>
     <head>
       <title>${title}</title>
@@ -13,8 +13,20 @@ const LoginPageTemplate = ({title, action, signup, type, customStyles}) => `
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
       ${customStyles}
+      <style>
+        #login-button {
+          position: fixed;
+          top: 15px;
+          right: 10px;
+          background-color: transparent;
+          box-shadow: 0 0 0 2px #00b5ad inset!important;
+          color: #00b5ad!important;
+          border-color: #00b5ad;
+        }
+      </style>
     </head>
     <body>
+        <a href="${otherlogin.href}" class="ui inverted teal button" id="login-button">${otherlogin.text}</a>
       <div class="ui middle aligned center aligned grid">
         <div class="column">
           <h2 class="ui teal image header">
@@ -56,6 +68,10 @@ const LoginPageDoctor = LoginPageTemplate({
   title: 'Doctor Login',
   action: '/signin',
   type: 'doctor',
+  otherlogin: {
+    href: '/booking/signin',
+    text: 'Patient Login'
+  },
   signup: '/signup',
   customStyles: DoctorStyles
 }).replace(/(\n|\s\s+)/g, ' ');
@@ -64,6 +80,10 @@ const LoginPagePatient = LoginPageTemplate({
   title: 'Patient Login',
   action: '/booking/signin',
   type: 'patient',
+  otherlogin: {
+    href: '/signin',
+    text: 'Doctor Login'
+  },
   signup: '/booking/signup',
   customStyles: PatientStyles
 }).replace(/(\n|\s\s+)/g, ' ');
