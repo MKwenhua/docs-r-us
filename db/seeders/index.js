@@ -6,8 +6,6 @@ const HospitalSeed = require('./HospitalSeed.js');
 const Sequelize = require('sequelize');
 const client = require('../../config/redis_client.js');
 
-client.flushdb((err, succeeded) => console.log(succeeded));
-
 module.exports = ({Doctor, Patient, Appointment, Hospital}) => {
   const promises = [
     Doctor.bulkCreate(DoctorSeed),
@@ -20,13 +18,21 @@ module.exports = ({Doctor, Patient, Appointment, Hospital}) => {
 
     AppointmentSeed(Appointment, doctors, patients);
     Hospital.findAll({
-      where: Sequelize.where(Sequelize.fn('ST_DWithin', Sequelize.col('position'), Sequelize.fn('ST_SetSRID', Sequelize.fn('ST_MakePoint', -87.6308846, 41.889671799999995), 4326), 0.045), true)
+      where: Sequelize.where(
+        Sequelize.fn('ST_DWithin',
+          Sequelize.col('position'),
+            Sequelize.fn('ST_SetSRID',
+              Sequelize.fn('ST_MakePoint', -87.6308846, 41.889671799999995),
+            4326),
+          0.045),
+        true)
     }).then(hospitals => {
       results[0].forEach(doc => {
         doc.setHospital(hospitals[Math.floor(Math.random() * hospitals.length)]).then(rel => {
           console.log('association created')
         }).catch(err => console.log('association error', err))
       });
-    }).catch(next)console.log('promise All Seeded:');
+    }).catch(err => console.log('hospital Geo Search error', err));
+    console.log('promise All Seeded:');
   }).catch(err => console.log(err));
 }

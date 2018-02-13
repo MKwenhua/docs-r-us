@@ -8,4 +8,8 @@ const client = LOCAL_DEV ? redis.createClient() : redis.createClient(REDIS_PORT,
 
 client.on('connect', () => console.log('Connected to Redis'));
 
+if (process.env.HEROKU) {
+  client.flushdb((err, succeeded) => console.log(succeeded));
+}
+
 module.exports = client;
