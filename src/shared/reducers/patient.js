@@ -1,12 +1,26 @@
 import {
   CONNECTED,
+  DISCONNECTED,
+  ONLINE_CONNECTION_CHANGE,
   TOGGLE_PROXIMITY_SEARCH,
   UPDATE_GEO_COORDINATES,
   UPDATE_SEARCH_RESULTS
 } from 'constants';
 
+const mapProximityResults = hospitals => hospitals.reduce((nearbyResults, hospital) => ({
+  ...nearbyResults,
+  doctors: nearbyResults.doctors.concat(hospital.doctors)
+}), {hospitals: hospitals, doctors: []})
+
 export default (initialState) => (function reducer(state = initialState, action) {
   switch (action.type) {
+    case ONLINE_CONNECTION_CHANGE:
+      {
+        return {
+          ...state,
+          online: action.payload
+        }
+      }
     case CONNECTED:
       {
         return {
@@ -32,6 +46,7 @@ export default (initialState) => (function reducer(state = initialState, action)
           ...state,
           searchNearby: {
             ...state.searchNearby,
+            fetching: true,
             position: {
               ...state.searchNearby.position,
               ...action.payload
@@ -45,7 +60,9 @@ export default (initialState) => (function reducer(state = initialState, action)
           ...state,
           searchNearby: {
             ...state.searchNearby,
-            ...action.payload
+            onLoadDataFetched: true,
+            fetching: false,
+            ...mapProximityResults(action.payload)
           }
         }
       }

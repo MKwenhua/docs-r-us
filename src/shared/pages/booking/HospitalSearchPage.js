@@ -1,13 +1,18 @@
 import React, {PureComponent} from 'react';
 import 'stylesheet/SearchPages.css';
 import {
+  CssLoader
+} from 'elements';
+import {
   CDN_URI,
   TOGGLE_PROXIMITY_SEARCH,
   UPDATE_GEO_COORDINATES,
   UPDATE_SEARCH_RESULTS
 } from 'constants';
 
-
+const hospitalResults = ({id,name}, i) => (
+  <li key={i} id={id}>{name}</li>
+)
 class HospitalSearchPage extends PureComponent {
   onProximityToggle = e => this.props.dispatch({
     type: TOGGLE_PROXIMITY_SEARCH
@@ -17,7 +22,7 @@ class HospitalSearchPage extends PureComponent {
       .then(results => results.json())
       .then(jsonResults => this.props.dispatch({
         type: UPDATE_SEARCH_RESULTS,
-        payload: { hospitals: jsonResults }
+        payload: jsonResults
       }))
       .catch(err => console.log('err', err))
   }
@@ -30,12 +35,12 @@ class HospitalSearchPage extends PureComponent {
     this.fetchQuery(`distance=${withinKM}&lat=${latitude}&long=${longitude}`);
   }
   componentDidMount() {
-    if (navigator.geolocation) {
+    if (navigator.geolocation && !this.props.searchNearby.onLoadDataFetched) {
       navigator.geolocation.getCurrentPosition(this.updateCoordinates(this.props.searchNearby));
     }
   }
   render() {
-    const { searchNearby } = this.props;
+    const { searchNearby, online } = this.props;
     return (
       <div className='container search-container'>
         <div className='row search-page-block search-options '>
@@ -73,10 +78,16 @@ class HospitalSearchPage extends PureComponent {
             </div>
             <input type='text' className='form-control' aria-label='Text input with dropdown button'/>
             <div className='input-group-append'>
-              <button className='btn btn-outline-secondary' type='button'>Search</button>
+              <button className='btn btn-outline-secondary' disabled={online === false} type='button'>Search</button>
             </div>
           </div>
         </div>
+        <ul className={searchNearby.fetching ? 'hidden' : ''}>
+          { searchNearby.hospitals.map(hospitalResults) }
+        </ul>
+        {
+          (searchNearby.fetching || !searchNearby.onLoadDataFetched) && <CssLoader />
+        }
 
       </div>
     )

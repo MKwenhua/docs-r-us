@@ -5,7 +5,9 @@ import BookingNav from 'component/BookingNav'
 import {withRouter} from 'react-router'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import {
-  SCROLL_FIX
+  CONNECTED,
+  DISCONNECTED,
+  ONLINE_CONNECTION_CHANGE
 } from 'constants';
 import {
   Debounce
@@ -27,14 +29,21 @@ const WrapperClass = {
 const selectState = (state) => state;
 
 class BookingContainer extends PureComponent {
-  constructor(props) {
-    super(props);
+  deiviceConnectionUpdate = e => this.props.dispatch({
+    type: ONLINE_CONNECTION_CHANGE,
+    payload: navigator.onLine
+  })
+  componentDidMount() {
+    this.deiviceConnectionUpdate();
+    window.addEventListener('online', this.deiviceConnectionUpdate);
+    window.addEventListener('offline', this.deiviceConnectionUpdate);
   }
   render() {
     const {
       dispatch,
       location,
       match,
+      online,
       appointments,
       searchNearby,
       currentUser
@@ -42,16 +51,16 @@ class BookingContainer extends PureComponent {
     console.log('BookingContainer this.props', this.props);
     return (
       <section className={WrapperClass[location.pathname] || 'booking-page'}>
-        <BookingNav dispatch={dispatch}/>
+        <BookingNav online={online} dispatch={dispatch}/>
         <Switch>
           <Route exact path='/'>
             <Landing location={ location } />
           </Route>
           <Route exact path='/search/hospitals' render={ props => (
-            <HospitalSearchPage searchNearby={searchNearby} dispatch={dispatch} location={ location } {...props} />
+            <HospitalSearchPage searchNearby={searchNearby} online={online} dispatch={dispatch} location={ location } {...props} />
           )}/>
           <Route exact path='/search/doctors' render={ props => (
-            <DoctorSearchPage searchNearby={searchNearby} dispatch={dispatch} location={ location } {...props} />
+            <DoctorSearchPage searchNearby={searchNearby} online={online} dispatch={dispatch} location={ location } {...props} />
           )}/>
           <Route path='/hospital/:id' render={(props) => (
             <HospitalProfile currentUser={currentUser} dispatch={dispatch} location={ location } {...props} />

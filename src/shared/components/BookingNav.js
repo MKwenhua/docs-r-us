@@ -9,14 +9,18 @@ const checkActive = (match, location) => {
   return true;
 }
 
-
 class BookingNav extends PureComponent {
   render() {
+    const { online } = this.props;
     return (
       <div className='booking-nav'>
         <Link className='profile-icon' to='/'>
           <i className='material-icons'>home</i>
         </Link>
+        <div className='online-indicator'>
+          <div className={`indicator ${online ? 'on' : ''}`}></div>
+          <span>{online ? 'Connected' : 'Disconnected'}</span>
+        </div>
         <Link className='profile-icon right'  to='/profile'>
           <i className='material-icons'>account_box</i>
         </Link>

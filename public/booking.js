@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 962);
+/******/ 	return __webpack_require__(__webpack_require__.s = 964);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -72,9 +72,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(183);
-} else {
   module.exports = __webpack_require__(184);
+} else {
+  module.exports = __webpack_require__(185);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -390,7 +390,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(46);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2091,7 +2091,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/components/Provider.js
-var Provider = __webpack_require__(200);
+var Provider = __webpack_require__(201);
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/components/connectAdvanced.js
 var connectAdvanced = __webpack_require__(111);
@@ -2169,10 +2169,10 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 
 /* harmony default export */ var connect_mapStateToProps = ([whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing]);
 // EXTERNAL MODULE: ./node_modules/react-redux/es/connect/mergeProps.js
-var connect_mergeProps = __webpack_require__(209);
+var connect_mergeProps = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/connect/selectorFactory.js
-var connect_selectorFactory = __webpack_require__(210);
+var connect_selectorFactory = __webpack_require__(211);
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/connect/connect.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -2398,7 +2398,7 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(110);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -2700,7 +2700,7 @@ selectorFactory) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = createStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(204);
 
 
 
@@ -3118,6 +3118,206 @@ function verifyPlainObject(value, displayName, methodName) {
 
 /***/ }),
 
+/***/ 133:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 13 modules
+var es = __webpack_require__(24);
+
+// CONCATENATED MODULE: ./src/shared/elements/TopNavButtons.js
+var _jsxFileName = '/Users/pete/docs-r-us/src/shared/elements/TopNavButtons.js',
+    _this = this;
+
+
+
+
+var TopNavButtons_currentNotications = function currentNotications(_ref) {
+  var list = _ref.list;
+  return list.map(function (notification, i) {
+    return react_default.a.createElement(
+      'li',
+      { key: i, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5
+        },
+        __self: _this
+      },
+      notification
+    );
+  });
+};
+
+var TopNavButtons_TopNavButtons = function TopNavButtons(_ref2) {
+  var dropdown = _ref2.dropdown,
+      avatar = _ref2.avatar,
+      name = _ref2.name,
+      notifications = _ref2.notifications,
+      iconClick = _ref2.iconClick;
+  return react_default.a.createElement(
+    'div',
+    { className: 'topbar-right', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: _this
+    },
+    react_default.a.createElement('div', { onClick: iconClick(null), className: dropdown === 'notifications' ? 'dropdown-backface' : 'hidden', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: _this
+    }),
+    react_default.a.createElement(
+      'div',
+      { onClick: iconClick('notifications'), className: dropdown === 'notifications' ? 'topbar-icon active' : 'topbar-icon', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: _this
+      },
+      react_default.a.createElement('i', { 'aria-hidden': 'true', className: 'alarm outline big icon', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: _this
+      }),
+      react_default.a.createElement(
+        'span',
+        { className: notifications.notSeen > 0 ? 'notification-count' : 'hidden', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: _this
+        },
+        notifications.notSeen
+      ),
+      react_default.a.createElement(
+        'ul',
+        { className: dropdown === 'notifications' ? 'topnav-dropdown left' : 'hidden', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16
+          },
+          __self: _this
+        },
+        TopNavButtons_currentNotications(notifications)
+      )
+    ),
+    react_default.a.createElement('img', { className: dropdown === 'account' ? 'topbar-avatar active' : 'topbar-avatar', src: 'https://dq8llwxgkllay.cloudfront.net/' + avatar, onClick: iconClick('account'), __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: _this
+    }),
+    react_default.a.createElement('div', { onClick: iconClick(null), className: dropdown === 'account' ? 'dropdown-backface' : 'hidden', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: _this
+    }),
+    react_default.a.createElement(
+      'ul',
+      { className: dropdown === 'account' ? 'topnav-dropdown' : 'hidden', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: _this
+      },
+      react_default.a.createElement(
+        'li',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: _this
+        },
+        react_default.a.createElement(
+          'a',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
+            },
+            __self: _this
+          },
+          'Example Item'
+        )
+      ),
+      react_default.a.createElement(
+        'li',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: _this
+        },
+        react_default.a.createElement(
+          'a',
+          { href: '/logout', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24
+            },
+            __self: _this
+          },
+          'Sign Out'
+        )
+      )
+    )
+  );
+};
+
+/* harmony default export */ var elements_TopNavButtons = (TopNavButtons_TopNavButtons);
+// EXTERNAL MODULE: ./src/shared/styles/CssLoader.css
+var styles_CssLoader = __webpack_require__(215);
+var CssLoader_default = /*#__PURE__*/__webpack_require__.n(styles_CssLoader);
+
+// CONCATENATED MODULE: ./src/shared/elements/CssLoader.js
+var CssLoader__jsxFileName = '/Users/pete/docs-r-us/src/shared/elements/CssLoader.js',
+    CssLoader__this = this;
+
+
+
+
+var CssLoader_CssLoader = function CssLoader() {
+  return react_default.a.createElement(
+    'div',
+    { className: 'loader-container', __source: {
+        fileName: CssLoader__jsxFileName,
+        lineNumber: 5
+      },
+      __self: CssLoader__this
+    },
+    react_default.a.createElement(
+      'div',
+      { className: 'loader', __source: {
+          fileName: CssLoader__jsxFileName,
+          lineNumber: 6
+        },
+        __self: CssLoader__this
+      },
+      'Loading...'
+    )
+  );
+};
+
+/* harmony default export */ var elements_CssLoader = (CssLoader_CssLoader);
+// CONCATENATED MODULE: ./src/shared/elements/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return elements_TopNavButtons; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return elements_CssLoader; });
+
+
+
+
+
+/***/ }),
+
 /***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3207,15 +3407,16 @@ var UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
 // CONCATENATED MODULE: ./src/shared/constants/index.js
 /* unused harmony export CHANGE_VIEW */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return EXIT_PATIENT_VIEW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENT_FILES_DROPPED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_UPLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILE_REMOVED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return VIEW_APPOINTMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return PATIENT_FILES_DROPPED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return PATIENT_FILES_UPLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_FILE_REMOVED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return VIEW_APPOINTMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return PATIENT_FILES_UPLOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CANCEL_FILE_UPLOAD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PATIENT_TAB_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SEARCH_INPUT_UPDATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PATIENTS_VIEW_RESET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return PATIENT_TAB_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return SEARCH_INPUT_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PATIENTS_VIEW_RESET; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ONLINE_CONNECTION_CHANGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CDN_URI; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "f", function() { return CONNECTED; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "g", function() { return DISCONNECTED; });
@@ -3224,11 +3425,11 @@ var UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "b", function() { return APPOINTMENT_VIEW_BACK; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "i", function() { return EDIT_APPOINTMENT_STATUS; });
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return APPOINTMENT_RECORD_UPDATED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "q", function() { return REQUEST_APPOINTMENT_CHANGE; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return TOP_NAV_ICON_CLICKED; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "u", function() { return UPDATE_GEO_COORDINATES; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "s", function() { return TOGGLE_PROXIMITY_SEARCH; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "v", function() { return UPDATE_SEARCH_RESULTS; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "r", function() { return REQUEST_APPOINTMENT_CHANGE; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "u", function() { return TOP_NAV_ICON_CLICKED; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "v", function() { return UPDATE_GEO_COORDINATES; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "t", function() { return TOGGLE_PROXIMITY_SEARCH; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "w", function() { return UPDATE_SEARCH_RESULTS; });
 
 
 
@@ -3246,6 +3447,8 @@ var SEARCH_INPUT_UPDATE = 'SEARCH_INPUT_UPDATE';
 var PATIENTS_VIEW_RESET = 'PATIENTS_VIEW_RESET';
 var VIEW_APPOINTMENT = 'VIEW_APPOINTMENT';
 
+var ONLINE_CONNECTION_CHANGE = 'ONLINE_CONNECTION_CHANGE';
+
 //Resources
 var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
 
@@ -3253,7 +3456,7 @@ var CDN_URI = 'https://dq8llwxgkllay.cloudfront.net/';
 
 /***/ }),
 
-/***/ 179:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3291,7 +3494,7 @@ var ParseJson = function ParseJson(data) {
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3320,7 +3523,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 /***/ }),
 
-/***/ 184:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4686,7 +4889,7 @@ module.exports = react;
 
 /***/ }),
 
-/***/ 185:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4923,7 +5126,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 /***/ }),
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4938,7 +5141,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(187);
+var isNode = __webpack_require__(188);
 
 /**
  * @param {*} object The object to check.
@@ -4952,7 +5155,7 @@ module.exports = isTextNode;
 
 /***/ }),
 
-/***/ 187:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4981,7 +5184,7 @@ module.exports = isNode;
 
 /***/ }),
 
-/***/ 188:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5015,8 +5218,8 @@ var containsNode = __webpack_require__(97);
 var focusNode = __webpack_require__(98);
 var emptyObject = __webpack_require__(44);
 var checkPropTypes = __webpack_require__(62);
-var hyphenateStyleName = __webpack_require__(189);
-var camelizeStyleName = __webpack_require__(191);
+var hyphenateStyleName = __webpack_require__(190);
+var camelizeStyleName = __webpack_require__(192);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -20384,7 +20587,7 @@ module.exports = reactDom;
 
 /***/ }),
 
-/***/ 189:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20399,7 +20602,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(190);
+var hyphenate = __webpack_require__(191);
 
 var msPattern = /^ms-/;
 
@@ -20427,7 +20630,7 @@ module.exports = hyphenateStyleName;
 
 /***/ }),
 
-/***/ 190:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20464,7 +20667,7 @@ module.exports = hyphenate;
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20479,7 +20682,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(192);
+var camelize = __webpack_require__(193);
 
 var msPattern = /^-ms-/;
 
@@ -20508,7 +20711,7 @@ module.exports = camelizeStyleName;
 
 /***/ }),
 
-/***/ 192:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20544,7 +20747,7 @@ module.exports = camelize;
 
 /***/ }),
 
-/***/ 193:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21095,7 +21298,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 /***/ }),
 
-/***/ 194:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21161,7 +21364,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 195:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21475,7 +21678,7 @@ exports.default = createBrowserHistory;
 
 /***/ }),
 
-/***/ 196:
+/***/ 197:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21806,7 +22009,7 @@ exports.default = createHashHistory;
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21983,10 +22186,10 @@ exports.default = createMemoryHistory;
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(199)
+var isarray = __webpack_require__(200)
 
 /**
  * Expose `pathToRegexp`.
@@ -22416,16 +22619,6 @@ function pathToRegexp (path, keys, options) {
 
 /***/ }),
 
-/***/ 199:
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-
-/***/ }),
-
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22451,11 +22644,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(193)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(194)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(194)();
+  module.exports = __webpack_require__(195)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -22506,6 +22699,16 @@ module.exports = emptyFunction;
 /***/ }),
 
 /***/ 200:
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22592,7 +22795,7 @@ function createProvider() {
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22692,7 +22895,7 @@ var Subscription = function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22705,11 +22908,11 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(205);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(206);
 /* global window */
 
 
@@ -22730,11 +22933,11 @@ if (typeof self !== 'undefined') {
 var result = Object(__WEBPACK_IMPORTED_MODULE_0__ponyfill_js__["a" /* default */])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(54), __webpack_require__(204)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(54), __webpack_require__(205)(module)))
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -22765,7 +22968,7 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22791,7 +22994,7 @@ function symbolObservablePonyfill(root) {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22933,7 +23136,7 @@ function combineReducers(reducers) {
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22988,7 +23191,7 @@ function bindActionCreators(actionCreators, dispatch) {
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23045,7 +23248,54 @@ function applyMiddleware() {
 
 /***/ }),
 
-/***/ 209:
+/***/ 21:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(186);
+} else {
+  module.exports = __webpack_require__(189);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23103,61 +23353,14 @@ function whenMergePropsIsOmitted(mergeProps) {
 
 /***/ }),
 
-/***/ 21:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(185);
-} else {
-  module.exports = __webpack_require__(188);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-
-/***/ 210:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export impureFinalPropsSelectorFactory */
 /* unused harmony export pureFinalPropsSelectorFactory */
 /* harmony export (immutable) */ __webpack_exports__["a"] = finalPropsSelectorFactory;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__verifySubselectors__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__verifySubselectors__ = __webpack_require__(212);
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 
@@ -23264,7 +23467,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23290,7 +23493,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23299,7 +23502,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 var es = __webpack_require__(68);
 
 // EXTERNAL MODULE: ./node_modules/redux-logger/dist/redux-logger.js
-var redux_logger = __webpack_require__(213);
+var redux_logger = __webpack_require__(214);
 var redux_logger_default = /*#__PURE__*/__webpack_require__.n(redux_logger);
 
 // EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
@@ -23331,7 +23534,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
           break;
         }
-      case constants["w" /* VIEW_APPOINTMENT */]:
+      case constants["x" /* VIEW_APPOINTMENT */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -23342,7 +23545,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["t" /* TOP_NAV_ICON_CLICKED */]:
+      case constants["u" /* TOP_NAV_ICON_CLICKED */]:
         {
           return Object.assign({}, state, {
             topNav: Object.assign({}, state.topNav, {
@@ -23371,7 +23574,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["q" /* REQUEST_APPOINTMENT_CHANGE */]:
+      case constants["r" /* REQUEST_APPOINTMENT_CHANGE */]:
         {
           return Object.assign({}, state, {
             calendarView: Object.assign({}, state.calendarView, {
@@ -23411,13 +23614,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["r" /* SEARCH_INPUT_UPDATE */]:
+      case constants["s" /* SEARCH_INPUT_UPDATE */]:
         {
           return Object.assign({}, state, {
             patientsView: Object.assign({}, state.patientsView, action.payload)
           });
         }
-      case constants["k" /* PATIENTS_VIEW_RESET */]:
+      case constants["l" /* PATIENTS_VIEW_RESET */]:
         {
           return Object.assign({}, state, {
             patientsView: {
@@ -23428,7 +23631,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
           });
         }
-      case constants["p" /* PATIENT_TAB_SELECTED */]:
+      case constants["q" /* PATIENT_TAB_SELECTED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -23455,7 +23658,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["l" /* PATIENT_FILES_DROPPED */]:
+      case constants["m" /* PATIENT_FILES_DROPPED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -23463,7 +23666,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["o" /* PATIENT_FILE_REMOVED */]:
+      case constants["p" /* PATIENT_FILE_REMOVED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -23471,7 +23674,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["n" /* PATIENT_FILES_UPLOADING */]:
+      case constants["o" /* PATIENT_FILES_UPLOADING */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -23479,7 +23682,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["m" /* PATIENT_FILES_UPLOADED */]:
+      case constants["n" /* PATIENT_FILES_UPLOADED */]:
         {
           return Object.assign({}, state, {
             patients: Object.assign({}, state.patients, {
@@ -23492,7 +23695,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["l" /* PATIENT_FILES_DROPPED */]:
+      case constants["m" /* PATIENT_FILES_DROPPED */]:
         {
           return Object.assign({}, state, {
             patientProfile: Object.assign({}, state.patientProfile, {
@@ -23507,12 +23710,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // CONCATENATED MODULE: ./src/shared/reducers/patient.js
 
 
+var mapProximityResults = function mapProximityResults(hospitals) {
+  return hospitals.reduce(function (nearbyResults, hospital) {
+    return Object.assign({}, nearbyResults, {
+      doctors: nearbyResults.doctors.concat(hospital.doctors)
+    });
+  }, { hospitals: hospitals, doctors: [] });
+};
+
 /* harmony default export */ var patient = (function (initialState) {
   return function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
+      case constants["k" /* ONLINE_CONNECTION_CHANGE */]:
+        {
+          return Object.assign({}, state, {
+            online: action.payload
+          });
+        }
       case constants["f" /* CONNECTED */]:
         {
           return Object.assign({}, state, {
@@ -23521,7 +23738,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
           break;
         }
-      case constants["s" /* TOGGLE_PROXIMITY_SEARCH */]:
+      case constants["t" /* TOGGLE_PROXIMITY_SEARCH */]:
         {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
@@ -23529,18 +23746,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             })
           });
         }
-      case constants["u" /* UPDATE_GEO_COORDINATES */]:
+      case constants["v" /* UPDATE_GEO_COORDINATES */]:
         {
           return Object.assign({}, state, {
             searchNearby: Object.assign({}, state.searchNearby, {
+              fetching: true,
               position: Object.assign({}, state.searchNearby.position, action.payload)
             })
           });
         }
-      case constants["v" /* UPDATE_SEARCH_RESULTS */]:
+      case constants["w" /* UPDATE_SEARCH_RESULTS */]:
         {
           return Object.assign({}, state, {
-            searchNearby: Object.assign({}, state.searchNearby, action.payload)
+            searchNearby: Object.assign({}, state.searchNearby, {
+              onLoadDataFetched: true,
+              fetching: false
+            }, mapProximityResults(action.payload))
           });
         }
       default:
@@ -23600,7 +23821,7 @@ var store_buildBookingServerStore = function buildBookingServerStore(state) {
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {!function(e,t){ true?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t(e.reduxLogger=e.reduxLogger||{})}(this,function(e){"use strict";function t(e,t){e.super_=t,e.prototype=Object.create(t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}})}function r(e,t){Object.defineProperty(this,"kind",{value:e,enumerable:!0}),t&&t.length&&Object.defineProperty(this,"path",{value:t,enumerable:!0})}function n(e,t,r){n.super_.call(this,"E",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0}),Object.defineProperty(this,"rhs",{value:r,enumerable:!0})}function o(e,t){o.super_.call(this,"N",e),Object.defineProperty(this,"rhs",{value:t,enumerable:!0})}function i(e,t){i.super_.call(this,"D",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0})}function a(e,t,r){a.super_.call(this,"A",e),Object.defineProperty(this,"index",{value:t,enumerable:!0}),Object.defineProperty(this,"item",{value:r,enumerable:!0})}function f(e,t,r){var n=e.slice((r||t)+1||e.length);return e.length=t<0?e.length+t:t,e.push.apply(e,n),e}function u(e){var t="undefined"==typeof e?"undefined":N(e);return"object"!==t?t:e===Math?"math":null===e?"null":Array.isArray(e)?"array":"[object Date]"===Object.prototype.toString.call(e)?"date":"function"==typeof e.toString&&/^\/.*\//.test(e.toString())?"regexp":"object"}function l(e,t,r,c,s,d,p){s=s||[],p=p||[];var g=s.slice(0);if("undefined"!=typeof d){if(c){if("function"==typeof c&&c(g,d))return;if("object"===("undefined"==typeof c?"undefined":N(c))){if(c.prefilter&&c.prefilter(g,d))return;if(c.normalize){var h=c.normalize(g,d,e,t);h&&(e=h[0],t=h[1])}}}g.push(d)}"regexp"===u(e)&&"regexp"===u(t)&&(e=e.toString(),t=t.toString());var y="undefined"==typeof e?"undefined":N(e),v="undefined"==typeof t?"undefined":N(t),b="undefined"!==y||p&&p[p.length-1].lhs&&p[p.length-1].lhs.hasOwnProperty(d),m="undefined"!==v||p&&p[p.length-1].rhs&&p[p.length-1].rhs.hasOwnProperty(d);if(!b&&m)r(new o(g,t));else if(!m&&b)r(new i(g,e));else if(u(e)!==u(t))r(new n(g,e,t));else if("date"===u(e)&&e-t!==0)r(new n(g,e,t));else if("object"===y&&null!==e&&null!==t)if(p.filter(function(t){return t.lhs===e}).length)e!==t&&r(new n(g,e,t));else{if(p.push({lhs:e,rhs:t}),Array.isArray(e)){var w;e.length;for(w=0;w<e.length;w++)w>=t.length?r(new a(g,w,new i(void 0,e[w]))):l(e[w],t[w],r,c,g,w,p);for(;w<t.length;)r(new a(g,w,new o(void 0,t[w++])))}else{var x=Object.keys(e),S=Object.keys(t);x.forEach(function(n,o){var i=S.indexOf(n);i>=0?(l(e[n],t[n],r,c,g,n,p),S=f(S,i)):l(e[n],void 0,r,c,g,n,p)}),S.forEach(function(e){l(void 0,t[e],r,c,g,e,p)})}p.length=p.length-1}else e!==t&&("number"===y&&isNaN(e)&&isNaN(t)||r(new n(g,e,t)))}function c(e,t,r,n){return n=n||[],l(e,t,function(e){e&&n.push(e)},r),n.length?n:void 0}function s(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":s(o[r.path[n]],r.index,r.item);break;case"D":delete o[r.path[n]];break;case"E":case"N":o[r.path[n]]=r.rhs}}else switch(r.kind){case"A":s(e[t],r.index,r.item);break;case"D":e=f(e,t);break;case"E":case"N":e[t]=r.rhs}return e}function d(e,t,r){if(e&&t&&r&&r.kind){for(var n=e,o=-1,i=r.path?r.path.length-1:0;++o<i;)"undefined"==typeof n[r.path[o]]&&(n[r.path[o]]="number"==typeof r.path[o]?[]:{}),n=n[r.path[o]];switch(r.kind){case"A":s(r.path?n[r.path[o]]:n,r.index,r.item);break;case"D":delete n[r.path[o]];break;case"E":case"N":n[r.path[o]]=r.rhs}}}function p(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":p(o[r.path[n]],r.index,r.item);break;case"D":o[r.path[n]]=r.lhs;break;case"E":o[r.path[n]]=r.lhs;break;case"N":delete o[r.path[n]]}}else switch(r.kind){case"A":p(e[t],r.index,r.item);break;case"D":e[t]=r.lhs;break;case"E":e[t]=r.lhs;break;case"N":e=f(e,t)}return e}function g(e,t,r){if(e&&t&&r&&r.kind){var n,o,i=e;for(o=r.path.length-1,n=0;n<o;n++)"undefined"==typeof i[r.path[n]]&&(i[r.path[n]]={}),i=i[r.path[n]];switch(r.kind){case"A":p(i[r.path[n]],r.index,r.item);break;case"D":i[r.path[n]]=r.lhs;break;case"E":i[r.path[n]]=r.lhs;break;case"N":delete i[r.path[n]]}}}function h(e,t,r){if(e&&t){var n=function(n){r&&!r(e,t,n)||d(e,t,n)};l(e,t,n)}}function y(e){return"color: "+F[e].color+"; font-weight: bold"}function v(e){var t=e.kind,r=e.path,n=e.lhs,o=e.rhs,i=e.index,a=e.item;switch(t){case"E":return[r.join("."),n,"→",o];case"N":return[r.join("."),o];case"D":return[r.join(".")];case"A":return[r.join(".")+"["+i+"]",a];default:return[]}}function b(e,t,r,n){var o=c(e,t);try{n?r.groupCollapsed("diff"):r.group("diff")}catch(e){r.log("diff")}o?o.forEach(function(e){var t=e.kind,n=v(e);r.log.apply(r,["%c "+F[t].text,y(t)].concat(P(n)))}):r.log("—— no diff ——");try{r.groupEnd()}catch(e){r.log("—— diff end —— ")}}function m(e,t,r,n){switch("undefined"==typeof e?"undefined":N(e)){case"object":return"function"==typeof e[n]?e[n].apply(e,P(r)):e[n];case"function":return e(t);default:return e}}function w(e){var t=e.timestamp,r=e.duration;return function(e,n,o){var i=["action"];return i.push("%c"+String(e.type)),t&&i.push("%c@ "+n),r&&i.push("%c(in "+o.toFixed(2)+" ms)"),i.join(" ")}}function x(e,t){var r=t.logger,n=t.actionTransformer,o=t.titleFormatter,i=void 0===o?w(t):o,a=t.collapsed,f=t.colors,u=t.level,l=t.diff,c="undefined"==typeof t.titleFormatter;e.forEach(function(o,s){var d=o.started,p=o.startedTime,g=o.action,h=o.prevState,y=o.error,v=o.took,w=o.nextState,x=e[s+1];x&&(w=x.prevState,v=x.started-d);var S=n(g),k="function"==typeof a?a(function(){return w},g,o):a,j=D(p),E=f.title?"color: "+f.title(S)+";":"",A=["color: gray; font-weight: lighter;"];A.push(E),t.timestamp&&A.push("color: gray; font-weight: lighter;"),t.duration&&A.push("color: gray; font-weight: lighter;");var O=i(S,j,v);try{k?f.title&&c?r.groupCollapsed.apply(r,["%c "+O].concat(A)):r.groupCollapsed(O):f.title&&c?r.group.apply(r,["%c "+O].concat(A)):r.group(O)}catch(e){r.log(O)}var N=m(u,S,[h],"prevState"),P=m(u,S,[S],"action"),C=m(u,S,[y,h],"error"),F=m(u,S,[w],"nextState");if(N)if(f.prevState){var L="color: "+f.prevState(h)+"; font-weight: bold";r[N]("%c prev state",L,h)}else r[N]("prev state",h);if(P)if(f.action){var T="color: "+f.action(S)+"; font-weight: bold";r[P]("%c action    ",T,S)}else r[P]("action    ",S);if(y&&C)if(f.error){var M="color: "+f.error(y,h)+"; font-weight: bold;";r[C]("%c error     ",M,y)}else r[C]("error     ",y);if(F)if(f.nextState){var _="color: "+f.nextState(w)+"; font-weight: bold";r[F]("%c next state",_,w)}else r[F]("next state",w);l&&b(h,w,r,k);try{r.groupEnd()}catch(e){r.log("—— log end ——")}})}function S(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=Object.assign({},L,e),r=t.logger,n=t.stateTransformer,o=t.errorTransformer,i=t.predicate,a=t.logErrors,f=t.diffPredicate;if("undefined"==typeof r)return function(){return function(e){return function(t){return e(t)}}};if(e.getState&&e.dispatch)return console.error("[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n// Logger with default options\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from 'redux-logger'\nconst logger = createLogger({\n  // ...options\n});\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n"),function(){return function(e){return function(t){return e(t)}}};var u=[];return function(e){var r=e.getState;return function(e){return function(l){if("function"==typeof i&&!i(r,l))return e(l);var c={};u.push(c),c.started=O.now(),c.startedTime=new Date,c.prevState=n(r()),c.action=l;var s=void 0;if(a)try{s=e(l)}catch(e){c.error=o(e)}else s=e(l);c.took=O.now()-c.started,c.nextState=n(r());var d=t.diff&&"function"==typeof f?f(r,l):t.diff;if(x(u,Object.assign({},t,{diff:d})),u.length=0,c.error)throw c.error;return s}}}}var k,j,E=function(e,t){return new Array(t+1).join(e)},A=function(e,t){return E("0",t-e.toString().length)+e},D=function(e){return A(e.getHours(),2)+":"+A(e.getMinutes(),2)+":"+A(e.getSeconds(),2)+"."+A(e.getMilliseconds(),3)},O="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance:Date,N="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},P=function(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)},C=[];k="object"===("undefined"==typeof global?"undefined":N(global))&&global?global:"undefined"!=typeof window?window:{},j=k.DeepDiff,j&&C.push(function(){"undefined"!=typeof j&&k.DeepDiff===c&&(k.DeepDiff=j,j=void 0)}),t(n,r),t(o,r),t(i,r),t(a,r),Object.defineProperties(c,{diff:{value:c,enumerable:!0},observableDiff:{value:l,enumerable:!0},applyDiff:{value:h,enumerable:!0},applyChange:{value:d,enumerable:!0},revertChange:{value:g,enumerable:!0},isConflict:{value:function(){return"undefined"!=typeof j},enumerable:!0},noConflict:{value:function(){return C&&(C.forEach(function(e){e()}),C=null),c},enumerable:!0}});var F={E:{color:"#2196F3",text:"CHANGED:"},N:{color:"#4CAF50",text:"ADDED:"},D:{color:"#F44336",text:"DELETED:"},A:{color:"#2196F3",text:"ARRAY:"}},L={level:"log",logger:console,logErrors:!0,collapsed:void 0,predicate:void 0,duration:!1,timestamp:!0,stateTransformer:function(e){return e},actionTransformer:function(e){return e},errorTransformer:function(e){return e},colors:{title:function(){return"inherit"},prevState:function(){return"#9E9E9E"},action:function(){return"#03A9F4"},nextState:function(){return"#4CAF50"},error:function(){return"#F20404"}},diff:!1,diffPredicate:void 0,transformer:void 0},T=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.dispatch,r=e.getState;return"function"==typeof t||"function"==typeof r?S()({dispatch:t,getState:r}):void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n")};e.defaults=L,e.createLogger=S,e.logger=T,e.default=T,Object.defineProperty(e,"__esModule",{value:!0})});
@@ -23609,7 +23830,14 @@ var store_buildBookingServerStore = function buildBookingServerStore(state) {
 
 /***/ }),
 
-/***/ 25:
+/***/ 215:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23627,7 +23855,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/history/createBrowserHistory.js
-var createBrowserHistory = __webpack_require__(195);
+var createBrowserHistory = __webpack_require__(196);
 var createBrowserHistory_default = /*#__PURE__*/__webpack_require__.n(createBrowserHistory);
 
 // EXTERNAL MODULE: ./node_modules/react-router/es/Router.js
@@ -23692,7 +23920,7 @@ BrowserRouter_BrowserRouter.propTypes = {
 
 /* harmony default export */ var es_BrowserRouter = (BrowserRouter_BrowserRouter);
 // EXTERNAL MODULE: ./node_modules/history/createHashHistory.js
-var createHashHistory = __webpack_require__(196);
+var createHashHistory = __webpack_require__(197);
 var createHashHistory_default = /*#__PURE__*/__webpack_require__.n(createHashHistory);
 
 // CONCATENATED MODULE: ./node_modules/react-router-dom/es/HashRouter.js
@@ -24035,7 +24263,7 @@ var withRouter = __webpack_require__(107);
 
 /***/ }),
 
-/***/ 290:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24524,7 +24752,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -24626,7 +24854,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 613:
+/***/ 615:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -25082,9 +25310,9 @@ function warning(message) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(113);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
@@ -25120,7 +25348,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/lodash-es/_freeGlobal.js
-var _freeGlobal = __webpack_require__(202);
+var _freeGlobal = __webpack_require__(203);
 
 // CONCATENATED MODULE: ./node_modules/lodash-es/_root.js
 
@@ -25603,7 +25831,7 @@ module.exports = getActiveElement;
 
 /***/ }),
 
-/***/ 962:
+/***/ 964:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25618,20 +25846,20 @@ var react_dom = __webpack_require__(21);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 13 modules
-var es = __webpack_require__(25);
+var es = __webpack_require__(24);
 
 // EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 4 modules
 var react_redux_es = __webpack_require__(109);
 
 // EXTERNAL MODULE: ./src/shared/store.js + 3 modules
-var store = __webpack_require__(212);
+var store = __webpack_require__(213);
 
 // EXTERNAL MODULE: ./src/shared/styles/BookingGlobal.css
-var BookingGlobal = __webpack_require__(963);
+var BookingGlobal = __webpack_require__(965);
 var BookingGlobal_default = /*#__PURE__*/__webpack_require__.n(BookingGlobal);
 
 // EXTERNAL MODULE: ./src/shared/styles/BookingNav.css
-var styles_BookingNav = __webpack_require__(964);
+var styles_BookingNav = __webpack_require__(966);
 var BookingNav_default = /*#__PURE__*/__webpack_require__.n(styles_BookingNav);
 
 // CONCATENATED MODULE: ./src/shared/components/BookingNav.js
@@ -25668,6 +25896,8 @@ var BookingNav_BookingNav = function (_PureComponent) {
   _createClass(BookingNav, [{
     key: 'render',
     value: function render() {
+      var online = this.props.online;
+
       return react_default.a.createElement(
         'div',
         { className: 'booking-nav', __source: {
@@ -25696,10 +25926,36 @@ var BookingNav_BookingNav = function (_PureComponent) {
           )
         ),
         react_default.a.createElement(
+          'div',
+          { className: 'online-indicator', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 20
+            },
+            __self: this
+          },
+          react_default.a.createElement('div', { className: 'indicator ' + (online ? 'on' : ''), __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21
+            },
+            __self: this
+          }),
+          react_default.a.createElement(
+            'span',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 22
+              },
+              __self: this
+            },
+            online ? 'Connected' : 'Disconnected'
+          )
+        ),
+        react_default.a.createElement(
           es["b" /* Link */],
           { className: 'profile-icon right', to: '/profile', __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 24
             },
             __self: this
           },
@@ -25707,7 +25963,7 @@ var BookingNav_BookingNav = function (_PureComponent) {
             'i',
             { className: 'material-icons', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 21
+                lineNumber: 25
               },
               __self: this
             },
@@ -25723,16 +25979,16 @@ var BookingNav_BookingNav = function (_PureComponent) {
 
 /* harmony default export */ var components_BookingNav = (BookingNav_BookingNav);
 // EXTERNAL MODULE: ./node_modules/react-router/es/index.js
-var react_router_es = __webpack_require__(290);
+var react_router_es = __webpack_require__(292);
 
 // EXTERNAL MODULE: ./src/shared/constants/index.js + 3 modules
 var constants = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./src/shared/helpers/index.js
-var helpers = __webpack_require__(179);
+var helpers = __webpack_require__(180);
 
 // EXTERNAL MODULE: ./src/shared/styles/BookingLandingPage.css
-var BookingLandingPage = __webpack_require__(965);
+var BookingLandingPage = __webpack_require__(967);
 var BookingLandingPage_default = /*#__PURE__*/__webpack_require__.n(BookingLandingPage);
 
 // CONCATENATED MODULE: ./src/shared/pages/booking/Landing.js
@@ -25986,13 +26242,17 @@ var PatientProfile_PatientProfile = function (_PureComponent) {
 
 /* harmony default export */ var booking_PatientProfile = (PatientProfile_PatientProfile);
 // EXTERNAL MODULE: ./src/shared/styles/SearchPages.css
-var SearchPages = __webpack_require__(613);
+var SearchPages = __webpack_require__(615);
 var SearchPages_default = /*#__PURE__*/__webpack_require__.n(SearchPages);
 
-// CONCATENATED MODULE: ./src/shared/pages/booking/DoctorSearchPage.js
-var DoctorSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorSearchPage.js';
+// EXTERNAL MODULE: ./src/shared/elements/index.js + 2 modules
+var shared_elements = __webpack_require__(133);
 
+// CONCATENATED MODULE: ./src/shared/pages/booking/DoctorSearchPage.js
 var DoctorSearchPage__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var DoctorSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorSearchPage.js',
+    DoctorSearchPage__this = this;
 
 function DoctorSearchPage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26004,13 +26264,28 @@ function DoctorSearchPage__inherits(subClass, superClass) { if (typeof superClas
 
 
 
+
+var DoctorSearchPage_doctorResults = function doctorResults(_ref, i) {
+  var fullName = _ref.fullName;
+  return react_default.a.createElement(
+    'li',
+    { key: i, __source: {
+        fileName: DoctorSearchPage__jsxFileName,
+        lineNumber: 14
+      },
+      __self: DoctorSearchPage__this
+    },
+    fullName
+  );
+};
+
 var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
   DoctorSearchPage__inherits(DoctorSearchPage, _PureComponent);
 
   function DoctorSearchPage() {
-    var _ref;
+    var _ref2;
 
-    var _temp, _this, _ret;
+    var _temp, _this2, _ret;
 
     DoctorSearchPage__classCallCheck(this, DoctorSearchPage);
 
@@ -26018,23 +26293,56 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = DoctorSearchPage__possibleConstructorReturn(this, (_ref = DoctorSearchPage.__proto__ || Object.getPrototypeOf(DoctorSearchPage)).call.apply(_ref, [this].concat(args))), _this), _this.onProximityToggle = function (e) {
-      return _this.props.dispatch({
-        type: constants["s" /* TOGGLE_PROXIMITY_SEARCH */]
+    return _ret = (_temp = (_this2 = DoctorSearchPage__possibleConstructorReturn(this, (_ref2 = DoctorSearchPage.__proto__ || Object.getPrototypeOf(DoctorSearchPage)).call.apply(_ref2, [this].concat(args))), _this2), _this2.onProximityToggle = function (e) {
+      return _this2.props.dispatch({
+        type: constants["t" /* TOGGLE_PROXIMITY_SEARCH */]
       });
-    }, _temp), DoctorSearchPage__possibleConstructorReturn(_this, _ret);
+    }, _this2.fetchQuery = function (queryString) {
+      fetch('/api/nearby/hospitals?' + queryString).then(function (results) {
+        return results.json();
+      }).then(function (jsonResults) {
+        return _this2.props.dispatch({
+          type: constants["w" /* UPDATE_SEARCH_RESULTS */],
+          payload: jsonResults
+        });
+      }).catch(function (err) {
+        return console.log('err', err);
+      });
+    }, _this2.updateCoordinates = function (_ref3) {
+      var withinKM = _ref3.withinKM;
+      return function (pos) {
+        var _pos$coords = pos.coords,
+            latitude = _pos$coords.latitude,
+            longitude = _pos$coords.longitude;
+
+        _this2.props.dispatch({
+          type: constants["v" /* UPDATE_GEO_COORDINATES */],
+          payload: { latitude: latitude, longitude: longitude }
+        });
+        _this2.fetchQuery('distance=' + withinKM + '&lat=' + latitude + '&long=' + longitude);
+      };
+    }, _temp), DoctorSearchPage__possibleConstructorReturn(_this2, _ret);
   }
 
   DoctorSearchPage__createClass(DoctorSearchPage, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (navigator.geolocation && !this.props.searchNearby.onLoadDataFetched) {
+        navigator.geolocation.getCurrentPosition(this.updateCoordinates(this.props.searchNearby));
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var searchNearby = this.props.searchNearby;
+      var _props = this.props,
+          searchNearby = _props.searchNearby,
+          online = _props.online;
 
       return react_default.a.createElement(
         'div',
         { className: 'container search-container', __source: {
             fileName: DoctorSearchPage__jsxFileName,
-            lineNumber: 15
+            lineNumber: 46
           },
           __self: this
         },
@@ -26042,7 +26350,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block search-options ', __source: {
               fileName: DoctorSearchPage__jsxFileName,
-              lineNumber: 16
+              lineNumber: 47
             },
             __self: this
           },
@@ -26050,7 +26358,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'btn-group btn-group-sm', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 17
+                lineNumber: 48
               },
               __self: this
             },
@@ -26058,7 +26366,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'button',
               { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 18
+                  lineNumber: 49
                 },
                 __self: this
               },
@@ -26068,7 +26376,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { className: 'dropdown-menu', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 21
+                  lineNumber: 52
                 },
                 __self: this
               },
@@ -26076,7 +26384,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 22
+                    lineNumber: 53
                   },
                   __self: this
                 },
@@ -26086,7 +26394,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 23
+                    lineNumber: 54
                   },
                   __self: this
                 },
@@ -26096,7 +26404,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 24
+                    lineNumber: 55
                   },
                   __self: this
                 },
@@ -26104,7 +26412,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               ),
               react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 25
+                  lineNumber: 56
                 },
                 __self: this
               }),
@@ -26112,7 +26420,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 26
+                    lineNumber: 57
                   },
                   __self: this
                 },
@@ -26124,7 +26432,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'proximity-search', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 29
+                lineNumber: 60
               },
               __self: this
             },
@@ -26133,7 +26441,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               {
                 __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 30
+                  lineNumber: 61
                 },
                 __self: this
               },
@@ -26143,14 +26451,14 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 31
+                  lineNumber: 62
                 },
                 __self: this
               },
               searchNearby.on ? 'ON' : 'OFF',
               react_default.a.createElement('div', { className: 'switch', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 33
+                  lineNumber: 64
                 },
                 __self: this
               })
@@ -26161,7 +26469,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block', __source: {
               fileName: DoctorSearchPage__jsxFileName,
-              lineNumber: 37
+              lineNumber: 68
             },
             __self: this
           },
@@ -26169,7 +26477,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             'div',
             { className: 'input-group mb-3 search-bar', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 38
+                lineNumber: 69
               },
               __self: this
             },
@@ -26177,7 +26485,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-prepend', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 39
+                  lineNumber: 70
                 },
                 __self: this
               },
@@ -26185,7 +26493,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 40
+                    lineNumber: 71
                   },
                   __self: this
                 },
@@ -26195,7 +26503,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'div',
                 { className: 'dropdown-menu', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 41
+                    lineNumber: 72
                   },
                   __self: this
                 },
@@ -26203,7 +26511,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: DoctorSearchPage__jsxFileName,
-                      lineNumber: 42
+                      lineNumber: 73
                     },
                     __self: this
                   },
@@ -26213,7 +26521,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: DoctorSearchPage__jsxFileName,
-                      lineNumber: 43
+                      lineNumber: 74
                     },
                     __self: this
                   },
@@ -26223,7 +26531,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: DoctorSearchPage__jsxFileName,
-                      lineNumber: 44
+                      lineNumber: 75
                     },
                     __self: this
                   },
@@ -26231,7 +26539,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 ),
                 react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 45
+                    lineNumber: 76
                   },
                   __self: this
                 }),
@@ -26239,7 +26547,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: DoctorSearchPage__jsxFileName,
-                      lineNumber: 46
+                      lineNumber: 77
                     },
                     __self: this
                   },
@@ -26249,7 +26557,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
             ),
             react_default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
                 fileName: DoctorSearchPage__jsxFileName,
-                lineNumber: 49
+                lineNumber: 80
               },
               __self: this
             }),
@@ -26257,7 +26565,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-append', __source: {
                   fileName: DoctorSearchPage__jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 81
                 },
                 __self: this
               },
@@ -26265,7 +26573,7 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary', type: 'button', __source: {
                     fileName: DoctorSearchPage__jsxFileName,
-                    lineNumber: 51
+                    lineNumber: 82
                   },
                   __self: this
                 },
@@ -26273,7 +26581,24 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
               )
             )
           )
-        )
+        ),
+        react_default.a.createElement(
+          'ul',
+          { className: searchNearby.fetching ? 'hidden' : '', __source: {
+              fileName: DoctorSearchPage__jsxFileName,
+              lineNumber: 86
+            },
+            __self: this
+          },
+          searchNearby.doctors.map(DoctorSearchPage_doctorResults)
+        ),
+        (searchNearby.fetching || !searchNearby.onLoadDataFetched) && react_default.a.createElement(shared_elements["a" /* CssLoader */], {
+          __source: {
+            fileName: DoctorSearchPage__jsxFileName,
+            lineNumber: 90
+          },
+          __self: this
+        })
       );
     }
   }]);
@@ -26283,9 +26608,10 @@ var DoctorSearchPage_DoctorSearchPage = function (_PureComponent) {
 
 /* harmony default export */ var booking_DoctorSearchPage = (DoctorSearchPage_DoctorSearchPage);
 // CONCATENATED MODULE: ./src/shared/pages/booking/HospitalSearchPage.js
-var HospitalSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/HospitalSearchPage.js';
-
 var HospitalSearchPage__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var HospitalSearchPage__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/HospitalSearchPage.js',
+    HospitalSearchPage__this = this;
 
 function HospitalSearchPage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26297,13 +26623,29 @@ function HospitalSearchPage__inherits(subClass, superClass) { if (typeof superCl
 
 
 
+
+var HospitalSearchPage_hospitalResults = function hospitalResults(_ref, i) {
+  var id = _ref.id,
+      name = _ref.name;
+  return react_default.a.createElement(
+    'li',
+    { key: i, id: id, __source: {
+        fileName: HospitalSearchPage__jsxFileName,
+        lineNumber: 14
+      },
+      __self: HospitalSearchPage__this
+    },
+    name
+  );
+};
+
 var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
   HospitalSearchPage__inherits(HospitalSearchPage, _PureComponent);
 
   function HospitalSearchPage() {
-    var _ref;
+    var _ref2;
 
-    var _temp, _this, _ret;
+    var _temp, _this2, _ret;
 
     HospitalSearchPage__classCallCheck(this, HospitalSearchPage);
 
@@ -26311,54 +26653,56 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = HospitalSearchPage__possibleConstructorReturn(this, (_ref = HospitalSearchPage.__proto__ || Object.getPrototypeOf(HospitalSearchPage)).call.apply(_ref, [this].concat(args))), _this), _this.onProximityToggle = function (e) {
-      return _this.props.dispatch({
-        type: constants["s" /* TOGGLE_PROXIMITY_SEARCH */]
+    return _ret = (_temp = (_this2 = HospitalSearchPage__possibleConstructorReturn(this, (_ref2 = HospitalSearchPage.__proto__ || Object.getPrototypeOf(HospitalSearchPage)).call.apply(_ref2, [this].concat(args))), _this2), _this2.onProximityToggle = function (e) {
+      return _this2.props.dispatch({
+        type: constants["t" /* TOGGLE_PROXIMITY_SEARCH */]
       });
-    }, _this.fetchQuery = function (queryString) {
+    }, _this2.fetchQuery = function (queryString) {
       fetch('/api/nearby/hospitals?' + queryString).then(function (results) {
         return results.json();
       }).then(function (jsonResults) {
-        return _this.props.dispatch({
-          type: constants["v" /* UPDATE_SEARCH_RESULTS */],
-          payload: { hospitals: jsonResults }
+        return _this2.props.dispatch({
+          type: constants["w" /* UPDATE_SEARCH_RESULTS */],
+          payload: jsonResults
         });
       }).catch(function (err) {
         return console.log('err', err);
       });
-    }, _this.updateCoordinates = function (_ref2) {
-      var withinKM = _ref2.withinKM;
+    }, _this2.updateCoordinates = function (_ref3) {
+      var withinKM = _ref3.withinKM;
       return function (pos) {
         var _pos$coords = pos.coords,
             latitude = _pos$coords.latitude,
             longitude = _pos$coords.longitude;
 
-        _this.props.dispatch({
-          type: constants["u" /* UPDATE_GEO_COORDINATES */],
+        _this2.props.dispatch({
+          type: constants["v" /* UPDATE_GEO_COORDINATES */],
           payload: { latitude: latitude, longitude: longitude }
         });
-        _this.fetchQuery('distance=' + withinKM + '&lat=' + latitude + '&long=' + longitude);
+        _this2.fetchQuery('distance=' + withinKM + '&lat=' + latitude + '&long=' + longitude);
       };
-    }, _temp), HospitalSearchPage__possibleConstructorReturn(_this, _ret);
+    }, _temp), HospitalSearchPage__possibleConstructorReturn(_this2, _ret);
   }
 
   HospitalSearchPage__createClass(HospitalSearchPage, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (navigator.geolocation) {
+      if (navigator.geolocation && !this.props.searchNearby.onLoadDataFetched) {
         navigator.geolocation.getCurrentPosition(this.updateCoordinates(this.props.searchNearby));
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var searchNearby = this.props.searchNearby;
+      var _props = this.props,
+          searchNearby = _props.searchNearby,
+          online = _props.online;
 
       return react_default.a.createElement(
         'div',
         { className: 'container search-container', __source: {
             fileName: HospitalSearchPage__jsxFileName,
-            lineNumber: 40
+            lineNumber: 45
           },
           __self: this
         },
@@ -26366,7 +26710,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block search-options ', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 41
+              lineNumber: 46
             },
             __self: this
           },
@@ -26374,7 +26718,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'btn-group btn-group-sm', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 42
+                lineNumber: 47
               },
               __self: this
             },
@@ -26382,7 +26726,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'button',
               { className: 'btn btn-secondary btn-sm dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 43
+                  lineNumber: 48
                 },
                 __self: this
               },
@@ -26392,7 +26736,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'dropdown-menu', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 46
+                  lineNumber: 51
                 },
                 __self: this
               },
@@ -26400,7 +26744,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 47
+                    lineNumber: 52
                   },
                   __self: this
                 },
@@ -26410,7 +26754,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 48
+                    lineNumber: 53
                   },
                   __self: this
                 },
@@ -26420,7 +26764,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 49
+                    lineNumber: 54
                   },
                   __self: this
                 },
@@ -26428,7 +26772,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               ),
               react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 50
+                  lineNumber: 55
                 },
                 __self: this
               }),
@@ -26436,7 +26780,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'a',
                 { className: 'dropdown-item', href: '#', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 51
+                    lineNumber: 56
                   },
                   __self: this
                 },
@@ -26448,7 +26792,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'proximity-search', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 54
+                lineNumber: 59
               },
               __self: this
             },
@@ -26457,7 +26801,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               {
                 __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 55
+                  lineNumber: 60
                 },
                 __self: this
               },
@@ -26467,14 +26811,14 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { onClick: this.onProximityToggle, className: 'toggle-switch ' + (searchNearby.on ? 'on' : 'off'), __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 56
+                  lineNumber: 61
                 },
                 __self: this
               },
               searchNearby.on ? 'ON' : 'OFF',
               react_default.a.createElement('div', { className: 'switch', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 58
+                  lineNumber: 63
                 },
                 __self: this
               })
@@ -26485,7 +26829,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
           'div',
           { className: 'row search-page-block', __source: {
               fileName: HospitalSearchPage__jsxFileName,
-              lineNumber: 62
+              lineNumber: 67
             },
             __self: this
           },
@@ -26493,7 +26837,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             'div',
             { className: 'input-group mb-3 search-bar', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 63
+                lineNumber: 68
               },
               __self: this
             },
@@ -26501,7 +26845,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-prepend', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 64
+                  lineNumber: 69
                 },
                 __self: this
               },
@@ -26509,7 +26853,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'button',
                 { className: 'btn btn-outline-secondary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 65
+                    lineNumber: 70
                   },
                   __self: this
                 },
@@ -26519,7 +26863,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 'div',
                 { className: 'dropdown-menu', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 66
+                    lineNumber: 71
                   },
                   __self: this
                 },
@@ -26527,7 +26871,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 67
+                      lineNumber: 72
                     },
                     __self: this
                   },
@@ -26537,7 +26881,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 68
+                      lineNumber: 73
                     },
                     __self: this
                   },
@@ -26547,7 +26891,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 69
+                      lineNumber: 74
                     },
                     __self: this
                   },
@@ -26555,7 +26899,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                 ),
                 react_default.a.createElement('div', { role: 'separator', className: 'dropdown-divider', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 70
+                    lineNumber: 75
                   },
                   __self: this
                 }),
@@ -26563,7 +26907,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
                   'a',
                   { className: 'dropdown-item', href: '#', __source: {
                       fileName: HospitalSearchPage__jsxFileName,
-                      lineNumber: 71
+                      lineNumber: 76
                     },
                     __self: this
                   },
@@ -26573,7 +26917,7 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
             ),
             react_default.a.createElement('input', { type: 'text', className: 'form-control', 'aria-label': 'Text input with dropdown button', __source: {
                 fileName: HospitalSearchPage__jsxFileName,
-                lineNumber: 74
+                lineNumber: 79
               },
               __self: this
             }),
@@ -26581,15 +26925,15 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               'div',
               { className: 'input-group-append', __source: {
                   fileName: HospitalSearchPage__jsxFileName,
-                  lineNumber: 75
+                  lineNumber: 80
                 },
                 __self: this
               },
               react_default.a.createElement(
                 'button',
-                { className: 'btn btn-outline-secondary', type: 'button', __source: {
+                { className: 'btn btn-outline-secondary', disabled: online === false, type: 'button', __source: {
                     fileName: HospitalSearchPage__jsxFileName,
-                    lineNumber: 76
+                    lineNumber: 81
                   },
                   __self: this
                 },
@@ -26597,7 +26941,24 @@ var HospitalSearchPage_HospitalSearchPage = function (_PureComponent) {
               )
             )
           )
-        )
+        ),
+        react_default.a.createElement(
+          'ul',
+          { className: searchNearby.fetching ? 'hidden' : '', __source: {
+              fileName: HospitalSearchPage__jsxFileName,
+              lineNumber: 85
+            },
+            __self: this
+          },
+          searchNearby.hospitals.map(HospitalSearchPage_hospitalResults)
+        ),
+        (searchNearby.fetching || !searchNearby.onLoadDataFetched) && react_default.a.createElement(shared_elements["a" /* CssLoader */], {
+          __source: {
+            fileName: HospitalSearchPage__jsxFileName,
+            lineNumber: 89
+          },
+          __self: this
+        })
       );
     }
   }]);
@@ -26648,13 +27009,33 @@ var selectState = function selectState(state) {
 var BookingContainer_BookingContainer = function (_PureComponent) {
   BookingContainer__inherits(BookingContainer, _PureComponent);
 
-  function BookingContainer(props) {
+  function BookingContainer() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     BookingContainer__classCallCheck(this, BookingContainer);
 
-    return BookingContainer__possibleConstructorReturn(this, (BookingContainer.__proto__ || Object.getPrototypeOf(BookingContainer)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = BookingContainer__possibleConstructorReturn(this, (_ref = BookingContainer.__proto__ || Object.getPrototypeOf(BookingContainer)).call.apply(_ref, [this].concat(args))), _this), _this.deiviceConnectionUpdate = function (e) {
+      return _this.props.dispatch({
+        type: constants["k" /* ONLINE_CONNECTION_CHANGE */],
+        payload: navigator.onLine
+      });
+    }, _temp), BookingContainer__possibleConstructorReturn(_this, _ret);
   }
 
   BookingContainer__createClass(BookingContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.deiviceConnectionUpdate();
+      window.addEventListener('online', this.deiviceConnectionUpdate);
+      window.addEventListener('offline', this.deiviceConnectionUpdate);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -26663,6 +27044,7 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
           dispatch = _props.dispatch,
           location = _props.location,
           match = _props.match,
+          online = _props.online,
           appointments = _props.appointments,
           searchNearby = _props.searchNearby,
           currentUser = _props.currentUser;
@@ -26672,13 +27054,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
         'section',
         { className: WrapperClass[location.pathname] || 'booking-page', __source: {
             fileName: BookingContainer__jsxFileName,
-            lineNumber: 44
+            lineNumber: 53
           },
           __self: this
         },
-        react_default.a.createElement(components_BookingNav, { dispatch: dispatch, __source: {
+        react_default.a.createElement(components_BookingNav, { online: online, dispatch: dispatch, __source: {
             fileName: BookingContainer__jsxFileName,
-            lineNumber: 45
+            lineNumber: 54
           },
           __self: this
         }),
@@ -26687,7 +27069,7 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
           {
             __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 46
+              lineNumber: 55
             },
             __self: this
           },
@@ -26695,42 +27077,42 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
             es["d" /* Route */],
             { exact: true, path: '/', __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 47
+                lineNumber: 56
               },
               __self: this
             },
             react_default.a.createElement(booking_Landing, { location: location, __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 48
+                lineNumber: 57
               },
               __self: this
             })
           ),
           react_default.a.createElement(es["d" /* Route */], { exact: true, path: '/search/hospitals', render: function render(props) {
-              return react_default.a.createElement(booking_HospitalSearchPage, Object.assign({ searchNearby: searchNearby, dispatch: dispatch, location: location }, props, {
+              return react_default.a.createElement(booking_HospitalSearchPage, Object.assign({ searchNearby: searchNearby, online: online, dispatch: dispatch, location: location }, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 51
+                  lineNumber: 60
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 50
+              lineNumber: 59
             },
             __self: this
           }),
           react_default.a.createElement(es["d" /* Route */], { exact: true, path: '/search/doctors', render: function render(props) {
-              return react_default.a.createElement(booking_DoctorSearchPage, Object.assign({ searchNearby: searchNearby, dispatch: dispatch, location: location }, props, {
+              return react_default.a.createElement(booking_DoctorSearchPage, Object.assign({ searchNearby: searchNearby, online: online, dispatch: dispatch, location: location }, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 63
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 53
+              lineNumber: 62
             },
             __self: this
           }),
@@ -26738,13 +27120,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
               return react_default.a.createElement(booking_HospitalProfile, Object.assign({ currentUser: currentUser, dispatch: dispatch, location: location }, props, {
                 __source: {
                   fileName: BookingContainer__jsxFileName,
-                  lineNumber: 57
+                  lineNumber: 66
                 },
                 __self: _this2
               }));
             }, __source: {
               fileName: BookingContainer__jsxFileName,
-              lineNumber: 56
+              lineNumber: 65
             },
             __self: this
           }),
@@ -26752,13 +27134,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
             es["d" /* Route */],
             { path: '/doctor/:id', __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 59
+                lineNumber: 68
               },
               __self: this
             },
             react_default.a.createElement(booking_DoctorProfile, { location: location, __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 60
+                lineNumber: 69
               },
               __self: this
             })
@@ -26767,13 +27149,13 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
             es["d" /* Route */],
             { exact: true, path: '/profile', __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 62
+                lineNumber: 71
               },
               __self: this
             },
             react_default.a.createElement(booking_PatientProfile, Object.assign({}, currentUser, { location: location, __source: {
                 fileName: BookingContainer__jsxFileName,
-                lineNumber: 63
+                lineNumber: 72
               },
               __self: this
             }))
@@ -26832,21 +27214,21 @@ Object(react_dom["hydrate"])(react_default.a.createElement(
 
 /***/ }),
 
-/***/ 963:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 964:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 965:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 966:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 967:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -26868,7 +27250,7 @@ Object(react_dom["hydrate"])(react_default.a.createElement(
  * 
  */
 
-var isTextNode = __webpack_require__(186);
+var isTextNode = __webpack_require__(187);
 
 /*eslint-disable no-bitwise */
 
