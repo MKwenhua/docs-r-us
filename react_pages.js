@@ -61,7 +61,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -80,13 +80,13 @@ module.exports = require("constants");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("semantic-ui-react");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("semantic-ui-react");
 
 /***/ }),
 /* 4 */
@@ -122,16 +122,22 @@ module.exports = require("react-router");
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -142,7 +148,7 @@ var external__react_ = __webpack_require__(0);
 var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
 
 // EXTERNAL MODULE: ./src/shared/styles/Main.css
-var Main = __webpack_require__(12);
+var Main = __webpack_require__(13);
 var Main_default = /*#__PURE__*/__webpack_require__.n(Main);
 
 // EXTERNAL MODULE: external "react-redux"
@@ -150,11 +156,11 @@ var external__react_redux_ = __webpack_require__(5);
 var external__react_redux__default = /*#__PURE__*/__webpack_require__.n(external__react_redux_);
 
 // EXTERNAL MODULE: ./src/shared/styles/TopNav.css
-var styles_TopNav = __webpack_require__(13);
+var styles_TopNav = __webpack_require__(14);
 var TopNav_default = /*#__PURE__*/__webpack_require__.n(styles_TopNav);
 
 // EXTERNAL MODULE: external "react-router-dom"
-var external__react_router_dom_ = __webpack_require__(3);
+var external__react_router_dom_ = __webpack_require__(2);
 var external__react_router_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_router_dom_);
 
 // EXTERNAL MODULE: external "constants"
@@ -306,7 +312,7 @@ var TopNavButtons_TopNavButtons = function TopNavButtons(_ref2) {
 
 /* harmony default export */ var elements_TopNavButtons = (TopNavButtons_TopNavButtons);
 // EXTERNAL MODULE: ./src/shared/styles/CssLoader.css
-var styles_CssLoader = __webpack_require__(14);
+var styles_CssLoader = __webpack_require__(15);
 var CssLoader_default = /*#__PURE__*/__webpack_require__.n(styles_CssLoader);
 
 // CONCATENATED MODULE: ./src/shared/elements/CssLoader.js
@@ -446,11 +452,11 @@ var TopNav_TopNav = function (_PureComponent) {
 
 /* harmony default export */ var components_TopNav = (TopNav_TopNav);
 // EXTERNAL MODULE: ./src/shared/styles/SideNav.css
-var styles_SideNav = __webpack_require__(15);
+var styles_SideNav = __webpack_require__(16);
 var SideNav_default = /*#__PURE__*/__webpack_require__.n(styles_SideNav);
 
 // EXTERNAL MODULE: external "semantic-ui-react"
-var external__semantic_ui_react_ = __webpack_require__(2);
+var external__semantic_ui_react_ = __webpack_require__(3);
 var external__semantic_ui_react__default = /*#__PURE__*/__webpack_require__.n(external__semantic_ui_react_);
 
 // CONCATENATED MODULE: ./src/shared/components/SideNav.js
@@ -794,7 +800,7 @@ var Home_Home = function (_PureComponent) {
 
 /* harmony default export */ var doctor_Home = (Home_Home);
 // EXTERNAL MODULE: ./src/shared/styles/PatientsView.css
-var styles_PatientsView = __webpack_require__(16);
+var styles_PatientsView = __webpack_require__(17);
 var PatientsView_default = /*#__PURE__*/__webpack_require__.n(styles_PatientsView);
 
 // CONCATENATED MODULE: ./src/shared/components/MatchTextHighlights.js
@@ -972,7 +978,7 @@ var PatientListItem_PatientListItem = function PatientListItem(_ref) {
 
 /* harmony default export */ var components_PatientListItem = (PatientListItem_PatientListItem);
 // EXTERNAL MODULE: external "action-autocomplete"
-var external__action_autocomplete_ = __webpack_require__(17);
+var external__action_autocomplete_ = __webpack_require__(18);
 var external__action_autocomplete__default = /*#__PURE__*/__webpack_require__.n(external__action_autocomplete_);
 
 // CONCATENATED MODULE: ./src/shared/pages/doctor/PatientsView.js
@@ -1194,7 +1200,7 @@ var styles_FileUploader = __webpack_require__(7);
 var FileUploader_default = /*#__PURE__*/__webpack_require__.n(styles_FileUploader);
 
 // EXTERNAL MODULE: external "react-dropzone"
-var external__react_dropzone_ = __webpack_require__(18);
+var external__react_dropzone_ = __webpack_require__(19);
 var external__react_dropzone__default = /*#__PURE__*/__webpack_require__.n(external__react_dropzone_);
 
 // CONCATENATED MODULE: ./src/shared/components/FileUploader.js
@@ -2193,11 +2199,11 @@ var PatientProfile_PatientProfile = function (_PureComponent) {
 
 /* harmony default export */ var doctor_PatientProfile = (PatientProfile_PatientProfile);
 // EXTERNAL MODULE: external "react-big-calendar"
-var external__react_big_calendar_ = __webpack_require__(19);
+var external__react_big_calendar_ = __webpack_require__(20);
 var external__react_big_calendar__default = /*#__PURE__*/__webpack_require__.n(external__react_big_calendar_);
 
 // EXTERNAL MODULE: ./src/shared/styles/BigCalendar.css
-var BigCalendar = __webpack_require__(20);
+var BigCalendar = __webpack_require__(21);
 var BigCalendar_default = /*#__PURE__*/__webpack_require__.n(BigCalendar);
 
 // CONCATENATED MODULE: ./src/shared/components/CalendarDisplay.js
@@ -3090,11 +3096,11 @@ var MainContainer_MainContainer = function (_PureComponent) {
 
 /* harmony default export */ var containers_MainContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(selectState)(MainContainer_MainContainer)));
 // EXTERNAL MODULE: ./src/shared/styles/BookingGlobal.css
-var BookingGlobal = __webpack_require__(21);
+var BookingGlobal = __webpack_require__(22);
 var BookingGlobal_default = /*#__PURE__*/__webpack_require__.n(BookingGlobal);
 
 // EXTERNAL MODULE: ./src/shared/styles/BookingNav.css
-var styles_BookingNav = __webpack_require__(22);
+var styles_BookingNav = __webpack_require__(23);
 var BookingNav_default = /*#__PURE__*/__webpack_require__.n(styles_BookingNav);
 
 // CONCATENATED MODULE: ./src/shared/components/BookingNav.js
@@ -3214,7 +3220,7 @@ var BookingNav_BookingNav = function (_PureComponent) {
 
 /* harmony default export */ var components_BookingNav = (BookingNav_BookingNav);
 // EXTERNAL MODULE: ./src/shared/styles/BookingLandingPage.css
-var BookingLandingPage = __webpack_require__(23);
+var BookingLandingPage = __webpack_require__(24);
 var BookingLandingPage_default = /*#__PURE__*/__webpack_require__.n(BookingLandingPage);
 
 // CONCATENATED MODULE: ./src/shared/pages/booking/Landing.js
@@ -3309,13 +3315,14 @@ var Landing_Landing = function (_PureComponent) {
 
 /* harmony default export */ var booking_Landing = (Landing_Landing);
 // EXTERNAL MODULE: ./src/shared/styles/ProfilePageStyles.css
-var ProfilePageStyles = __webpack_require__(34);
+var ProfilePageStyles = __webpack_require__(8);
 var ProfilePageStyles_default = /*#__PURE__*/__webpack_require__.n(ProfilePageStyles);
 
 // CONCATENATED MODULE: ./src/shared/pages/booking/DoctorProfile.js
-var DoctorProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorProfile.js';
-
 var DoctorProfile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var DoctorProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/DoctorProfile.js',
+    DoctorProfile__this = this;
 
 function DoctorProfile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3329,13 +3336,63 @@ function DoctorProfile__inherits(subClass, superClass) { if (typeof superClass !
 
 
 
+var DoctorProfile_doctorProfile = function doctorProfile(_ref) {
+  var fullName = _ref.fullName,
+      specialty = _ref.specialty,
+      photo = _ref.photo;
+  return external__react__default.a.createElement(
+    'div',
+    { className: 'col-md-8 offset-md-2', __source: {
+        fileName: DoctorProfile__jsxFileName,
+        lineNumber: 15
+      },
+      __self: DoctorProfile__this
+    },
+    external__react__default.a.createElement(
+      'div',
+      { className: 'media', __source: {
+          fileName: DoctorProfile__jsxFileName,
+          lineNumber: 16
+        },
+        __self: DoctorProfile__this
+      },
+      external__react__default.a.createElement('img', { height: '100', className: 'mr-3', src: external__constants_["CDN_URI"] + photo, __source: {
+          fileName: DoctorProfile__jsxFileName,
+          lineNumber: 17
+        },
+        __self: DoctorProfile__this
+      }),
+      external__react__default.a.createElement(
+        'div',
+        { className: 'media-body', __source: {
+            fileName: DoctorProfile__jsxFileName,
+            lineNumber: 18
+          },
+          __self: DoctorProfile__this
+        },
+        external__react__default.a.createElement(
+          'h5',
+          { className: 'mt-0', __source: {
+              fileName: DoctorProfile__jsxFileName,
+              lineNumber: 19
+            },
+            __self: DoctorProfile__this
+          },
+          fullName
+        ),
+        specialty
+      )
+    )
+  );
+};
+
 var DoctorProfile_DoctorProfile = function (_PureComponent) {
   DoctorProfile__inherits(DoctorProfile, _PureComponent);
 
   function DoctorProfile() {
-    var _ref;
+    var _ref2;
 
-    var _temp, _this, _ret;
+    var _temp, _this2, _ret;
 
     DoctorProfile__classCallCheck(this, DoctorProfile);
 
@@ -3343,20 +3400,20 @@ var DoctorProfile_DoctorProfile = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = DoctorProfile__possibleConstructorReturn(this, (_ref = DoctorProfile.__proto__ || Object.getPrototypeOf(DoctorProfile)).call.apply(_ref, [this].concat(args))), _this), _this.fetchProfileData = function (id) {
+    return _ret = (_temp = (_this2 = DoctorProfile__possibleConstructorReturn(this, (_ref2 = DoctorProfile.__proto__ || Object.getPrototypeOf(DoctorProfile)).call.apply(_ref2, [this].concat(args))), _this2), _this2.fetchProfileData = function (id) {
       fetch('/api/doctors/' + id).then(function (results) {
         return results.json();
-      }).then(_this.populateProfileData).catch(_this.profileFetchError);
-    }, _this.populateProfileData = function (doctor) {
-      return _this.props.dispatch({
+      }).then(_this2.populateProfileData).catch(_this2.profileFetchError);
+    }, _this2.populateProfileData = function (doctor) {
+      return _this2.props.dispatch({
         type: external__constants_["POPULATE_DOCTOR_PROFILE"],
-        payload: hospital
+        payload: doctor
       });
-    }, _this.profileFetchError = function (err) {
-      return _this.props.dispatch({
+    }, _this2.profileFetchError = function (err) {
+      return _this2.props.dispatch({
         type: external__constants_["DOCTOR_PROFILE_ERROR"]
       });
-    }, _temp), DoctorProfile__possibleConstructorReturn(_this, _ret);
+    }, _temp), DoctorProfile__possibleConstructorReturn(_this2, _ret);
   }
 
   DoctorProfile__createClass(DoctorProfile, [{
@@ -3366,8 +3423,8 @@ var DoctorProfile_DoctorProfile = function (_PureComponent) {
           searchNearby = _props.searchNearby,
           match = _props.match;
 
-      if (searchNearby.hospitals[match.params.id]) {
-        this.populateProfileData(searchNearby.hospitals[match.params.id]);
+      if (searchNearby.doctors[match.params.id]) {
+        this.populateProfileData(searchNearby.doctors[match.params.id]);
       } else {
         this.fetchProfileData(match.params.id);
       }
@@ -3389,31 +3446,28 @@ var DoctorProfile_DoctorProfile = function (_PureComponent) {
         'div',
         { className: 'container', __source: {
             fileName: DoctorProfile__jsxFileName,
-            lineNumber: 42
+            lineNumber: 54
           },
           __self: this
         },
-        external__react__default.a.createElement(
-          'h1',
-          {
-            __source: {
-              fileName: DoctorProfile__jsxFileName,
-              lineNumber: 43
-            },
-            __self: this
-          },
-          'Doctor Profile'
-        ),
         error && external__react__default.a.createElement(
           'h1',
           { className: 'fetch-error', __source: {
               fileName: DoctorProfile__jsxFileName,
-              lineNumber: 45
+              lineNumber: 56
             },
             __self: this
           },
           'Seems there was an issue fetching the data'
-        )
+        ),
+        !doctor && external__react__default.a.createElement(elements_CssLoader, {
+          __source: {
+            fileName: DoctorProfile__jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        }),
+        doctor && DoctorProfile_doctorProfile(doctor)
       );
     }
   }]);
@@ -3423,9 +3477,10 @@ var DoctorProfile_DoctorProfile = function (_PureComponent) {
 
 /* harmony default export */ var booking_DoctorProfile = (DoctorProfile_DoctorProfile);
 // CONCATENATED MODULE: ./src/shared/pages/booking/HospitalProfile.js
-var HospitalProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/HospitalProfile.js';
-
 var HospitalProfile__createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var HospitalProfile__jsxFileName = '/Users/pete/docs-r-us/src/shared/pages/booking/HospitalProfile.js',
+    HospitalProfile__this = this;
 
 function HospitalProfile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3439,13 +3494,62 @@ function HospitalProfile__inherits(subClass, superClass) { if (typeof superClass
 
 
 
+var HospitalProfile_hospitalProfile = function hospitalProfile(_ref) {
+  var name = _ref.name,
+      address = _ref.address;
+  return external__react__default.a.createElement(
+    'div',
+    { className: 'col-md-8 offset-md-2', __source: {
+        fileName: HospitalProfile__jsxFileName,
+        lineNumber: 15
+      },
+      __self: HospitalProfile__this
+    },
+    external__react__default.a.createElement(
+      'div',
+      { className: 'media', __source: {
+          fileName: HospitalProfile__jsxFileName,
+          lineNumber: 16
+        },
+        __self: HospitalProfile__this
+      },
+      external__react__default.a.createElement('img', { height: '160', className: 'mr-3', src: external__constants_["CDN_URI"] + 'temp_hospital_photo.jpg', __source: {
+          fileName: HospitalProfile__jsxFileName,
+          lineNumber: 17
+        },
+        __self: HospitalProfile__this
+      }),
+      external__react__default.a.createElement(
+        'div',
+        { className: 'media-body', __source: {
+            fileName: HospitalProfile__jsxFileName,
+            lineNumber: 18
+          },
+          __self: HospitalProfile__this
+        },
+        external__react__default.a.createElement(
+          'h5',
+          { className: 'mt-0', __source: {
+              fileName: HospitalProfile__jsxFileName,
+              lineNumber: 19
+            },
+            __self: HospitalProfile__this
+          },
+          name
+        ),
+        address
+      )
+    )
+  );
+};
+
 var HospitalProfile_HospitalProfile = function (_PureComponent) {
   HospitalProfile__inherits(HospitalProfile, _PureComponent);
 
   function HospitalProfile() {
-    var _ref;
+    var _ref2;
 
-    var _temp, _this, _ret;
+    var _temp, _this2, _ret;
 
     HospitalProfile__classCallCheck(this, HospitalProfile);
 
@@ -3453,20 +3557,20 @@ var HospitalProfile_HospitalProfile = function (_PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = HospitalProfile__possibleConstructorReturn(this, (_ref = HospitalProfile.__proto__ || Object.getPrototypeOf(HospitalProfile)).call.apply(_ref, [this].concat(args))), _this), _this.fetchProfileData = function (id) {
+    return _ret = (_temp = (_this2 = HospitalProfile__possibleConstructorReturn(this, (_ref2 = HospitalProfile.__proto__ || Object.getPrototypeOf(HospitalProfile)).call.apply(_ref2, [this].concat(args))), _this2), _this2.fetchProfileData = function (id) {
       fetch('/api/hospitals/' + id).then(function (results) {
         return results.json();
-      }).then(_this.populateProfileData).catch(_this.profileFetchError);
-    }, _this.populateProfileData = function (hospital) {
-      return _this.props.dispatch({
+      }).then(_this2.populateProfileData).catch(_this2.profileFetchError);
+    }, _this2.populateProfileData = function (hospital) {
+      return _this2.props.dispatch({
         type: external__constants_["POPULATE_HOSPITAL_PROFILE"],
         payload: hospital
       });
-    }, _this.profileFetchError = function (err) {
-      return _this.props.dispatch({
+    }, _this2.profileFetchError = function (err) {
+      return _this2.props.dispatch({
         type: external__constants_["HOSPITAL_PROFILE_ERROR"]
       });
-    }, _temp), HospitalProfile__possibleConstructorReturn(_this, _ret);
+    }, _temp), HospitalProfile__possibleConstructorReturn(_this2, _ret);
   }
 
   HospitalProfile__createClass(HospitalProfile, [{
@@ -3499,31 +3603,28 @@ var HospitalProfile_HospitalProfile = function (_PureComponent) {
         'div',
         { className: 'container', __source: {
             fileName: HospitalProfile__jsxFileName,
-            lineNumber: 42
+            lineNumber: 54
           },
           __self: this
         },
-        external__react__default.a.createElement(
-          'h1',
-          {
-            __source: {
-              fileName: HospitalProfile__jsxFileName,
-              lineNumber: 43
-            },
-            __self: this
-          },
-          'HospitalProfile'
-        ),
         error && external__react__default.a.createElement(
           'h1',
           { className: 'fetch-error', __source: {
               fileName: HospitalProfile__jsxFileName,
-              lineNumber: 45
+              lineNumber: 56
             },
             __self: this
           },
           'Seems there was an issue fetching the data'
-        )
+        ),
+        !hospital && external__react__default.a.createElement(elements_CssLoader, {
+          __source: {
+            fileName: HospitalProfile__jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        }),
+        hospital && HospitalProfile_hospitalProfile(hospital)
       );
     }
   }]);
@@ -3586,7 +3687,7 @@ var booking_PatientProfile_PatientProfile = function (_PureComponent) {
 
 /* harmony default export */ var booking_PatientProfile = (booking_PatientProfile_PatientProfile);
 // EXTERNAL MODULE: ./src/shared/styles/SearchPages.css
-var SearchPages = __webpack_require__(8);
+var SearchPages = __webpack_require__(9);
 var SearchPages_default = /*#__PURE__*/__webpack_require__.n(SearchPages);
 
 // CONCATENATED MODULE: ./src/shared/pages/booking/DoctorSearchPage.js
@@ -4432,7 +4533,7 @@ var BookingContainer_BookingContainer = function (_PureComponent) {
 
 /* harmony default export */ var containers_BookingContainer = (Object(external__react_router_["withRouter"])(Object(external__react_redux_["connect"])(BookingContainer_selectState)(BookingContainer_BookingContainer)));
 // EXTERNAL MODULE: external "react-dom/server"
-var server_ = __webpack_require__(9);
+var server_ = __webpack_require__(10);
 var server__default = /*#__PURE__*/__webpack_require__.n(server_);
 
 // CONCATENATED MODULE: ./src/server/render_page.js
@@ -4441,7 +4542,7 @@ var prodEnv = process.env.NODE_ENV === 'production';
 var assetBase = prodEnv ? 'https://dq8llwxgkllay.cloudfront.net/public' : '';
 
 var render_page_RenderPage = function RenderPage(content, preloadedState) {
-  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + /* Cannot get final name for export "renderToString" in "./src/shared/containers/BookingContainer.js" (known exports: default, known reexports: ) */ undefined(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
+  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Docs R Us</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      <link rel="stylesheet" href="' + assetBase + '/css/app_bundle.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + assetBase + '/app_bundle.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + Object(server_["renderToString"])(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
 };
 
 /* harmony default export */ var render_page = (render_page_RenderPage);
@@ -4451,7 +4552,7 @@ var render_booking_page_prodEnv = process.env.NODE_ENV === 'production';
 var render_booking_page_assetBase = render_booking_page_prodEnv ? 'https://dq8llwxgkllay.cloudfront.net/public' : '';
 
 var render_booking_page_RenderBookingPage = function RenderBookingPage(content, preloadedState) {
-  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Find Doctors</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">\n      <link rel="stylesheet" href="' + render_booking_page_assetBase + '/css/booking.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + render_booking_page_assetBase + '/booking.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + /* Cannot get final name for export "renderToString" in "./src/shared/containers/BookingContainer.js" (known exports: default, known reexports: ) */ undefined(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
+  return '\n    <!DOCTYPE html>\n    <html lang="en">\n    <head>\n      <title>Find Doctors</title>\n      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/xing-icon.png">\n      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">\n      <link rel="stylesheet" href="' + render_booking_page_assetBase + '/css/booking.css">\n      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">\n      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">\n\n      <script src="' + render_booking_page_assetBase + '/booking.js" defer></script>\n    </head>\n    <body>\n      <div id="root">' + Object(server_["renderToString"])(content) + '</div>\n      <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n    </body>\n  </html>\n';
 };
 
 /* harmony default export */ var render_booking_page = (render_booking_page_RenderBookingPage);
@@ -4554,11 +4655,11 @@ var normalizeDoctorState = function normalizeDoctorState(_ref) {
 
 
 // EXTERNAL MODULE: external "redux"
-var external__redux_ = __webpack_require__(10);
+var external__redux_ = __webpack_require__(11);
 var external__redux__default = /*#__PURE__*/__webpack_require__.n(external__redux_);
 
 // EXTERNAL MODULE: external "redux-logger"
-var external__redux_logger_ = __webpack_require__(24);
+var external__redux_logger_ = __webpack_require__(25);
 var external__redux_logger__default = /*#__PURE__*/__webpack_require__.n(external__redux_logger_);
 
 // CONCATENATED MODULE: ./src/shared/reducers/doctor.js
@@ -4800,7 +4901,6 @@ var mapProximityResults = function mapProximityResults(hospitals) {
             connected: true,
             socketId: action.payload
           });
-          break;
         }
       case external__constants_["TOGGLE_PROXIMITY_SEARCH"]:
         {
@@ -4897,20 +4997,20 @@ var reducers_clientBookingStoreBuilder = function clientBookingStoreBuilder(stat
 
 
 
-var composedStore = /* Cannot get final name for export "compose" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "applyMiddleware" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* unused reexport */undefined));
+var composedStore = Object(external__redux_["compose"])(Object(external__redux_["applyMiddleware"])(external__redux_logger__default.a));
 
 var store_buildClientStore = function buildClientStore(state) {
-  return composedStore(/* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined)(/* Cannot get final name for export "clientStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
+  return composedStore(external__redux_["createStore"])(reducers_clientStoreBuilder(state));
 };
 var store_buildServerStore = function buildServerStore(state) {
-  return /* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "serverStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
+  return Object(external__redux_["createStore"])(reducers_serverStoreBuilder(state));
 };
 
 var store_buildBookingClientStore = function buildBookingClientStore(state) {
-  return composedStore(/* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined)(/* Cannot get final name for export "clientBookingStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
+  return composedStore(external__redux_["createStore"])(reducers_clientBookingStoreBuilder(state));
 };
 var store_buildBookingServerStore = function buildBookingServerStore(state) {
-  return /* Cannot get final name for export "createStore" in "./src/shared/state/index.js" (known exports: , known reexports: setPatientState normalizeDoctorState) */ undefined(/* Cannot get final name for export "serverBookingStoreBuilder" in "./src/shared/reducers/patient.js" (known exports: default, known reexports: ) */ undefined(state));
+  return Object(external__redux_["createStore"])(reducers_serverBookingStoreBuilder(state));
 };
 
 
@@ -4935,8 +5035,8 @@ var context = {
 };
 
 var server_IndexRoute = function IndexRoute(req, res) {
-  var store = /* Cannot get final name for export "buildServerStore" in "./src/shared/reducers/index.js" (known exports: serverStoreBuilder clientStoreBuilder serverBookingStoreBuilder clientBookingStoreBuilder, known reexports: ) */ undefined(/* Cannot get final name for export "normalizeDoctorState" in "./src/shared/state/normalizeDoctorState.js" (known exports: default, known reexports: ) */ undefined(req.user.dataValues));
-  res.send(/* unused reexport */undefined(external__react__default.a.createElement(
+  var store = store_buildServerStore(state_normalizeDoctorState(req.user.dataValues));
+  res.send(render_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
@@ -4965,8 +5065,8 @@ var server_IndexRoute = function IndexRoute(req, res) {
 };
 
 var server_BookingRoute = function BookingRoute(req, res) {
-  var store = /* Cannot get final name for export "buildBookingServerStore" in "./src/shared/reducers/index.js" (known exports: serverStoreBuilder clientStoreBuilder serverBookingStoreBuilder clientBookingStoreBuilder, known reexports: ) */ undefined(/* Cannot get final name for export "setPatientState" in "./src/shared/state/normalizeDoctorState.js" (known exports: default, known reexports: ) */ undefined(req.user.dataValues));
-  res.send(render_page(external__react__default.a.createElement(
+  var store = store_buildBookingServerStore(state_setPatientState(req.user.dataValues));
+  res.send(render_booking_page(external__react__default.a.createElement(
     external__react_redux_["Provider"],
     { store: store, __source: {
         fileName: server__jsxFileName,
@@ -4982,7 +5082,7 @@ var server_BookingRoute = function BookingRoute(req, res) {
         },
         __self: server__this
       },
-      external__react__default.a.createElement(/* Cannot get final name for export "default" in "./src/shared/pages/booking/index.js" (known exports: , known reexports: Landing DoctorProfile HospitalProfile PatientProfile DoctorSearchPage HospitalSearchPage) */ undefined, {
+      external__react__default.a.createElement(containers_BookingContainer, {
         __source: {
           fileName: server__jsxFileName,
           lineNumber: 39
@@ -5005,12 +5105,6 @@ var RoutingPortal = function RoutingPortal(req, res) {
 };
 
 
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 13 */
@@ -5040,25 +5134,25 @@ var RoutingPortal = function RoutingPortal(req, res) {
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = require("action-autocomplete");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dropzone");
+module.exports = require("action-autocomplete");
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-big-calendar");
+module.exports = require("react-dropzone");
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = require("react-big-calendar");
 
 /***/ }),
 /* 21 */
@@ -5082,22 +5176,13 @@ module.exports = require("react-big-calendar");
 /* 24 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-logger");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */
+/* 25 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = require("redux-logger");
 
 /***/ })
 /******/ ]);

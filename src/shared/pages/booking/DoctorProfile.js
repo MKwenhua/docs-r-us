@@ -11,6 +11,18 @@ import {
   CssLoader
 } from 'elements';
 
+const doctorProfile = ({fullName, specialty, photo}) => (
+  <div className='col-md-8 offset-md-2'>
+    <div className='media'>
+      <img height='100' className='mr-3' src={CDN_URI + photo} />
+      <div className='media-body'>
+        <h5 className='mt-0'>{fullName}</h5>
+        {specialty}
+      </div>
+    </div>
+  </div>
+)
+
 class DoctorProfile extends PureComponent {
   fetchProfileData = id => {
     fetch(`/api/doctors/${id}`)
@@ -20,15 +32,15 @@ class DoctorProfile extends PureComponent {
   }
   populateProfileData = doctor => this.props.dispatch({
     type: POPULATE_DOCTOR_PROFILE,
-    payload: hospital
+    payload: doctor
   })
   profileFetchError = err => this.props.dispatch({
     type: DOCTOR_PROFILE_ERROR
   })
   componentDidMount() {
     const { searchNearby, match } = this.props;
-    if (searchNearby.hospitals[match.params.id]) {
-      this.populateProfileData(searchNearby.hospitals[match.params.id]);
+    if (searchNearby.doctors[match.params.id]) {
+      this.populateProfileData(searchNearby.doctors[match.params.id]);
     } else {
       this.fetchProfileData(match.params.id);
     }
@@ -40,12 +52,16 @@ class DoctorProfile extends PureComponent {
     const { error, doctor, searchNearby } = this.props;
     return (
       <div className='container'>
-        <h1>Doctor Profile</h1>
         { error &&
           <h1 className='fetch-error'>Seems there was an issue fetching the data</h1>
         }
         {
-
+          !doctor &&
+          <CssLoader />
+        }
+        {
+          doctor &&
+          doctorProfile(doctor)
         }
       </div>
     )

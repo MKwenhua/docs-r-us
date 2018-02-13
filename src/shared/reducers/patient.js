@@ -31,34 +31,34 @@ const mapProximityResults = hospitals => hospitals.reduce((nearbyResults, hospit
 }), { hospitals: {}, doctors: {} });
 
 export default(initialState) => (function reducer(state = initialState, action) {
-    switch (action.type) {
-      case ONLINE_CONNECTION_CHANGE:
-        {
-          return {
-            ...state,
-            online: action.payload
+  switch (action.type) {
+    case ONLINE_CONNECTION_CHANGE:
+      {
+        return {
+          ...state,
+          online: action.payload
+        }
+      }
+    case CONNECTED:
+      {
+        return {
+          ...state,
+          connected: true,
+          socketId: action.payload
+        }
+      }
+    case TOGGLE_PROXIMITY_SEARCH:
+      {
+        return {
+          ...state,
+          searchNearby: {
+            ...state.searchNearby,
+            on: !state.searchNearby.on
           }
         }
-      case CONNECTED:
-        {
-          return {
-            ...state,
-            connected: true,
-            socketId: action.payload
-          }
-          break;
-        }
-      case TOGGLE_PROXIMITY_SEARCH:
-        {
-          return {
-            ...state,
-            searchNearby: {
-              ...state.searchNearby,
-              on: !state.searchNearby.on
-            }
-          }
-        }
-      case HOSPITAL_PROFILE_ERROR: {
+      }
+    case HOSPITAL_PROFILE_ERROR:
+      {
         return {
           ...state,
           hospitalProfile: {
@@ -66,21 +66,22 @@ export default(initialState) => (function reducer(state = initialState, action) 
           }
         }
       }
-      case RESET_DOCTOR_PROFILE: {
+    case RESET_DOCTOR_PROFILE:
+      {
         return {
           ...state,
-          doctorProfile: {
-          }
+          doctorProfile: {}
         }
       }
-      case RESET_HOSPITAL_PROFILE: {
+    case RESET_HOSPITAL_PROFILE:
+      {
         return {
           ...state,
-          hospitalProfile: {
-          }
+          hospitalProfile: {}
         }
       }
-      case POPULATE_HOSPITAL_PROFILE: {
+    case POPULATE_HOSPITAL_PROFILE:
+      {
         return {
           ...state,
           hospitalProfile: {
@@ -89,7 +90,8 @@ export default(initialState) => (function reducer(state = initialState, action) 
           }
         }
       }
-      case POPULATE_DOCTOR_PROFILE: {
+    case POPULATE_DOCTOR_PROFILE:
+      {
         return {
           ...state,
           doctorProfile: {
@@ -98,34 +100,34 @@ export default(initialState) => (function reducer(state = initialState, action) 
           }
         }
       }
-      case UPDATE_GEO_COORDINATES:
-        {
-          return {
-            ...state,
-            searchNearby: {
-              ...state.searchNearby,
-              fetching: true,
-              position: {
-                ...state.searchNearby.position,
-                ...action.payload
-              }
+    case UPDATE_GEO_COORDINATES:
+      {
+        return {
+          ...state,
+          searchNearby: {
+            ...state.searchNearby,
+            fetching: true,
+            position: {
+              ...state.searchNearby.position,
+              ...action.payload
             }
           }
         }
-      case UPDATE_SEARCH_RESULTS:
-        {
-          return {
-            ...state,
-            searchNearby: {
-              ...state.searchNearby,
-              onLoadDataFetched: true,
-              fetching: false,
-              ...mapProximityResults(action.payload)
-            }
+      }
+    case UPDATE_SEARCH_RESULTS:
+      {
+        return {
+          ...state,
+          searchNearby: {
+            ...state.searchNearby,
+            onLoadDataFetched: true,
+            fetching: false,
+            ...mapProximityResults(action.payload)
           }
         }
-      default:
-        return state;
-    }
-    return state
-  })
+      }
+    default:
+      return state;
+  }
+  return state
+})

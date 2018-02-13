@@ -46,8 +46,14 @@ app.get('/appointment/:id', isLoggedIn, RoutingPortal);
 
 app.get('/patient/:id', isLoggedIn, RoutingPortal);
 
+//These Routes are Booking Portal specific
 app.get('/search/hospitals', isLoggedIn, BookingRoute);
+
 app.get('/search/doctors', isLoggedIn, BookingRoute);
+
+app.get('/hospital/:id', isLoggedIn, BookingRoute);
+
+app.get('/doctor/:id', isLoggedIn, BookingRoute);
 
 //These Routes are static
 app.get('/signin', DoctorLogin);
@@ -65,7 +71,6 @@ app.post('/booking/signin', SignInBookingHandler)
 app.get('/booking/signup', PatientSignup);
 
 app.post('/booking/signup', SignUpBookingHandler)
-
 
 app.get('/logout', LogOut);
 

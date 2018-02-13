@@ -11,6 +11,18 @@ import {
   CssLoader
 } from 'elements';
 
+const hospitalProfile = ({name, address}) => (
+  <div className='col-md-8 offset-md-2'>
+    <div className='media'>
+      <img height='160' className='mr-3' src={CDN_URI + 'temp_hospital_photo.jpg'} />
+      <div className='media-body'>
+        <h5 className='mt-0'>{name}</h5>
+        {address}
+      </div>
+    </div>
+  </div>
+)
+
 class HospitalProfile extends PureComponent {
   fetchProfileData = id => {
     fetch(`/api/hospitals/${id}`)
@@ -40,9 +52,16 @@ class HospitalProfile extends PureComponent {
     const { error, hospital, searchNearby } = this.props;
     return (
       <div className='container'>
-        <h1>HospitalProfile</h1>
         { error &&
           <h1 className='fetch-error'>Seems there was an issue fetching the data</h1>
+        }
+        {
+          !hospital &&
+          <CssLoader />
+        }
+        {
+          hospital &&
+          hospitalProfile(hospital)
         }
       </div>
     )

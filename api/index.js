@@ -3,15 +3,25 @@ const {
  AllHospitals,
  Hospital
 } = require('./hospitals');
+
 const {
  UpdateAppointment
 } = require('./appointments');
+
 const {
   UpdatePatient,
   CreatePatient,
   AllPatients,
   Patient
 } = require('./patients');
+
+const {
+  UpdateDoctor,
+  CreateDoctor,
+  AllDoctors,
+  Doctor
+} = require('./doctors');
+
 const {
   UploadToS3
 } = require('../helpers/s3_uploads.js');
@@ -29,5 +39,9 @@ module.exports = (app) => {
   app.get('/api/hospitals/:id', Hospital);
 
   app.get('/api/patients', AllPatients);
+
+  app.get('/api/doctors/:id', Doctor);
+
+  app.get('/api/doctors', AllDoctors);
 
 }
